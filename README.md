@@ -3,12 +3,12 @@ My personal pages
 
 I'm a senior .NET software engineer in the second half of my forties. Started using a computer at six years, gone through logo, basic, assembly, C/C++, java and finally to .NET and .NET core. Proficient also in databases, especially Sql Server and reporting. Let's say I have also some experience on security but mainly in the past, now things have become much more difficult and I do not have too much time to keep me updated, but sometimes I am still kicking in. Fan of videogames, technologies, motorbikes, travelling and comedy.
 
-Email: Federico Di Marco <fededim@gmail.com>
-Linkedin: https://www.linkedin.com/in/federicodimarco
-Github: https://github.com/fededim/
-Stackoverflow: https://stackoverflow.com/users/4375005/fededim
-Instagram: https://www.instagram.com/fededim.76
-YouTube: https://www.youtube.com/@fededim76
+Email: Federico Di Marco <fededim@gmail.com><br/>
+Linkedin: https://www.linkedin.com/in/federicodimarco<br/>
+Github: https://github.com/fededim/<br/>
+Stackoverflow: https://stackoverflow.com/users/4375005/fededim<br/>
+Instagram: https://www.instagram.com/fededim.76<br/>
+YouTube: https://www.youtube.com/@fededim76<br/>
 
 You can find below copies of my articles published on the CodeProject which unluckily was shutted down in October 2024.
 
