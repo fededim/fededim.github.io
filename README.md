@@ -14,7 +14,7 @@ You can find below copies of my articles published on the CodeProject which unlu
 
 # Articles
 
-[Fededim.Extensions.Configuration.Protected.DataProtectionAPI](<./Articles/Fededim.Extensions.Configuration.Protected.DataProtectionAPI_ The Ultimate Integration between ASP.NET Configuration and Data Protection API- CodeProject.html>)<br/>
+[Fededim.Extensions.Configuration.Protected.DataProtectionAPI](<./Articles/Fededim.Extensions.Configuration.Protected.DataProtectionAPI.html>)<br/>
 [How to Transform Binary Files into Powershell Script(s)<br/> in Order to Copy them Silently on a Server- CodeProject](<./Articles/How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject.html>)<br/>
 [ProtectedJson_ Integrating ASP.NET Core Configuration and Data Protection](<./Articles/ProtectedJson_ Integrating ASP.NET Core Configuration and Data Protection- CodeProje.html>)<br/>
 [SyncEvent_ The missing Java Event Class- CodeProject](<./Articles/SyncEvent_ The missing Java Event Class- CodeProject.html>)<br/>
@@ -25,4 +25,4 @@ You can find below copies of my articles published on the CodeProject which unlu
 [How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject](<./TipsAndTricks/How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject.html>)<br/>
 [Query Excel or CSV files with T-SQL- CodeProject](<./TipsAndTricks/Query Excel or CSV files with T-SQL- CodeProject.html>)<br/>
 [spSearchTables_ Search and Find Tables or Columns by Name or Value- CodeProject](<./TipsAndTricks/spSearchTables_ Search and Find Tables or Columns by Name or Value- CodeProject.html>)<br/>
-[VPNScripter_ A Scripter for Windows' VPN Connections- CodeProject](<./TipsAndTricks/VPNScripter_ A Scripter for Windows' VPN Connections- CodeProject>)<br/>
+[VPNScripter_ A Scripter for Windows' VPN Connections- CodeProject](<./TipsAndTricks/VPNScripter_ A Scripter for Windows' VPN Connections- CodeProject.html>)<br/>
