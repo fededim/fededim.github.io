@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<!-- saved from url=(0095)https://www.codeproject.com/Articles/5370606/spSearchTables-Search-and-Find-Tables-or-Columns-b -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	
+	<link rel="preconnect" href="https://www.google-analytics.com/">
+
+	<link rel="preconnect" href="https://www.codeproject.com/">
+
+
+	<link rel="preload" href="./spSearchTables_ Search and Find Tables or Columns by Name or Value- CodeProject_files/logo250x135.gif" as="image">
+
+
+	<link rel="preload" href="https://www.codeproject.com/App_Themes/CodeProject/Img/logo135-bg.gif" as="image">
+	<link rel="preload" href="./spSearchTables_ Search and Find Tables or Columns by Name or Value- CodeProject_files/jquery-3.4.1.min.js.download" as="script" type="text/javascript">
+
+
+	<title>spSearchTables: Search and Find Tables or Columns by Name or Value- CodeProject</title> 
+    
+	<link type="text/css" rel="stylesheet" href="./spSearchTables_ Search and Find Tables or Columns by Name or Value- CodeProject_files/Article.min.css">
+
+
+    <script type="text/javascript" async="" src="./spSearchTables_ Search and Find Tables or Columns by Name or Value- CodeProject_files/analytics.js.download"></script><script type="text/javascript" src="./spSearchTables_ Search and Find Tables or Columns by Name or Value- CodeProject_files/jquery-3.4.1.min.js.download" defer=""></script>
+<script type="text/javascript" src="./spSearchTables_ Search and Find Tables or Columns by Name or Value- CodeProject_files/article.min.js.download" defer=""></script>
+
+	
+<meta http-equiv="content-language" content="en-US">
+
+<meta name="Description" content="spSearchTables: a helper T-SQL stored procedure for digging into (large) databases">
+<meta name="Keywords" content="SQL, SQL-Server, T-SQL, SSMS">
+<meta name="Author" content="Federico Di Marco">
+<meta name="Rating" content="General">
+<meta name="Revisit-After" content="1 days">
+<meta name="application-name" content="CodeProject">
+<meta name="google-translate-customization" content="d908bb7ce7aff658-4c2f3a504525c916-g629383f736781a8a-13">
+
+
+
+<link rel="dns-prefetch" href="https://ajax.googleapis.com/"> 
+<link rel="canonical" href="https://www.codeproject.com/Articles/5370606/spSearchTables-Search-and-Find-Tables-or-Columns-b">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@CodeProject">
+<meta name="og:site_name" content="CodeProject">
+<meta name="twitter:creator" content="@CodeProject">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="10/26/2023 5:52:00 AM">
+<meta property="article:modified_time" content="11/21/2023 5:24:00 PM">
+<meta name="twitter:label1" content="Written by">
+<meta name="twitter:data1" content="Federico Di Marco">
+<meta name="twitter:label2" content="Reading time">
+<meta name="twitter:data2" content="6 min read">
+<meta property="og:url" content="https://www.codeproject.com/Articles/5370606/spSearchTables-Search-and-Find-Tables-or-Columns-b">
+<meta property="og:title" content="spSearchTables: Search and Find Tables or Columns by Name or Value">
+<meta property="og:description" content="spSearchTables: a helper T-SQL stored procedure for digging into (large) databases">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="apple-touch-icon" sizes="144x144" href="https://www.codeproject.com/favicon/apple-touch-icon.png"> 
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.codeproject.com/favicon/favicon-32x32.png"> 
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.codeproject.com/favicon/favicon-16x16.png"> 
+<link rel="manifest" href="https://www.codeproject.com/favicon/manifest.json"> 
+<link rel="mask-icon" href="https://www.codeproject.com/favicon/safari-pinned-tab.svg" color="#ff9900">
+	<script type="application/ld+json">{
+  "@context": "http://schema.org",
+  "@type": "TechArticle",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.codeproject.com/Articles/5370606/spSearchTables-Search-and-Find-Tables-or-Columns-b"
+   },
+  "name": "spSearchTables: Search and Find Tables or Columns by Name or Value",
+  "headline": "spSearchTables: Search and Find Tables or Columns by Name or Value",
+  "url": "https://www.codeproject.com/Articles/5370606/spSearchTables-Search-and-Find-Tables-or-Columns-b",
+  "discussionUrl": "https://www.codeproject.com/Articles/5370606/spSearchTables-Search-and-Find-Tables-or-Columns-b#_comments",
+  "isFamilyFriendly": "true",
+  "image": "https://www.codeproject.com/App_Themes/CodeProject/Img/Article100.png",
+  "keywords": "SQL,SQL-Server,T-SQL,SSMS",
+  "commentCount": "0",
+  "editor" : {
+    "@type" : "Person",
+    "name" : "Editor",
+    "url" : "https://www.codeproject.com/script/Membership/View.aspx?mid=3866010"
+  },
+  "license": "http://www.codeproject.com/info/cpol10.aspx",
+  "publisher" : {
+    "@type" : "Organization",
+    "name" : "CodeProject"
+  },
+  "description": "spSearchTables is a helper stored procedure which allows you to search tables or columns either by name or by value in all databases in a server using SQL pattern matching.",
+  "articleSection": "SQL-Server",
+  "author" : [{
+      "@type" : "Person",
+      "name" : "Federico Di Marco",
+      "url" : "https://www.codeproject.com/script/Membership/View.aspx?mid=3865041"
+    }],
+  "datePublished": "2023-10-26",
+  "dateCreated": "2023-10-26",
+  "dateModified": "2023-11-21"
+,
+  "contentRating" : {
+    "@type" : "Rating",
+    "ratingValue" : 5.00,
+    "bestRating" : 5,
+    "worstRating" : 1
+  }
+}</script>
+
+<script type="application/ld+json">{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "item" : {
+      "@id" : "/script/Content/Tag.aspx?tags=database",
+      "name" : "database"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "item" : {
+      "@id" : "/script/Content/Tag.aspx?tags=SQL-Server",
+      "name" : "SQL-Server"
+    }
+  }]
+}</script>
+
+
+	<!--<base target="_top">--><base href="." target="_top">
+	
+    
+
+
+<script type="text/javascript">
+function defrm () { /* thanks twitter */
+    document.write = '';
+    window.top.location = window.self.location;
+    setTimeout(function() { document.body.innerHTML = ''; }, 0);
+    window.self.onload = function(evt) { document.body.innerHTML = ''; };
+}
+
+if (window.top !== window.self) {
+    try {
+        if (window.top.location.host) { /* will throw for all except chrome */ }
+        else { defrm(); /* chrome */ }
+    } catch (ex) { defrm(); /* everyone else */ }
+}
+
+// Specific case where a site is screwing with us.
+if (typeof(DemoUrl) !== 'undefined') {
+    document.write(unescape('%3Cme') + 'ta http' + '-equiv="re' + 'fresh con' +
+                           'tent="1;url=' + DemoUrl + unescape('"%3CE'));
+}
+</script>
+	
+
+
+
+
+
+    <script async="" type="text/javascript" src="./spSearchTables_ Search and Find Tables or Columns by Name or Value- CodeProject_files/js"></script>
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-1735123-1' , {'user_id': '61732e5b-06af-4ac2-8734-b1591748583e'});
+    </script>
+
+<style type="text/css"></style></head>	
+
+<body class="chrome chrome130">
+
+
+
+<a class="access-link" href="https://www.codeproject.com/Articles/5370606/spSearchTables-Search-and-Find-Tables-or-Columns-b#Main"><img alt="Click here to Skip to main content" src="./spSearchTables_ Search and Find Tables or Columns by Name or Value- CodeProject_files/t.gif"></a>
+
+
+
+
+<div class="page-background">
+
+	
+	
+
+	
+
+	
+    <div id="ctl00_STM" class="site-top-menu fixed narrow">
+        <div class="main-content">
+            
+
+<div class="container memberbar clearfix flex-container flex-extend">
+
+	<div id="ctl00_MemberBar_GenInfo" class="flex-item align-left">65,938 articles</div>
+	
+	<div id="ctl00_MemberBar_ChangeNotice" class="flex-item align-left">CodeProject
+	is changing. <a href="https://www.codeproject.com/info/Changes.aspx">Read more</a>.</div>
+
+	<div class="flex-item">
+		
+	</div>
+
+	<div class="flex-item align-right">
+
+		
+
+		
+
+		
+	</div>
+</div>
+        </div>
+    </div>
+
+	
+    <div id="ctl00_SH" class="site-header fixed narrow">
+        <div class="main-content">
+            <div class="logo"><a href="https://www.codeproject.com/"><img id="ctl00_Logo" tabindex="1" title="CodeProject" src="./spSearchTables_ Search and Find Tables or Columns by Name or Value- CodeProject_files/logo250x135.gif" alt="Home" style="height:135px;width:250px;border-width:0px;"></a></div>
+            <div class="promo"></div>
+        </div>
+    </div>
+
+	
+			
+	
+
+	<div id="A" class="container-content-wrap fixed narrow"> 
+
+	<div class="container-content">
+
+        
+		<div class="clearfix">
+			<div class="container-breadcrumb float-left ">
+				<div><a rel="nofollow" href="https://www.codeproject.com/script/Content/SiteMap.aspx">Articles</a> / <a rel="nofollow" href="https://www.codeproject.com/script/Content/Tag.aspx?tags=database">database</a> / <a rel="nofollow" href="https://www.codeproject.com/script/Content/Tag.aspx?tags=SQL-Server">SQL-Server</a></div>
+			</div>
+
+            <div class="float-left">
+				
+			</div>
+
+			<div class="edit-links float-right">
+				
+
+
+
+ 
+&nbsp;
+
+
+
+
+
+
+
+
+
+
+			</div>
+
+			<div class="article-nav float-right">
+				
+
+
+<div style="display:inline-block;position:relative;top:-6px;margin-right:20px">
+    
+</div>
+
+
+
+ 
+
+<a id="ctl00_ActionLinks_PrintMd" data-tooltip="Print" data-enabletooltip="true" data-width="auto" href="https://www.codeproject.com/Articles/5370606/spSearchTables-Search-and-Find-Tables-or-Columns-b?display=Print" class="tooltip" title="">
+   <img src="./spSearchTables_ Search and Find Tables or Columns by Name or Value- CodeProject_files/print48.png" width="24" height="24" style="border:0">
+<div class="speech-bubble-container-up" style="width:auto">  <div class="speech-bubble-up" style="text-align:center"> Print</div>  <div class="speech-bubble-pointer-up">    <div class="speech-bubble-pointer-up-inner"></div>  </div></div></a>
+
+
+
+<span id="ctl00_ActionLinks_R">
+    
+    
+</span>
+			</div>
+		</div>
+
+        
+		<div class="extended article-container-parts">
+
+			
+		    
+            
+
+			
+			<div id="AT" class="article-container  fixed narrow" style="max-width:inherit;"> 
+
+				<div class="article">
+
+					<form name="aspnetForm" method="post" action="https://www.codeproject.com/Articles/5370606/View.aspx" id="aspnetForm" style="margin:0;padding:0">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="sae9sJgv5rBfBN+3pMcI2+ms2eh5cyM1GZopBMtc7IpRpu3vNuRw1V6SPeEgtUeeJ+L0Kk1wqDeg82D/Gw50tIyi9GhQCLUIpjbGUVYhXuWtrsBI10JqeQ4eA6m/3d/CwsEgntDvhTzcKdJ4BKZ8J2bQE6sWPEMUi+Osm/OMG8WyjGJEsZQSF/A+k+30x+l8BqovfeTy/VC92/V025SsWcUMvOZe77qlBiWIONie/0CXXeHqtNQn1lk0hIRzPidINYgb5FiVaQJC2FkydiUHNOowORd8z4CJ6ORzcKugGir0uX5HPldzB1GGK6EhZB929W1f9MpFNcq5c9d0vsMvi9mpuA/pXyIZDNGpUChe9y71qeP4ZLAPRO1ITvoUuTHRObx5bnwWDS87ATlJ1DjOJAN+MGnT3isv4YLGzCbJHwniuIS1WySEIMTPC0rKE81sIrK+XOIFnbkXMJ/pvuBjSJRGtwSqvATkSXIONHMrCdHJtY5yPGk65wIj2B4rS0g7coWapwHCpJvRMlsMI5mqiqdTRVeaV0487op6VsKt9TGlvy2ZoohkViVsZyZwIhasWsShaMlJzXsRk4PxfZ3ObL//6qKorhhNZbo9RZyFC6Dme7fogr6whULpOhkYO1u1M7M8ATk9TwD3d17S/FtSz/wbLgFJrYYnKyyxRbmSeAmU/IJ15znJALyglHHbJ5QeHzCK6jUQAI+hsSz/VwB/btD3ZNWyXfxRLHqexg+wQulThyIKcW1dLGcct1KcVyQKJm3X7hMV6QmZQthFochxPWOwQPavgmVnwBXoTLWOtQW5FxXeGM6O1QIk84OueVjbxzalEHTEq22EAHbN2BbbEJlVQXIZbso1hI/hFUU23Mz5yLwjQW/WN6M2K/tcHrbbLnWtFGBS9qY4lalC1Mayu2wE6iT5Nw1apgIQyZvT2Qm935STfxb8fx/s03MXge16fwuerHgeC2sgb9Qi/Yu4ulLPh64xYqc07+WrI+4rImK2ethgADWKflYvQTofxJ6mNoACysqF8lZXupjUaMExrFz2QaWkxwEDZzuLbsoc6YKcL+n5NkVaUXwKRidoybR8zt8WWE/T96XWbAp+/BOMVScZtL/yJvStB8eP8udIcsnNdylXHe/luNCy50zBXsCobKdDrQKbo+RJ7UlwG/hTw+2JkJEQ0TNOqt/gp26yCX6i4oAF9ELvP3Dlz05FAIw75oeJv92fI9PXgIPJHi0OMzHmmWTEFY89GYUtzzohgh++Ihgz76oq0Sg0lFqqGs6DNHdUg4Iljs93IWtGk5LhlWG4OVAMhlCZencKP1g/yQzRi/nCsOD1EBy66spi7NTpaiE0nEu5Fj+sM9xT1sy56ZmcSJEROF7hvIgwtKivX6Hn6wmtMjAp6U2Ps1lgdQGBF7r0o/a8eVZ2eSugRhj0WWmWpI1tdbuKJGu75iEnwYYsluC3kRDe8rlUB4TBbRF9rJsyFp6O7zIrquzzWMHDWOZQqSr3WVOsGaC6EhxILfkwNG55lD6av2PkX/IcKp407SmOJ0AURyq9evZp3Z2iUR/rScbevwal/2Qs7PwzXeHeWJl9ZoRI4DIygfDUlG5qAEAznUViS6LtJKRxqmpPrDPGXRJWqtWN6nU7n5+qTL1SWFqef/5N5SvMW9Jvb/cFwYxyxIVgElVPBVMKg94podV9mgZMqkediPws1Alg48OUmreEowqfdKHy/AuZ5DTxX/PN3oeFD/G+t22HmfQZChsRQMZQulObt32I5J4JvFxnq5qq7TWQRlhqCO9+GmICmiuLAuOHSuYH3CPFL3NccZbx70AaNdyE7ZgNc0T5L9DPu6ZSUutO/4yN7wVka49n7h76D51FVQuqMOfaP7ars94359UPR2Kio8t/dFWOOB/KoYZPUsJLn/qv3egv5pua0JGIzrp0Anl/MPAGIGR2EwJakF86JyZBdYWK8PWXTWzgce1tXp5BNzC3XfGkDjeWooBACWAJUI/x2UBNa1Qe3elNtUszu9d9UF9UJWSxJLc5iNOZFu3yWM+iUvMYfShJH1udiswE5irGmBeBeb6LrTf06PHleszAd0GJl1AZdLZwPsV0J8Zd9iNmaOsL2G2vU2oq/P+j6dsxh9eY0tMG7DXE5e7oj2gYIhv01NYplAOT2VKk+btgeDZe+Je//GaYAjbLy9UVwpBUTjFkzn2uMZkZ3WMbzCm31ECjh1zuVf10dWt4rk8cN/I0v+smy/xhvQxKZ6atxLn2mDQqUAv2aOvL+geii661+IcOXERiAbLibLQV5f2xf+UfCCxX8WR964pjfo50oo2wlHqhZNJ5YuLr7oRKF+qjqqySov1zSlAQ/xma19u/wg5gWCqsbUtTYX+u1+78HUs6DMc8b37+krgeE5gJdZsNb976tjgVyDM+F1AlKIfR+BLSeoNgN3B9r3uPSn1Tk/h1tc+bNNsD5AOUhxalsbz7ulTZAzgbR0EhxCPiqQzJG4R5S3mXLQ0/2BUBYg==">
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="10C1FD69">
+</div>
+
+					
+					 
+					<div class="header">
+					    <a name="Main"></a>
+					    <a name="_articleTop" id="_articleTop"></a>
+
+					    
+						<div>
+							<span id="ctl00_TagListHorz_TagWrp" class="tags horizontal">
+
+	
+	
+
+	
+	<span id="ctl00_TagListHorz_VisibleTags"><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/SQL" data-id="93">SQL</a></div><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/SQL-Server" data-id="101">SQL-Server</a></div><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/T-SQL" data-id="1695">T-SQL</a></div><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/SSMS" data-id="3431">SSMS</a></div></span> 
+
+	
+	
+</span>
+
+
+						</div>
+					    <div class="title">
+					        <h1 id="ctl00_ArticleTitle">spSearchTables: Search and Find Tables or Columns by Name or Value</h1>
+					    </div>
+
+                        <div>
+					        
+					        <div class="entry flex-container">
+
+								
+
+                                <div class="flex-item" style="flex:1 1 auto">
+                                    <div class="flex-container" style="justify-content:space-between;flex-wrap:wrap-reverse">
+                                       <span id="ctl00_Authors" class="author flex-item"><a href="https://www.codeproject.com/script/Membership/View.aspx?mid=3865041" rel="author">Federico Di Marco</a></span> 
+
+                                        <div class="flex-item" style="margin-top:-4px;">
+                                            <div id="ctl00_RateArticle_RatingTable" class="small-text" data-objectref="2_5370606">
+
+	<meta itemprop="upvoteCount" content="4">
+
+
+	<div id="ctl00_RateArticle_RatingRow" class="flex-container rating-container large-stars">
+
+					
+		
+
+		
+		<div class="nowrap tooltip">
+
+			
+			<div id="ctl00_RateArticle_ResultNoHist" class="rating-result"><div class="flex-container rating-stars large-stars"><div><img src="./spSearchTables_ Search and Find Tables or Columns by Name or Value- CodeProject_files/star-fill-lg.png" style="width:24px;height:24px"></div><div><img src="./spSearchTables_ Search and Find Tables or Columns by Name or Value- CodeProject_files/star-fill-lg.png" style="width:24px;height:24px"></div><div><img src="./spSearchTables_ Search and Find Tables or Columns by Name or Value- CodeProject_files/star-fill-lg.png" style="width:24px;height:24px"></div><div><img src="./spSearchTables_ Search and Find Tables or Columns by Name or Value- CodeProject_files/star-fill-lg.png" style="width:24px;height:24px"></div><div><img src="./spSearchTables_ Search and Find Tables or Columns by Name or Value- CodeProject_files/star-fill-lg.png" style="width:24px;height:24px"></div></div></div>
+			
+
+			
+			
+
+			
+            
+
+			
+                
+
+		</div>
+		
+	
+		
+		<div id="ctl00_RateArticle_VoteCountNoHist" class="rating-votes nowrap">5.00/5  (4 votes)</div>	
+
+		
+
+		
+		<div class="rating-undo" title="Undo vote" style="margin-left:5px;display:none"></div>
+
+		
+		
+	</div>
+
+	
+	
+
+</div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="flex-container" style="color:#666;font-size:smaller">
+                                        <span id="ctl00_LastUpdated" class="date flex-item-tight" title="Date last updated">21 Nov 2023</span><a id="ctl00_LicenseLink" title="The Code Project Open License (CPOL)" class="license flex-item-tight" href="http://www.codeproject.com/info/cpol10.aspx">CPOL</a><span id="ctl00_ReadingTime" class="stats flex-item-tight">6 min read</span><span id="ctl00_HorizontalStats" class="stats flex-item-tight"><span class="stats"><span title="Views"><img src="./spSearchTables_ Search and Find Tables or Columns by Name or Value- CodeProject_files/views32.png" style="width:16px"> 9.1K</span> &nbsp; </span></span>
+                                    </div>
+                                </div>
+					        </div>
+
+                            
+
+                        </div>
+
+                        <div id="ctl00_DescriptionSpot" class="summary">spSearchTables: a helper T-SQL stored procedure for digging into (large) databases</div><span id="ctl00_ThumbnailUrl" class="date" content="https://www.codeproject.com/script/Articles/Images/article100x80.png"></span>			
+
+                    </div>
+                    
+					
+					
+
+					
+
+					
+					<div id="ctl00_Abstract" class="abstract">spSearchTables is a helper stored procedure which allows you to search tables or columns either by name or by value in all databases in a server using SQL pattern matching.</div>
+
+					
+					
+
+						
+					
+
+					
+
+						
+						<div id="contentdiv" class="text">
+						
+
+
+
+<!-- Article Starts -->
+
+<h2>Introduction</h2>
+
+<p>I have always worked as a consultant switching projects every 1 to 3 years. Every time you switch a project, you have to tackle new databases, which not rarely are undocumented. I have usually dealt with databases of medium sizes (less than 300 tables), heard also of colleagues tackling bigger databases (around 700 tables), but recently I have joined a new project which is huge (several databases with some containing the whopping size of 2000 tables!) and trying to get an understanding of them is sometimes quite troublesome. For this reason, I decided to write this helper stored procedure which allows you to search for databases, tables, columns or column data by using <code>LIKE</code> wildcard syntax.</p>
+
+<h2>Background</h2>
+
+<p>Using the code is a no-brainer, you just paste the stored procedure code in SSMS and call it using the search options you want. The T-SQL code of the stored procedure is instead complex and tricky, but I think that anyone with an intermediate understanding of T-SQL is able to understand it.</p>
+
+<h2>Using the Code</h2>
+
+<p>You can check <a href="https://github.com/fededim/TSqlResources/blob/master/README.md#stored-procedures-sps-folder">my GitHub repository</a> for the documentation, source code and sample queries on how to use <code>spSearchTables</code>. Here follows the main concepts on the implementation:</p>
+
+<ul>
+	<li>The code outputs a table with these columns:
+	<ul>
+		<li>[<code>Database</code>]: database names matching <code>@dbSearchPattern</code> parameter</li>		<li>[<code>Schema</code>]: schema name associated with the table</li>		<li>[<code>Table</code>]: table names matching <code>@tableSearchPattern</code> parameter</li>		<li>[<code>FullTableName</code>]: it's just the concatenation of database + schema + table</li>		<li>		<p>[<code>MatchingColumns</code>]: comma separated list of column names matching the <code>@columnsSearchPattern</code> and the <code>@valuePattern</code> when it is not <code>null</code></p>
+		</li>		<li>		<p>[<code>MatchingWhereColumns</code>]: helper column which is not shown in the final output, it is like <code>MatchingColumns </code>but it shows the converted column statement used for <code>LIKE</code> pattern matching (see below).</p>
+		</li>		<li>[<code>MatchingSelect</code>]: the <code>select</code> statement returning the rows matching the <code>@valuePattern</code> when it is not <code>null</code> (it supports all column datatypes). The matching columns are shown first in the output.</li>	</ul>
+	</li>	<li><code>spSearchTables</code> cycles through a cursor after having retrieved a list of all databases by executing the following query on the <code>sys.databases catalog</code>.
+	<div class="pre-lang" id="premain283306"><div>SQL</div><div class="pre-action-link"><span id="copycode283306" class="copy-code" data-index="283306" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre283306" style="margin-top:0;" class="lang-sql notranslate" data-language="sql" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">SELECT</span> [name]
+<span class="code-keyword">FROM</span> sys.databases</pre>
+
+	<p>It does not use the Microsoft <code>sp_MSforeachdb</code> since it has the limitation of supporting scripts up to 2000 characters (the one generated by this SP is longer, initially I used <code>sp_MSforeachdb</code>, but after spending almost 2 hours to understand why strange errors happened, I discovered that the input script was being truncated at 2K chars 🤬 ).</p>
+	</li>	<li>For every matching database, it executes this general script passing down the 4 input parameters <code>@valuePattern, @columnSearchPattern, @columnTypeSearchPattern </code>and <code>@schemaSearchPattern</code>:
+	<div class="pre-lang" id="premain481707"><div>SQL</div><div class="pre-action-link"><span class="code-collapse" data-index="481707" id="preShrink481707">Shrink ▲</span> &nbsp; <span id="copycode481707" class="copy-code" data-index="481707" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre481707" style="margin-top:0;" class="lang-sql notranslate" data-language="sql" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">USE</span> [?]
+
+<span class="code-keyword">DECLARE</span> <span class="code-sdkkeyword">@dbName</span> <span class="code-keyword">nvarchar</span>(<span class="code-digit">200</span>), <span class="code-sdkkeyword">@schemaName</span> <span class="code-keyword">nvarchar</span>(<span class="code-digit">200</span>),_
+<span class="code-sdkkeyword">@tableName</span> <span class="code-keyword">nvarchar</span>(<span class="code-digit">200</span>), <span class="code-sdkkeyword">@columnName</span> <span class="code-keyword">nvarchar</span>(<span class="code-digit">200</span>), <span class="code-sdkkeyword">@columnType</span> <span class="code-keyword">nvarchar</span>(<span class="code-digit">200</span>), _
+<span class="code-sdkkeyword">@fullTableName</span> <span class="code-keyword">nvarchar</span>(<span class="code-digit">1000</span>)  <span class="code-comment">--</span><span class="code-comment"> current data</span>
+<span class="code-keyword">DECLARE</span> <span class="code-sdkkeyword">@oldDbName</span> <span class="code-keyword">nvarchar</span>(<span class="code-digit">200</span>), <span class="code-sdkkeyword">@oldSchemaName</span> <span class="code-keyword">nvarchar</span>(<span class="code-digit">200</span>),_
+<span class="code-sdkkeyword">@oldTableName</span> <span class="code-keyword">nvarchar</span>(<span class="code-digit">200</span>), <span class="code-sdkkeyword">@oldFullTableName</span> <span class="code-keyword">nvarchar</span>(<span class="code-digit">1000</span>)  <span class="code-comment">--</span><span class="code-comment"> old data</span>
+<span class="code-keyword">DECLARE</span> <span class="code-sdkkeyword">@whereColumnName</span> <span class="code-keyword">nvarchar</span>(<span class="code-digit">200</span>), <span class="code-sdkkeyword">@whereCondition</span> <span class="code-keyword">nvarchar</span>(<span class="code-digit">400</span>), _
+<span class="code-sdkkeyword">@whereClause</span> <span class="code-keyword">nvarchar</span>(max), <span class="code-sdkkeyword">@sql</span> <span class="code-keyword">nvarchar</span>(max), <span class="code-sdkkeyword">@selectSql</span> <span class="code-keyword">nvarchar</span>(max), _
+<span class="code-sdkkeyword">@columnListSelect</span> <span class="code-keyword">nvarchar</span>(max), <span class="code-sdkkeyword">@columnList</span> <span class="code-keyword">nvarchar</span>(max)  <span class="code-comment">--</span><span class="code-comment"> helper variables</span>
+
+<span class="code-comment">--</span><span class="code-comment"> try to parse innerValuePattern with geometry and geography types</span>
+<span class="code-keyword">DECLARE</span> <span class="code-sdkkeyword">@geometry</span> <span class="code-keyword">geometry</span>, <span class="code-sdkkeyword">@geography</span> <span class="code-keyword">geography</span>, <span class="code-sdkkeyword">@compatibilityLevel</span> <span class="code-keyword">int</span>
+
+<span class="code-keyword">BEGIN</span> TRY
+    <span class="code-keyword">SELECT</span> <span class="code-sdkkeyword">@compatibilityLevel</span> = compatibility_level _
+    <span class="code-keyword">FROM</span> sys.databases <span class="code-keyword">WHERE</span> database_id=DB_ID()
+    <span class="code-keyword">SELECT</span> @geography=geography::Parse(<span class="code-sdkkeyword">@innerValuePattern</span>)
+    <span class="code-keyword">SELECT</span> @geometry=geometry::Parse(<span class="code-sdkkeyword">@innerValuePattern</span>)
+<span class="code-keyword">END</span> TRY
+<span class="code-keyword">BEGIN</span> CATCH
+<span class="code-keyword">END</span> CATCH
+
+<span class="code-keyword">PRINT</span> N<span class="code-string">'</span><span class="code-string">Checking database [?]'</span>
+
+<span class="code-keyword">DECLARE</span> [tables] <span class="code-keyword">CURSOR</span> LOCAL READ_ONLY FORWARD_ONLY <span class="code-keyword">FOR</span>
+<span class="code-keyword">SELECT</span> N<span class="code-string">'</span><span class="code-string">['</span>+ <span class="code-sdkkeyword">DB_NAME</span>() +N<span class="code-string">'</span><span class="code-string">]'</span> <span class="code-keyword">AS</span> DatabaseName,N<span class="code-string">'</span><span class="code-string">['</span>+ s.[name] +N<span class="code-string">'</span><span class="code-string">]'</span> _
+<span class="code-keyword">AS</span> SchemaName,N<span class="code-string">'</span><span class="code-string">['</span>+ t.[name] +N<span class="code-string">'</span><span class="code-string">]'</span> <span class="code-keyword">AS</span> TableName,N<span class="code-string">'</span><span class="code-string">['</span>+ c.[name] +N<span class="code-string">'</span><span class="code-string">]'</span> _
+<span class="code-keyword">AS</span> ColumnName,tp.[Name] <span class="code-keyword">AS</span> ColumnType, _
+N<span class="code-string">'</span><span class="code-string">['</span>+DB_NAME()+N<span class="code-string">'</span><span class="code-string">].['</span>+s.[name]+N<span class="code-string">'</span><span class="code-string">].['</span>+t.[name]+N<span class="code-string">'</span><span class="code-string">]'</span> <span class="code-keyword">AS</span> FullTableName
+<span class="code-keyword">FROM</span> sys.tables t
+<span class="code-keyword">INNER</span> <span class="code-keyword">JOIN</span> sys.schemas s <span class="code-keyword">ON</span> t.schema_id=s.schema_id _
+<span class="code-keyword">AND</span> (<span class="code-sdkkeyword">@innerSchemaSearchPattern</span> <span class="code-keyword">IS</span> <span class="code-keyword">NULL</span> <span class="code-keyword">OR</span> s.[name] <span class="code-keyword">LIKE</span> <span class="code-sdkkeyword">@innerSchemaSearchPattern</span>)
+<span class="code-keyword">INNER</span> <span class="code-keyword">JOIN</span> sys.columns c <span class="code-keyword">ON</span> (<span class="code-sdkkeyword">@innerColumnSearchPattern</span> <span class="code-keyword">IS</span> <span class="code-keyword">NULL</span> _
+<span class="code-keyword">OR</span> c.[name] <span class="code-keyword">LIKE</span> <span class="code-sdkkeyword">@innerColumnSearchPattern</span>) <span class="code-keyword">AND</span> c.[object_id]=t.[object_id]
+<span class="code-keyword">INNER</span> <span class="code-keyword">JOIN</span> sys.types tp <span class="code-keyword">ON</span> tp.user_type_id = c.user_type_id _
+<span class="code-keyword">AND</span> (<span class="code-sdkkeyword">@innerColumnTypeSearchPattern</span> <span class="code-keyword">IS</span> <span class="code-keyword">NULL</span> <span class="code-keyword">OR</span> tp.[name] _
+<span class="code-keyword">LIKE</span> <span class="code-sdkkeyword">@innerColumnTypeSearchPattern</span>)
+<span class="code-keyword">ORDER</span> <span class="code-keyword">BY</span> FullTableName
+
+<span class="code-keyword">SET</span> <span class="code-sdkkeyword">@oldFullTableName</span> = <span class="code-keyword">NULL</span>
+
+<span class="code-keyword">OPEN</span> [tables]
+
+<span class="code-keyword">FETCH</span> NEXT <span class="code-keyword">FROM</span> [tables] <span class="code-keyword">INTO</span> <span class="code-sdkkeyword">@dbName</span>, <span class="code-sdkkeyword">@schemaName</span>, <span class="code-sdkkeyword">@tableName</span>, _
+<span class="code-sdkkeyword">@columnName</span>, <span class="code-sdkkeyword">@columnType</span>, <span class="code-sdkkeyword">@fullTableName</span>
+<span class="code-keyword">WHILE</span> (1=1)
+<span class="code-keyword">BEGIN</span>
+    <span class="code-keyword">IF</span> ((@oldFullTableName&lt;&gt;@fullTableName <span class="code-keyword">AND</span> <span class="code-sdkkeyword">@oldFullTableName</span> <span class="code-keyword">IS</span> <span class="code-keyword">NOT</span> <span class="code-keyword">NULL</span>) _
+         <span class="code-keyword">OR</span> @@FETCH_STATUS&lt;&gt;0)
+    <span class="code-keyword">BEGIN</span>
+        <span class="code-keyword">IF</span> (<span class="code-sdkkeyword">@whereClause</span> <span class="code-keyword">IS</span> <span class="code-keyword">NOT</span> <span class="code-keyword">NULL</span>)
+        <span class="code-keyword">BEGIN</span>
+            <span class="code-keyword">SET</span> <span class="code-sdkkeyword">@whereClause</span> = REPLACE(CONCAT(<span class="code-sdkkeyword">@whereClause</span>,N<span class="code-string">'</span><span class="code-string">[???]'</span>) _
+            <span class="code-keyword">COLLATE</span> DATABASE_DEFAULT,N<span class="code-string">'</span><span class="code-string">OR [???]'</span>,N<span class="code-string">'</span><span class="code-string">'</span>)  <span class="code-comment">--</span><span class="code-comment">trim last "OR "</span>
+            <span class="code-keyword">SET</span> <span class="code-sdkkeyword">@selectSql</span> = N<span class="code-string">'</span><span class="code-string">SELECT [??] FROM '</span>+@oldFullTableName+N<span class="code-string">'</span><span class="code-string"> _
+            WHERE '</span> + <span class="code-sdkkeyword">@whereClause</span> 
+        <span class="code-keyword">END</span>
+        <span class="code-keyword">ELSE</span>
+            <span class="code-keyword">SET</span> <span class="code-sdkkeyword">@selectSql</span> = <span class="code-keyword">NULL</span>
+
+        <span class="code-keyword">IF</span> (<span class="code-sdkkeyword">@columnListSelect</span> <span class="code-keyword">IS</span> <span class="code-keyword">NOT</span> <span class="code-keyword">NULL</span>)
+        <span class="code-keyword">BEGIN</span>
+            <span class="code-keyword">SET</span> <span class="code-sdkkeyword">@columnListSelect</span> = N<span class="code-string">'</span><span class="code-string">REPLACE(CONCAT('</span>+@columnListSelect + _
+            N<span class="code-string">'</span><span class="code-string">''[???]'') COLLATE DATABASE_DEFAULT,N'',[???]'',N'''')'</span>  <span class="code-comment">--</span><span class="code-comment"> trim last ","</span>
+            <span class="code-keyword">SET</span> <span class="code-sdkkeyword">@columnList</span> = N<span class="code-string">'</span><span class="code-string">REPLACE(CONCAT('</span>+@columnList + N<span class="code-string">'</span><span class="code-string">''[???]'') _
+            COLLATE DATABASE_DEFAULT,N'',[???]'',N'''')'</span>  <span class="code-comment">--</span><span class="code-comment"> trim last ","</span>
+            <span class="code-keyword">SET</span> <span class="code-sdkkeyword">@sql</span> = N<span class="code-string">'</span><span class="code-string"> INSERT INTO #Output SELECT  '''</span>+@oldDbName+N<span class="code-string">'</span><span class="code-string">'','''</span>+_
+            @oldSchemaName+N<span class="code-string">'</span><span class="code-string">'','''</span>+@oldTableName+N<span class="code-string">'</span><span class="code-string">'','''</span>+@oldFullTableName+N<span class="code-string">'</span><span class="code-string">'','</span>+_
+            @columnList+N<span class="code-string">'</span><span class="code-string">,'</span>+@columnListSelect+N<span class="code-string">'</span><span class="code-string">,'''</span>+_
+            REPLACE(<span class="code-sdkkeyword">@selectSql</span> <span class="code-keyword">COLLATE</span> DATABASE_DEFAULT,<span class="code-string">'</span><span class="code-string">'''</span>,<span class="code-string">'</span><span class="code-string">'''''</span>)+N<span class="code-string">'</span><span class="code-string">'''</span>+_
+            IIF(<span class="code-sdkkeyword">@whereClause</span> <span class="code-keyword">IS</span> <span class="code-keyword">NOT</span> <span class="code-keyword">NULL</span>,<span class="code-string">'</span><span class="code-string"> FROM '</span>+@oldFullTableName+<span class="code-string">'</span><span class="code-string"> WHERE '</span>+_
+            <span class="code-sdkkeyword">@whereClause</span>,<span class="code-string">'</span><span class="code-string">'</span>)
+        <span class="code-keyword">END</span>
+        <span class="code-keyword">ELSE</span> <span class="code-keyword">IF</span> (<span class="code-sdkkeyword">@oldDbName</span> <span class="code-keyword">IS</span> <span class="code-keyword">NOT</span> <span class="code-keyword">NULL</span>)
+        <span class="code-keyword">BEGIN</span>
+            <span class="code-keyword">SET</span> <span class="code-sdkkeyword">@columnList</span> = N<span class="code-string">'</span><span class="code-string">REPLACE(CONCAT('</span>+@columnList + N<span class="code-string">'</span><span class="code-string">''[???]'') _
+            COLLATE DATABASE_DEFAULT,N'',[???]'',N'''')'</span>  <span class="code-comment">--</span><span class="code-comment"> trim last ","</span>
+            <span class="code-keyword">SET</span> <span class="code-sdkkeyword">@sql</span> = N<span class="code-string">'</span><span class="code-string"> INSERT INTO #Output SELECT  '''</span>+@oldDbName+N<span class="code-string">'</span><span class="code-string">'','''</span>+_
+            @oldSchemaName+N<span class="code-string">'</span><span class="code-string">'','''</span>+@oldTableName+N<span class="code-string">'</span><span class="code-string">'','''</span>+@oldFullTableName+N<span class="code-string">'</span><span class="code-string">'','</span>+_
+            @columnList+N<span class="code-string">'</span><span class="code-string">,NULL,NULL'</span>
+        <span class="code-keyword">END</span>
+
+        <span class="code-keyword">IF</span> (<span class="code-sdkkeyword">@selectSql</span> <span class="code-keyword">IS</span> <span class="code-keyword">NOT</span> <span class="code-keyword">NULL</span>)
+            <span class="code-keyword">SET</span> <span class="code-sdkkeyword">@sql</span> = N<span class="code-string">'</span><span class="code-string">IF EXISTS ('</span>+REPLACE(<span class="code-sdkkeyword">@selectSql</span> _
+            <span class="code-keyword">COLLATE</span> DATABASE_DEFAULT,<span class="code-string">'</span><span class="code-string">[??]'</span>,<span class="code-string">'</span><span class="code-string">1'</span>)+N<span class="code-string">'</span><span class="code-string">)'</span> +@sql
+
+        <span class="code-keyword">IF</span> (<span class="code-sdkkeyword">@sql</span> <span class="code-keyword">IS</span> <span class="code-keyword">NOT</span> <span class="code-keyword">NULL</span>)
+        <span class="code-keyword">BEGIN</span>
+            <span class="code-keyword">PRINT</span> <span class="code-sdkkeyword">@sql</span>
+
+            <span class="code-keyword">EXECUTE</span> sp_executesql <span class="code-sdkkeyword">@sql</span>
+        <span class="code-keyword">END</span>
+
+        <span class="code-keyword">IF</span> (@@FETCH_STATUS&lt;&gt;0)
+            <span class="code-keyword">BREAK</span>
+
+        <span class="code-keyword">SET</span> <span class="code-sdkkeyword">@whereClause</span> = <span class="code-keyword">NULL</span>
+        <span class="code-keyword">SET</span> <span class="code-sdkkeyword">@columnListSelect</span> = <span class="code-keyword">NULL</span>
+        <span class="code-keyword">SET</span> <span class="code-sdkkeyword">@columnList</span> = <span class="code-keyword">NULL</span>
+    <span class="code-keyword">END</span>
+
+    <span class="code-keyword">IF</span> (<span class="code-sdkkeyword">@innerValuePattern</span> <span class="code-keyword">IS</span> <span class="code-keyword">NOT</span> <span class="code-keyword">NULL</span>)
+    <span class="code-keyword">BEGIN</span>
+        <span class="code-keyword">SET</span> <span class="code-sdkkeyword">@whereColumnName</span> = (<span class="code-keyword">CASE</span> <span class="code-keyword">WHEN</span> <span class="code-sdkkeyword">@columnType</span> _
+        <span class="code-keyword">COLLATE</span> DATABASE_DEFAULT = N<span class="code-string">'</span><span class="code-string">image'</span> <span class="code-keyword">THEN</span> N<span class="code-string">'</span><span class="code-string">CONVERT(NVARCHAR(MAX),_
+        CONVERT(VARBINARY(MAX),'</span>+@columnName+N<span class="code-string">'</span><span class="code-string">),1)'</span> <span class="code-keyword">WHEN</span> <span class="code-sdkkeyword">@columnType</span> _
+        <span class="code-keyword">COLLATE</span> DATABASE_DEFAULT = N<span class="code-string">'</span><span class="code-string">xml'</span> <span class="code-keyword">THEN</span> N<span class="code-string">'</span><span class="code-string">CONVERT(nvarchar(MAX),'</span>+_
+        @columnName+N<span class="code-string">'</span><span class="code-string">)'</span> <span class="code-keyword">WHEN</span> <span class="code-sdkkeyword">@columnType</span> <span class="code-keyword">COLLATE</span> DATABASE_DEFAULT _
+        <span class="code-keyword">IN</span> (N<span class="code-string">'</span><span class="code-string">hierarchyid'</span>) <span class="code-keyword">THEN</span> @columnName+N<span class="code-string">'</span><span class="code-string">.ToString()'</span> _
+        <span class="code-keyword">WHEN</span> <span class="code-sdkkeyword">@columnType</span> <span class="code-keyword">COLLATE</span> DATABASE_DEFAULT <span class="code-keyword">IN</span> (N<span class="code-string">'</span><span class="code-string">datetime'</span>,N<span class="code-string">'</span><span class="code-string">datetime2'</span>,_
+        N<span class="code-string">'</span><span class="code-string">datetimeoffset'</span>,N<span class="code-string">'</span><span class="code-string">time'</span>) <span class="code-keyword">THEN</span> N<span class="code-string">'</span><span class="code-string">CONVERT(nvarchar(50),'</span>+_
+        @columnName+N<span class="code-string">'</span><span class="code-string">,126)'</span> <span class="code-keyword">ELSE</span> <span class="code-sdkkeyword">@columnName</span> <span class="code-keyword">END</span>)
+        
+        <span class="code-keyword">IF</span> (<span class="code-sdkkeyword">@columnType</span> <span class="code-keyword">COLLATE</span> DATABASE_DEFAULT <span class="code-keyword">IN</span> (N<span class="code-string">'</span><span class="code-string">geography'</span>,N<span class="code-string">'</span><span class="code-string">geometry'</span>))
+        <span class="code-keyword">BEGIN</span>    
+            <span class="code-keyword">IF</span> (@compatibilityLevel&gt;=130 <span class="code-keyword">AND</span> ((<span class="code-sdkkeyword">@columnType</span> _
+            <span class="code-keyword">COLLATE</span> DATABASE_DEFAULT = N<span class="code-string">'</span><span class="code-string">geometry'</span> <span class="code-keyword">AND</span> <span class="code-sdkkeyword">@geometry</span> <span class="code-keyword">IS</span> <span class="code-keyword">NOT</span> <span class="code-keyword">NULL</span>)
+                <span class="code-keyword">OR</span> (<span class="code-sdkkeyword">@columnType</span> <span class="code-keyword">COLLATE</span> DATABASE_DEFAULT = N<span class="code-string">'</span><span class="code-string">geography'</span> _
+                <span class="code-keyword">AND</span> <span class="code-sdkkeyword">@geography</span> <span class="code-keyword">IS</span> <span class="code-keyword">NOT</span> <span class="code-keyword">NULL</span>)))
+                <span class="code-keyword">SET</span> <span class="code-sdkkeyword">@whereCondition</span> = N<span class="code-string">'</span><span class="code-string">COALESCE('</span>+@whereColumnName+N<span class="code-string">'</span><span class="code-string">.STContains_
+                ('</span>+IIF(<span class="code-sdkkeyword">@columnType</span> <span class="code-keyword">COLLATE</span> DATABASE_DEFAULT = N<span class="code-string">'</span><span class="code-string">geometry'</span>,_
+                N<span class="code-string">'</span><span class="code-string">geometry::Parse('''</span>+@geometry.ToString()+N<span class="code-string">'</span><span class="code-string">'')),0)=1)'</span>,_
+                N<span class="code-string">'</span><span class="code-string">geography::Parse('''</span>+@geography.ToString()+N<span class="code-string">'</span><span class="code-string">'')),0)=1'</span>)
+            <span class="code-keyword">ELSE</span>
+                <span class="code-keyword">SET</span> <span class="code-sdkkeyword">@whereCondition</span> = N<span class="code-string">'</span><span class="code-string">('</span> + @whereColumnName+N<span class="code-string">'</span><span class="code-string">.ToString() _
+                LIKE N'''</span>+@innerValuePattern+N<span class="code-string">'</span><span class="code-string">'' COLLATE DATABASE_DEFAULT)'</span>
+
+            <span class="code-keyword">SET</span> <span class="code-sdkkeyword">@whereColumnName</span> = @whereColumnName+N<span class="code-string">'</span><span class="code-string">.ToString()'</span>
+        <span class="code-keyword">END</span>
+        <span class="code-keyword">ELSE</span>
+            <span class="code-keyword">SET</span> <span class="code-sdkkeyword">@whereCondition</span> = N<span class="code-string">'</span><span class="code-string">('</span> + @whereColumnName+N<span class="code-string">'</span><span class="code-string"> LIKE '''</span>+_
+                @innerValuePattern+N<span class="code-string">'</span><span class="code-string">'')'</span>
+
+        <span class="code-keyword">SET</span> <span class="code-sdkkeyword">@whereClause</span> = <span class="code-sdkkeyword">@whereClause</span> + <span class="code-sdkkeyword">@whereCondition</span> + N<span class="code-string">'</span><span class="code-string"> OR '</span>
+
+        <span class="code-keyword">SET</span> <span class="code-sdkkeyword">@columnListSelect</span> = <span class="code-sdkkeyword">@columnListSelect</span> + N<span class="code-string">'</span><span class="code-string">IIF(SUM(CASE WHEN '</span>+_
+        @whereCondition+<span class="code-string">'</span><span class="code-string"> THEN 1 ELSE 0 END)&gt;0,'''</span>+@whereColumnName+<span class="code-string">'</span><span class="code-string"> _
+        AS '</span>+@columnName+<span class="code-string">'</span><span class="code-string">,'',NULL),'</span>
+        <span class="code-keyword">SET</span> <span class="code-sdkkeyword">@columnList</span> = <span class="code-sdkkeyword">@columnList</span> + N<span class="code-string">'</span><span class="code-string">IIF(SUM(CASE WHEN '</span>+@whereCondition+<span class="code-string">'</span><span class="code-string"> _
+        THEN 1 ELSE 0 END)&gt;0,'''</span>+@columnName+<span class="code-string">'</span><span class="code-string">,'',NULL),'</span>
+    <span class="code-keyword">END</span>
+    <span class="code-keyword">ELSE</span>
+    <span class="code-keyword">BEGIN</span>
+        <span class="code-keyword">SET</span> <span class="code-sdkkeyword">@whereClause</span> = <span class="code-keyword">NULL</span>
+        <span class="code-keyword">SET</span> <span class="code-sdkkeyword">@columnListSelect</span> = <span class="code-keyword">NULL</span>
+        <span class="code-keyword">SET</span> <span class="code-sdkkeyword">@columnList</span> = <span class="code-sdkkeyword">@columnList</span> + N<span class="code-string">'</span><span class="code-string">'''</span> + <span class="code-sdkkeyword">@columnName</span> + N<span class="code-string">'</span><span class="code-string">,'','</span>
+    <span class="code-keyword">END</span>
+
+    <span class="code-keyword">SET</span> <span class="code-sdkkeyword">@oldDbName</span> = <span class="code-sdkkeyword">@dbName</span>
+    <span class="code-keyword">SET</span> <span class="code-sdkkeyword">@oldSchemaName</span> = <span class="code-sdkkeyword">@schemaName</span>
+    <span class="code-keyword">SET</span> <span class="code-sdkkeyword">@oldTableName</span> = <span class="code-sdkkeyword">@tableName</span>
+    <span class="code-keyword">SET</span> <span class="code-sdkkeyword">@oldFullTableName</span> = <span class="code-sdkkeyword">@fullTableName</span>
+
+    <span class="code-keyword">FETCH</span> NEXT <span class="code-keyword">FROM</span> [tables] <span class="code-keyword">INTO</span> <span class="code-sdkkeyword">@dbName</span>, <span class="code-sdkkeyword">@schemaName</span>, <span class="code-sdkkeyword">@tableName</span>, _
+                                  <span class="code-sdkkeyword">@columnName</span>, <span class="code-sdkkeyword">@columnType</span>, <span class="code-sdkkeyword">@fullTableName</span>
+<span class="code-keyword">END</span>    
+
+<span class="code-keyword">CLOSE</span> [tables]; 
+<span class="code-keyword">DEALLOCATE</span> [tables];</pre>
+	</li>	<li>The general script above selects the outer database in the loop and queries again the <em>system catalogs about its tables, its schemas, its columns together with their datatypes</em> and cycles for all of them.
+	<div class="pre-lang" id="premain278664"><div>SQL</div><div class="pre-action-link"><span id="copycode278664" class="copy-code" data-index="278664" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre278664" style="margin-top:0;" class="lang-sql notranslate" data-language="sql" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">SELECT</span> N<span class="code-string">'</span><span class="code-string">['</span> + <span class="code-sdkkeyword">DB_NAME</span>() + N<span class="code-string">'</span><span class="code-string">]'</span> <span class="code-keyword">AS</span> DatabaseName,
+       N<span class="code-string">'</span><span class="code-string">['</span> + s.[name] + N<span class="code-string">'</span><span class="code-string">]'</span> <span class="code-keyword">AS</span> SchemaName,
+       N<span class="code-string">'</span><span class="code-string">['</span> + t.[name] + N<span class="code-string">'</span><span class="code-string">]'</span> <span class="code-keyword">AS</span> TableName,
+       N<span class="code-string">'</span><span class="code-string">['</span> + c.[name] + N<span class="code-string">'</span><span class="code-string">]'</span> <span class="code-keyword">AS</span> ColumnName,
+       tp.[Name] <span class="code-keyword">AS</span> ColumnType,
+       N<span class="code-string">'</span><span class="code-string">['</span> + <span class="code-sdkkeyword">DB_NAME</span>() + N<span class="code-string">'</span><span class="code-string">].['</span> + s.[name] + N<span class="code-string">'</span><span class="code-string">].['</span> + t.[name] + N<span class="code-string">'</span><span class="code-string">]'</span> _
+       <span class="code-keyword">AS</span> FullTableName
+<span class="code-keyword">FROM</span> sys.tables t
+<span class="code-keyword">INNER</span> <span class="code-keyword">JOIN</span> sys.schemas s <span class="code-keyword">ON</span> t.schema_id=s.schema_id _
+<span class="code-keyword">AND</span> (<span class="code-sdkkeyword">@innerSchemaSearchPattern</span> <span class="code-keyword">IS</span> <span class="code-keyword">NULL</span> <span class="code-keyword">OR</span> s.[name] <span class="code-keyword">LIKE</span> <span class="code-sdkkeyword">@innerSchemaSearchPattern</span>)
+<span class="code-keyword">INNER</span> <span class="code-keyword">JOIN</span> sys.columns c <span class="code-keyword">ON</span> (<span class="code-sdkkeyword">@innerColumnSearchPattern</span> <span class="code-keyword">IS</span> <span class="code-keyword">NULL</span> _
+<span class="code-keyword">OR</span> c.[name] <span class="code-keyword">LIKE</span> <span class="code-sdkkeyword">@innerColumnSearchPattern</span>) <span class="code-keyword">AND</span> c.[object_id]=t.[object_id]
+<span class="code-keyword">INNER</span> <span class="code-keyword">JOIN</span> sys.types tp <span class="code-keyword">ON</span> tp.user_type_id = c.user_type_id _
+<span class="code-keyword">AND</span> (<span class="code-sdkkeyword">@innerColumnTypeSearchPattern</span> <span class="code-keyword">IS</span> <span class="code-keyword">NULL</span> <span class="code-keyword">OR</span> tp.[name] _
+<span class="code-keyword">LIKE</span> <span class="code-sdkkeyword">@innerColumnTypeSearchPattern</span>)
+<span class="code-keyword">ORDER</span> <span class="code-keyword">BY</span> FullTableName </pre>
+
+	<p>The code then gets very complicated and tricky, but basically, it builds and executes one of the two queries below which populate the output table with the information about the filtered tables/columns found in the database.</p>
+
+	<ul>
+		<li>		<p>Query generated when <code>@valuePattern</code> parameter is <code>null</code>:</p>
+
+		<div class="pre-lang" id="premain216706"><div>SQL</div><div class="pre-action-link"><span id="copycode216706" class="copy-code" data-index="216706" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre216706" style="margin-top:0;" class="lang-sql notranslate" data-language="sql" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">INSERT</span> <span class="code-keyword">INTO</span> #Output
+<span class="code-keyword">SELECT</span> <span class="code-string">'</span><span class="code-string">[Northwind]'</span>,
+       <span class="code-string">'</span><span class="code-string">[dbo]'</span>,
+       <span class="code-string">'</span><span class="code-string">[Order Details]'</span>,
+       <span class="code-string">'</span><span class="code-string">[Northwind].[dbo].[Order Details]'</span>,
+       REPLACE(
+                  CONCAT(<span class="code-string">'</span><span class="code-string">[OrderID],'</span>, <span class="code-string">'</span><span class="code-string">[ProductID],'</span>, <span class="code-string">'</span><span class="code-string">[UnitPrice],'</span>, _
+                  <span class="code-string">'</span><span class="code-string">[Quantity],'</span>, <span class="code-string">'</span><span class="code-string">[Discount],'</span>, <span class="code-string">'</span><span class="code-string">[???]'</span>) _
+                  <span class="code-keyword">COLLATE</span> DATABASE_DEFAULT,
+                  N<span class="code-string">'</span><span class="code-string">,[???]'</span>,
+                  N<span class="code-string">'</span><span class="code-string">'</span>
+              ),
+       <span class="code-keyword">NULL</span>,
+       <span class="code-keyword">NULL</span></pre>
+
+		<p><code>MatchingColumns</code> is basically a variable length <code>CONCAT</code> with all column names plus comma plus an additional custom postfix (<code>'[???]'</code> which hopefully should not match any table name). The postfix is used to remove the last comma from the last column (the string <code>',[???]'</code> gets replaced with an empty <code>string</code> through <code>REPLACE</code> function). This is a hack which avoids performing an inner subquery for retrieving the <code>string</code> length in order to trim the last comma with <code>SUBSTRING</code>.</p>
+
+		<p>The <code>MatchingWhereColumns / MatchingSelect</code> parameters are instead <code>NULL</code> since we do not query any value.</p>
+		</li>		<li>Query generated when <code>@valuePattern</code> parameter is not <code>null</code>:
+		<div class="pre-lang" id="premain199519"><div>SQL</div><div class="pre-action-link"><span class="code-collapse" data-index="199519" id="preShrink199519">Shrink ▲</span> &nbsp; <span id="copycode199519" class="copy-code" data-index="199519" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre199519" style="margin-top:0;" class="lang-sql notranslate" data-language="sql" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">IF</span> <span class="code-keyword">EXISTS</span>
+(
+    <span class="code-keyword">SELECT</span> <span class="code-digit">1</span>
+    <span class="code-keyword">FROM</span> [AdventureWorks2022].[Person].[Address]
+    <span class="code-keyword">WHERE</span> ([AddressID] <span class="code-keyword">LIKE</span> <span class="code-string">'</span><span class="code-string">%898)'</span>)
+          <span class="code-keyword">OR</span> ([AddressLine1] <span class="code-keyword">LIKE</span> <span class="code-string">'</span><span class="code-string">%898)'</span>)
+          <span class="code-keyword">OR</span> ([AddressLine2] <span class="code-keyword">LIKE</span> <span class="code-string">'</span><span class="code-string">%898)'</span>)
+          <span class="code-keyword">OR</span> ([City] <span class="code-keyword">LIKE</span> <span class="code-string">'</span><span class="code-string">%898)'</span>)
+          <span class="code-keyword">OR</span> ([StateProvinceID] <span class="code-keyword">LIKE</span> <span class="code-string">'</span><span class="code-string">%898)'</span>)
+          <span class="code-keyword">OR</span> ([PostalCode] <span class="code-keyword">LIKE</span> <span class="code-string">'</span><span class="code-string">%898)'</span>)
+          <span class="code-keyword">OR</span> ([SpatialLocation].ToString() <span class="code-keyword">LIKE</span> N<span class="code-string">'</span><span class="code-string">%898)'</span> _
+          <span class="code-keyword">COLLATE</span> DATABASE_DEFAULT)
+          <span class="code-keyword">OR</span> ([rowguid] <span class="code-keyword">LIKE</span> <span class="code-string">'</span><span class="code-string">%898)'</span>)
+          <span class="code-keyword">OR</span> (<span class="code-keyword">CONVERT</span>(<span class="code-keyword">nvarchar</span>(<span class="code-digit">50</span>), [ModifiedDate], <span class="code-digit">126</span>) <span class="code-keyword">LIKE</span> <span class="code-string">'</span><span class="code-string">%898)'</span>)
+)
+    <span class="code-keyword">INSERT</span> <span class="code-keyword">INTO</span> #Output
+    <span class="code-keyword">SELECT</span> <span class="code-string">'</span><span class="code-string">[AdventureWorks2022]'</span>,
+           <span class="code-string">'</span><span class="code-string">[Person]'</span>,
+           <span class="code-string">'</span><span class="code-string">[Address]'</span>,
+           <span class="code-string">'</span><span class="code-string">[AdventureWorks2022].[Person].[Address]'</span>,
+           REPLACE(
+                      CONCAT(
+                                IIF(SUM(<span class="code-keyword">CASE</span> <span class="code-keyword">WHEN</span> ([AddressID] <span class="code-keyword">LIKE</span> <span class="code-string">'</span><span class="code-string">%898)'</span>) _
+                                             <span class="code-keyword">THEN</span> <span class="code-digit">1</span> <span class="code-keyword">ELSE</span> <span class="code-digit">0</span> <span class="code-keyword">END</span>) &gt; <span class="code-digit">0</span>,
+                                    <span class="code-string">'</span><span class="code-string">[AddressID],'</span>,
+                                    <span class="code-keyword">NULL</span>),
+                                IIF(SUM(<span class="code-keyword">CASE</span> <span class="code-keyword">WHEN</span> ([AddressLine1] <span class="code-keyword">LIKE</span> <span class="code-string">'</span><span class="code-string">%898)'</span>) _
+                                             <span class="code-keyword">THEN</span> <span class="code-digit">1</span> <span class="code-keyword">ELSE</span> <span class="code-digit">0</span> <span class="code-keyword">END</span>) &gt; <span class="code-digit">0</span>,
+                                    <span class="code-string">'</span><span class="code-string">[AddressLine1],'</span>,
+                                    <span class="code-keyword">NULL</span>),
+                                IIF(SUM(<span class="code-keyword">CASE</span> <span class="code-keyword">WHEN</span> ([AddressLine2] <span class="code-keyword">LIKE</span> <span class="code-string">'</span><span class="code-string">%898)'</span>) _
+                                    <span class="code-keyword">THEN</span> <span class="code-digit">1</span> <span class="code-keyword">ELSE</span> <span class="code-digit">0</span> <span class="code-keyword">END</span>) &gt; <span class="code-digit">0</span>,
+                                    <span class="code-string">'</span><span class="code-string">[AddressLine2],'</span>,
+                                    <span class="code-keyword">NULL</span>),
+                                IIF(SUM(<span class="code-keyword">CASE</span> <span class="code-keyword">WHEN</span> ([City] <span class="code-keyword">LIKE</span> <span class="code-string">'</span><span class="code-string">%898)'</span>) _
+                                    <span class="code-keyword">THEN</span> <span class="code-digit">1</span> <span class="code-keyword">ELSE</span> <span class="code-digit">0</span> <span class="code-keyword">END</span>) &gt; <span class="code-digit">0</span>, <span class="code-string">'</span><span class="code-string">[City],'</span>, <span class="code-keyword">NULL</span>),
+                                IIF(SUM(<span class="code-keyword">CASE</span> <span class="code-keyword">WHEN</span> ([StateProvinceID] _
+                                    <span class="code-keyword">LIKE</span> <span class="code-string">'</span><span class="code-string">%898)'</span>) <span class="code-keyword">THEN</span> <span class="code-digit">1</span> <span class="code-keyword">ELSE</span> <span class="code-digit">0</span> <span class="code-keyword">END</span>) &gt; <span class="code-digit">0</span>,
+                                    <span class="code-string">'</span><span class="code-string">[StateProvinceID],'</span>,
+                                    <span class="code-keyword">NULL</span>),
+                                IIF(SUM(<span class="code-keyword">CASE</span> <span class="code-keyword">WHEN</span> ([PostalCode] <span class="code-keyword">LIKE</span> <span class="code-string">'</span><span class="code-string">%898)'</span>) _
+                                     <span class="code-keyword">THEN</span> <span class="code-digit">1</span> <span class="code-keyword">ELSE</span> <span class="code-digit">0</span> <span class="code-keyword">END</span>) &gt; <span class="code-digit">0</span>,
+                                    <span class="code-string">'</span><span class="code-string">[PostalCode],'</span>,
+                                    <span class="code-keyword">NULL</span>),
+                                IIF(
+                                    SUM(   <span class="code-keyword">CASE</span>
+                                               <span class="code-keyword">WHEN</span> ([SpatialLocation].ToString() _
+                                               <span class="code-keyword">LIKE</span> N<span class="code-string">'</span><span class="code-string">%898)'</span> _
+                                               <span class="code-keyword">COLLATE</span> DATABASE_DEFAULT) <span class="code-keyword">THEN</span>
+                                                   <span class="code-digit">1</span>
+                                               <span class="code-keyword">ELSE</span>
+                                                   <span class="code-digit">0</span>
+                                           <span class="code-keyword">END</span>
+                                       ) &gt; <span class="code-digit">0</span>,
+                                    <span class="code-string">'</span><span class="code-string">[SpatialLocation],'</span>,
+                                    <span class="code-keyword">NULL</span>),
+                                IIF(SUM(<span class="code-keyword">CASE</span> <span class="code-keyword">WHEN</span> ([rowguid] <span class="code-keyword">LIKE</span> <span class="code-string">'</span><span class="code-string">%898)'</span>) _
+                                <span class="code-keyword">THEN</span> <span class="code-digit">1</span> <span class="code-keyword">ELSE</span> <span class="code-digit">0</span> <span class="code-keyword">END</span>) &gt; <span class="code-digit">0</span>, <span class="code-string">'</span><span class="code-string">[rowguid],'</span>, <span class="code-keyword">NULL</span>),
+                                IIF(
+                                    SUM(   <span class="code-keyword">CASE</span>
+                                               <span class="code-keyword">WHEN</span> (<span class="code-keyword">CONVERT</span>(<span class="code-keyword">nvarchar</span>(<span class="code-digit">50</span>), _
+                                               [ModifiedDate], <span class="code-digit">126</span>) <span class="code-keyword">LIKE</span> <span class="code-string">'</span><span class="code-string">%898)'</span>) <span class="code-keyword">THEN</span>
+                                                   <span class="code-digit">1</span>
+                                               <span class="code-keyword">ELSE</span>
+                                                   <span class="code-digit">0</span>
+                                           <span class="code-keyword">END</span>
+                                       ) &gt; <span class="code-digit">0</span>,
+                                    <span class="code-string">'</span><span class="code-string">[ModifiedDate],'</span>,
+                                    <span class="code-keyword">NULL</span>),
+                                <span class="code-string">'</span><span class="code-string">[???]'</span>
+                            ) <span class="code-keyword">COLLATE</span> DATABASE_DEFAULT,
+                      N<span class="code-string">'</span><span class="code-string">,[???]'</span>,
+                      N<span class="code-string">'</span><span class="code-string">'</span>
+                  ),
+           REPLACE(
+                      CONCAT(
+                                IIF(SUM(<span class="code-keyword">CASE</span> <span class="code-keyword">WHEN</span> ([AddressID] <span class="code-keyword">LIKE</span> <span class="code-string">'</span><span class="code-string">%898)'</span>) _
+                                    <span class="code-keyword">THEN</span> <span class="code-digit">1</span> <span class="code-keyword">ELSE</span> <span class="code-digit">0</span> <span class="code-keyword">END</span>) &gt; <span class="code-digit">0</span>,
+                                    <span class="code-string">'</span><span class="code-string">[AddressID] AS [AddressID],'</span>,
+                                    <span class="code-keyword">NULL</span>),
+                                IIF(SUM(<span class="code-keyword">CASE</span> <span class="code-keyword">WHEN</span> ([AddressLine1] <span class="code-keyword">LIKE</span> <span class="code-string">'</span><span class="code-string">%898)'</span>) _
+                                    <span class="code-keyword">THEN</span> <span class="code-digit">1</span> <span class="code-keyword">ELSE</span> <span class="code-digit">0</span> <span class="code-keyword">END</span>) &gt; <span class="code-digit">0</span>,
+                                    <span class="code-string">'</span><span class="code-string">[AddressLine1] AS [AddressLine1],'</span>,
+                                    <span class="code-keyword">NULL</span>),
+                                IIF(SUM(<span class="code-keyword">CASE</span> <span class="code-keyword">WHEN</span> ([AddressLine2] <span class="code-keyword">LIKE</span> <span class="code-string">'</span><span class="code-string">%898)'</span>) _
+                                    <span class="code-keyword">THEN</span> <span class="code-digit">1</span> <span class="code-keyword">ELSE</span> <span class="code-digit">0</span> <span class="code-keyword">END</span>) &gt; <span class="code-digit">0</span>,
+                                    <span class="code-string">'</span><span class="code-string">[AddressLine2] AS [AddressLine2],'</span>,
+                                    <span class="code-keyword">NULL</span>),
+                                IIF(SUM(<span class="code-keyword">CASE</span> <span class="code-keyword">WHEN</span> ([City] <span class="code-keyword">LIKE</span> <span class="code-string">'</span><span class="code-string">%898)'</span>) _
+                                    <span class="code-keyword">THEN</span> <span class="code-digit">1</span> <span class="code-keyword">ELSE</span> <span class="code-digit">0</span> <span class="code-keyword">END</span>) &gt; <span class="code-digit">0</span>,
+                                    <span class="code-string">'</span><span class="code-string">[City] AS [City],'</span>,
+                                    <span class="code-keyword">NULL</span>),
+                                IIF(
+                                    SUM(   <span class="code-keyword">CASE</span>
+                                               <span class="code-keyword">WHEN</span> ([StateProvinceID] <span class="code-keyword">LIKE</span> <span class="code-string">'</span><span class="code-string">%898)'</span>) <span class="code-keyword">THEN</span>
+                                                   <span class="code-digit">1</span>
+                                               <span class="code-keyword">ELSE</span>
+                                                   <span class="code-digit">0</span>
+                                           <span class="code-keyword">END</span>
+                                       ) &gt; <span class="code-digit">0</span>,
+                                    <span class="code-string">'</span><span class="code-string">[StateProvinceID] AS [StateProvinceID],'</span>,
+                                    <span class="code-keyword">NULL</span>),
+                                IIF(SUM(<span class="code-keyword">CASE</span> <span class="code-keyword">WHEN</span> ([PostalCode] <span class="code-keyword">LIKE</span> <span class="code-string">'</span><span class="code-string">%898)'</span>) _
+                                    <span class="code-keyword">THEN</span> <span class="code-digit">1</span> <span class="code-keyword">ELSE</span> <span class="code-digit">0</span> <span class="code-keyword">END</span>) &gt; <span class="code-digit">0</span>,
+                                    <span class="code-string">'</span><span class="code-string">[PostalCode] AS [PostalCode],'</span>,
+                                    <span class="code-keyword">NULL</span>),
+                                IIF(
+                                    SUM(   <span class="code-keyword">CASE</span>
+                                               <span class="code-keyword">WHEN</span> ([SpatialLocation].ToString() _
+                                               <span class="code-keyword">LIKE</span> N<span class="code-string">'</span><span class="code-string">%898)'</span> _
+                                               <span class="code-keyword">COLLATE</span> DATABASE_DEFAULT) <span class="code-keyword">THEN</span>
+                                                   <span class="code-digit">1</span>
+                                               <span class="code-keyword">ELSE</span>
+                                                   <span class="code-digit">0</span>
+                                           <span class="code-keyword">END</span>
+                                       ) &gt; <span class="code-digit">0</span>,
+                                    <span class="code-string">'</span><span class="code-string">[SpatialLocation].ToString() _
+                                     AS [SpatialLocation],'</span>,
+                                    <span class="code-keyword">NULL</span>),
+                                IIF(SUM(<span class="code-keyword">CASE</span> <span class="code-keyword">WHEN</span> ([rowguid] <span class="code-keyword">LIKE</span> <span class="code-string">'</span><span class="code-string">%898)'</span>) _
+                                    <span class="code-keyword">THEN</span> <span class="code-digit">1</span> <span class="code-keyword">ELSE</span> <span class="code-digit">0</span> <span class="code-keyword">END</span>) &gt; <span class="code-digit">0</span>,
+                                    <span class="code-string">'</span><span class="code-string">[rowguid] AS [rowguid],'</span>,
+                                    <span class="code-keyword">NULL</span>),
+                                IIF(
+                                    SUM(   <span class="code-keyword">CASE</span>
+                                               <span class="code-keyword">WHEN</span> (<span class="code-keyword">CONVERT</span>(<span class="code-keyword">nvarchar</span>(<span class="code-digit">50</span>), _
+                                               [ModifiedDate], <span class="code-digit">126</span>) _
+                                               <span class="code-keyword">LIKE</span> <span class="code-string">'</span><span class="code-string">%898)'</span>) <span class="code-keyword">THEN</span>
+                                                   <span class="code-digit">1</span>
+                                               <span class="code-keyword">ELSE</span>
+                                                   <span class="code-digit">0</span>
+                                           <span class="code-keyword">END</span>
+                                       ) &gt; <span class="code-digit">0</span>,
+                                    <span class="code-string">'</span><span class="code-string">CONVERT(nvarchar(50),[ModifiedDate],126) _
+                                     AS [ModifiedDate],'</span>,
+                                    <span class="code-keyword">NULL</span>),
+                                <span class="code-string">'</span><span class="code-string">[???]'</span>
+                            ) <span class="code-keyword">COLLATE</span> DATABASE_DEFAULT,
+                      N<span class="code-string">'</span><span class="code-string">,[???]'</span>,
+                      N<span class="code-string">'</span><span class="code-string">'</span>
+                  ),
+           <span class="code-string">'</span><span class="code-string">SELECT [??] FROM [AdventureWorks2022].[Person].[Address] _
+            WHERE ([AddressID] LIKE ''%898)'') OR ([AddressLine1] _
+            LIKE ''%898)'') OR ([AddressLine2] LIKE ''%898)'') _
+            OR ([City] LIKE ''%898)'') OR ([StateProvinceID] LIKE ''%898)'') _
+            OR ([PostalCode] LIKE ''%898)'') OR ([SpatialLocation].ToString() _
+            LIKE N''%898)'' COLLATE DATABASE_DEFAULT) OR ([rowguid] _
+            LIKE ''%898)'') OR (CONVERT(nvarchar(50),[ModifiedDate],126) _
+            LIKE ''%898)'') '</span>
+    <span class="code-keyword">FROM</span> [AdventureWorks2022].[Person].[Address]
+    <span class="code-keyword">WHERE</span> ([AddressID] <span class="code-keyword">LIKE</span> <span class="code-string">'</span><span class="code-string">%898)'</span>)
+          <span class="code-keyword">OR</span> ([AddressLine1] <span class="code-keyword">LIKE</span> <span class="code-string">'</span><span class="code-string">%898)'</span>)
+          <span class="code-keyword">OR</span> ([AddressLine2] <span class="code-keyword">LIKE</span> <span class="code-string">'</span><span class="code-string">%898)'</span>)
+          <span class="code-keyword">OR</span> ([City] <span class="code-keyword">LIKE</span> <span class="code-string">'</span><span class="code-string">%898)'</span>)
+          <span class="code-keyword">OR</span> ([StateProvinceID] <span class="code-keyword">LIKE</span> <span class="code-string">'</span><span class="code-string">%898)'</span>)
+          <span class="code-keyword">OR</span> ([PostalCode] <span class="code-keyword">LIKE</span> <span class="code-string">'</span><span class="code-string">%898)'</span>)
+          <span class="code-keyword">OR</span> ([SpatialLocation].ToString() <span class="code-keyword">LIKE</span> N<span class="code-string">'</span><span class="code-string">%898)'</span> _
+          <span class="code-keyword">COLLATE</span> DATABASE_DEFAULT)
+          <span class="code-keyword">OR</span> ([rowguid] <span class="code-keyword">LIKE</span> <span class="code-string">'</span><span class="code-string">%898)'</span>)
+          <span class="code-keyword">OR</span> (<span class="code-keyword">CONVERT</span>(<span class="code-keyword">nvarchar</span>(<span class="code-digit">50</span>), [ModifiedDate], <span class="code-digit">126</span>) <span class="code-keyword">LIKE</span> <span class="code-string">'</span><span class="code-string">%898)'</span>)</pre>
+		</li>	</ul>
+	</li></ul>
+
+<p style="margin-left: 80px">Basically, before the <code>INSERT</code> statement, we have a <code>IF EXISTS</code> statement which through a query checks whether any of the filtered columns matches the <code>@valuePattern</code> parameter using a standard SQL <code>LIKE</code> clauses and <code>OR</code> conditions. The <code>INSERT</code> statement is similar to one of the previous queries, the only changes are:</p>
+
+<p style="margin-left: 80px"><code>MatchingColumns (MatchingWhereColumns </code>was <code>null)</code>: The first difference is that we also have a <code>FROM</code> and <code>WHERE</code> clause to test if the filtered columns match the <code>@valuePattern</code> parameter and this implies that multiple matching rows can be returned and so some sort of aggregate function must be performed to return just a single <code>string</code>. I used a <code>CASE</code> condition which returns <code>1</code> or <code>0</code> if a column matches the <code>@valuePattern</code> parameter and then we aggregate all these values through the <code>SUM</code> operator, so basically the query returns the <code>n</code> value if the column under examination matches <code>@valuePattern</code> in <code>n</code> rows. Finally, we convert this number into a <code>string</code> through an <code>IIF</code> operator which returns the column name followed by comma if the <code>SUM</code> is greater than <code>0</code> (e.g., there is at least one match), <code>NULL</code> otherwise. Again, the <code>REPLACE</code> / <code>CONCAT</code> hack is used here to remove the last comma.</p>
+
+<p style="margin-left: 80px"><code>MatchingSelect</code> this time the column is not <code>null</code>, but it contains the <code>IF EXISTS</code> subquery in order to allow the user to take it from the output table result and issue it in <code>SSMS</code> to retrieve quickly the matching columns and rows for that particular table.</p>
+
+<p>As a final note, I point out that some kind of conversion has to be done for particular column datatypes in order to be used with the <code>LIKE</code> operator:</p>
+
+<ul>
+	<li><code>image --&gt; CONVERT(NVARCHAR(MAX),CONVERT(VARBINARY(MAX),@columnName),1)</code></li>	<li><code>xml --&gt; CONVERT(nvarchar(MAX),@columnName)</code></li>	<li><code>hierarchyid --&gt;@columnName.ToString()</code></li>	<li><code>geometry</code> or <code>geography</code> --&gt; These two column types behave differently since beside the column they change also the <code>where</code> condition which is one of these two:
+	<ul>
+		<li><code>@columnName.STContains(geography::Parse(@valuePattern)) </code>if <code>@valuePattern</code> represents a valid WKT and <code>STContains</code> method is supported, e.g., database<code> compatibility_level</code> is <code>&gt;= 130 [Sql Server 2016]</code></li>		<li><code>@columnName.ToString() LIKE @valuePattern</code> in all other cases</li>	</ul>
+	</li>	<li><code>datetime</code>, <code>datetime2</code>, <code>datetimeoffset</code>, <code>time --&gt; CONVERT(nvarchar(50),@columnName,126) </code>[this is ISO8601 format so '<code>yyyy-mm-ddThh:mi:ss.mmm</code>']</li></ul>
+
+<p>Here follows a sample table output:</p>
+
+<p><img alt="Image 1" src="./spSearchTables_ Search and Find Tables or Columns by Name or Value- CodeProject_files/extracted-image-1.png" style="width: 640px; height: 360px" class="lazyload" data-sizes="auto" data-srcset="/KB/Articles/5370606/extracted-image-1-r-400.png 400w, /KB/Articles/5370606/extracted-image-1.png 640w"></p>
+
+<p><code>spSearchTables</code> logs for troubleshooting in the <strong>Messages</strong> tab in SSMS the general script at the beginning followed by all the queries issued for every table in order to populate the output one.</p>
+
+<p>I tested the code on three well known SQL Server databases provided by Microsoft (<code>Northwind</code>, <code>AdventureWorks2022</code> and <code>pubs</code>) and everything worked flawlessly, so hopefully this query should support a great deal of databases and almost any kind of column datatype (if it is not, please let me know by email). Probably, I will add some form of unit testing in the future, when I have spare time.</p>
+
+<h2>Points of Interest</h2>
+
+<p>I believe that extracting a comma separated list of matching columns from the rows of matching query is very witty (though a little bit hacky), so please carefully read the part about how <code>MatchingColumns</code> output <code>string</code> is created.</p>
+
+<h2>History</h2>
+
+<ul>
+	<li>V1.0 (26<sup>th</sup> October, 2023)
+
+	<ul>
+		<li>Initial version</li>	</ul>
+	</li>	<li>V1.1 (31<sup>st</sup> October, 2023)
+	<ul>
+		<li>Added <code>@schemaSearchPattern</code> and <code>@columnTypeSearchPattern</code> parameters</li>		<li>Bugfix on geometry column type, WKT can be used in <code>@valuePattern</code> to perform <code>STContains</code> query on spatial columns when supported (e.g., database compatibility level <code>&gt;=130</code>)</li>	</ul>
+	</li></ul>
+
+
+
+
+						</div>
+						
+
+						
+						<h2>License</h2>
+						<div id="LicenseTerms"><p>This article, along with any associated source code and files, is licensed under <a href="http://www.codeproject.com/info/cpol10.aspx" rel="license">The Code Project Open License (CPOL)</a></p></div>
+						
+
+						
+						<br>
+						
+						    <br>
+						
+						
+
+						<div class="clearfix"></div>
+
+						<div style="padding-top:8px">
+							
+						</div>
+
+					
+
+				    
+					</form>
+
+				</div>
+
+				
+				<div class="bottom-promo"> 
+				    
+				</div>
+				
+                
+                
+
+				
+				
+				
+
+			</div>
+			
+
+            
+            
+            
+
+        </div>
+        
+
+		
+		<div class="site-footer">
+			<div class="align-left">
+				<a id="ctl00_PermaLink" href="https://www.codeproject.com/Articles/5370606/spSearchTables-Search-and-Find-Tables-or-Columns-b">Permalink</a><br>
+				<br>
+				<a id="ctl00_PrivacyLink" href="https://www.codeproject.com/info/privacy.aspx">Privacy</a><br>
+    			<a id="ctl00_CookiePolicyLink" href="https://www.codeproject.com/info/cookie.aspx">Cookies</a><br>
+                <a id="ctl00_TermsOfUseLink" href="https://www.codeproject.com/info/TermsOfUse.aspx">Terms of Use</a><br>
+			</div>
+
+            <div class="align-center">
+				
+
+
+<div class="page-width">
+    Layout: <a id="ctl00_PageWidth_FixedT" title="Fixed width layout" rel="nofollow" class=" active" href="https://www.codeproject.com/Articles/5370606/spSearchTables-Search-and-Find-Tables-or-Columns-b?PageFlow=FixedWidth">fixed</a>
+    |
+    <a id="ctl00_PageWidth_FluidT" title="Fluid layout" rel="nofollow" href="https://www.codeproject.com/Articles/5370606/spSearchTables-Search-and-Find-Tables-or-Columns-b?PageFlow=Fluid">fluid</a>
+</div>
+
+
+				
+
+				
+
+	            
+
+                <br>
+			</div>
+                
+			<div class="align-right">
+				Article Copyright 2023 by Federico Di Marco<br>Everything else
+				Copyright © <a href="mailto:webmaster@codeproject.com">CodeProject</a>, 1999-2024<br>
+                <br>
+				Web01 
+				2.8:2024-10-20:1<br>
+			</div>
+		</div>
+		
+
+		<br clear="all">
+		
+			
+
+	</div> 
+	</div> 
+</div>
+
+
+
+
+
+
+
+<script type="text/javascript"> // DEFERRED script
+
+document.addEventListener('DOMContentLoaded', function() {
+
+	new CodeBlocks().initialise('#contentdiv');
+	
+	$('.author-wrapper .description').shorten({showChars: 400});
+	
+	anchorAnimate();
+	
+	$('#__EVENTVALIDATION').attr('autocomplete', 'off');
+
+})
+</script>
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">.copied::after {  position: absolute;  right: 0;  display: inline-block; white-space: nowrap; content: 'copied'; color: #fff; background-color: #f90;  border-radius: 3px; padding:1px 8px; opacity: 0;  will-change: opacity, transform; animation: showcopied 1.5s ease; } @keyframes showcopied { 0% { opacity: 0; } 70% { opacity: 1; } 100% { opacity: 0; } } </style><canvas id="cv1" width="1px" height="1px" style="position:absolute;left:0;top:0;pointer-events:none"></canvas><canvas id="cv2" width="1px" height="1px" style="position:absolute;left:0;top:0;pointer-events:none"></canvas></body></html>

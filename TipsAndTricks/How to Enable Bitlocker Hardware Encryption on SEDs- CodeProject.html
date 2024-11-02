@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<!-- saved from url=(0091)https://www.codeproject.com/Tips/5372281/How-to-Enable-Bitlocker-Hardware-Encryption-on-SED -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	
+	<link rel="preconnect" href="https://www.google-analytics.com/">
+
+	<link rel="preconnect" href="https://www.codeproject.com/">
+
+
+	<link rel="preload" href="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/logo250x135.gif" as="image">
+
+
+	<link rel="preload" href="https://www.codeproject.com/App_Themes/CodeProject/Img/logo135-bg.gif" as="image">
+	<link rel="preload" href="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/jquery-3.4.1.min.js.download" as="script" type="text/javascript">
+
+
+	<title>How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject</title> 
+    
+	<link type="text/css" rel="stylesheet" href="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Article.min.css">
+
+
+    <script type="text/javascript" async="" src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/analytics.js.download"></script><script type="text/javascript" src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/jquery-3.4.1.min.js.download" defer=""></script>
+<script type="text/javascript" src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/article.min.js.download" defer=""></script>
+
+	
+<meta http-equiv="content-language" content="en-US">
+
+<meta name="Description" content="How to enable Bitlocker hardware encryption on self encrypting drives">
+<meta name="Keywords" content="Windows, Beginner, hardware, PowerShell, encryption, bitlocker">
+<meta name="Author" content="Federico Di Marco">
+<meta name="Rating" content="General">
+<meta name="Revisit-After" content="1 days">
+<meta name="application-name" content="CodeProject">
+<meta name="google-translate-customization" content="d908bb7ce7aff658-4c2f3a504525c916-g629383f736781a8a-13">
+
+
+
+<link rel="dns-prefetch" href="https://ajax.googleapis.com/"> 
+<link rel="canonical" href="https://www.codeproject.com/Tips/5372281/How-to-Enable-Bitlocker-Hardware-Encryption-on-SED">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@CodeProject">
+<meta name="og:site_name" content="CodeProject">
+<meta name="twitter:creator" content="@CodeProject">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="11/8/2023 9:33:00 PM">
+<meta property="article:modified_time" content="7/7/2024 10:40:00 PM">
+<meta name="twitter:label1" content="Written by">
+<meta name="twitter:data1" content="Federico Di Marco">
+<meta name="twitter:label2" content="Reading time">
+<meta name="twitter:data2" content="18 min read">
+<meta property="og:url" content="https://www.codeproject.com/Tips/5372281/How-to-Enable-Bitlocker-Hardware-Encryption-on-SED">
+<meta property="og:title" content="How to Enable Bitlocker Hardware Encryption on SEDs">
+<meta property="og:description" content="How to enable Bitlocker hardware encryption on self encrypting drives">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="apple-touch-icon" sizes="144x144" href="https://www.codeproject.com/favicon/apple-touch-icon.png"> 
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.codeproject.com/favicon/favicon-32x32.png"> 
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.codeproject.com/favicon/favicon-16x16.png"> 
+<link rel="manifest" href="https://www.codeproject.com/favicon/manifest.json"> 
+<link rel="mask-icon" href="https://www.codeproject.com/favicon/safari-pinned-tab.svg" color="#ff9900">
+	<script type="application/ld+json">{
+  "@context": "http://schema.org",
+  "@type": "TechArticle",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.codeproject.com/Tips/5372281/How-to-Enable-Bitlocker-Hardware-Encryption-on-SED"
+   },
+  "name": "How to Enable Bitlocker Hardware Encryption on SEDs",
+  "headline": "How to Enable Bitlocker Hardware Encryption on SEDs",
+  "url": "https://www.codeproject.com/Tips/5372281/How-to-Enable-Bitlocker-Hardware-Encryption-on-SED",
+  "discussionUrl": "https://www.codeproject.com/Tips/5372281/How-to-Enable-Bitlocker-Hardware-Encryption-on-SED#_comments",
+  "isFamilyFriendly": "true",
+  "image": "https://www.codeproject.com/App_Themes/CodeProject/Img/Article100.png",
+  "keywords": "Windows,Beginner,hardware,PowerShell,encryption,bitlocker",
+  "commentCount": "0",
+  "editor" : {
+    "@type" : "Person",
+    "name" : "Editor",
+    "url" : "https://www.codeproject.com/script/Membership/View.aspx?mid=3865041"
+  },
+  "license": "http://www.codeproject.com/info/cpol10.aspx",
+  "publisher" : {
+    "@type" : "Organization",
+    "name" : "CodeProject"
+  },
+  "description": "This article is a guide on how to activate Bitlocker hardware encryption on self encrypting drives in Windows.",
+  "articleSection": "encryption",
+  "author" : [{
+      "@type" : "Person",
+      "name" : "Federico Di Marco",
+      "url" : "https://www.codeproject.com/script/Membership/View.aspx?mid=3865041"
+    }],
+  "datePublished": "2023-11-08",
+  "dateCreated": "2023-11-08",
+  "dateModified": "2024-07-07"
+,
+  "contentRating" : {
+    "@type" : "Rating",
+    "ratingValue" : 5.00,
+    "bestRating" : 5,
+    "worstRating" : 1
+  }
+}</script>
+
+<script type="application/ld+json">{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "item" : {
+      "@id" : "/script/Content/Tag.aspx?tags=security",
+      "name" : "security"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "item" : {
+      "@id" : "/script/Content/Tag.aspx?tags=encryption",
+      "name" : "encryption"
+    }
+  }]
+}</script>
+
+
+	<!--<base target="_top">--><base href="." target="_top">
+	
+    
+
+
+<script type="text/javascript">
+function defrm () { /* thanks twitter */
+    document.write = '';
+    window.top.location = window.self.location;
+    setTimeout(function() { document.body.innerHTML = ''; }, 0);
+    window.self.onload = function(evt) { document.body.innerHTML = ''; };
+}
+
+if (window.top !== window.self) {
+    try {
+        if (window.top.location.host) { /* will throw for all except chrome */ }
+        else { defrm(); /* chrome */ }
+    } catch (ex) { defrm(); /* everyone else */ }
+}
+
+// Specific case where a site is screwing with us.
+if (typeof(DemoUrl) !== 'undefined') {
+    document.write(unescape('%3Cme') + 'ta http' + '-equiv="re' + 'fresh con' +
+                           'tent="1;url=' + DemoUrl + unescape('"%3CE'));
+}
+</script>
+	
+
+
+
+
+
+    <script async="" type="text/javascript" src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/js"></script>
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-1735123-1' , {'user_id': '61732e5b-06af-4ac2-8734-b1591748583e'});
+    </script>
+
+<style type="text/css"></style></head>	
+
+<body class="chrome chrome130">
+
+
+
+<a class="access-link" href="https://www.codeproject.com/Tips/5372281/How-to-Enable-Bitlocker-Hardware-Encryption-on-SED#Main"><img alt="Click here to Skip to main content" src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/t.gif"></a>
+
+
+
+
+<div class="page-background">
+
+	
+	
+
+	
+
+	
+    <div id="ctl00_STM" class="site-top-menu fixed narrow">
+        <div class="main-content">
+            
+
+<div class="container memberbar clearfix flex-container flex-extend">
+
+	<div id="ctl00_MemberBar_GenInfo" class="flex-item align-left">65,938 articles</div>
+	
+	<div id="ctl00_MemberBar_ChangeNotice" class="flex-item align-left">CodeProject
+	is changing. <a href="https://www.codeproject.com/info/Changes.aspx">Read more</a>.</div>
+
+	<div class="flex-item">
+		
+	</div>
+
+	<div class="flex-item align-right">
+
+		
+
+		
+
+		
+	</div>
+</div>
+        </div>
+    </div>
+
+	
+    <div id="ctl00_SH" class="site-header fixed narrow">
+        <div class="main-content">
+            <div class="logo"><a href="https://www.codeproject.com/"><img id="ctl00_Logo" tabindex="1" title="CodeProject" src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/logo250x135.gif" alt="Home" style="height:135px;width:250px;border-width:0px;"></a></div>
+            <div class="promo"></div>
+        </div>
+    </div>
+
+	
+			
+	
+
+	<div id="A" class="container-content-wrap fixed narrow"> 
+
+	<div class="container-content">
+
+        
+		<div class="clearfix">
+			<div class="container-breadcrumb float-left ">
+				<div><a rel="nofollow" href="https://www.codeproject.com/script/Content/SiteMap.aspx">Articles</a> / <a rel="nofollow" href="https://www.codeproject.com/script/Content/Tag.aspx?tags=security">security</a> / <a rel="nofollow" href="https://www.codeproject.com/script/Content/Tag.aspx?tags=encryption">encryption</a></div>
+			</div>
+
+            <div class="float-left">
+				
+			</div>
+
+			<div class="edit-links float-right">
+				
+
+
+
+ 
+&nbsp;
+
+
+
+
+
+
+
+
+
+
+			</div>
+
+			<div class="article-nav float-right">
+				
+
+
+<div style="display:inline-block;position:relative;top:-6px;margin-right:20px">
+    
+</div>
+
+
+
+ 
+
+<a id="ctl00_ActionLinks_PrintMd" data-tooltip="Print" data-enabletooltip="true" data-width="auto" href="https://www.codeproject.com/Tips/5372281/How-to-Enable-Bitlocker-Hardware-Encryption-on-SED?display=Print" class="tooltip" title="">
+   <img src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/print48.png" width="24" height="24" style="border:0">
+<div class="speech-bubble-container-up" style="width:auto">  <div class="speech-bubble-up" style="text-align:center"> Print</div>  <div class="speech-bubble-pointer-up">    <div class="speech-bubble-pointer-up-inner"></div>  </div></div></a>
+
+
+
+<span id="ctl00_ActionLinks_R">
+    
+    
+</span>
+			</div>
+		</div>
+
+        
+		<div class="extended article-container-parts">
+
+			
+		    
+            
+
+			
+			<div id="AT" class="article-container  fixed narrow" style="max-width:inherit;"> 
+
+				<div class="article">
+
+					<form name="aspnetForm" method="post" action="https://www.codeproject.com/Tips/5372281/View.aspx" id="aspnetForm" style="margin:0;padding:0">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="CVpamVTss26tJWjOmbgYhUbsWx0y1zaGsOtWODoIIR8heyT/AYjF4XkNhUgQi7Di2OOnC6HoHBrXsUrromn7pVKbHTSxP7aTcY0a8Owvsk1jlIUFB5KwfEUNwKwJO9EqLhEerXS8CtJ11fTG8+4d0uZEzZDVkxAZJEkG9HBxu8kObFyeD8gg1Wlep5+W5+ZY4d9rJy2znZoix7qJ19EaTdINehoxFBkOoPOIhv6c29TnUvTobOTK5Qvp83Pe2ywtzLEhnMCz/N99vPmpbLzsAmKZIH7L627DTSaTHUKwb97VZfKigq69ZUUnTk4Qkb0lI7AnpUgb3T00AF6aDrGs4WdKjzR9jT2aatWe1NYmCnnvPgQEcd5j0maQ5aRQpqfOgi4K3rHsYH6K1VowVwhpuhoNukifH63vWJxmXsng3gzNc1JlTaUB7hcbOmGNTJCXoV8goWSEa+9SbkNs0Bv5QQJDiQdnExWGqrnrkgkweI0Wx26MNok7UCUeOWjDMPfMgu7tgpVBwXR7G17lvTlispq6jNZjyS8NB+u+eQ/BSE5RgPVVgA/CY23BatoDo/YnpfQS22k2jzjYiIilG4tGSCW3i6BqSdaqTNTVsVcjkHI/Zayo0DyLAENFPBPv1CcAqqhYNzCMJyuv3WTj+w2TXA8jesO8PQ5qEyqPpaKLN8L5nICGc/bbpLOf7XcvU9ChB7YwNB9AM9ZBcUrGym5IkZtf/Gr9B1m4LRQGtdRPCKea/jFDdCqj4Bg97lU7uHWwmYkLn5142nE1Vg4T3Ep8AbNjZ7PLw28Z0yla5t5QxGxcNewQosYRvrEj8NEEMEWO5BOOv1zoA0J8V3qLdYuohivR7rv+Iq+u10NEGvvbYF4pyVyFMVf24ckzygjm+8Ymu+E8AQG8IxCGtEtX6T154BqX0+JcjnqkckxykJ9LQ16cug1+Kh41KttfO8mvwF91oMHgYTeW5spTGYCEn/+gmxfFfJjawNQL6F/pU1wraTrIE+vR8mS6/4JHeFSrv2PuN3RoKUk1ThDY4e9UCA6TmNVKQetf09Q0bKNAscMIHq36BL9LLqpaZFyn2NFlcGIWVh46gz+F4S75MNGwcBVg9qec5HGXta6iV/yugxI0K/UhQEdlKh+YNEpyeuAq0HaMlI4aqL1UWSwAYAXmL+NJl3AIC/9F3r9h8d5dQb/J9V0ZoBW7m/isLJ3IE4Eei+ttdlCrgC2uAY5NukGTm3cLE9cNXd0yBnbIDj/bB9+I3+CkrArbV6hfT8B6Zctn2+uTkF4ywfyDL7PFiURckr9ylYNLfyyASvn91RsrK8O3gh+G6zadABz0PTZeP6PW01xRlJ/uxYkFi2Gr8vOJ1JWh0dGPXPrB8bZcMhBQ+0VZlb1wJIY0PQrbwC+LwH+IKyBfGE6mmEfTi+KXWn19l7Vg0Hp5VTWbrG+WeKp1uCD4At+kuVBnlQCM1K2H3Inqb7sIIf7ED9ah0RLS6cxzvXlJWU2z+XRV6Os7df5ACHHz8APhlk5BWMUppv5FSxK115XBPqqaABgHg6Kgom45HugR6CajCutDVddu3wjYCiR5wXHMOaqY7yYUy8n0qe2QnOmcBKS9yQO2ljA2+fKmwkqwDl8Iq7VqEB5PgkbCA0cfkgf7C2trQxTJFuRT1SUovF1uNTX1orZRPlJdHuIfdWClyuwlFbSRyVt3Yn9F391pYyZLxoU3SvwRd/ZhzVvR2PKk6w/ga0Op6AeHna9J7YOsh7hutvFuAAskESQj3BBYqqyrJmzmvAIeXoETJ/dhyDsgypCHao32ls1V6IZED/5RAFkhm5l71Fqk8Z7lDAK1Z6ujxRZjAWjE+pRbpXQt2ff1a2EJhxRZlaqDkH5710mPupPS1ov4vYZjrAUKpgGqTckfSX2OFtr0wAY0YSFgcObiwK3uQQ2kuFQZt5LIK7WouNscyNLWRB9/cNnqLt7EVQDdL6xN5nPZI/oN5qpkcoiuJXsk13KDfdRSQG65HoXEJM84gC/57u/39LqHo0uyxMmXZkwmrwRyNYkjpeuyROfCiEdU9fKvxg+eI59yvGZA1l0es13UbO1NRse//HSGLtl+KomK0rpWU9M+ujoyCWoAGL5DxD6oL+mPyShcnjffhrbYvwwlf6OuJDN5waqgrT95nh1broTWHTYOidvPCQ8IYIN+U2PZh7FSCJLLmvG99HH+XXXYdmPWS8fCQSDxFZvt6/rXNhB/6mXI/+99OBuYSM8VYz3/4hDbRanjECiaqqW2DMDUgJuDytYx8opypQmbkU9TKBBuyWzjqLd4FmsQNEhLB3rip6NjrQ8q8E609Ss/NC0hG3VGVu5hHdpqW0kzJzVTr+7mphfLgEOJbwSxgr261A==">
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="10C1FD69">
+</div>
+
+					
+					 
+					<div class="header">
+					    <a name="Main"></a>
+					    <a name="_articleTop" id="_articleTop"></a>
+
+					    
+						<div>
+							<span id="ctl00_TagListHorz_TagWrp" class="tags horizontal">
+
+	
+	
+
+	
+	<span id="ctl00_TagListHorz_VisibleTags"><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/Windows" data-id="94">Windows</a></div><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/hardware" data-id="299">hardware</a></div><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/PowerShell" data-id="302">PowerShell</a></div><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/encryption" data-id="415">encryption</a></div><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/bitlocker" data-id="5482">bitlocker</a></div></span> 
+
+	
+	
+</span>
+
+
+						</div>
+					    <div class="title">
+					        <h1 id="ctl00_ArticleTitle">How to Enable Bitlocker Hardware Encryption on SEDs</h1>
+					    </div>
+
+                        <div>
+					        
+					        <div class="entry flex-container">
+
+								
+
+                                <div class="flex-item" style="flex:1 1 auto">
+                                    <div class="flex-container" style="justify-content:space-between;flex-wrap:wrap-reverse">
+                                       <span id="ctl00_Authors" class="author flex-item"><a href="https://www.codeproject.com/script/Membership/View.aspx?mid=3865041" rel="author">Federico Di Marco</a></span> 
+
+                                        <div class="flex-item" style="margin-top:-4px;">
+                                            <div id="ctl00_RateArticle_RatingTable" class="small-text" data-objectref="2_5372281">
+
+	<meta itemprop="upvoteCount" content="5">
+
+
+	<div id="ctl00_RateArticle_RatingRow" class="flex-container rating-container large-stars">
+
+					
+		
+
+		
+		<div class="nowrap tooltip">
+
+			
+			<div id="ctl00_RateArticle_ResultNoHist" class="rating-result"><div class="flex-container rating-stars large-stars"><div><img src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/star-fill-lg.png" style="width:24px;height:24px"></div><div><img src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/star-fill-lg.png" style="width:24px;height:24px"></div><div><img src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/star-fill-lg.png" style="width:24px;height:24px"></div><div><img src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/star-fill-lg.png" style="width:24px;height:24px"></div><div><img src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/star-fill-lg.png" style="width:24px;height:24px"></div></div></div>
+			
+
+			
+			
+
+			
+            
+
+			
+                
+
+		</div>
+		
+	
+		
+		<div id="ctl00_RateArticle_VoteCountNoHist" class="rating-votes nowrap">5.00/5  (5 votes)</div>	
+
+		
+
+		
+		<div class="rating-undo" title="Undo vote" style="margin-left:5px;display:none"></div>
+
+		
+		
+	</div>
+
+	
+	
+
+</div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="flex-container" style="color:#666;font-size:smaller">
+                                        <span id="ctl00_LastUpdated" class="date flex-item-tight" title="Date last updated">7 Jul 2024</span><a id="ctl00_LicenseLink" title="The Code Project Open License (CPOL)" class="license flex-item-tight" href="http://www.codeproject.com/info/cpol10.aspx">CPOL</a><span id="ctl00_ReadingTime" class="stats flex-item-tight">18 min read</span><span id="ctl00_HorizontalStats" class="stats flex-item-tight"><span class="stats"><span title="Views"><img src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/views32.png" style="width:16px"> 28.2K</span> &nbsp; <span title="Downloads"><img src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/download32.png" style="width:16px"> 122</span> &nbsp; </span></span>
+                                    </div>
+                                </div>
+					        </div>
+
+                            
+
+                        </div>
+
+                        <div id="ctl00_DescriptionSpot" class="summary">How to enable Bitlocker hardware encryption on self encrypting drives</div><span id="ctl00_ThumbnailUrl" class="date" content="https://www.codeproject.com/script/Articles/Images/tip100x80.png"></span>			
+
+                    </div>
+                    
+					
+					
+
+					
+
+					
+					<div id="ctl00_Abstract" class="abstract">This article is a guide on how to activate Bitlocker hardware encryption on self encrypting drives in Windows.</div>
+
+					
+					
+
+						
+					
+
+					
+
+						
+						<div id="contentdiv" class="text">
+						
+
+
+
+<!-- Article Starts -->
+
+<ul class="download">
+	<li><a href="https://www.codeproject.com./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/DisableBlockSid.zip">Download source code - 858 B</a></li></ul>
+
+<h2>Introduction</h2>
+
+<p>This article is a guide on how to activate <strong>Bitlocker hardware encryption</strong> (aka <em>IEEE1667</em> or <em>Microsoft eDrive</em>) on <strong>SEDs</strong> (<em>self encrypting drives</em>) in Windows. I have been using SEDs since May 2016 (my first drive was a Crucial MX200) and at that time, there wasn't too much documentation about how to activate flawlessly hardware encryption in Windows. I wanted to publish this guide then, but I was "too lazy". I only posted some hints on forums till now when I decided to write this article.</p>
+
+<h2>Background</h2>
+
+<p>SEDs aka <strong>S</strong>elf <strong>E</strong>ncrypting <strong>D</strong>rives are particular type of hard disks which have onboard a crypto processor which encrypts on the fly every block of data written from the computer to the drive controller and, vice versa, decrypts every block of data read from the drive for the comp<em>uter, in a transparent way to the users, except for an initial provisioning phase</em>. In essence, each SED has a <strong>disk encryption key</strong> (<em>DEK</em>) that is set at the factory and stored safely inside the crypto processor. The disk uses the DEK to encrypt everything it writes and to decrypt everything it reads.</p>
+
+<p>SEDs then also use an <strong>authentication encryption key</strong> (<em>AEK</em>) provided during the boot of operating system either by the user (for Windows through either a password or PIN) or by the <strong>Trusted Processor Module</strong> (aka <em>TPM</em>) to protect its DEK. SEDs have a mode referred to as <dfn>auto-lock mode, e.g., w</dfn>hen a disk is powered off, they get automatically locked; when later the disk is powered on again, the SED requires a valid AEK in order to read (and decrypt) the DEK needed to unlock the disk and perform any read and write operation. If the SED does not receive a valid authentication key, the data on the disk cannot be read. The auto-lock mode also helps to protect the data when disks are accidentally or intentionally removed from the system (disconnected lively from a SATA cable of a computer in order to get connected to another SATA cable in a different computer).</p>
+
+<h2>How to Enable Bitlocker Hardware Encryption</h2>
+
+<p><strong>Precondition</strong>: The SED must explicitly have in their technical specification the support to <strong>IEEE1667</strong> or <strong>Microsoft eDrive</strong>, otherwise, it won't work. <strong>TCG Opal</strong> is another security storage specification and it is not enough for Bitlocker hardware encryption. There are drives which do support both standards (TCG Opal and Microsoft eDrive), for example, Crucials and Samsungs usually do.</p>
+
+<p>It's a nine step process, which must be followed <em><strong>even with a brand new drive</strong></em>.</p>
+
+<ol>
+	<li><strong>Update computer BIOS and SED firmware to the latest version</strong>. Sometimes, in order to update them, you need to disable Bitlocker encryption (if you use TPM), so it's better to do it as first point. In BIOS:
+
+	<ul>
+		<li><em>Disable <strong>UEFI CSM</strong></em> (<i>Compatibility Support Module) </i>option, if present</li>		<li><em>Ensure that <strong>Secure Boot</strong> option is set to <strong>Custom</strong></em> for the entire setup, this allows Bitlocker to enroll boot keys for booting without a password the SED. Moreover, it allows you to enroll boot keys for multi image booting tools like <a href="https://www.ventoy.net/en/index.html"><code>Ventoy</code></a>.</li>		<li><em>Reset Secure Boot keys to platform default </em>(optional step to restore TPM keys to factory default)</li>	</ul>
+	</li>	<li><strong>Check on SED hardware vendor website if and how IEEE1667 or Microsoft eDrive should be first activated (o<em>ptional step depending on hardware vendor</em>)</strong>: This is usually performed through their management software (Samsung Magician for Samsungs, Kingston SSD Manager for Kingston SEDs, etc., Crucials have it instead activated by default).</li>	<li><strong>Prepare a bootable usb drive</strong> (I would say 64GB or bigger) for the next operations: personally, I use the <a href="https://www.ventoy.net/en/index.html"><code>Ventoy</code></a><font color="#990000" face="Consolas, monospace, mono"><span style="font-size: 15px"> </span></font>usb tool which came out in 2020 and it has quickly become a must have for any IT Administrator or enthusiast since it allows you to configure multiple booting images on a single USB drive in a very simple way. First and foremost, you install it on an USB disk and then you can copy any iso image in any format (ISO/WIM/IMG/VHD(x)/EFI) you want; when you restart your computer and boot it, it will scan all the iso images inside and let you pick through a menu which one you would like to boot (in my usb key, I put the latest Windows to be installed, the Samsung SecureErase, the MemTest86 and an Ubuntu live image for emergency).
+	<p>If your bios does not have the <strong>Disable Block SID option</strong>, <em>you need also to build a WinPE image (e.g., a live Windows iso which runs in RAM without being installed) with Powershell core or Powershell in order to configure such option through a script;</em> incredibly, I wasn't able to find any iso image like this publicly available. To build the iso image, you can use a tool like <a href="https://github.com/ChrisRfr/Win10XPE"><code><strong>Win10XPE</strong></code></a> (the link is to the project website for the documentation, but incredibly it does not contain the binary, I downloaded it from <a href="https://sourceforge.net/projects/win10xpe/files/Program/"><code>Sourceforge</code></a>). It is simple to use (it has a GUI), essentially you have to:</p>
+
+	<ul>
+		<li>Download the latest Windows (10 or 11) ISO image from the Microsoft website</li>		<li>Select it in the main window of Win10XPE</li>		<li>Configure any feature you would like to have in the iso image by selecting checkboxes, in our case, we need <em>Powershell Core, </em>but you can add as many as you like (the more tools you add, the bigger the image gets, but with around 3GB, I was able to fit almost any needed tool)<em>. </em>There is even the possibility to configure hardware vendor management software like Samsung Magician!
+		<p><img src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Win10XPE.jpg" style="width: 700px; height: auto; cursor: pointer; border: 0" alt="Image 1" onclick="imageCleanup.showFullImage(&#39;./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Win10XPE.jpg&#39;)" class="lazyautosizes lazyloaded" data-sizes="auto" data-srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Win10XPE.jpg 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Win10XPE.jpg 700w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Win10XPE.jpg 1920w" sizes="672px" srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Win10XPE.jpg 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Win10XPE.jpg 700w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Win10XPE.jpg 1920w"></p>
+
+		<p>After configuration, you have to hit the play button and wait for the iso image to be built (takes less than 10 minutes), then you can copy it to the Ventoy usb drive, together with the 2 Powershell scripts (<em>DisableBlockSid.ps1</em> and <em>DisableBlockSid_Core.ps1</em>) provided in the archive attached to this article (<a href="https://www.codeproject.com./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/DisableBlockSid.zip">Download DisableBlockSid.zip</a>).</p>
+
+		<p style="margin-left: 40px"><img src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Win10XPE_running.png" alt="Image 2" data-src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Win10XPE_running.png" class="lazyautosizes lazyloaded" style="cursor: pointer; border: 0; width: 700px; height: auto" onclick="imageCleanup.showFullImage(&#39;./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Win10XPE_running.png&#39;)" data-sizes="auto" data-srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Win10XPE_running.png 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Win10XPE_running.png 700w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Win10XPE_running.png 1920w" sizes="632px" srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Win10XPE_running.png 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Win10XPE_running.png 700w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Win10XPE_running.png 1920w"></p>
+		</li>	</ul>
+	</li>	<li><strong>PSID revert the SED</strong>: All SEDs have a 32 hexadecimal characters code physically printed on their label with the heading <strong>PSID</strong> (aka <em>Physical Secure ID</em>, check picture below). This code can be passed to a tool in order to bring the SED back to factory state destroying also any data on drive since this operation also creates a new DEK which makes all user data on drive unreadable.<br>
+	<strong>Again, I repeat it, you must do this, even for brand new drives, otherwise it won't work.</strong> I have always used <code><strong>sedutil-cli</strong></code> which is the first official executable tool provided by Drive Trust Alliance, available for both Linux and Windows. You can <a href="http://github.com/Drive-Trust-Alliance/sedutil/wiki/PSID-Revert">read the documentation</a> and <a href="http://github.com/Drive-Trust-Alliance/sedutil/wiki/Executable-Distributions">download the binaries</a>. <strong>Remember that the PSID must be quoted in upper case letters without any dashes</strong>. Nowadays, this PSID revert function is even integrated in UEFI bios or in the SEDs hardware vendor management software, pick the one which works best for you.
+	<p><img alt="Storage Executive - Frequently Asked Questions | Crucial IN" height="291" src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/db1f2eeb-6a59-43e8-8f93-31984c3f6137.Png" width="399" data-src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/db1f2eeb-6a59-43e8-8f93-31984c3f6137.Png" class=" lazyloaded"></p>
+
+	<p>Check that this operation <strong>nukes</strong> the SED (e.g., deletes all partitions and all data on disk), you can test this by creating before a partition and a simple text file with whatever characters you like inside, after this operation there won't be any partition and obviously any file. If this is not the case, then the drive is not fully compliant to the TCG standard (PSID revert should be the standard command to be executed); if not fully supported, you need to use what the hardware vendor management software reports (for my <strong>Samsung 990 PRO SED</strong> I had to use Samsung <strong>SecureErase </strong>as stated in Samsung Magician which unbelievably did not even ask for PSID to nuke the drive, I will follow up again with Samsung since from the security viewpoint this behaviour is very dangerous as an attacker could nuke all your data by issuing such command without any human confirmation).</p>
+
+	<p><strong>Note</strong>:<em> </em>I followed up with Samsung about this previous SecureErase point and I discovered the main difference between PSID Revert and SecureErase (for Samsung):</p>
+
+	<ul>
+		<li>		<p>The SecureErase procedure does not ask correctly for the PSID since <em>you are only allowed to SecureErase a Samsung SED only if the disk is not encrypted yet.</em></p>
+		</li>		<li>		<p>If you want SecureErase again an encrypted disk you have to first PSID Revert it by providing the PSID.</p>
+		</li>	</ul>
+
+	<p><img src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Samsung_followup.jpg" alt="Image 4" data-src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Samsung_followup.jpg" class="lazyautosizes lazyloaded" style="cursor: pointer; border: 0; width: 700px; height: auto" onclick="imageCleanup.showFullImage(&#39;./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Samsung_followup.jpg&#39;)" data-sizes="auto" data-srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Samsung_followup.jpg 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Samsung_followup.jpg 700w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Samsung_followup.jpg 1276w" sizes="700px" srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Samsung_followup.jpg 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Samsung_followup.jpg 700w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Samsung_followup.jpg 1276w"></p>
+
+	<p>Since I always test by myself critical points like this, I made a "kamizake" attempt to try again to SecureErase my newly re-installed SED and this time, I received correctly an error as you can see in the picture below; moreover I was quite happy that I did not have to reinstall everything from scratch for the sixth time. :-)</p>
+
+	<p><img src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/kamikaze_attempt.jpg" alt="Image 5" data-src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/kamikaze_attempt.jpg" class="lazyautosizes lazyloaded" style="cursor: pointer; border: 0; width: 700px; height: auto" onclick="imageCleanup.showFullImage(&#39;./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/kamikaze_attempt.jpg&#39;)" data-sizes="auto" data-srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/kamikaze_attempt.jpg 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/kamikaze_attempt.jpg 700w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/kamikaze_attempt.jpg 967w" sizes="700px" srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/kamikaze_attempt.jpg 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/kamikaze_attempt.jpg 700w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/kamikaze_attempt.jpg 967w"></p>
+
+	<p><em>Summing up for Samsung SEDs, the PSID Revert and SecureErase are two separate functions whereas in Crucials, there is no SecureErase procedure, the PSID Revert performs both functionalities in a single command. If you manage to find any other hardware vendors with another variation of this step, please let me know.</em></p>
+	</li>	<li>	<p><strong>Disable the Disable Block SID option </strong>either through BIOS (if supported) or through the<strong> Win10XPE </strong>iso image you have built in step 3 by running one of the two attached scripts. Essentially, both the two provided scripts contains a single command line, <code>SetPhysicalPresenceRequest</code> (97) on the TPM instance, e.g.:</p>
+
+	<p><strong>Powershell</strong> (<em>DisableBlockSid.ps1)</em><br>
+	powershell.exe -ExecutionPolicy bypass -Command "(Get-WmiObject -Namespace "root\CIMV2\Security\MicrosoftTpm" -Class Win32_TPM).SetPhysicalPresenceRequest(97)"</p>
+
+	<p><strong>Powershell Core</strong> (<em>DisableBlockSid_Core.ps1)</em><br>
+	pwsh.exe -ExecutionPolicy Bypass -Command "Get-CimInstance -Namespace 'root/cimv2/Security/MicrosoftTpm' -ClassName 'Win32_TPM' | Invoke-CimMethod -MethodName 'SetPhysicalPresenceRequest' -Arguments @{Request='97'}"</p>
+
+	<p>If you would like to know why 97, you can check out the document about <a href="https://trustedcomputinggroup.org/wp-content/uploads/PC-Client-Platform-Physical-Presence-Interface-Specification-V1.4-R15_22July22.pdf">Physical Presence specification on TCG website (at the bottom of page 60)</a>. At the next reboot, you should be seeing a warning message at boot like the one below which you must accept (hit F10). <em>Note that this is valid only for the next boot so you have to boot the official Windows iso image to start the installation, if not, you have to redo this when you are ready to install it.</em></p>
+
+	<p><img src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/BlockSID_disabled_for_the_next_boot-r-700.jpeg" alt="Image 6" data-src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/BlockSID_disabled_for_the_next_boot-r-700.jpeg" class="lazyautosizes lazyloaded" style="cursor: pointer; border: 0; width: 700px; height: auto" onclick="imageCleanup.showFullImage(&#39;./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/BlockSID_disabled_for_the_next_boot.jpeg&#39;)" data-sizes="auto" data-srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/BlockSID_disabled_for_the_next_boot-r-400.jpeg 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/BlockSID_disabled_for_the_next_boot-r-700.jpeg 700w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/BlockSID_disabled_for_the_next_boot.jpeg 800w" sizes="700px" srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/BlockSID_disabled_for_the_next_boot-r-400.jpeg 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/BlockSID_disabled_for_the_next_boot-r-700.jpeg 700w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/BlockSID_disabled_for_the_next_boot.jpeg 800w"></p>
+	</li>	<li><strong>Perform a fresh install of Windows</strong> (Windows 8 upwards).</li>	<li><strong>Enable hardware-based encryption in Bitlocker's Group Policy for both fixed and operating system drives:</strong> launch <em>gpedit.msc</em> and set
+	<ul>
+		<li><strong>Computer Configuration</strong> -&gt; <strong>Administrative templates</strong> -&gt; <strong>Windows Components</strong> -&gt; <strong>Bitlocker Drive Encryption</strong> -&gt; <strong>Operating System Drives</strong> -&gt; <strong>Configure use of hardware-based encryption</strong> --&gt; <strong>Enabled</strong></li>		<li><strong>Computer Configuration</strong> -&gt; <strong>Administrative templates</strong> -&gt; <strong>Windows Components</strong> -&gt; <strong>Bitlocker Drive Encryption</strong> -&gt; <strong>Fixed Data Drives</strong> -&gt; <strong>Configure use of hardware-based encryption</strong> --&gt; <strong>Enabled</strong>
+		<p>Check also that option "<strong>Use Bitlocker software-based encryption when hardware encryption is not available</strong>" is <strong><em>unchecked</em> </strong>in order to avoid fallback to software encryption when things do not work.</p>
+
+		<p><img src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Group_policy.png" alt="Image 7" data-src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Group_policy.png" class="lazyautosizes lazyloaded" style="cursor: pointer; border: 0; width: 700px; height: auto" onclick="imageCleanup.showFullImage(&#39;./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Group_policy.png&#39;)" data-sizes="auto" data-srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Group_policy.png 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Group_policy.png 700w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Group_policy.png 1920w" sizes="672px" srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Group_policy.png 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Group_policy.png 700w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Group_policy.png 1920w"></p>
+		</li>	</ul>
+	</li>	<li><strong>Try to turn on Bitlocker on drive (e.g., right click on disk drive</strong> -&gt; <strong>Turn Bitlocker On</strong>). There are two outcomes:
+	<ul>
+		<li>There is something which prevents the activation of Bitlocker hardware encryption. In this case, you have to try again the procedure from scratch (yes from scratch), but you can check the <strong>Windows Event Viewer</strong> for some hints about what went wrong under the nodes <strong>Application and Service Logs --&gt; Microsoft --&gt; Windows --&gt; BitLocker-API --&gt; Management</strong> and <strong>Application and Service Logs</strong> --&gt; <strong>Microsoft</strong> --&gt; <strong>Windows</strong> --&gt; <strong>EnhancedStorage-ClassDrive</strong> --&gt; <strong>Microsoft-Windows-EnhancedStorage-EhStorClass/Operational</strong><em>,</em> even though most of the events logged there are murky for those who do not know the details of the provisioning process of a SEDs including me (you can send them however to the technical support of your vendor).
+		<p><img alt="Image 8" src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/extracted-image-3.png" style="height: 471px; width: 600px" data-src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/extracted-image-3.png" class="lazyautosizes lazyloaded" data-sizes="auto" data-srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/extracted-image-3.png 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/extracted-image-3.png 600w" sizes="600px" srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/extracted-image-3.png 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/extracted-image-3.png 600w"></p>
+
+		<p><img src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/event_viewer.jpg" alt="Image 9" data-src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/event_viewer.jpg" class="lazyautosizes lazyloaded" style="cursor: pointer; border: 0; width: 700px; height: auto" onclick="imageCleanup.showFullImage(&#39;./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/event_viewer.jpg&#39;)" data-sizes="auto" data-srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/event_viewer.jpg 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/event_viewer.jpg 700w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/event_viewer.jpg 1920w" sizes="672px" srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/event_viewer.jpg 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/event_viewer.jpg 700w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/event_viewer.jpg 1920w"></p>
+		</li>		<li>		<p>If everything is fine instead, you will be prompted to reboot your machine. At the next reboot, the hardware encryption will be enabled automatically, you can check that by issuing <strong>manage-bde -status</strong> in an administrative prompt or powershell and you should be seeing in <em>Encryption Method</em> "<strong>Hardware Encryption - &lt;OID [object identifier] for the crypto algorithm used&gt;"</strong>, in this case <a href="https://oidref.com/1.3.111.2.1619.0.1"><strong>1.3.111.2.1619.0.2</strong> is <strong>XTS-AES-256</strong></a>.</p>
+
+		<p><img src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/bitlocker_hardware_encryption_enabled.jpg" style="width: 600px; height: 573px" alt="Image 10" data-src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/bitlocker_hardware_encryption_enabled.jpg" class="lazyautosizes lazyloaded" data-sizes="auto" data-srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/bitlocker_hardware_encryption_enabled.jpg 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/bitlocker_hardware_encryption_enabled.jpg 600w" sizes="600px" srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/bitlocker_hardware_encryption_enabled.jpg 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/bitlocker_hardware_encryption_enabled.jpg 600w"></p>
+
+		<p>If after the reboot, you see the window below, it means that <em>you didn't put Secure Boot option in Custom mode</em> in order to seal encryption keys into TPM. Do not worry, just reboot, change the bios settings and retry to turn on again the Bitlocker encryption in Windows.</p>
+
+		<p><img height="328" src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/SecureBoot_not_in_custom_mode.png" width="528" alt="Image 11" data-src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/SecureBoot_not_in_custom_mode.png" class="lazyautosizes lazyloaded" data-sizes="auto" data-srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/SecureBoot_not_in_custom_mode.png 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/SecureBoot_not_in_custom_mode.png 528w" sizes="528px" srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/SecureBoot_not_in_custom_mode.png 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/SecureBoot_not_in_custom_mode.png 528w"></p>
+		</li>	</ul>
+	</li>	<li>	<p><strong>Perform a last reboot and switch back in bios the Secure Boot option from Custom to Enabled (or Standard)</strong> in order to forbid any key management operation.</p>
+	</li></ol>
+
+<h2>Points of Interest</h2>
+
+<p><em><strong>I have tested the above procedure on 6 Crucial drives and it has always been successful, so it should be quite trustworthy</strong></em>. Moreover, I have recently bought a <strong>Samsung 990 PRO NVME</strong> SED (the top product in Samsung NVME drives) and I was unable to activate hardware encryption on it with this procedure <strong>due to a bug in the firmware</strong> (I submitted a ticket to Samsung, they acknowledged the issue and released a new firmware which I still have to test due to lack of time, even though others have reported it as working). So this should be a further bonus point for the above procedure.</p>
+
+<p><img src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/samsung_email.jpg" alt="Image 12" data-src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/samsung_email.jpg" class="lazyautosizes lazyloaded" style="cursor: pointer; border: 0; width: 700px; height: auto" onclick="imageCleanup.showFullImage(&#39;./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/samsung_email.jpg&#39;)" data-sizes="auto" data-srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/samsung_email.jpg 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/samsung_email.jpg 700w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/samsung_email.jpg 1277w" sizes="700px" srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/samsung_email.jpg 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/samsung_email.jpg 700w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/samsung_email.jpg 1277w"></p>
+
+<p><strong>Note</strong>: Six months after the new firmware was released for Samsung 990 PRO, I tried again to configure Bitlocker hardware encryption and at the beginning I was not successful since I was not performing a <strong>SecureErase </strong>with the Samsung provided tool and not activating the <strong>Disable Block SID option </strong>since it was not present in the BIOS of my actual laptop (on my older laptop for some reasons now unknown to me, it was not needed or maybe it was already disabled). After a thorough research, I managed to find a way to disable it by script and to activate successfully hardware encryption also on my Samsung 990 PRO as you can see in the screen below:</p>
+
+<p><img src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Hardware_encryption_on_Samsung_990_PRO_2-r-700.jpeg" alt="Image 13" data-src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Hardware_encryption_on_Samsung_990_PRO_2-r-700.jpeg" class="lazyautosizes lazyloaded" style="cursor: pointer; border: 0; width: 700px; height: auto" onclick="imageCleanup.showFullImage(&#39;./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Hardware_encryption_on_Samsung_990_PRO_2.jpeg&#39;)" data-sizes="auto" data-srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Hardware_encryption_on_Samsung_990_PRO_2-r-400.jpeg 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Hardware_encryption_on_Samsung_990_PRO_2-r-700.jpeg 700w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Hardware_encryption_on_Samsung_990_PRO_2.jpeg 1920w" sizes="700px" srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Hardware_encryption_on_Samsung_990_PRO_2-r-400.jpeg 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Hardware_encryption_on_Samsung_990_PRO_2-r-700.jpeg 700w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Hardware_encryption_on_Samsung_990_PRO_2.jpeg 1920w"></p>
+
+<p>With the benefit of the hindsight, I would say that I submitted a bug to Samsung "wrongly" (even though I sent them also the procedure I was using, see email below) because I was not following the right procedure with their SSD (as you learnt from this article, for them it is a little bit different) even though before submitting the bug, I read almost all internet forums on the subject and there was no one able to activate Bitlocker hardware encryption on a 990 PRO. Samsung for some reasons again unknown to me acknowledged an issue and released anyway a new firmware which now I can confirm to be working. It would be interesting to try the right procedure also on the older firmware to see that it was not working, but I have no time so I trust what other users reported in forums, e.g. it was not working.</p>
+
+<p><img src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Original_email_sent_to_Samsung.jpg" alt="Image 14" data-src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Original_email_sent_to_Samsung.jpg" class="lazyautosizes lazyloaded" style="cursor: pointer; border: 0; width: 700px; height: auto" onclick="imageCleanup.showFullImage(&#39;./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Original_email_sent_to_Samsung.jpg&#39;)" data-sizes="auto" data-srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Original_email_sent_to_Samsung.jpg 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Original_email_sent_to_Samsung.jpg 700w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Original_email_sent_to_Samsung.jpg 1278w" sizes="700px" srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Original_email_sent_to_Samsung.jpg 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Original_email_sent_to_Samsung.jpg 700w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Original_email_sent_to_Samsung.jpg 1278w"></p>
+
+<p>As other point of interest, I remind that since 2008, the Intel (and AMD) processors do support the AES-NI instruction set which performs AES encryption quickly in hardware, so disk encryption has been historically performed on the computer by using the CPU. So one could be wondering what is the advantage in using the SEDs and the answer is a single word: <strong>DMA</strong>.</p>
+
+<p>At the beginning, computers were using <strong>Programmed Input Output</strong> (aka <strong>PIO</strong> mode) to access peripherals like hard disks which required that the CPU was the one actually performing the transfer of data for any read / write operation by using memory mapped registers, thus making it unable to perform any other work during IO operations. Then <strong>Direct Memory Access</strong> (aka <strong>DMA</strong>) was developed in which the CPU offloaded the management of I/O operations to another processor, the DMA controller, freeing the load on CPU and allowing it to perform other work. When using the CPU based encryption (AES-NI instruction set or similar) the DMA benefits get greatly reduced since the processor has to intervene accessing the memory in order to decrypt the data after a read operation as well as to encrypt the data before a write operation (so the offload of I/O is partial and therefore, you should be experiencing higher CPU utilization during I/O). <em>When using SEDs, this drawback does not happen and this is a bonus point for them, at least for now. </em>And who knows, perhaps one day, the DMA controller will integrate a crypto processor inside allowing encrypted transfers not only from/to SSD but also from/to any peripheral on the bus.</p>
+
+<p><em>Another bonus point for SEDs is the encryption speed which is faster on them</em> even though both SEDs and x64 CPU perform AES encryption in hardware. X64 encryption speed is lower due to the general purpose of the chip and due to the fact that it has also to run the operating system besides other processes while it is encrypting. I have an <strong>Intel Core i9 I13900H processor</strong> (so a quite recent and I would say performing CPU)<strong> </strong>and using <em>Veracrypt </em>benchmarking function, I got these results:</p>
+
+<p><img height="304" src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/cpuz.png" width="303" alt="Image 15" data-src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/cpuz.png" class=" lazyloaded"></p>
+
+<p><img height="312" src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/veracrypt_speed.png" width="373" alt="Image 16" data-src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/veracrypt_speed.png" class=" lazyloaded"></p>
+
+<p>As you can see, X64 hardware encryption is around 6.5 GB/s which is a lot, but not enough for keeping the pace of <em>PCIe 5.0 NVMe SSDs </em>which top up to 12 GB/s and theoretically up to 14 GB/s. Using CrystaDiskMark on the hardware encrypted Samsung 990 PRO (which I remind is a <em>PCIe</em>® 4.0 SED) I top up 7.1 GB/s in read and 6.8 GB/s in write which is higher than Intel AES-NI, but it does not come very close to the 8GB/s theoretical bandwidth probably due to a non top performant NAND flash. I am eager to see PCIe 5.0 SED benchmarks as soon as they come out.</p>
+
+<h4>4 GB data benchmark</h4>
+
+<p><img height="259" src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/CrystalDiskMark_4GB.jpg" width="358" alt="Image 17" data-src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/CrystalDiskMark_4GB.jpg" class=" lazyloaded"></p>
+
+<h4>1 GB data benchmark</h4>
+
+<p><img height="259" src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/CrystalDiskMark_1GB.jpg" width="362" alt="Image 18" data-src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/CrystalDiskMark_1GB.jpg" class=" lazyloaded"></p>
+
+<p>Another point of interest is the <code>SecureErase</code> function implicitly available in every SEDs: if needed, for whatever reason, you can nuke all its data in an instant being quite confident that it won't be recovered almost in any way.</p>
+
+<p>Last but not the least, I mentioned the <strong>TPM</strong>, to give a primer about it, I can just say that it is an additional crypto coprocessor in the motherboard (or even software emulated in the processor security enclaves like in Intel chips through <em>PTT</em> feature) which stores securely any encryption keys (AEK for SEDs) through the <strong>sealing</strong> technique. Basically, the TPM encrypts any key with its own factory installed hardware key and saves some key metrics about the hardware/software configuration of the system (CPU, motherboard, etc.).; the TPM during the boot process, after having validated that the hardware/software configuration has not changed "provides automatically" the encryption keys (AEK for SEDs) for decrypting and booting the drive without any input of the user. So as long as you do not change your hardware/software configuration, you won't be prompted for any password or pin during boot. In case instead, you need to change the hardware configuration (e.g., upgrade CPU, update BIOS, etc.), before updating in order to avoid potential issues you need to write down your&nbsp;Bitlocker recovery key which can be used to boot the encrypted SED in case the upgrades break the sealing configuration data inside TPM. To recover your Bitlocker recovery key in case you did not wrote it down when you first configured Bitlocker you can issue this command in an administrator prompt:</p>
+
+<div class="pre-lang" id="premain321475"><div>PowerShell</div><div class="pre-action-link"><span id="copycode321475" class="copy-code" data-index="321475" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre321475" style="margin-top:0;" class="lang-powershell notranslate" data-language="powershell" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true">manage-bde -protectors -get &lt;disk drive letter&gt; e.g.
+
+manage-bde -protectors -get c:</pre>
+
+<p>Essentially Bitlockers allow different ways to boot an encrypted disk (a password, a (long) numerical password,&nbsp;a (shorter) numerical pin, the tpm or an external file containing the key inside a folder on a path) and you can enable multiple of them; Bitlocker recovery key is just a long numerical password consisting of 8 groups of 6 numbers separated by a hyphen (-).</p>
+
+<p>After booting using the recovery key after a "breaking" upgrade you can re-seal the new hardware/software configuration inside the TPM using&nbsp;these two commands (again in an administrator command prompt):</p>
+
+<div class="pre-lang" id="premain885745"><div>PowerShell</div><div class="pre-action-link"><span id="copycode885745" class="copy-code" data-index="885745" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre885745" style="margin-top:0;" class="lang-powershell notranslate" data-language="powershell" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true">manage-bde -protectors -delete c: -type tpm
+
+manage-bde -protectors -add c: -tpm</pre>
+
+<p>Here follows a picture ot the output of the above commands</p>
+
+<p><img src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Bitlocker_remove_and_insert_again_tpm_protector.png" alt="Image 19" data-src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Bitlocker_remove_and_insert_again_tpm_protector.png" class="lazyautosizes lazyloaded" style="cursor: pointer; border: 0; width: 700px; height: auto" onclick="imageCleanup.showFullImage(&#39;./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Bitlocker_remove_and_insert_again_tpm_protector.png&#39;)" data-sizes="auto" data-srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Bitlocker_remove_and_insert_again_tpm_protector.png 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Bitlocker_remove_and_insert_again_tpm_protector.png 700w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Bitlocker_remove_and_insert_again_tpm_protector.png 983w" sizes="700px" srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Bitlocker_remove_and_insert_again_tpm_protector.png 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Bitlocker_remove_and_insert_again_tpm_protector.png 700w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Bitlocker_remove_and_insert_again_tpm_protector.png 983w"></p>
+
+<h2>SED Security</h2>
+
+<p>There is a paramount question that I think most of the users who are going to buy a SEDs wonder: are they really safe ? Well, SEDs security is coded and managed mainly by their firmware and to be secure a <em>sound</em> implementation is required, which for the first devices (including the Crucial MX200 which I still have) was not. You can check this <a href="https://ieeexplore.ieee.org/document/8835339">paper</a> (also <a href="https://www.ieee-security.org/TC/SP2019/papers/310.pdf">here</a>) for details, it was published in 2019 and analyzed SEDs produced between 2014 and 2018 (so not the most recent ones), hopefully hardware vendors should have addressed their implementation flaws with firmware updates or newer products, but unluckily, I haven't found a recent paper on the state-of-art of SED security. Let's hope it is, even though I shall remind everyone that a flawless implementation in a software has never been seen, at least till now.</p>
+
+<h2>History</h2>
+
+<ul>
+	<li>V1.0 (9<sup>th</sup> November, 2023)
+
+	<ul>
+		<li>Initial version</li>	</ul>
+	</li>	<li>V1.1 (11<sup>th</sup> November, 2023)
+	<ul>
+		<li>Added insight on encryption speed and SED security section</li>	</ul>
+	</li>	<li>V1.2 (3<sup>rd</sup> December, 2023)
+	<ul>
+		<li>Added "prepare a bootable usb drive"<strong> </strong>and "Disable Block SID option" steps.</li>		<li>Improved "PSID revert the SED" step</li>		<li>Added note on Samsung 990 Pro in Points of Interest</li>		<li>Added further screenshots and scripts</li>		<li>Added benchmarks in Points of Interest</li>		<li>Added bonus point of <code>SecureErase</code> functionality in Points of Interest</li>	</ul>
+	</li>	<li>V1.3 (7<sup>th</sup> December, 2023)
+	<ul>
+		<li>Added note on difference between PSID Revert and <code>SecureErase</code> (for Samsung drives) on PSID Revert step</li>	</ul>
+	</li>	<li>V1.4 (7<sup>th</sup>&nbsp;July, 2024)
+	<ul>
+		<li>Improved TPM information inside Points Of Interest section (added way to retrieve recovery key and to re-seal the hardware/software configuration inside TPM after a "breaking" upgrade)</li>	</ul>
+	</li></ul>
+
+
+
+
+						</div>
+						
+
+						
+						<h2>License</h2>
+						<div id="LicenseTerms"><p>This article, along with any associated source code and files, is licensed under <a href="http://www.codeproject.com/info/cpol10.aspx" rel="license">The Code Project Open License (CPOL)</a></p></div>
+						
+
+						
+						<br>
+						
+						    <br>
+						
+						
+
+						<div class="clearfix"></div>
+
+						<div style="padding-top:8px">
+							
+						</div>
+
+					
+
+				    
+					</form>
+
+				</div>
+
+				
+				<div class="bottom-promo"> 
+				    
+				</div>
+				
+                
+                
+
+				
+				
+				
+
+			</div>
+			
+
+            
+            
+            
+
+        </div>
+        
+
+		
+		<div class="site-footer">
+			<div class="align-left">
+				<a id="ctl00_PermaLink" href="https://www.codeproject.com/Tips/5372281/How-to-Enable-Bitlocker-Hardware-Encryption-on-SED">Permalink</a><br>
+				<br>
+				<a id="ctl00_PrivacyLink" href="https://www.codeproject.com/info/privacy.aspx">Privacy</a><br>
+    			<a id="ctl00_CookiePolicyLink" href="https://www.codeproject.com/info/cookie.aspx">Cookies</a><br>
+                <a id="ctl00_TermsOfUseLink" href="https://www.codeproject.com/info/TermsOfUse.aspx">Terms of Use</a><br>
+			</div>
+
+            <div class="align-center">
+				
+
+
+<div class="page-width">
+    Layout: <a id="ctl00_PageWidth_FixedT" title="Fixed width layout" rel="nofollow" class=" active" href="https://www.codeproject.com/Tips/5372281/How-to-Enable-Bitlocker-Hardware-Encryption-on-SED?PageFlow=FixedWidth">fixed</a>
+    |
+    <a id="ctl00_PageWidth_FluidT" title="Fluid layout" rel="nofollow" href="https://www.codeproject.com/Tips/5372281/How-to-Enable-Bitlocker-Hardware-Encryption-on-SED?PageFlow=Fluid">fluid</a>
+</div>
+
+
+				
+
+				
+
+	            
+
+                <br>
+			</div>
+                
+			<div class="align-right">
+				Article Copyright 2023 by Federico Di Marco<br>Everything else
+				Copyright © <a href="mailto:webmaster@codeproject.com">CodeProject</a>, 1999-2024<br>
+                <br>
+				Web01 
+				2.8:2024-10-19:1<br>
+			</div>
+		</div>
+		
+
+		<br clear="all">
+		
+			
+
+	</div> 
+	</div> 
+</div>
+
+
+
+
+
+
+
+<script type="text/javascript"> // DEFERRED script
+
+document.addEventListener('DOMContentLoaded', function() {
+
+	new CodeBlocks().initialise('#contentdiv');
+	
+	$('.author-wrapper .description').shorten({showChars: 400});
+	
+	anchorAnimate();
+	
+	$('#__EVENTVALIDATION').attr('autocomplete', 'off');
+
+})
+</script>
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">.copied::after {  position: absolute;  right: 0;  display: inline-block; white-space: nowrap; content: 'copied'; color: #fff; background-color: #f90;  border-radius: 3px; padding:1px 8px; opacity: 0;  will-change: opacity, transform; animation: showcopied 1.5s ease; } @keyframes showcopied { 0% { opacity: 0; } 70% { opacity: 1; } 100% { opacity: 0; } } </style><canvas id="cv1" width="1px" height="1px" style="position:absolute;left:0;top:0;pointer-events:none"></canvas><canvas id="cv2" width="1px" height="1px" style="position:absolute;left:0;top:0;pointer-events:none"></canvas></body></html>

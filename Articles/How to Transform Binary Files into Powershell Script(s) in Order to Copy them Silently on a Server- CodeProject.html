@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<!-- saved from url=(0095)https://www.codeproject.com/Articles/5369565/How-to-Transform-Binary-Files-into-Powershell-Scri -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	
+	<link rel="preconnect" href="https://www.google-analytics.com/">
+
+	<link rel="preconnect" href="https://www.codeproject.com/">
+
+
+	<link rel="preload" href="./How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject_files/logo250x135.gif" as="image">
+
+
+	<link rel="preload" href="https://www.codeproject.com/App_Themes/CodeProject/Img/logo135-bg.gif" as="image">
+	<link rel="preload" href="./How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject_files/jquery-3.4.1.min.js.download" as="script" type="text/javascript">
+
+
+	<title>How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject</title> 
+    
+	<link type="text/css" rel="stylesheet" href="./How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject_files/Article.min.css">
+
+
+    <script type="text/javascript" async="" src="./How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject_files/analytics.js.download"></script><script type="text/javascript" src="./How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject_files/jquery-3.4.1.min.js.download" defer=""></script>
+<script type="text/javascript" src="./How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject_files/article.min.js.download" defer=""></script>
+
+	
+<meta http-equiv="content-language" content="en-US">
+
+<meta name="Description" content="A tool which creates one or more Powershell scripts which in turn recreate one or more binary files">
+<meta name="Keywords" content=".NET, Intermediate, PowerShell, security, server, copy-paste">
+<meta name="Author" content="Federico Di Marco">
+<meta name="Rating" content="General">
+<meta name="Revisit-After" content="1 days">
+<meta name="application-name" content="CodeProject">
+<meta name="google-translate-customization" content="d908bb7ce7aff658-4c2f3a504525c916-g629383f736781a8a-13">
+
+
+
+<link rel="dns-prefetch" href="https://ajax.googleapis.com/"> 
+<link rel="canonical" href="https://www.codeproject.com/Articles/5369565/How-to-Transform-Binary-Files-into-Powershell-Scri">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@CodeProject">
+<meta name="og:site_name" content="CodeProject">
+<meta name="twitter:creator" content="@CodeProject">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="10/9/2023 8:42:00 AM">
+<meta property="article:modified_time" content="3/2/2024 7:26:00 PM">
+<meta name="twitter:label1" content="Written by">
+<meta name="twitter:data1" content="Federico Di Marco">
+<meta name="twitter:label2" content="Reading time">
+<meta name="twitter:data2" content="9 min read">
+<meta property="og:url" content="https://www.codeproject.com/Articles/5369565/How-to-Transform-Binary-Files-into-Powershell-Scri">
+<meta property="og:title" content="How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server">
+<meta property="og:description" content="A tool which creates one or more Powershell scripts which in turn recreate one or more binary files">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="apple-touch-icon" sizes="144x144" href="https://www.codeproject.com/favicon/apple-touch-icon.png"> 
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.codeproject.com/favicon/favicon-32x32.png"> 
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.codeproject.com/favicon/favicon-16x16.png"> 
+<link rel="manifest" href="https://www.codeproject.com/favicon/manifest.json"> 
+<link rel="mask-icon" href="https://www.codeproject.com/favicon/safari-pinned-tab.svg" color="#ff9900">
+	<script type="application/ld+json">{
+  "@context": "http://schema.org",
+  "@type": "TechArticle",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.codeproject.com/Articles/5369565/How-to-Transform-Binary-Files-into-Powershell-Scri"
+   },
+  "name": "How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server",
+  "headline": "How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server",
+  "url": "https://www.codeproject.com/Articles/5369565/How-to-Transform-Binary-Files-into-Powershell-Scri",
+  "discussionUrl": "https://www.codeproject.com/Articles/5369565/How-to-Transform-Binary-Files-into-Powershell-Scri#_comments",
+  "isFamilyFriendly": "true",
+  "image": "https://www.codeproject.com/App_Themes/CodeProject/Img/Article100.png",
+  "keywords": ".NET,Intermediate,PowerShell,security,server,copy-paste",
+  "commentCount": "0",
+  "editor" : {
+    "@type" : "Person",
+    "name" : "Editor",
+    "url" : "https://www.codeproject.com/script/Membership/View.aspx?mid=3865041"
+  },
+  "license": "http://www.codeproject.com/info/cpol10.aspx",
+  "publisher" : {
+    "@type" : "Organization",
+    "name" : "CodeProject"
+  },
+  "description": "Lately, I have seen a rise in limitations on what actions a user can do on remote desktop services (e.g., Microsoft MSTSC and Citrix Workspace) consisting of forbidding the copy and paste of files through clipboard allowing only plain text for security reasons, sometimes making developer user experience troublesome. I would like to raise the awareness that these measures can be bypassed easily, even if the plain text copy/paste through clipboard gets disabled.",
+  "author" : [{
+      "@type" : "Person",
+      "name" : "Federico Di Marco",
+      "url" : "https://www.codeproject.com/script/Membership/View.aspx?mid=3865041"
+    }],
+  "datePublished": "2023-10-09",
+  "dateCreated": "2023-10-09",
+  "dateModified": "2024-03-02"
+,
+  "contentRating" : {
+    "@type" : "Rating",
+    "ratingValue" : 4.73,
+    "bestRating" : 5,
+    "worstRating" : 1
+  }
+}</script>
+
+<script type="application/ld+json">{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "item" : {
+      "@id" : "/script/Content/Tag.aspx?tags=security",
+      "name" : "security"
+    }
+  }]
+}</script>
+
+
+	<!--<base target="_top">--><base href="." target="_top">
+	
+    
+
+
+<script type="text/javascript">
+function defrm () { /* thanks twitter */
+    document.write = '';
+    window.top.location = window.self.location;
+    setTimeout(function() { document.body.innerHTML = ''; }, 0);
+    window.self.onload = function(evt) { document.body.innerHTML = ''; };
+}
+
+if (window.top !== window.self) {
+    try {
+        if (window.top.location.host) { /* will throw for all except chrome */ }
+        else { defrm(); /* chrome */ }
+    } catch (ex) { defrm(); /* everyone else */ }
+}
+
+// Specific case where a site is screwing with us.
+if (typeof(DemoUrl) !== 'undefined') {
+    document.write(unescape('%3Cme') + 'ta http' + '-equiv="re' + 'fresh con' +
+                           'tent="1;url=' + DemoUrl + unescape('"%3CE'));
+}
+</script>
+	
+
+
+
+
+
+    <script async="" type="text/javascript" src="./How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject_files/js"></script>
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-1735123-1' , {'user_id': '61732e5b-06af-4ac2-8734-b1591748583e'});
+    </script>
+
+<style type="text/css"></style></head>	
+
+<body class="chrome chrome130">
+
+
+
+<a class="access-link" href="https://www.codeproject.com/Articles/5369565/How-to-Transform-Binary-Files-into-Powershell-Scri#Main"><img alt="Click here to Skip to main content" src="./How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject_files/t.gif"></a>
+
+
+
+
+<div class="page-background">
+
+	
+	
+
+	
+
+	
+    <div id="ctl00_STM" class="site-top-menu fixed narrow">
+        <div class="main-content">
+            
+
+<div class="container memberbar clearfix flex-container flex-extend">
+
+	<div id="ctl00_MemberBar_GenInfo" class="flex-item align-left">65,938 articles</div>
+	
+	<div id="ctl00_MemberBar_ChangeNotice" class="flex-item align-left">CodeProject
+	is changing. <a href="https://www.codeproject.com/info/Changes.aspx">Read more</a>.</div>
+
+	<div class="flex-item">
+		
+	</div>
+
+	<div class="flex-item align-right">
+
+		
+
+		
+
+		
+	</div>
+</div>
+        </div>
+    </div>
+
+	
+    <div id="ctl00_SH" class="site-header fixed narrow">
+        <div class="main-content">
+            <div class="logo"><a href="https://www.codeproject.com/"><img id="ctl00_Logo" tabindex="1" title="CodeProject" src="./How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject_files/logo250x135.gif" alt="Home" style="height:135px;width:250px;border-width:0px;"></a></div>
+            <div class="promo"></div>
+        </div>
+    </div>
+
+	
+			
+	
+
+	<div id="A" class="container-content-wrap fixed narrow"> 
+
+	<div class="container-content">
+
+        
+		<div class="clearfix">
+			<div class="container-breadcrumb float-left ">
+				<div><a rel="nofollow" href="https://www.codeproject.com/script/Content/SiteMap.aspx">Articles</a> / <a rel="nofollow" href="https://www.codeproject.com/script/Content/Tag.aspx?tags=security">security</a></div>
+			</div>
+
+            <div class="float-left">
+				
+			</div>
+
+			<div class="edit-links float-right">
+				
+
+
+
+ 
+&nbsp;
+
+
+
+
+
+
+
+
+
+
+			</div>
+
+			<div class="article-nav float-right">
+				
+
+
+<div style="display:inline-block;position:relative;top:-6px;margin-right:20px">
+    
+</div>
+
+
+
+ 
+
+<a id="ctl00_ActionLinks_PrintMd" data-tooltip="Print" data-enabletooltip="true" data-width="auto" href="https://www.codeproject.com/Articles/5369565/How-to-Transform-Binary-Files-into-Powershell-Scri?display=Print" class="tooltip" title="">
+   <img src="./How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject_files/print48.png" width="24" height="24" style="border:0">
+<div class="speech-bubble-container-up" style="width:auto">  <div class="speech-bubble-up" style="text-align:center"> Print</div>  <div class="speech-bubble-pointer-up">    <div class="speech-bubble-pointer-up-inner"></div>  </div></div></a>
+
+
+
+<span id="ctl00_ActionLinks_R">
+    
+    
+</span>
+			</div>
+		</div>
+
+        
+		<div class="extended article-container-parts">
+
+			
+		    
+            
+
+			
+			<div id="AT" class="article-container  fixed narrow" style="max-width:inherit;"> 
+
+				<div class="article">
+
+					<form name="aspnetForm" method="post" action="https://www.codeproject.com/Articles/5369565/View.aspx" id="aspnetForm" style="margin:0;padding:0">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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">
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="10C1FD69">
+</div>
+
+					
+					 
+					<div class="header">
+					    <a name="Main"></a>
+					    <a name="_articleTop" id="_articleTop"></a>
+
+					    
+						<div>
+							<span id="ctl00_TagListHorz_TagWrp" class="tags horizontal">
+
+	
+	
+
+	
+	<span id="ctl00_TagListHorz_VisibleTags"><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/.NET" data-id="98">.NET</a></div><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/PowerShell" data-id="302">PowerShell</a></div><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/security" data-id="810">security</a></div><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/server" data-id="859">server</a></div><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/copy-paste" data-id="1289">copy-paste</a></div></span> 
+
+	
+	
+</span>
+
+
+						</div>
+					    <div class="title">
+					        <h1 id="ctl00_ArticleTitle">How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server</h1>
+					    </div>
+
+                        <div>
+					        
+					        <div class="entry flex-container">
+
+								
+
+                                <div class="flex-item" style="flex:1 1 auto">
+                                    <div class="flex-container" style="justify-content:space-between;flex-wrap:wrap-reverse">
+                                       <span id="ctl00_Authors" class="author flex-item"><a href="https://www.codeproject.com/script/Membership/View.aspx?mid=3865041" rel="author">Federico Di Marco</a></span> 
+
+                                        <div class="flex-item" style="margin-top:-4px;">
+                                            <div id="ctl00_RateArticle_RatingTable" class="small-text" data-objectref="2_5369565">
+
+	<meta itemprop="upvoteCount" content="7">
+
+
+	<div id="ctl00_RateArticle_RatingRow" class="flex-container rating-container large-stars">
+
+					
+		
+
+		
+		<div class="nowrap tooltip">
+
+			
+			<div id="ctl00_RateArticle_ResultNoHist" class="rating-result"><div class="flex-container rating-stars large-stars"><div><img src="./How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject_files/star-fill-lg.png" style="width:24px;height:24px"></div><div><img src="./How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject_files/star-fill-lg.png" style="width:24px;height:24px"></div><div><img src="./How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject_files/star-fill-lg.png" style="width:24px;height:24px"></div><div><img src="./How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject_files/star-fill-lg.png" style="width:24px;height:24px"></div><div style="width:17px;" class="clipped"><img src="./How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject_files/star-fill-lg.png" style="width:24px;height:24px"></div><div style="width:7px;position:relative" class="clipped"><img src="./How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject_files/star-empty-lg.png" style="width:24px;height:24px;position:absolute;top:0px;right:0"></div></div></div>
+			
+
+			
+			
+
+			
+            
+
+			
+                
+
+		</div>
+		
+	
+		
+		<div id="ctl00_RateArticle_VoteCountNoHist" class="rating-votes nowrap">4.73/5  (8 votes)</div>	
+
+		
+
+		
+		<div class="rating-undo" title="Undo vote" style="margin-left:5px;display:none"></div>
+
+		
+		
+	</div>
+
+	
+	
+
+</div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="flex-container" style="color:#666;font-size:smaller">
+                                        <span id="ctl00_LastUpdated" class="date flex-item-tight" title="Date last updated">2 Mar 2024</span><a id="ctl00_LicenseLink" title="The Code Project Open License (CPOL)" class="license flex-item-tight" href="http://www.codeproject.com/info/cpol10.aspx">CPOL</a><span id="ctl00_ReadingTime" class="stats flex-item-tight">9 min read</span><span id="ctl00_HorizontalStats" class="stats flex-item-tight"><span class="stats"><span title="Views"><img src="./How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject_files/views32.png" style="width:16px"> 12.5K</span> &nbsp; </span></span>
+                                    </div>
+                                </div>
+					        </div>
+
+                            
+
+                        </div>
+
+                        <div id="ctl00_DescriptionSpot" class="summary">A tool which creates one or more Powershell scripts which in turn recreate one or more binary files</div><span id="ctl00_ThumbnailUrl" class="date" content="https://www.codeproject.com/script/Articles/Images/article100x80.png"></span>			
+
+                    </div>
+                    
+					
+					
+
+					
+
+					
+					<div id="ctl00_Abstract" class="abstract">Lately, I have seen a rise in limitations on what actions a user can do on remote desktop services (e.g., Microsoft MSTSC and Citrix Workspace) consisting of forbidding the copy and paste of files through clipboard allowing only plain text for security reasons, sometimes making developer user experience troublesome. I would like to raise the awareness that these measures can be bypassed easily, even if the plain text copy/paste through clipboard gets disabled.</div>
+
+					
+					
+
+						
+					
+
+					
+
+						
+						<div id="contentdiv" class="text">
+						
+
+
+
+<!-- Article Starts -->
+
+<h2>Introduction</h2>
+
+<p><strong><a href="https://github.com/fededim/BinaryToPowershellScript">BinaryToPowershellScript</a> </strong>is a .NET Core console application which converts one or more binary file(s) into a Powershell script(s) which if executed on a server, recreates exactly the same set of scripted files there.</p>
+
+<h2>Background</h2>
+
+<p>The main idea is to convert a binary file into a script which recreates the same binary file. I chose <strong>Powershell</strong> because it's a recent technology which I know and because with its version <strong>Powershell Core</strong>, it is available for all major platforms (Windows, Linux and Mac), but again everything could be re-implemented in pure bash (Linux) or a bat file (Windows, highly likely in this case encryption won't be available). The conversion from binary to script is done mainly transcoding binary into text and I came up with three possibilities:</p>
+
+<ul>
+	<li>Use <a href="https://en.wikipedia.org/wiki/Base64"><strong>Base64</strong></a> encoding: This encoding is the standard way for encoding binary files in JSON files/apis. Basically, it subdivides the binary file in group of 6 bits (so a little less than a byte) and maps these 64 possible values into 64 ASCII characters (so 1 byte). This encoding has the weakness of increasing the size of 33% (8 bits / 6 bits), but <em>binary to text conversion is impossible to be done without increasing size</em>. Another caveat is that this encoding could be detected as a counter measure to this kind of scripts, even though this detection could also cause troubles to other legitimate scripts.</li>	<li>Use a <strong>Hex Text</strong> format: This encoding converts each byte of the binary file into a 2 digits ASCII representation of it (YZ, so 2 bytes). This encoding is wasteful since it multiples the original size by a factor of 2. Historically, bytes have always been represented in hex editors in hexadecimal format (for Windows, you can try the good <a href="https://mh-nexus.de/en/hxd/">HxD</a>).</li>	<li>Use a <strong>Decimal</strong> format: This encoding converts each byte of the binary file into up 4 digits ASCII representation of it (0-255, from 2 to 4 bytes). It is the most wasteful format, but the output PowerShell script has the simplest code so it should work almost on every instance/configuration of powershell.</li></ul>
+
+<h2>Using the Code</h2>
+
+<p>You can find the source code on my <a href="https://github.com/fededim/BinaryToPowershellScript/tree/master">GitHub</a> page, there is a comprehensive <em>README </em>on how to use the console application with examples of command lines and generated script(s).</p>
+
+<p>I want to concentrate now on the code, basically, we have just <em>one file Program.cs</em> which contains the following code:</p>
+
+<div class="pre-lang" id="premain900581"><div>C#</div><div class="pre-action-link"><span class="code-collapse" data-index="900581" id="preShrink900581">Shrink ▲</span> &nbsp; <span id="copycode900581" class="copy-code" data-index="900581" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre900581" style="margin-top:0;" class="lang-csharp notranslate" data-language="cs" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">using</span> System;
+<span class="code-keyword">using</span> System.Collections;
+<span class="code-keyword">using</span> System.ComponentModel;
+<span class="code-keyword">using</span> System.ComponentModel.Design;
+<span class="code-keyword">using</span> System.IO;
+<span class="code-keyword">using</span> System.IO.Compression;
+<span class="code-keyword">using</span> System.Reflection.Metadata.Ecma335;
+<span class="code-keyword">using</span> System.Security.Cryptography;
+<span class="code-keyword">using</span> System.Text;
+<span class="code-keyword">using</span> CommandLine;
+
+<span class="code-keyword">namespace</span> BinaryToPowershellScript
+{
+    <span class="code-keyword">public</span> <span class="code-keyword">class</span> Options
+    {
+        [Option(<span class="code-string">'</span><span class="code-string">i'</span>, <span class="code-string">"</span><span class="code-string">inputs"</span>, Required = <span class="code-keyword">true</span>, 
+        HelpText = <span class="code-string">"</span><span class="code-string">Specifies the input file(s) to process, 
+                    you can use also a wildcard pattern or 
+                    specify multiple files separated by space"</span>)]
+        <span class="code-keyword">public</span> IEnumerable&lt;String&gt;? Inputs { <span class="code-keyword">get</span>; <span class="code-keyword">set</span>; }
+
+        [Option(<span class="code-string">'</span><span class="code-string">o'</span>, <span class="code-string">"</span><span class="code-string">outputfolder"</span>, Required = <span class="code-keyword">false</span>, 
+        HelpText = <span class="code-string">"</span><span class="code-string">Specify the output folder where all the powershell scripts 
+                    will be generated"</span>)]
+        <span class="code-keyword">public</span> <span class="code-sdkkeyword">String</span>? OutputFolder { <span class="code-keyword">get</span>; <span class="code-keyword">set</span>; }
+
+        [Option(<span class="code-string">'</span><span class="code-string">b'</span>, <span class="code-string">"</span><span class="code-string">base64"</span>, Required = <span class="code-keyword">false</span>, 
+        HelpText = <span class="code-string">"</span><span class="code-string">Specify the base64 file format for the powershell script(s)"</span>)]
+        <span class="code-keyword">public</span> <span class="code-keyword">bool</span> Base64 { <span class="code-keyword">get</span>; <span class="code-keyword">set</span>; }
+
+        [Option(<span class="code-string">'</span><span class="code-string">d'</span>, <span class="code-string">"</span><span class="code-string">decimal"</span>, Required = <span class="code-keyword">false</span>, 
+        HelpText = <span class="code-string">"</span><span class="code-string">Specify the decimal file format for the powershell script(s)"</span>)]
+        <span class="code-keyword">public</span> <span class="code-keyword">bool</span> Decimal { <span class="code-keyword">get</span>; <span class="code-keyword">set</span>; }
+
+        [Option(<span class="code-string">'</span><span class="code-string">c'</span>, <span class="code-string">"</span><span class="code-string">compress"</span>, Required = <span class="code-keyword">false</span>, 
+        HelpText = <span class="code-string">"</span><span class="code-string">Specify to compress the input file(s) with gzip compression"</span>)]
+        <span class="code-keyword">public</span> <span class="code-keyword">bool</span> Compress { <span class="code-keyword">get</span>; <span class="code-keyword">set</span>; }
+
+        [Option(<span class="code-string">'</span><span class="code-string">h'</span>, <span class="code-string">"</span><span class="code-string">hash"</span>, Required = <span class="code-keyword">false</span>, 
+        HelpText = <span class="code-string">"</span><span class="code-string">Specify to add a SHA256 hash as check on 
+        file(s) integrity in the powershell script(s)"</span>)]
+        <span class="code-keyword">public</span> <span class="code-keyword">bool</span> Hash { <span class="code-keyword">get</span>; <span class="code-keyword">set</span>; }
+
+        [Option(<span class="code-string">'</span><span class="code-string">s'</span>, <span class="code-string">"</span><span class="code-string">single"</span>, Required = <span class="code-keyword">false</span>, 
+        HelpText = <span class="code-string">"</span><span class="code-string">Specify to create just a single script file for all input files"</span>)]
+        <span class="code-keyword">public</span> <span class="code-keyword">bool</span> SingleFile { <span class="code-keyword">get</span>; <span class="code-keyword">set</span>; }
+
+        [Option(<span class="code-string">'</span><span class="code-string">p'</span>, <span class="code-string">"</span><span class="code-string">password"</span>, Required = <span class="code-keyword">false</span>, 
+        HelpText = <span class="code-string">"</span><span class="code-string">Specify the password used to encrypt data with AES"</span>)]
+        <span class="code-keyword">public</span> <span class="code-sdkkeyword">String</span>? Password { <span class="code-keyword">get</span>; <span class="code-keyword">set</span>; }
+
+        [Option(<span class="code-string">'</span><span class="code-string">r'</span>, <span class="code-string">"</span><span class="code-string">recurse"</span>, Required = <span class="code-keyword">false</span>, 
+        HelpText = <span class="code-string">"</span><span class="code-string">Specify to perform recursive search on all input file(s)"</span>)]
+        <span class="code-keyword">public</span> <span class="code-keyword">bool</span> Recurse { <span class="code-keyword">get</span>; <span class="code-keyword">set</span>; }
+    }
+
+    <span class="code-keyword">class</span> Program
+    {
+        <span class="code-keyword">const</span> <span class="code-keyword">int</span> KEYSIZE = <span class="code-digit">256</span>;
+
+        <span class="code-keyword">public</span> <span class="code-keyword">static</span> <span class="code-keyword">void</span> Main(string[] args)
+        {
+            Parser.Default.ParseArguments&lt;Options&gt;
+            (args).WithParsed&lt;Options&gt;(o =&gt; CreateScript(o));
+        }
+
+        <span class="code-keyword">static</span> <span class="code-keyword">string</span> ComputeSha256Hash(byte[] bytes)
+        {
+            <span class="code-keyword">using</span> (SHA256 sha256Hash = SHA256.Create())
+            {
+                <span class="code-keyword">return</span> BitConverter.ToString
+                (sha256Hash.ComputeHash(bytes)).Replace(<span class="code-string">"</span><span class="code-string">-"</span>, <span class="code-sdkkeyword">String</span>.Empty);
+            }
+        }
+
+        <span class="code-keyword">public</span> <span class="code-keyword">static</span> byte[] EncryptBytes(byte[] input, <span class="code-keyword">string</span> password)
+        {
+            <span class="code-keyword">var</span> pbkdf2DerivedBytes = <span class="code-keyword">new</span> Rfc2898DeriveBytes(password, <span class="code-digit">16</span>, <span class="code-digit">2000</span>);
+
+            <span class="code-keyword">using</span> (<span class="code-keyword">var</span> AES = Aes.Create())
+            {
+                AES.KeySize = KEYSIZE;
+                AES.Key = pbkdf2DerivedBytes.GetBytes(KEYSIZE / <span class="code-digit">8</span>);
+                AES.Mode = CipherMode.CBC;
+                AES.Padding = PaddingMode.PKCS7;
+
+                <span class="code-keyword">using</span> (MemoryStream memoryStream = <span class="code-keyword">new</span> MemoryStream())
+                {
+                    CryptoStream cryptoStream = <span class="code-keyword">new</span> CryptoStream
+                    (memoryStream, AES.CreateEncryptor(), CryptoStreamMode.Write);
+
+                    memoryStream.Write(pbkdf2DerivedBytes.Salt, <span class="code-digit">0</span>, <span class="code-digit">16</span>);  <span class="code-comment">//</span><span class="code-comment"> 16 bytes of </span>
+                    <span class="code-comment">//</span><span class="code-comment"> SALT for PBKDF2 derivation function, must not be encrypted</span>
+                    memoryStream.Write(AES.IV, <span class="code-digit">0</span>, <span class="code-digit">16</span>);  <span class="code-comment">//</span><span class="code-comment"> IV is always 128 bits for AES, </span>
+                                                        <span class="code-comment">//</span><span class="code-comment"> must not be encrypted</span>
+                    cryptoStream.Write(input, <span class="code-digit">0</span>, input.Length);
+                    cryptoStream.FlushFinalBlock();
+
+                    <span class="code-comment">//</span><span class="code-comment"> uncomment this line to debug encryption</span>
+                    <span class="code-comment">//</span><span class="code-comment">Console.WriteLine($"Password {password} Salt </span>
+                    <span class="code-comment">//</span><span class="code-comment">{BitConverter.ToString(pbkdf2DerivedBytes.Salt)} IV </span>
+                    <span class="code-comment">//</span><span class="code-comment">{BitConverter.ToString(AES.IV)} Key {BitConverter.ToString(AES.Key)} </span>
+                    <span class="code-comment">//</span><span class="code-comment">Input {BitConverter.ToString(input)} </span>
+                    <span class="code-comment">//</span><span class="code-comment">ActualPosition {memoryStream.Length}");</span>
+
+                    <span class="code-keyword">return</span> memoryStream.ToArray();
+                }
+            }
+        }
+
+        <span class="code-keyword">public</span> <span class="code-keyword">static</span> byte[] CopyBytesToStream(byte[] bytes, 
+                      <span class="code-keyword">bool</span> fromStream, Func&lt;Stream, Stream&gt; streamCallback)
+        {
+            <span class="code-keyword">var</span> inputMemoryStream = <span class="code-keyword">new</span> MemoryStream(bytes);
+            <span class="code-keyword">var</span> outputMemoryStream = <span class="code-keyword">new</span> MemoryStream();
+
+            <span class="code-keyword">var</span> stream = streamCallback(fromStream ? 
+                         inputMemoryStream : outputMemoryStream);
+
+            <span class="code-keyword">if</span> (fromStream)
+                stream.CopyTo(outputMemoryStream);
+            <span class="code-keyword">else</span>
+            {
+                inputMemoryStream.CopyTo(stream);
+                stream.Flush();
+            }
+
+            <span class="code-keyword">return</span> outputMemoryStream.ToArray();
+        }
+
+        <span class="code-keyword">private</span> <span class="code-keyword">static</span> StringBuilder CreateScriptHeader(Options o)
+        {
+            <span class="code-keyword">var</span> script = <span class="code-keyword">new</span> StringBuilder();
+
+            <span class="code-keyword">if</span> (o.Compress || !String.IsNullOrEmpty(o.Password))
+            {
+                script.AppendLine(<span class="code-string">@"</span><span class="code-string">
+function copyBytesToStream  {
+    [OutputType([byte[]])]
+    Param (
+        [Parameter(Mandatory=$true)] [byte[]] $bytes,
+        [Parameter(Mandatory=$true)] [System.Boolean] $fromStream,
+        [Parameter(Mandatory=$true)] [ScriptBlock] $streamCallback)
+
+    $InputMemoryStream = New-Object System.IO.MemoryStream @(,$bytes)
+    $OutputMemoryStream = New-Object System.IO.MemoryStream
+
+    $stream = (Invoke-Command $streamCallback -ArgumentList 
+    $(if ($fromStream) { $InputMemoryStream } else { $OutputMemoryStream }))
+
+    if ($fromStream) {
+        $stream.CopyTo($OutputMemoryStream)
+    }
+    else {
+        $InputMemoryStream.CopyTo($stream)
+        $stream.Flush()
+    }
+
+    $result = $OutputMemoryStream.ToArray()
+
+    ,$result
+}
+
+"</span>);
+            }
+
+            <span class="code-keyword">if</span> (!o.Base64 &amp;&amp; !o.Decimal)
+            {
+                script.AppendLine(<span class="code-string">@"</span><span class="code-string">
+function StringToByteArray  {
+    [OutputType([byte[]])]
+    Param ([Parameter(Mandatory=$true)] [System.String] $hexstring)
+
+    [byte[]] $bytes = New-Object Byte[] ($hexstring.Length/2)
+    for ($i=0; $i -lt $hexstring.Length;$i+=2) {
+        $bytes[$i/2] = [System.Byte]::Parse($hexstring.Substring($i,2),
+                       [System.Globalization.NumberStyles]::HexNumber)
+    }
+    ,$bytes
+    }
+
+"</span>);
+            }
+
+            <span class="code-keyword">if</span> (!String.IsNullOrEmpty(o.Password))
+            {
+                <span class="code-comment">//</span><span class="code-comment"> uncomment these lines and put them in the decryptBytes function below </span>
+                <span class="code-comment">//</span><span class="code-comment"> (row "$Dec = $AES.CreateDecryptor()") to troubleshoot encryption</span>
+                <span class="code-comment">//</span><span class="code-comment">Write - Host ""Password $password""</span>
+                <span class="code-comment">//</span><span class="code-comment">Write - Host ""KEY: $([System.BitConverter]::ToString($AES.Key))""</span>
+                <span class="code-comment">//</span><span class="code-comment">Write - Host ""IV: $([System.BitConverter]::ToString($AES.IV))""</span>
+                <span class="code-comment">//</span><span class="code-comment">Write - Host ""EncryptedData: </span>
+                <span class="code-comment">//</span><span class="code-comment">$([System.BitConverter]::ToString($EncryptedData))""</span>
+
+                <span class="code-comment">//</span><span class="code-comment"> uncomment these lines and put them in the decryptBytes function below </span>
+                <span class="code-comment">//</span><span class="code-comment"> (row ",$result") to troubleshoot encryption</span>
+                <span class="code-comment">//</span><span class="code-comment">Write - Host ""DecryptedData: </span>
+                <span class="code-comment">//</span><span class="code-comment">$([System.BitConverter]::ToString($result))""</span>
+
+                script.Append(@$<span class="code-string">"</span><span class="code-string">function decryptBytes {{
+    [OutputType([byte[]])]
+    Param (
+        [parameter(Mandatory=$true)] [System.Byte[]] $bytes,
+        [parameter(Mandatory=$true)] [System.String] $password
+    ) 
+
+    # Split IV and encrypted data
+    $PBKDF2Salt = New-Object Byte[] 16
+    $IV = New-Object Byte[] 16
+    $EncryptedData = New-Object Byte[] ($bytes.Length-32)
+    
+    [System.Array]::Copy($bytes, 0, $PBKDF2Salt, 0, 16)
+    [System.Array]::Copy($bytes, 16, $IV, 0, 16)
+    [System.Array]::Copy($bytes, 32, $EncryptedData, 0, $bytes.Length-32)
+
+    # Generate PBKDF2 from Salt and Password
+    $PBKDF2 = New-Object System.Security.Cryptography.Rfc2898DeriveBytes
+                ($password, $PBKDF2Salt, 2000)
+
+    # Setup our decryptor
+    $AES = [Security.Cryptography.Aes]::Create()
+    $AES.KeySize = {KEYSIZE}
+    $AES.Key = $PBKDF2.GetBytes({KEYSIZE / 8})
+    $AES.IV = $IV
+    $AES.Mode = [System.Security.Cryptography.CipherMode]::CBC
+    $AES.Padding = [System.Security.Cryptography.PaddingMode]::PKCS7
+
+    $Dec = $AES.CreateDecryptor()
+
+    [byte[]] $result = copyBytesToStream $EncryptedData $true {{ param ($EncryptedStream) 
+              New-Object System.Security.Cryptography.CryptoStream
+              ($EncryptedStream, $Dec, 
+              [System.Security.Cryptography.CryptoStreamMode] 'Read') }} 
+
+    ,$result
+}}
+
+"</span>);
+            }
+
+            <span class="code-keyword">var</span> decryptCode = <span class="code-sdkkeyword">String</span>.IsNullOrEmpty(o.Password) ? 
+            <span class="code-sdkkeyword">String</span>.Empty : <span class="code-string">"</span><span class="code-string">\t\t$bytes = $(decryptBytes $bytes $password)"</span>;
+
+            <span class="code-keyword">var</span> decompressCodeMultiRow = <span class="code-string">@"</span><span class="code-string">
+        if ($decompress) {
+            $bytes = copyBytesToStream $bytes $true { param ($EncryptedStream) 
+            New-Object System.IO.Compression.DeflateStream($EncryptedStream, 
+            [System.IO.Compression.CompressionMode ] 'Decompress') } 
+        }
+"</span>;
+            <span class="code-keyword">var</span> decompressCode = o.Compress ? decompressCodeMultiRow : <span class="code-sdkkeyword">String</span>.Empty;
+
+
+            <span class="code-keyword">var</span> hashCodeMultiRow = <span class="code-string">@"</span><span class="code-string">
+        if (![System.String]::IsNullOrEmpty($hash)) {
+            $actualHash = (Get-FileHash -Path $file -Algorithm Sha256).Hash
+            if ($actualHash -ne $hash) {
+                Write-Error ""Integrity check failed on $file expected 
+                              $hash actual $actualHash!""
+            }
+        }
+"</span>;
+    <span class="code-keyword">var</span> hashCode = o.Hash ? hashCodeMultiRow : <span class="code-sdkkeyword">String</span>.Empty;
+
+            script.Append($<span class="code-string">@"</span><span class="code-string">function createFile  {{
+    param (
+        [parameter(Mandatory=$true)] [String] $file,
+        [parameter(Mandatory=$true)] [byte[]] $bytes,
+        [parameter(Mandatory=$false)] [String] $password,
+        [Parameter(Mandatory=$false)] [String] $hash,
+        [Parameter(Mandatory=$false)] [System.Boolean] $decompress=$false)
+    
+        $null = New-Item -ItemType Directory -Path (Split-Path $file) -Force
+{decryptCode}
+{decompressCode}
+        if ($global:core) {{ Set-Content -Path $file -Value $bytes -AsByteStream -Force }} 
+        else {{ Set-Content -Path $file -Value $bytes -Encoding Byte -Force }}
+
+{hashCode}
+        Write-Host ""Created file $file Length $($bytes.Length)""
+    }}
+
+"</span>);
+
+            script.Append($<span class="code-string">"</span><span class="code-string">function createFiles  {{\n\tparam 
+            ([parameter(Mandatory={(String.IsNullOrEmpty(o.Password) ? 
+            "</span>$false<span class="code-string">"</span><span class="code-string"> : "</span>$true<span class="code-string">"</span><span class="code-string">)})] [String] $password)\n\n"</span>);
+            script.Append(<span class="code-string">"</span><span class="code-string">\t$setContentHelp = (help Set-Content) | 
+            Out-String\n\tif ($setContentHelp.Contains(\"AsByteStream\")) 
+            { $global:core = $true } else { $global:core = $false }\n\n"</span>);
+
+            <span class="code-keyword">return</span> script;
+        }
+
+        <span class="code-keyword">public</span> <span class="code-keyword">static</span> <span class="code-keyword">void</span> CreateScript(Options o)
+        {
+            <span class="code-keyword">if</span> (<span class="code-sdkkeyword">String</span>.IsNullOrEmpty(o.OutputFolder))
+                o.OutputFolder = Directory.GetCurrentDirectory();
+            <span class="code-keyword">else</span>
+                Directory.CreateDirectory(o.OutputFolder);
+
+            StringBuilder script = CreateScriptHeader(o);
+
+            <span class="code-keyword">var</span> outputFile = Path.Combine(o.OutputFolder, $<span class="code-string">"</span><span class="code-string">SingleScript.ps1"</span>);
+
+            <span class="code-keyword">foreach</span> (<span class="code-keyword">var</span> input <span class="code-keyword">in</span> o.Inputs)
+            {
+                <span class="code-keyword">var</span> actualCompress = <span class="code-keyword">false</span>;
+
+                <span class="code-keyword">var</span> path = Path.GetDirectoryName(input);
+                <span class="code-keyword">foreach</span> (<span class="code-keyword">var</span> file <span class="code-keyword">in</span> Directory.GetFiles(!String.IsNullOrEmpty(path) ? 
+                path : <span class="code-string">"</span><span class="code-string">."</span>, Path.GetFileName(input), o.Recurse ? 
+                SearchOption.AllDirectories : SearchOption.TopDirectoryOnly))
+                {
+
+                    <span class="code-keyword">if</span> (!o.SingleFile)
+                    {
+                        script = CreateScriptHeader(o);
+
+                        outputFile = Path.Combine(o.OutputFolder, 
+                        $<span class="code-string">"</span><span class="code-string">{Path.GetFileName(file).Replace("</span>.<span class="code-string">"</span><span class="code-string">, "</span>_<span class="code-string">"</span><span class="code-string">)}_script.ps1"</span>);
+                    }
+
+                    Console.Write($<span class="code-string">"</span><span class="code-string">Scripting file {file} 
+                    {(!o.SingleFile ? $"</span><span class="code-sdkkeyword">into</span> {outputFile}...<span class="code-string">"</span><span class="code-string"> : String.Empty)}"</span>);
+
+                    <span class="code-keyword">var</span> inputBytes = File.ReadAllBytes(file);
+                    <span class="code-keyword">var</span> hash = ComputeSha256Hash(inputBytes);
+
+                    <span class="code-keyword">if</span> (o.Compress)
+                    {
+                        <span class="code-keyword">var</span> compressedFileBytes = CopyBytesToStream(inputBytes, <span class="code-keyword">false</span>, 
+                        encryptedStream =&gt; <span class="code-keyword">new</span> DeflateStream
+                              (encryptedStream, CompressionMode.Compress));
+
+                        <span class="code-keyword">if</span> (compressedFileBytes.Length &lt; inputBytes.Length)
+                        {
+                            inputBytes = compressedFileBytes;
+                            actualCompress = <span class="code-keyword">true</span>;
+                        }
+                        <span class="code-keyword">else</span>
+                            Console.Write(<span class="code-string">"</span><span class="code-string">compression is useless, disabling it..."</span>);
+                    }
+
+                    <span class="code-keyword">var</span> bytes = <span class="code-sdkkeyword">String</span>.IsNullOrEmpty(o.Password) ? 
+                    inputBytes : EncryptBytes(inputBytes, o.Password);
+
+                    <span class="code-keyword">if</span> (o.Base64)
+                    {
+                        script.Append($<span class="code-string">"</span><span class="code-string">\t[byte[]] $bytes = 
+                        [Convert]::FromBase64String('{Convert.ToBase64String(bytes)}')"</span>);
+                    }
+                    <span class="code-keyword">else</span>
+                    {
+                        script.Append(o.Decimal ? <span class="code-string">"</span><span class="code-string">\t[byte[]] $bytes = "</span> : 
+                        <span class="code-string">"</span><span class="code-string">\t[byte[]] $bytes = (StringToByteArray '"</span>);
+
+                        <span class="code-keyword">foreach</span> (<span class="code-keyword">var</span> b <span class="code-keyword">in</span> bytes)
+                        {
+                            <span class="code-keyword">if</span> (o.Decimal)
+                                script.Append($<span class="code-string">"</span><span class="code-string">{b.ToString("</span>D<span class="code-string">"</span><span class="code-string">)},"</span>);
+                            <span class="code-keyword">else</span>
+                                script.Append($<span class="code-string">"</span><span class="code-string">{b.ToString("</span>X2<span class="code-string">"</span><span class="code-string">)}"</span>);
+                        }
+
+                        <span class="code-keyword">if</span> (!o.Decimal)
+                            script.Append(<span class="code-string">"</span><span class="code-string">')"</span>);
+                        <span class="code-keyword">else</span>
+                            script.Length--;
+                    }
+
+                    script.Append($<span class="code-string">"</span><span class="code-string">\n\tcreateFile '{file}' $bytes $password 
+                    {(o.Hash ? $"</span><span class="code-string">'</span><span class="code-string">{hash}'</span><span class="code-string">"</span><span class="code-string"> : "</span><span class="code-string">'</span><span class="code-string">'</span><span class="code-string">"</span><span class="code-string">)} 
+                    {(o.Compress ? $"</span>${actualCompress}<span class="code-string">"</span><span class="code-string"> : "</span>$false<span class="code-string">"</span><span class="code-string">)}\n\n"</span>);
+
+                    <span class="code-keyword">if</span> (!o.SingleFile)
+                    {
+                        script.Append($<span class="code-string">"</span><span class="code-string">}}\n\ncreateFiles '{o.Password}'\n"</span>);
+
+                        <span class="code-keyword">var</span> outputScript = script.ToString();
+                        File.WriteAllText(outputFile, outputScript);
+                        Console.WriteLine($<span class="code-string">"</span><span class="code-string">length 
+                                {Math.Round(outputScript.Length / 1024.0)}KB."</span>);
+                    }
+                    <span class="code-keyword">else</span>
+                        Console.WriteLine(<span class="code-string">"</span><span class="code-string">"</span>);
+                }
+            }
+
+            <span class="code-keyword">if</span> (o.SingleFile)
+            {
+                script.Append($<span class="code-string">"</span><span class="code-string">}}\n\ncreateFiles '{o.Password}'\n"</span>);
+
+                <span class="code-keyword">var</span> outputScript = script.ToString();
+                File.WriteAllText(outputFile, outputScript);
+
+                Console.WriteLine($<span class="code-string">"</span><span class="code-string">Created single script file {outputFile} 
+                length {Math.Round(outputScript.Length / 1024.0)}KB."</span>);
+            }
+        }
+    }
+}</pre>
+
+<p>Here follows the description of the main components of the code:</p>
+
+<ul>
+	<li>For parsing the command line option, I use the <code>CommandLineParser</code> NuGet package which IMHO is a simple and very effective library to perform parsing. Basically, you create a class <code>Options</code> in which you define a set of properties, each one corresponding to an option of the command line decorating it with an <code>Option</code> custom attribute which specifies the short and long form of the option, the help text, whether it is required or not and the target data type (<code>string</code>, <code>bool</code>, etc.). The parsing happens automatically by just one line of code where you pass as a generic the <code>Options</code> class created previously and you receive in turn an <code>Action</code> with the same <code>Options</code> class containing the parsed parameters, if everything is fine (if not, the help is shown together with the error):
+
+	<div class="pre-lang" id="premain818926"><div>C#</div><div class="pre-action-link"><span id="copycode818926" class="copy-code" data-index="818926" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre818926" style="margin-top:0;" class="lang-csharp notranslate" data-language="cs" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true">Parser.Default.ParseArguments&lt;Options&gt;(args).WithParsed&lt;Options&gt;
+                                      (o =&gt; CreateScript(o));</pre>
+	</li>	<li><code>EncryptBytes</code>: This is a helper function used to encrypt with AES256 algorithm the input bytes with a user password specified in the <code>-p</code> command line option. It uses the standard .NET <code>Aes</code> class to perform encryption using a key derived from password with <code>PBKDF2</code> key derivation function (class <code>Rfc2898DeriveBytes</code>). Everything is standard so I won't spend too much time explaining this code. I just stress one note: the <code>PBKDF2</code> key derivation function is not the best one, better alternatives exist (e.g., Scrypt) but they are not natively implemented in .NET Core so external libraries have to be used and in this case, they would need to be embedded also in the output Powershell script(s) in order to allow it to derive again the key from password when decrypting (for now, I decided not to go this way).</li>	<li><code>CopyBytesToStream</code>: This is a helper function which basically passes an array of bytes given in input in a stream in order to compress/decompress/encrypt/decrypt them.</li>	<li><code>CreateScriptHeader</code>: It is a helper function which creates the initial part of the output Powershell script. Basically, it injects these functions into the output Powershell:
+	<ul>
+		<li><code>copyBytesToStream</code>: Same code as above, only implemented also in Powershell.</li>		<li><code>StringToByteArray</code>: which basically converts a hex string into a byte array.</li>		<li><code>decryptBytes</code>: which decrypts the AES encrypted binary and it is only injected if a password is passed in the <code>-p</code> command line parameter</li>		<li><code>createFile</code>: always injected, it basically writes an array of bytes to the disk, creating all the destination folders if not present and decrypting data if needed.</li>		<li><code>createFiles</code>: always injected, it is the main function executed by the script which basically accepts the password as an input parameter and for every input file, it defines the <code>decimal array of bytes </code>or the <code>hex/base64 string</code> of the binary data and calls in turn the <code>createFile </code>function in order to recreate the file.</li>	</ul>
+	</li>	<li><strong>Example of single output Powershell script for multiple input files in base64 format</strong>
+	<p><a href="./How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject_files/Output_Base64.Png"><img src="./How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject_files/Output_Base64.Png" style="width: 700px; height: 438px" alt="Image 1" class="lazyload" data-sizes="auto" data-srcset="./How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject_files/Output_Base64.Png 400w, ./How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject_files/Output_Base64.Png 1920w"></a></p>
+	</li>	<li><strong>Example of one of multiple files output Powershell script in hex byte array format</strong>
+	<p><a href="./How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject_files/Output_Hex.Png"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="width: 700px; height: 434px" alt="Image 2" data-src="./How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject_files/Output_Hex.Png" class="lazyload" data-sizes="auto" data-srcset="./How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject_files/Output_Hex.Png 400w, ./How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject_files/Output_Hex.Png 1920w"></a></p>
+	</li>	<li><strong>Example of one of multiple files output Powershell script in decimal byte array format</strong>
+	<p><a href="./How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject_files/Output_Decimal.Png"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" style="width: 700px; height: 438px" alt="Image 3" data-src="./How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject_files/Output_Decimal.Png" class="lazyload" data-sizes="auto" data-srcset="./How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject_files/Output_Decimal.Png 400w, ./How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject_files/Output_Decimal.Png 1920w"></a></p>
+	</li></ul>
+
+<h2 id="PointsOfInterest">Points of Interest</h2>
+
+<p>The script works perfectly by pasting it in the target remote desktop session without the need to save it into a file and execute it thus bypassing the <a href="https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-7.3">Set-ExecutionPolicy</a> restrictions (e.g., it works also in the strictest <code>AllSigned</code> execution policy). I'll post a video later with the demo on YouTube showing that the recreated files have the same hash of the original ones.</p>
+
+<h4>What to do if remote desktop sessions will forbid the copy and paste of any text as a countermeasure?</h4>
+
+<p>Well, if the clipboard gets disabled, as a workaround, you can try the following:</p>
+
+<ul>
+	<li>Create another program which runs on the client computer which basically starts the remote desktop client, focuses on its window and:
+	<ul>
+		<li><strong>sends "Windows+R"</strong> to open the run window</li>		<li><strong>enters "Powershell"</strong> <strong>text</strong> to start a new powershell window</li>		<li><strong>finally sends the output Powershell script as keystrokes</strong>.</li>	</ul>
+	</li></ul>
+
+<p>In Windows, the sending of keystrokes can be achieved by using <a href="https://qa.social.technet.microsoft.com/wiki/contents/articles/5169.vbscript-sendkeys-method.aspx">VBScript SendKeys</a> method of <strong>WScript.Shell COM object</strong> (read <a href="https://www.codeproject.com/Tips/5368776/How-to-Automate-Saving-Webpages-as-a-Single-MHTML">my other article</a> in order to get an idea).</p>
+
+<p><strong>Ok got it, but what happens if as additional countermeasure, the above <em>SendKeys </em>method gets forbidden somehow?</strong></p>
+
+<p>Game over ? No way :-)</p>
+
+<p>IMHO, this won't happen but anyway should be that the case, RDP protocol though proprietary is <a href="https://learn.microsoft.com/en-us/openspecs/windows_protocols/ms-rdpbcgr/5073f4ed-1e93-45e1-b039-6e30c385867c">freely available</a> as an Open Specification from Microsoft so you can try to implement a custom client or adapt an existing open source one like FreeRDP to support keyboard scripting.</p>
+
+<p><strong>Ultimate challenge: What if the server has no network, it does not accept any usb drives or devices and you must go physically there in order to access it?</strong></p>
+
+<p>Well, any physical server in the world will always have two devices:</p>
+
+<ul>
+	<li><strong>An input device like a keyboard</strong> which can be used to inject any sequence of keystrokes, for example, by plugging in a programmable microcontroller like ESP32 which simulates a USB keyboard and sends the output Powershell script as keystrokes on the happening of a particular condition (<em>this is an idea for another project</em>). If the server has only an old PS2 keyboard, you can design or subcontract a custom hardware which acts in the same way. Or if you want a quick solution, you can invest some bucks on a programmable keyboard.</li>	<li><strong>An output device like a monitor</strong> which can be used to extract silently data from the server by injecting and executing a custom app with the above script method. This app basically will read any binary file and transcodes it into sequences of "QR codes" (or pixel images) which in turn can be recorded and decoded by a mobile phone camera shooting at the monitor. This is nothing new since it was already done in the 90s on an old 32bit computer called Amiga with the <a href="http://www.hugolyppens.com/VBS.html">Video Backup System</a> which basically transcoded binary files (usually floppy disks images) into sequences of black and white pixel images which were stored on a videotape. As a bonus, one could think also of transcoding into color pixel images in order to increase the density (and therefore, the throughput) of the data, but <em>this is again an idea for another project</em>.</li></ul>
+
+<p>Last but not the least, I want to underline that the script language, be it either Powershell or bash or bat is not so much important (maybe on bat you have some limitations), what is important is the idea behind this implementation, e.g., to recreate a binary file through a well crafted script.</p>
+
+<p><strong>Additional note</strong>: In order to bypass the most hardened environments, I have implemented the above C# code in Powershell as well. You can find it <a href="https://github.com/fededim/BinaryToPowershellScript/blob/master/BinaryToPowershellScript/BinaryToPowershellScript.ps1">on GitHub</a> together with C# code. To bypass Powershell execution policies, you can simply copy the code and paste it inside a Powershell console and hit return. After having done this, you can convert any file you want just by calling the function <code>BinaryToPowershellScript</code><em> </em>with the same above mentioned parameters.</p>
+
+<h2>History</h2>
+
+<ul>
+	<li>V1.0 (9<sup>th</sup> October, 2023)
+
+	<ul>
+		<li>Initial version</li>	</ul>
+	</li>	<li>V1.0.1(13<sup>th</sup> October, 2023)
+	<ul>
+		<li>Added <code>-c</code> option to compress file(s) through gzip compression, the compression gets automatically disabled if the compressed file size is bigger than original size.</li>		<li>Added <code>-h</code> option to add a SHA256 hash as a check on file(s) integrity</li>		<li>Improved hex format now it uses 2 bytes instead of 4 for each byte in the input file</li>		<li>Added Powershell implementation, it can be used when running an executable is not allowed</li>		<li>Added dynamic output file generation: now it generates the helper functions only when the related option is specified (e.g., hashing helper code is added only when you specify <code>-h</code> option, etc.)</li>		<li>Added output script length in KB in console output</li>		<li>Some bugfixes</li>	</ul>
+	</li>	<li>V1.0.2 (31<sup>st</sup> January, 2023)
+	<ul>
+		<li>Added additional note at the end of <a href="https://www.codeproject.com/Articles/5369565/How-to-Transform-Binary-Files-into-Powershell-Scri#PointsOfInterest">Points of Interest</a> section about a further implementation available also in the Powershell language.</li>	</ul>
+	</li></ul>
+
+
+
+
+						</div>
+						
+
+						
+						<h2>License</h2>
+						<div id="LicenseTerms"><p>This article, along with any associated source code and files, is licensed under <a href="http://www.codeproject.com/info/cpol10.aspx" rel="license">The Code Project Open License (CPOL)</a></p></div>
+						
+
+						
+						<br>
+						
+						    <br>
+						
+						
+
+						<div class="clearfix"></div>
+
+						<div style="padding-top:8px">
+							
+						</div>
+
+					
+
+				    
+					</form>
+
+				</div>
+
+				
+				<div class="bottom-promo"> 
+				    
+				</div>
+				
+                
+                
+
+				
+				
+				
+
+			</div>
+			
+
+            
+            
+            
+
+        </div>
+        
+
+		
+		<div class="site-footer">
+			<div class="align-left">
+				<a id="ctl00_PermaLink" href="https://www.codeproject.com/Articles/5369565/How-to-Transform-Binary-Files-into-Powershell-Scri">Permalink</a><br>
+				<br>
+				<a id="ctl00_PrivacyLink" href="https://www.codeproject.com/info/privacy.aspx">Privacy</a><br>
+    			<a id="ctl00_CookiePolicyLink" href="https://www.codeproject.com/info/cookie.aspx">Cookies</a><br>
+                <a id="ctl00_TermsOfUseLink" href="https://www.codeproject.com/info/TermsOfUse.aspx">Terms of Use</a><br>
+			</div>
+
+            <div class="align-center">
+				
+
+
+<div class="page-width">
+    Layout: <a id="ctl00_PageWidth_FixedT" title="Fixed width layout" rel="nofollow" class=" active" href="https://www.codeproject.com/Articles/5369565/How-to-Transform-Binary-Files-into-Powershell-Scri?PageFlow=FixedWidth">fixed</a>
+    |
+    <a id="ctl00_PageWidth_FluidT" title="Fluid layout" rel="nofollow" href="https://www.codeproject.com/Articles/5369565/How-to-Transform-Binary-Files-into-Powershell-Scri?PageFlow=Fluid">fluid</a>
+</div>
+
+
+				
+
+				
+
+	            
+
+                <br>
+			</div>
+                
+			<div class="align-right">
+				Article Copyright 2023 by Federico Di Marco<br>Everything else
+				Copyright © <a href="mailto:webmaster@codeproject.com">CodeProject</a>, 1999-2024<br>
+                <br>
+				Web01 
+				2.8:2024-10-19:1<br>
+			</div>
+		</div>
+		
+
+		<br clear="all">
+		
+			
+
+	</div> 
+	</div> 
+</div>
+
+
+
+
+
+
+
+<script type="text/javascript"> // DEFERRED script
+
+document.addEventListener('DOMContentLoaded', function() {
+
+	new CodeBlocks().initialise('#contentdiv');
+	
+	$('.author-wrapper .description').shorten({showChars: 400});
+	
+	anchorAnimate();
+	
+	$('#__EVENTVALIDATION').attr('autocomplete', 'off');
+
+})
+</script>
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">.copied::after {  position: absolute;  right: 0;  display: inline-block; white-space: nowrap; content: 'copied'; color: #fff; background-color: #f90;  border-radius: 3px; padding:1px 8px; opacity: 0;  will-change: opacity, transform; animation: showcopied 1.5s ease; } @keyframes showcopied { 0% { opacity: 0; } 70% { opacity: 1; } 100% { opacity: 0; } } </style><canvas id="cv1" width="1px" height="1px" style="position:absolute;left:0;top:0;pointer-events:none"></canvas><canvas id="cv2" width="1px" height="1px" style="position:absolute;left:0;top:0;pointer-events:none"></canvas></body></html>

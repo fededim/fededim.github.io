@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<!-- saved from url=(0095)https://www.codeproject.com/Articles/1158881/VPNScripter-A-Scripter-for-Windows-VPN-Connections -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	
+	<link rel="preconnect" href="https://www.google-analytics.com/">
+
+	<link rel="preconnect" href="https://www.codeproject.com/">
+
+
+	<link rel="preload" href="./VPNScripter_ A Scripter for Windows&#39; VPN Connections- CodeProject_files/logo250x135.gif" as="image">
+
+
+	<link rel="preload" href="https://www.codeproject.com/App_Themes/CodeProject/Img/logo135-bg.gif" as="image">
+	<link rel="preload" href="./VPNScripter_ A Scripter for Windows&#39; VPN Connections- CodeProject_files/jquery-3.4.1.min.js.download" as="script" type="text/javascript">
+
+
+	<title>VPNScripter: A Scripter for Windows' VPN Connections- CodeProject</title> 
+    
+	<link type="text/css" rel="stylesheet" href="./VPNScripter_ A Scripter for Windows&#39; VPN Connections- CodeProject_files/Article.min.css">
+
+
+    <script type="text/javascript" async="" src="./VPNScripter_ A Scripter for Windows&#39; VPN Connections- CodeProject_files/analytics.js.download"></script><script type="text/javascript" src="./VPNScripter_ A Scripter for Windows&#39; VPN Connections- CodeProject_files/jquery-3.4.1.min.js.download" defer=""></script>
+<script type="text/javascript" src="./VPNScripter_ A Scripter for Windows&#39; VPN Connections- CodeProject_files/article.min.js.download" defer=""></script>
+
+	
+<meta http-equiv="content-language" content="en-US">
+
+<meta name="Description" content="Create quickly VPN connections in Windows according to a XML configuration file">
+<meta name="Keywords" content="C#, XML, Windows, PowerShell, script, VPN">
+<meta name="Author" content="Federico Di Marco">
+<meta name="Rating" content="General">
+<meta name="Revisit-After" content="1 days">
+<meta name="application-name" content="CodeProject">
+<meta name="google-translate-customization" content="d908bb7ce7aff658-4c2f3a504525c916-g629383f736781a8a-13">
+
+
+
+<link rel="dns-prefetch" href="https://ajax.googleapis.com/"> 
+<link rel="canonical" href="https://www.codeproject.com/Articles/1158881/VPNScripter-A-Scripter-for-Windows-VPN-Connections">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@CodeProject">
+<meta name="og:site_name" content="CodeProject">
+<meta name="twitter:creator" content="@CodeProject">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="12/2/2016 1:58:00 AM">
+<meta property="article:modified_time" content="11/21/2023 1:47:00 PM">
+<meta name="twitter:label1" content="Written by">
+<meta name="twitter:data1" content="Federico Di Marco">
+<meta name="twitter:label2" content="Reading time">
+<meta name="twitter:data2" content="8 min read">
+<meta property="og:url" content="https://www.codeproject.com/Articles/1158881/VPNScripter-A-Scripter-for-Windows-VPN-Connections">
+<meta property="og:title" content="VPNScripter: A Scripter for Windows&#39; VPN Connections">
+<meta property="og:description" content="Create quickly VPN connections in Windows according to a XML configuration file">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="apple-touch-icon" sizes="144x144" href="https://www.codeproject.com/favicon/apple-touch-icon.png"> 
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.codeproject.com/favicon/favicon-32x32.png"> 
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.codeproject.com/favicon/favicon-16x16.png"> 
+<link rel="manifest" href="https://www.codeproject.com/favicon/manifest.json"> 
+<link rel="mask-icon" href="https://www.codeproject.com/favicon/safari-pinned-tab.svg" color="#ff9900">
+	<script type="application/ld+json">{
+  "@context": "http://schema.org",
+  "@type": "TechArticle",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.codeproject.com/Articles/1158881/VPNScripter-A-Scripter-for-Windows-VPN-Connections"
+   },
+  "name": "VPNScripter: A Scripter for Windows' VPN Connections",
+  "headline": "VPNScripter: A Scripter for Windows' VPN Connections",
+  "url": "https://www.codeproject.com/Articles/1158881/VPNScripter-A-Scripter-for-Windows-VPN-Connections",
+  "discussionUrl": "https://www.codeproject.com/Articles/1158881/VPNScripter-A-Scripter-for-Windows-VPN-Connections#_comments",
+  "isFamilyFriendly": "true",
+  "image": "https://www.codeproject.com/App_Themes/CodeProject/Img/Article100.png",
+  "keywords": "C#,XML,Windows,PowerShell,script,VPN",
+  "commentCount": "0",
+  "editor" : {
+    "@type" : "Person",
+    "name" : "Editor",
+    "url" : "https://www.codeproject.com/script/Membership/View.aspx?mid=3873871"
+  },
+  "license": "http://www.opensource.org/licenses/mit-license.php",
+  "publisher" : {
+    "@type" : "Organization",
+    "name" : "CodeProject"
+  },
+  "description": "Create quickly VPN connections in Windows according to a XML configuration file",
+  "articleSection": "PowerShell",
+  "author" : [{
+      "@type" : "Person",
+      "name" : "Federico Di Marco",
+      "url" : "https://www.codeproject.com/script/Membership/View.aspx?mid=3865041"
+    }],
+  "datePublished": "2016-12-02",
+  "dateCreated": "2016-12-02",
+  "dateModified": "2023-11-21"
+,
+  "contentRating" : {
+    "@type" : "Rating",
+    "ratingValue" : 4.84,
+    "bestRating" : 5,
+    "worstRating" : 1
+  }
+}</script>
+
+<script type="application/ld+json">{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "item" : {
+      "@id" : "/script/Content/Tag.aspx?tags=Languages",
+      "name" : "Languages"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "item" : {
+      "@id" : "/script/Content/Tag.aspx?tags=PowerShell",
+      "name" : "PowerShell"
+    }
+  }]
+}</script>
+
+
+	<!--<base target="_top">--><base href="." target="_top">
+	
+    
+
+
+<script type="text/javascript">
+function defrm () { /* thanks twitter */
+    document.write = '';
+    window.top.location = window.self.location;
+    setTimeout(function() { document.body.innerHTML = ''; }, 0);
+    window.self.onload = function(evt) { document.body.innerHTML = ''; };
+}
+
+if (window.top !== window.self) {
+    try {
+        if (window.top.location.host) { /* will throw for all except chrome */ }
+        else { defrm(); /* chrome */ }
+    } catch (ex) { defrm(); /* everyone else */ }
+}
+
+// Specific case where a site is screwing with us.
+if (typeof(DemoUrl) !== 'undefined') {
+    document.write(unescape('%3Cme') + 'ta http' + '-equiv="re' + 'fresh con' +
+                           'tent="1;url=' + DemoUrl + unescape('"%3CE'));
+}
+</script>
+	
+
+
+
+
+
+    <script async="" type="text/javascript" src="./VPNScripter_ A Scripter for Windows&#39; VPN Connections- CodeProject_files/js"></script>
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-1735123-1' , {'user_id': '61732e5b-06af-4ac2-8734-b1591748583e'});
+    </script>
+
+<style type="text/css"></style></head>	
+
+<body class="chrome chrome130">
+
+
+
+<a class="access-link" href="https://www.codeproject.com/Articles/1158881/VPNScripter-A-Scripter-for-Windows-VPN-Connections#Main"><img alt="Click here to Skip to main content" src="./VPNScripter_ A Scripter for Windows&#39; VPN Connections- CodeProject_files/t.gif"></a>
+
+
+
+
+<div class="page-background">
+
+	
+	
+
+	
+
+	
+    <div id="ctl00_STM" class="site-top-menu fixed narrow">
+        <div class="main-content">
+            
+
+<div class="container memberbar clearfix flex-container flex-extend">
+
+	<div id="ctl00_MemberBar_GenInfo" class="flex-item align-left">65,938 articles</div>
+	
+	<div id="ctl00_MemberBar_ChangeNotice" class="flex-item align-left">CodeProject
+	is changing. <a href="https://www.codeproject.com/info/Changes.aspx">Read more</a>.</div>
+
+	<div class="flex-item">
+		
+	</div>
+
+	<div class="flex-item align-right">
+
+		
+
+		
+
+		
+	</div>
+</div>
+        </div>
+    </div>
+
+	
+    <div id="ctl00_SH" class="site-header fixed narrow">
+        <div class="main-content">
+            <div class="logo"><a href="https://www.codeproject.com/"><img id="ctl00_Logo" tabindex="1" title="CodeProject" src="./VPNScripter_ A Scripter for Windows&#39; VPN Connections- CodeProject_files/logo250x135.gif" alt="Home" style="height:135px;width:250px;border-width:0px;"></a></div>
+            <div class="promo"></div>
+        </div>
+    </div>
+
+	
+			
+	
+
+	<div id="A" class="container-content-wrap fixed narrow"> 
+
+	<div class="container-content">
+
+        
+		<div class="clearfix">
+			<div class="container-breadcrumb float-left ">
+				<div><a rel="nofollow" href="https://www.codeproject.com/script/Content/SiteMap.aspx">Articles</a> / <a rel="nofollow" href="https://www.codeproject.com/script/Content/Tag.aspx?tags=Languages">Languages</a> / <a rel="nofollow" href="https://www.codeproject.com/script/Content/Tag.aspx?tags=PowerShell">PowerShell</a></div>
+			</div>
+
+            <div class="float-left">
+				
+			</div>
+
+			<div class="edit-links float-right">
+				
+
+
+
+ 
+&nbsp;
+
+
+
+
+
+
+
+
+
+
+			</div>
+
+			<div class="article-nav float-right">
+				
+
+
+<div style="display:inline-block;position:relative;top:-6px;margin-right:20px">
+    
+</div>
+
+
+
+ 
+
+<a id="ctl00_ActionLinks_PrintMd" data-tooltip="Print" data-enabletooltip="true" data-width="auto" href="https://www.codeproject.com/Articles/1158881/VPNScripter-A-Scripter-for-Windows-VPN-Connections?display=Print" class="tooltip" title="">
+   <img src="./VPNScripter_ A Scripter for Windows&#39; VPN Connections- CodeProject_files/print48.png" width="24" height="24" style="border:0">
+<div class="speech-bubble-container-up" style="width:auto">  <div class="speech-bubble-up" style="text-align:center"> Print</div>  <div class="speech-bubble-pointer-up">    <div class="speech-bubble-pointer-up-inner"></div>  </div></div></a>
+
+
+
+<span id="ctl00_ActionLinks_R">
+    
+    
+</span>
+			</div>
+		</div>
+
+        
+		<div class="extended article-container-parts">
+
+			
+		    
+            
+
+			
+			<div id="AT" class="article-container  fixed narrow" style="max-width:inherit;"> 
+
+				<div class="article">
+
+					<form name="aspnetForm" method="post" action="https://www.codeproject.com/Articles/1158881/View.aspx" id="aspnetForm" style="margin:0;padding:0">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="vUgdO4qq4jYRQBBeKd/HH/E8vKqotIvt8WYkxW8GaHAhvZiLo46Ebfzkq/ZfkTkch3szJq94mOAQIMsiL3jkH+avzTBBHUmv7WTp/1ehp7GCYKAkLCPtC+r1k538FGXDOV232gQnNtInTjrO9oTSJ0MTz1ApFC/L8Pn1XpL+OLvw3lhQH1MXB1cNgTFwbde8mb8+nN9OlNK6eulGWKZzw1tgB1zhM+1icI9vXHH5a5yB62b45xje10oSTAw0G1OtoE/rHdec6prq4CBhJ20vtY9HmDgYc0Szw93RtiGKQSBBb4M3O9Ejq4KqW5XgzYpvemoDtGGzUZ6XF5IQTnvOGftT/n/E4N9Ta3IttoRrmLwsQeDpZasMe1+L/YK9wOJ4Z2DdN5tFOcojFSM4GMQP4MwMCv3yAHknDOBQ9zOZc/3JQR6iLLrO4mCbUwwcBXSg87tltStKWsaJgaZgLAVZdzld4Se3UUtr7r/5mcOPaowIFtsGaV+lkTZf4ghFsX2LOBKBYfJd+VgrZ+akfM09ggi2gna4DpDbFQib8BTs6EjQjAccpz7pIAgx7TIWYhoZXjbV4rkQFixiZk7INS6Yv1jgquAtbGPaJiqNDq6X/Q+yd5zheWCdnAzTH9s3XEAAquHA7hbq/0pqtD2vp4xzYCP0mOq0DTLZItwpi3jMXtiJFkbxQnWJl5jxdVxNL0pT6IsXeQBYUGp/6kYvoXNvguk0BFc4pOgfX76CFKOWdKIZ8kuXKhA9vrp6z4buqrnc+E33puY/h93hlu1//o/noO2dk62sLKgPNaNZpInjcJ3wIaji5vHjAusVKQnN0SzMeFarsX1WkliQAuB7j7sr510x5Ty5Ke6oL6PaeL7p7nlfBlr3gtyHQxpWF2WVr0RQfXdOBPzesrdHak8oB+fNSsT40f4soOybgGqiOE165frHnCIy0VDhuwGNIumNVftONnHeyVR4gh3UMuUThoFLlotTZ/dBhDQD8Una3hHoFnR0qcM9y1y0UcUw/gplWfFFMuumPCYSKnMInNryjke+IGB3RK1NWROz4Sq5rShIwEXBo9pIUA53aZ/Osjw/Lh66XxK5DAXLxJDv3MY7HyjAxaNsQSDumzTQbd1uoxZIitfe4pxvfFdW0agn0d25Sbd1ReNKq5OMkKbpyAtGW0/jjn5rYIIEIo+pPX1W0OGj0cme9ZDc3V4HbKDotwWGuRuZBfs3F0lVYnRW5boxMtaUEsa/MJhllLW33jv3CA5Hn+YqgWHC5r6ARwqYQexPkrs4h7QbIZ5MqEYbk1RIc30Bnn2Ee5fuWk/DnXncbiY6Q2oW4AYoyXwI4xYxaPNK8XoFDW90xBwNUMtGQu0S8ANNhyd2kg9lljVHGBXAl5heoiEgwE0Wjlv2OyUG9tE8XSG/73UfmEHMwqDhzfMQ1b/nxjUt6ijOgZPSOrsypLe29eHYl9Za6SbcwAY2p//NxNsiWs4T4SdYejOqCP+EV1T+7q8PRvtMMQHTI2CbAY/xcV7CNIgyBxYuTx9Kji4pUbFh3x3uyA0tfJRZgm7UQ+6GMW+RjkKTFzCjGlBmqibyPov0mQpmKIYComaV8UsESow7LICtmewUakQgJQd3uNLQZtYIPUqQGGbPW4RoOoGkS8BQorPRgwNl/WcCk8pLSX82DXbyF5hW9ivysOrBddKe8Ual8bJZ+h+KFuH5/OHaCXjSL1nXdqRvOshwP9uTzZlcee8cZ4ITvfOwAVpH4DjiMb9I/5jlX9tciMgsgX44KKBa4sif4k2f8APMHfiufUe3csyf+igNLuDL1nh04ta6vyRK9MoszZf1IawbF9M7YbxjdU/oIlWTuToiZq/me9Wy2FZj9cvBY/l2KWOm+LZpW/iQKKonjjHdk2pek5lVi9/EJVJGorWKfCD3+dUi2nRrXPBjmdQIdxAepwcY53i1y/GDoPcxOUAohM69J0Cj3q7O6ToHds2BmSPF1L2dnmFM9aceSVrom87vsE9qVUQpjWN7hXWHPf75dE8EMXEvgGODPlUPtGllJ6iwF9Ck3a2Ts638RQozsyCDZKh0Yl7CQXZBoWzBets4gMYRI+ZrQqk6aF/rUUgM4f1Lb1ie0vSgs3TKH5FOP8baOc7o3wBn0MLedi7tI9DvB0ZbHmDONCz3CBJ3lQeeH31rRutqN/smMnKiAnErTBiaC5QvbSkm8mVpSOSwmCSM6mefQOVFOU5DUD40">
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="10C1FD69">
+</div>
+
+					
+					 
+					<div class="header">
+					    <a name="Main"></a>
+					    <a name="_articleTop" id="_articleTop"></a>
+
+					    
+						<div>
+							<span id="ctl00_TagListHorz_TagWrp" class="tags horizontal">
+
+	
+	
+
+	
+	<span id="ctl00_TagListHorz_VisibleTags"><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/Csharp" data-id="81">C#</a></div><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/XML" data-id="88">XML</a></div><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/Windows" data-id="94">Windows</a></div><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/PowerShell" data-id="302">PowerShell</a></div><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/script" data-id="1202">script</a></div><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/VPN" data-id="2202">VPN</a></div></span> 
+
+	
+	
+</span>
+
+
+						</div>
+					    <div class="title">
+					        <h1 id="ctl00_ArticleTitle">VPNScripter: A Scripter for Windows' VPN Connections</h1>
+					    </div>
+
+                        <div>
+					        
+					        <div class="entry flex-container">
+
+								
+
+                                <div class="flex-item" style="flex:1 1 auto">
+                                    <div class="flex-container" style="justify-content:space-between;flex-wrap:wrap-reverse">
+                                       <span id="ctl00_Authors" class="author flex-item"><a href="https://www.codeproject.com/script/Membership/View.aspx?mid=3865041" rel="author">Federico Di Marco</a></span> 
+
+                                        <div class="flex-item" style="margin-top:-4px;">
+                                            <div id="ctl00_RateArticle_RatingTable" class="small-text" data-objectref="2_1158881">
+
+	<meta itemprop="upvoteCount" content="15">
+
+
+	<div id="ctl00_RateArticle_RatingRow" class="flex-container rating-container large-stars">
+
+					
+		
+
+		
+		<div class="nowrap tooltip">
+
+			
+			<div id="ctl00_RateArticle_ResultNoHist" class="rating-result"><div class="flex-container rating-stars large-stars"><div><img src="./VPNScripter_ A Scripter for Windows&#39; VPN Connections- CodeProject_files/star-fill-lg.png" style="width:24px;height:24px"></div><div><img src="./VPNScripter_ A Scripter for Windows&#39; VPN Connections- CodeProject_files/star-fill-lg.png" style="width:24px;height:24px"></div><div><img src="./VPNScripter_ A Scripter for Windows&#39; VPN Connections- CodeProject_files/star-fill-lg.png" style="width:24px;height:24px"></div><div><img src="./VPNScripter_ A Scripter for Windows&#39; VPN Connections- CodeProject_files/star-fill-lg.png" style="width:24px;height:24px"></div><div style="width:20px;" class="clipped"><img src="./VPNScripter_ A Scripter for Windows&#39; VPN Connections- CodeProject_files/star-fill-lg.png" style="width:24px;height:24px"></div><div style="width:4px;position:relative" class="clipped"><img src="./VPNScripter_ A Scripter for Windows&#39; VPN Connections- CodeProject_files/star-empty-lg.png" style="width:24px;height:24px;position:absolute;top:0px;right:0"></div></div></div>
+			
+
+			
+			
+
+			
+            
+
+			
+                
+
+		</div>
+		
+	
+		
+		<div id="ctl00_RateArticle_VoteCountNoHist" class="rating-votes nowrap">4.84/5  (16 votes)</div>	
+
+		
+
+		
+		<div class="rating-undo" title="Undo vote" style="margin-left:5px;display:none"></div>
+
+		
+		
+	</div>
+
+	
+	
+
+</div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="flex-container" style="color:#666;font-size:smaller">
+                                        <span id="ctl00_LastUpdated" class="date flex-item-tight" title="Date last updated">21 Nov 2023</span><a id="ctl00_LicenseLink" title="The MIT License" class="license flex-item-tight" href="http://www.opensource.org/licenses/mit-license.php">MIT</a><span id="ctl00_ReadingTime" class="stats flex-item-tight">8 min read</span><span id="ctl00_HorizontalStats" class="stats flex-item-tight"><span class="stats"><span title="Views"><img src="./VPNScripter_ A Scripter for Windows&#39; VPN Connections- CodeProject_files/views32.png" style="width:16px"> 62.5K</span> &nbsp; <span title="Downloads"><img src="./VPNScripter_ A Scripter for Windows&#39; VPN Connections- CodeProject_files/download32.png" style="width:16px"> 1.5K</span> &nbsp; </span></span>
+                                    </div>
+                                </div>
+					        </div>
+
+                            
+
+                        </div>
+
+                        <div id="ctl00_DescriptionSpot" class="summary">Create quickly VPN connections in Windows according to a XML configuration file</div><span id="ctl00_ThumbnailUrl" class="date" content="https://www.codeproject.com/script/Articles/Images/article100x80.png"></span>			
+
+                    </div>
+                    
+					
+					
+
+					
+
+					
+					
+
+					
+					
+
+						
+					
+
+					
+
+						
+						<div id="contentdiv" class="text">
+						
+
+
+
+<!-- Article Starts -->
+
+<ul class="download">
+	<li><a href="https://www.codeproject.com/KB/Articles/1158881/vpnscripter_1.1.zip">Download source code - 80.9 KB</a></li></ul>
+
+<h2>Introduction</h2>
+
+<p>This is a general PowerShell script which creates automatically a set of VPN connections according to a XML configuration file. Very useful if you want to quickly configure VPN directly in Windows without using any custom VPN software developed by your VPN provider.</p>
+
+<h2>Background</h2>
+
+<p>VPNs have&nbsp;always been historically a way to connect to companies' private network from Internet. Nowadays, they have gone commercial being used mainly for privacy issues, routing all customer's internet traffic to relay servers distributed across the world. There are a few different protocols for VPN connections and Windows supports natively most of them, in particular:</p>
+
+<ul>
+	<li><strong>PPTP</strong>: One of the first VPN protocols, based on the encapsulation (through GRE protocol) and encryption (RC4) of the PPP protocol <a href="https://www.codeproject.com/Articles/1158881/VPNScripter-A-Scripter-for-Windows-VPN-Connections#[1]">[1]</a>. PPTP was developed by Microsoft and it is now being abandoned due to the weak and insecure encryption algorithm. <strong>Client authentication is performed usually through a login and password</strong>, even though client certificates can be used. From a network viewpoint, PPTP uses TCP port 1723 and requires routers to forward IP protocol GRE.</li>	<li><strong>L2TP/IPSEC</strong>: L2TP is a tunnelling protocol which like PPTP is used to encapsulate PPP protocol. Since L2TP is insecure (it does not have any kind of encryption), in order to provide security, it is often used together with another protocol, IPSEC <a href="https://www.codeproject.com/Articles/1158881/VPNScripter-A-Scripter-for-Windows-VPN-Connections#[2]">[2]</a>. <strong>L2TP client authentication requires a login and password and moreover client and server share usually also a PSK in order to allow the client to establish the IPSEC tunnel</strong>, even though the client can also authenticate to IPSEC server by certificates. From the network viewpoint, L2TP uses port UDP 1701, while IPSEC uses UDP ports 4500 and 500 (if not behind a NAT ip protocol ESP must also be forwarded by routers). It is the "bulkiest" protocol.</li>	<li><strong>SSTP</strong>: Developed by Microsoft, like PPTP and L2TP, it is based on the encapsulation of PPP protocol using instead a SSL/TLS channel to secure all traffic (the same protocols used while browsing with https on secure internet websites). <strong>Like PPTP, client authentication is performed usually through a login and password</strong>, even though client certificates can be used. Since it uses only the standard HTTPS port (TCP 443), it is the most suitable protocol to bypass almost any firewall restriction and can also be used flawlessly with proxies.</li>	<li><strong>IKEv2: It is a slight variation of IPSEC in which the client authentication is not done only by a PSK or a certificate, but also by using standard user-password credentials</strong>. Moreover, IKEv2 is much more resilient to changing network connectivity, making it a good choice for mobile users who move between access points. From a network viewpoint, IKEv2 uses UDP ports 500 and 4500 (if not behind a NAT ip protocol ESP must also be forwarded by routers).</li></ul>
+
+<p>Windows has also the <strong>automatic </strong>protocol which essentially attempts to establish the vpn connection by trying all protocols IKEv2, SSTP, L2TP/IPSEC, PPTP in order. For more information, please see <a href="https://www.codeproject.com/Articles/1158881/VPNScripter-A-Scripter-for-Windows-VPN-Connections#[3]">[3]</a>.</p>
+
+<h2>Using the Code</h2>
+
+<p>All scripter configuration takes place in the XML file called <em>vpnconfig.xml</em> (see below). This file defines a set of VPN providers (<strong>Provider</strong> element node) and for each provider specifies a set of servers (<strong>Server</strong> sub element node) for each of which a VPN connection will be created in Windows. Let's examine the nodes:</p>
+
+<ul>
+	<li><strong>Provider</strong>: This node corresponds to a VPN provider. Attributes:
+
+	<ul>
+		<li><code>name</code>: Used to generate the VPN connection name in Windows</li>		<li><code>basedomain</code>: Used to generate host name of the VPN server (usually a VPN provider offers a set of servers which share a common domain name). It can be overridden in server node.</li>		<li><code>l2tppsk</code>: It's the pre-shared secret for L2TP/IPSEC connection (usually it is the same across all provider's servers).</li>		<li><code>user</code>: It's the username to access the VPN (usually, it is the same across all provider's servers).</li>		<li><code>password</code>: It's the password associated with the username (usually, it is the same across all provider's servers).</li>		<li><code>proto</code>: Specifies the VPN protocol to use for all servers, if left empty, it means automatic.</li>	</ul>
+	</li>	<li><strong>Server</strong>: This node corresponds to a server of a VPN provider. Attributes:
+	<ul>
+		<li><code>server</code>: Specifies the host name of the server. If this attribute does not contain the "." character, the host name is obtained by concatenating this field to provider's base domain, otherwise host name is equal to this field.</li>		<li><code>proto</code>: Specifies the VPN protocol to use. It also overrides any protocol defined in provider node.</li>		<li><code>user</code>: It's the username to access the VPN. It also overrides any user defined in provider node.</li>		<li><code>password</code>: It's the password associated to the <code>username</code>. It also overrides any password defined in provider node.</li>	</ul>
+	</li></ul>
+
+<div class="pre-lang" id="premain789390"><div>XML</div><div class="pre-action-link"><span class="code-collapse" data-index="789390" id="preShrink789390">Shrink ▲</span> &nbsp; <span id="copycode789390" class="copy-code" data-index="789390" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre789390" style="margin-top:0;" class="lang-xml notranslate" data-language="xml" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-comment">&lt;!--</span><span class="code-keyword"><span class="code-comment"> VpnScripter configuration file © 2016 Federico Di Marco
+
+Provider defines the vpn providers you have. 
+Each vpn provider has usually a set of servers to which you
+can connect and the script creates a vpn connection 
+for every server you specify for every provider listed.
+The created connection will have:
+- Name: Server attribute (till first .) + Provider name 
+if proto is auto or empty, Server + Proto + Provider name if not null.        
+- Protocol: the one specified in the server element or if null 
+the one specified in the provider element or if null auto
+- L2tp PSK, User, Password: the one specified in the server 
+element or if null the one specified in the provider element 
+(you don't have to repeat them for all servers)
+- Server hostname: Server attribute + Provider base domain 
+if server attributes does not contain any "." char
+                  otherwise server attribute
+</span><span class="code-comment">--&gt;</span></span>
+
+<span class="code-keyword">&lt;</span><span class="code-leadattribute">Providers</span><span class="code-keyword">&gt;</span>
+  <span class="code-keyword">&lt;</span><span class="code-leadattribute">Provider</span><span class="code-attribute"> </span><span class="code-attribute">name</span><span class="code-keyword">="</span><span class="code-keyword">TestVPN1"</span><span class="code-attribute"> 
+  </span><span class="code-attribute">basedomain</span><span class="code-keyword">="</span><span class="code-keyword">myvpn.com"</span><span class="code-attribute"> </span><span class="code-attribute">user</span><span class="code-keyword">="</span><span class="code-keyword">user01"</span><span class="code-attribute"> 
+  </span><span class="code-attribute">password</span><span class="code-keyword">="</span><span class="code-keyword">hottie"</span><span class="code-keyword">&gt;</span>   
+    <span class="code-keyword">&lt;</span><span class="code-leadattribute">Server</span><span class="code-attribute"> </span><span class="code-attribute">server</span><span class="code-keyword">="</span><span class="code-keyword">sw"</span><span class="code-attribute"> </span><span class="code-keyword">/</span><span class="code-keyword">&gt;</span>   
+    <span class="code-comment">&lt;!--</span><span class="code-keyword"><span class="code-comment">Vpn will have sw.myvpn.com as host address and 
+    SW TestVPN1 as name, automatic protocol</span><span class="code-comment">--&gt;</span></span>
+    <span class="code-keyword">&lt;</span><span class="code-leadattribute">Server</span><span class="code-attribute"> </span><span class="code-attribute">server</span><span class="code-keyword">="</span><span class="code-keyword">ro"</span><span class="code-attribute"> </span><span class="code-attribute">proto</span><span class="code-keyword">="</span><span class="code-keyword">PPTP"</span><span class="code-keyword">/</span><span class="code-keyword">&gt;</span>   
+    <span class="code-comment">&lt;!--</span><span class="code-keyword"><span class="code-comment">Server proto overrides Provider specified protocol (auto in this case)</span><span class="code-comment">--&gt;</span></span>
+    <span class="code-keyword">&lt;</span><span class="code-leadattribute">Server</span><span class="code-attribute"> </span><span class="code-attribute">server</span><span class="code-keyword">="</span><span class="code-keyword">kick-vm.myvpnext.com"</span><span class="code-attribute"> 
+    </span><span class="code-attribute">proto</span><span class="code-keyword">="</span><span class="code-keyword">SSTP"</span><span class="code-keyword">/</span><span class="code-keyword">&gt;</span>  
+    <span class="code-comment">&lt;!--</span><span class="code-keyword"><span class="code-comment">Vpn will have kick-vm.myvpnext.com as host address 
+    and KICK-VM TestVPN1 as name </span><span class="code-comment">--&gt;</span></span>
+    <span class="code-keyword">&lt;</span><span class="code-leadattribute">Server</span><span class="code-attribute"> </span><span class="code-attribute">server</span><span class="code-keyword">="</span><span class="code-keyword">sp"</span><span class="code-attribute"> </span><span class="code-attribute">proto</span><span class="code-keyword">="</span><span class="code-keyword">IKEV2"</span><span class="code-attribute"> 
+    </span><span class="code-attribute">user</span><span class="code-keyword">="</span><span class="code-keyword">user15"</span><span class="code-attribute"> </span><span class="code-attribute">password</span><span class="code-keyword">="</span><span class="code-keyword">beer"</span><span class="code-attribute"> </span><span class="code-keyword">/</span><span class="code-keyword">&gt;</span> 
+<span class="code-keyword">&lt;</span><span class="code-leadattribute">/Provider</span><span class="code-keyword">&gt;</span>
+<span class="code-keyword">&lt;</span><span class="code-leadattribute">Provider</span><span class="code-attribute"> </span><span class="code-attribute">name</span><span class="code-keyword">="</span><span class="code-keyword">TestVPN2"</span><span class="code-attribute"> </span><span class="code-attribute">basedomain</span><span class="code-keyword">="</span><span class="code-keyword">myvpn2.com"</span><span class="code-attribute"> 
+</span><span class="code-attribute">l2tppsk</span><span class="code-keyword">="</span><span class="code-keyword">12345"</span><span class="code-attribute"> </span><span class="code-attribute">user</span><span class="code-keyword">="</span><span class="code-keyword">test001"</span><span class="code-attribute"> </span><span class="code-attribute">password</span><span class="code-keyword">="</span><span class="code-keyword">master"</span><span class="code-keyword">&gt;</span>
+    <span class="code-keyword">&lt;</span><span class="code-leadattribute">Server</span><span class="code-attribute"> </span><span class="code-attribute">server</span><span class="code-keyword">="</span><span class="code-keyword">karate"</span><span class="code-attribute"> </span><span class="code-attribute">proto</span><span class="code-keyword">="</span><span class="code-keyword">L2TP"</span><span class="code-attribute"> 
+    </span><span class="code-attribute">l2tppsk</span><span class="code-keyword">="</span><span class="code-keyword">314pi"</span><span class="code-keyword">/</span><span class="code-keyword">&gt;</span> 
+    <span class="code-keyword">&lt;</span><span class="code-leadattribute">Server</span><span class="code-attribute"> </span><span class="code-attribute">server</span><span class="code-keyword">="</span><span class="code-keyword">kazu"</span><span class="code-attribute">  </span><span class="code-keyword">/</span><span class="code-keyword">&gt;</span> 
+    <span class="code-keyword">&lt;</span><span class="code-leadattribute">Server</span><span class="code-attribute"> </span><span class="code-attribute">server</span><span class="code-keyword">="</span><span class="code-keyword">moon"</span><span class="code-attribute">  </span><span class="code-keyword">/</span><span class="code-keyword">&gt;</span> 
+    <span class="code-keyword">&lt;</span><span class="code-leadattribute">Server</span><span class="code-attribute"> </span><span class="code-attribute">server</span><span class="code-keyword">="</span><span class="code-keyword">sun"</span><span class="code-attribute"> </span><span class="code-keyword">/</span><span class="code-keyword">&gt;</span> 
+<span class="code-keyword">&lt;</span><span class="code-leadattribute">/Provider</span><span class="code-keyword">&gt;</span>
+<span class="code-keyword">&lt;</span><span class="code-leadattribute">/Providers</span><span class="code-keyword">&gt;</span></pre>
+
+<p>Inside the zip archive, you will find 3 files:</p>
+
+<ul>
+	<li><em>DotRas.dll</em>: It's a .NET class library which is used by the PowerShell script to create VPN connections and it must be in the same folder of the script.</li>	<li><em>vpnconfig.xml</em>: It's the above XML configuration file which must be edited with your settings.</li>	<li><em>VpnScripter.ps1</em>: It is a PowerShell script which can be launched from PowerShell or double clicked. It accepts an optional parameter named <code>ConfigFile</code> specifying the name of the XML configuration file to use (defaults to <em>vpnconfig.xml</em>). You can specify the <code>-Debug</code> flag to obtain a more verbose log output.</li></ul>
+
+<p>The script has been tested on Windows 10, but should also work in any Windows with at least PowerShell 3.0.</p>
+
+<h2>Implementation Overview</h2>
+
+<p>Basically, all the code is inside a single PowerShell file called <em>VpnScripter.ps1</em>, which contains a mixture of XSD, C# and PowerShell code. Basically it:</p>
+
+<ul>
+	<li>Parses and verifies the XML configuration file <em>vpnconfig.xml </em>using an embedded XSD schema defined inside the PowerShell script.<br>
+	The schema itself is very simple (e.g. contains mainly <code>xs:attribute</code> clauses specifying the allowed/required attributes of the configuration file) and defines a simple type called <code>NotEmptyTrimmedString</code><em> </em>which, as the name implies, checks by a regular expression that an attribute value is a "not empty trimmed string" (it is used for server attribute which must be "meaningful"). The verification of XSD schema is performed through a PowerShell function <code>ValidateLoadXml</code><em> </em>which uses standard .NET functions to perform validation (e.g., C# <code>new XmlDocument().Load(XmlReader.Create(&lt;file&gt;,&lt;settings with schema file&gt;))</code>)
+
+	<div class="pre-lang" id="premain518696"><div>C#</div><div class="pre-action-link"><span id="copycode518696" class="copy-code" data-index="518696" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre518696" style="margin-top:0;" class="lang-csharp notranslate" data-language="cs" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true">function ValidateLoadXml([string] $XmlFile, [string] $Schema) {
+
+	$verr={ 
+		Write-Error <span class="code-string">"</span><span class="code-string">Error: malformed XSD/XML Line: $($_.Exception.LineNumber) 
+		Offset: $($_.Exception.LinePosition) - $($_.Message)"</span> 
+		<span class="code-keyword">throw</span> [System.IO.InvalidDataException] 
+	}
+
+	<span class="code-keyword">try</span> {
+		[System.Xml.XmlReaderSettings]$readsett=New-Object System.Xml.XmlReaderSettings
+		$readsett.Schemas.Add([System.Xml.Schema.XmlSchema]::Read
+		((New-Object System.IO.StringReader($Schema)),$verr))
+		$readsett.ValidationType=[System.Xml.ValidationType]::Schema
+		$readsett.add_ValidationEventHandler($verr)
+		$xmlconf = New-Object System.Xml.XmlDocument
+		$xmlconf.Load([System.Xml.XmlReader]::Create($XmlFile,$readsett))
+	}
+	<span class="code-keyword">catch</span> [System.IO.InvalidDataException]  {
+		<span class="code-keyword">return</span> $null
+	}
+	
+	<span class="code-keyword">return</span> $xmlconf
+}	</pre>
+	</li>	<li><strong>Cycles for all Server nodes of all the Provider nodes of the XML configuration file</strong>
+	<ul>
+		<li><strong>Builds the list of parameters needed to create the VPN entry in Windows according to aforementioned rules</strong> (if <em>server </em>attribute contains a point '.', it's the full DNS name of the VPN endpoint, otherwise it must be concatenated with the <code>basedomain</code> attribute, etc.). In order to evaluate the needed user, password, protocol and l2tppsk from the information contained in <em>Server </em>and <em>Provider</em> nodes, the script uses a coalescing operator, quite common in SQL queries and C# (operator ??), but unluckily missing in PowerShell, hence implemented in custom defined PowerShell function called <code>Coalesce</code>.
+		<div class="pre-lang" id="premain751475"><div>PowerShell</div><div class="pre-action-link"><span id="copycode751475" class="copy-code" data-index="751475" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre751475" style="margin-top:0;" class="lang-powershell notranslate" data-language="PowerShell" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">function</span> Coalesce(<span class="code-keyword">[</span><span class="code-sdkkeyword">string[</span>]] <span class="code-sdkkeyword">$StringsToLookThrough</span>, <span class="code-keyword">[</span><span class="code-sdkkeyword">switch</span>]<span class="code-sdkkeyword">$EmptyStringAsNull</span>) {
+  <span class="code-keyword">if</span> (<span class="code-sdkkeyword">$EmptyStringAsNull</span>.IsPresent) {
+    <span class="code-keyword">return</span> (<span class="code-sdkkeyword">$StringsToLookThrough</span> | Where-Object { <span class="code-sdkkeyword">$_</span> } | Select-Object -first <span class="code-digit">1</span>)
+  }
+  <span class="code-keyword">else</span> {
+    <span class="code-keyword">return</span> ((<span class="code-sdkkeyword">$StringsToLookThrough</span> <span class="code-keyword">-ne</span> <span class="code-sdkkeyword">$null</span>) | Select-Object -first <span class="code-digit">1</span>)
+  }  
+}	</pre>
+		</li>		<li><strong>Performs additional checks on parameters</strong> which are not so straightforward to do with XSD:
+		<ul>
+			<li>If <code>proto</code> attribute is L2TP, the <code>l2tppsk</code> attribute must be not empty</li>			<li>The <code>user</code> and <code>password</code> attributes must not be empty</li>		</ul>
+		</li>		<li><strong>Checks if the VPN entry already exists in Windows through Get-VpnConnection cmdlet and if so deletes it through Remove-VpnConnection cmdlet.</strong>
+		<div class="pre-lang" id="premain671942"><div>PowerShell</div><div class="pre-action-link"><span id="copycode671942" class="copy-code" data-index="671942" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre671942" style="margin-top:0;" class="lang-powershell notranslate" data-language="PowerShell" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true">$exist=Get-VpnConnection -Name <span class="code-sdkkeyword">$vpnname</span> -ErrorAction silentlycontinue
+<span class="code-keyword">if</span> (<span class="code-sdkkeyword">$exist</span> <span class="code-keyword">-ne</span> <span class="code-sdkkeyword">$null</span>) {
+    Write-Host <span class="code-string">"</span><span class="code-string">Info: Removing VPN connection $vpnname"</span>
+
+    Remove-VpnConnection -Name <span class="code-sdkkeyword">$vpnname</span> -Force
+}
+</pre>
+		</li>		<li><strong>Creates a new VPN entry by calling a custom defined C# function called <em><code>Add</code>.</em></strong><br>
+		Basically, this function sets up the VPN parameters (proto is converted into an <code>enum</code> by a simple conversion function called <code>ConvertProto</code>, with an IKEV2 VPN EAP authentication must be used, etc.) and straightforwardly calls the <em>DotRas.dll</em> functions to add a new VPN entry to Windows.
+		<div class="pre-lang" id="premain487961"><div>C#</div><div class="pre-action-link"><span class="code-collapse" data-index="487961" id="preShrink487961">Shrink ▲</span> &nbsp; <span id="copycode487961" class="copy-code" data-index="487961" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre487961" style="margin-top:0;" class="lang-csharp notranslate" data-language="cs" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">public</span> <span class="code-keyword">static</span> <span class="code-keyword">void</span> Add(<span class="code-keyword">string</span> path,<span class="code-keyword">string</span> name,<span class="code-keyword">string</span> server,
+<span class="code-keyword">string</span> proto, <span class="code-keyword">string</span> l2tppsk, <span class="code-keyword">string</span> user, <span class="code-keyword">string</span> password) {
+    RasPhoneBook PhoneBook=<span class="code-keyword">new</span> RasPhoneBook();
+    PhoneBook.Open(path);
+    RasEntry VpnEntry = RasEntry.CreateVpnEntry
+    (name,server, ConvertProto(proto),
+    RasDevice.Create(name, DotRas.RasDeviceType.Vpn), <span class="code-keyword">true</span>);
+    VpnEntry.Options.UsePreSharedKey = <span class="code-keyword">true</span>;
+    VpnEntry.Options.CacheCredentials = <span class="code-keyword">true</span>;
+    VpnEntry.Options.ReconnectIfDropped = <span class="code-keyword">true</span>;
+    <span class="code-keyword">if</span> (VpnEntry.VpnStrategy==RasVpnStrategy.IkeV2Only) {
+        <span class="code-comment">//</span><span class="code-comment"> 23 EAP-AKA</span>
+        <span class="code-comment">//</span><span class="code-comment"> 50 EAP-AKA'</span>
+        <span class="code-comment">//</span><span class="code-comment"> 18 EAP-SIM</span>
+        <span class="code-comment">//</span><span class="code-comment"> 21 EAP-TTLS</span>
+        <span class="code-comment">//</span><span class="code-comment"> 25 PEAP</span>
+        <span class="code-comment">//</span><span class="code-comment"> 26 EAP-MSCHAPV2</span>
+        <span class="code-comment">//</span><span class="code-comment"> 13 EAP-smart card or certificate</span>
+        VpnEntry.Options.RequireEap = <span class="code-keyword">true</span>;
+        VpnEntry.CustomAuthKey=<span class="code-digit">26</span>; <span class="code-comment">//</span><span class="code-comment"> 26 means eap-mschapv2 username/password</span>
+    }
+    <span class="code-keyword">else</span> {
+        VpnEntry.Options.RequireMSChap2 = <span class="code-keyword">true</span>;
+    }
+    <span class="code-comment">//</span><span class="code-comment">VpnEntry.Options.RequireWin95MSChap = false; // seems to be ignored,</span>
+    <span class="code-comment">//</span><span class="code-comment">chap is still checked in newly created vpn profile</span>
+    <span class="code-comment">//</span><span class="code-comment">VpnEntry.Options.RequireMSChap = false;  // seems to be ignored,</span>
+    <span class="code-comment">//</span><span class="code-comment">chap is still checked in newly created vpn profile</span>
+    <span class="code-comment">//</span><span class="code-comment">VpnEntry.Options.RequireChap = false; // seems to be ignored,</span>
+    <span class="code-comment">//</span><span class="code-comment">chap is still checked in newly created vpn profile</span>
+    VpnEntry.EncryptionType = RasEncryptionType.RequireMax;
+    PhoneBook.Entries.Add(VpnEntry);
+    VpnEntry.UpdateCredentials(RasPreSharedKey.Client,l2tppsk);
+    VpnEntry.UpdateCredentials(<span class="code-keyword">new</span> System.Net.NetworkCredential(user,password));
+}
+</pre>
+		</li>	</ul>
+	</li></ul>
+
+<p><strong>As already said, both the XSD schema and the .NET helper code have been embedded inside the PowerShell script in a single, almost self-contained (needs <em>DotRas.dll</em>) file.</strong> In fact, PowerShell scripts have the nice feature to allow the inclusion of any .NET code inside allowing them to do everything that can be done with C# code. It's interesting the way in which a C# code can be parsed and compiled:</p>
+
+<ul>
+	<li>First "load" any DLL (with <em>Add-Type -Path &lt;dll file&gt;</em>) or assembly (with <em>Add-Type -AssemblyName &lt;assembly&gt;</em>) used by the custom code</li>	<li>Then parse and compile your custom C# code with<br>
+	<em>Add-Type -ReferencedAssemblies &lt;list of referenced assemblies&gt; -TypeDefinition &lt;string containing C# code&gt; -Language CSharp</em></li></ul>
+
+<div class="pre-lang" id="premain190265"><div>PowerShell</div><div class="pre-action-link"><span id="copycode190265" class="copy-code" data-index="190265" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre190265" style="margin-top:0;" class="lang-powershell notranslate" data-language="PowerShell" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true">Add-Type -Path $psscriptroot\DotRas.dll
+Add-Type -AssemblyName System.Xml
+Add-Type -ReferencedAssemblies $psscriptroot\DotRas.dll,System.Xml 
+         -TypeDefinition <span class="code-sdkkeyword">$Source</span> -Language CSharp</pre>
+
+<h2>Points of Interest</h2>
+
+<p>The external library <em>DotRas.dll</em> has been used because there does not seem to be a way to configure credentials (login and password) with the standard PowerShell command <code>Add-VpnConnection</code>, please let me know if you find a way.</p>
+
+<h2>Repository</h2>
+
+<p>You can find the source code repository on <a href="https://github.com/fededim/VpnScripter">GitHub</a>. If you want to add a predefined configuration file for your VPN provider with all servers or to improve the code, you are welcome.</p>
+
+<h2>History</h2>
+
+<ul>
+	<li>V1.0&nbsp;(2<sup>nd</sup> December 2016
+
+	<ul>
+		<li>First release</li>	</ul>
+	</li>	<li>V1.1. (7<sup>th</sup> December 2016)
+	<ul>
+		<li>Added override of <code>l2tppsk</code>, <code>user</code> and <code>password</code> in server nodes</li>		<li>Added XML validation through XSD and simple checks on <code>user</code>/<code>password</code>/<code>l2tppsk</code> parameters</li>	</ul>
+	</li>	<li>V1.2 (27<sup>th</sup> March 2017)
+	<ul>
+		<li>Added "Implementation overview" section</li>	</ul>
+	</li></ul>
+
+<h2>References</h2>
+
+<ul>
+	<li>[1] <a href="https://en.wikipedia.org/wiki/Point-to-Point_Protocol" name="[1]">PPP </a>is an old point-to-point protocol historically used to connect to ISP by modems. It allows to establish a connection between two endpoints.</li>	<li>[2] <a href="https://en.wikipedia.org/wiki/IPsec" name="[2]">IPSEC</a> is an encrypted tunnel between two endpoints based on a set of rules (called security associations) establishing the encryption and integrity algorithms to be used in the tunnel and the network packets which need to be tunnelled (e.g. all TCP packets, TCP addressed to a particular port, etc.). Basically, it encapsulates TCP/UDP in a new encrypted IP packet (ESP). The algorithms used to encrypt and to check message's integrity are established through a negotiation protocol called IKE. Since client and server mainly authenticate mutually by certificates, IPSEC is usually used in lan-to-lan VPN (e.g. connecting two different organizations' network) and not in a client-to-lan scenario, however for this kind of scenario, it is possible to authenticate through a PSK (pre-shared key or shared secret), although this entails a lower security.</li>	<li>[3] <a href="https://technet.microsoft.com/en-us/library/dd469817(v=ws.10).aspx" name="[3]">Microsoft VPN Tunnelling Protocols</a></li></ul>
+
+<!-- Article Ends -->
+
+
+						</div>
+						
+
+						
+						<h2>License</h2>
+						<div id="LicenseTerms"><p>This article, along with any associated source code and files, is licensed under <a href="http://www.opensource.org/licenses/mit-license.php" rel="license">The MIT License</a></p></div>
+						
+
+						
+						<br>
+						
+						    <br>
+						
+						
+
+						<div class="clearfix"></div>
+
+						<div style="padding-top:8px">
+							
+						</div>
+
+					
+
+				    
+					</form>
+
+				</div>
+
+				
+				<div class="bottom-promo"> 
+				    
+				</div>
+				
+                
+                
+
+				
+				
+				
+
+			</div>
+			
+
+            
+            
+            
+
+        </div>
+        
+
+		
+		<div class="site-footer">
+			<div class="align-left">
+				<a id="ctl00_PermaLink" href="https://www.codeproject.com/Articles/1158881/VPNScripter-A-Scripter-for-Windows-VPN-Connections">Permalink</a><br>
+				<br>
+				<a id="ctl00_PrivacyLink" href="https://www.codeproject.com/info/privacy.aspx">Privacy</a><br>
+    			<a id="ctl00_CookiePolicyLink" href="https://www.codeproject.com/info/cookie.aspx">Cookies</a><br>
+                <a id="ctl00_TermsOfUseLink" href="https://www.codeproject.com/info/TermsOfUse.aspx">Terms of Use</a><br>
+			</div>
+
+            <div class="align-center">
+				
+
+
+<div class="page-width">
+    Layout: <a id="ctl00_PageWidth_FixedT" title="Fixed width layout" rel="nofollow" class=" active" href="https://www.codeproject.com/Articles/1158881/VPNScripter-A-Scripter-for-Windows-VPN-Connections?PageFlow=FixedWidth">fixed</a>
+    |
+    <a id="ctl00_PageWidth_FluidT" title="Fluid layout" rel="nofollow" href="https://www.codeproject.com/Articles/1158881/VPNScripter-A-Scripter-for-Windows-VPN-Connections?PageFlow=Fluid">fluid</a>
+</div>
+
+
+				
+
+				
+
+	            
+
+                <br>
+			</div>
+                
+			<div class="align-right">
+				Article Copyright 2016 by Federico Di Marco<br>Everything else
+				Copyright © <a href="mailto:webmaster@codeproject.com">CodeProject</a>, 1999-2024<br>
+                <br>
+				Web01 
+				2.8:2024-10-20:1<br>
+			</div>
+		</div>
+		
+
+		<br clear="all">
+		
+			
+
+	</div> 
+	</div> 
+</div>
+
+
+
+
+
+
+
+<script type="text/javascript"> // DEFERRED script
+
+document.addEventListener('DOMContentLoaded', function() {
+
+	new CodeBlocks().initialise('#contentdiv');
+	
+	$('.author-wrapper .description').shorten({showChars: 400});
+	
+	anchorAnimate();
+	
+	$('#__EVENTVALIDATION').attr('autocomplete', 'off');
+
+})
+</script>
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">.copied::after {  position: absolute;  right: 0;  display: inline-block; white-space: nowrap; content: 'copied'; color: #fff; background-color: #f90;  border-radius: 3px; padding:1px 8px; opacity: 0;  will-change: opacity, transform; animation: showcopied 1.5s ease; } @keyframes showcopied { 0% { opacity: 0; } 70% { opacity: 1; } 100% { opacity: 0; } } </style><canvas id="cv1" width="1px" height="1px" style="position:absolute;left:0;top:0;pointer-events:none"></canvas><canvas id="cv2" width="1px" height="1px" style="position:absolute;left:0;top:0;pointer-events:none"></canvas></body></html>

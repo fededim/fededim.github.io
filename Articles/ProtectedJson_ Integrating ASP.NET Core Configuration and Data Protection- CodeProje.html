@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<!-- saved from url=(0095)https://www.codeproject.com/Articles/5372873/ProtectedJson-Integrating-ASP-NET-Core-Configurati -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	
+	<link rel="preconnect" href="https://www.google-analytics.com/">
+
+	<link rel="preconnect" href="https://www.codeproject.com/">
+
+
+	<link rel="preload" href="./ProtectedJson_ Integrating ASP.NET Core Configuration and Data Protection- CodeProje_files/logo250x135.gif" as="image">
+
+
+	<link rel="preload" href="https://www.codeproject.com/App_Themes/CodeProject/Img/logo135-bg.gif" as="image">
+	<link rel="preload" href="./ProtectedJson_ Integrating ASP.NET Core Configuration and Data Protection- CodeProje_files/jquery-3.4.1.min.js.download" as="script" type="text/javascript">
+
+
+	<title>ProtectedJson: Integrating ASP.NET Core Configuration and Data Protection- CodeProject</title> 
+    
+	<link type="text/css" rel="stylesheet" href="./ProtectedJson_ Integrating ASP.NET Core Configuration and Data Protection- CodeProje_files/Article.min.css">
+
+
+    <script type="text/javascript" async="" src="./ProtectedJson_ Integrating ASP.NET Core Configuration and Data Protection- CodeProje_files/analytics.js.download"></script><script type="text/javascript" src="./ProtectedJson_ Integrating ASP.NET Core Configuration and Data Protection- CodeProje_files/jquery-3.4.1.min.js.download" defer=""></script>
+<script type="text/javascript" src="./ProtectedJson_ Integrating ASP.NET Core Configuration and Data Protection- CodeProje_files/article.min.js.download" defer=""></script>
+
+	
+<meta http-equiv="content-language" content="en-US">
+
+<meta name="Description" content="An improved JSON configuration provider that allows partial or full encryption of values in appsettings.json">
+<meta name="Keywords" content="C#, .NET, JSON">
+<meta name="Author" content="Federico Di Marco">
+<meta name="Rating" content="General">
+<meta name="Revisit-After" content="1 days">
+<meta name="application-name" content="CodeProject">
+<meta name="google-translate-customization" content="d908bb7ce7aff658-4c2f3a504525c916-g629383f736781a8a-13">
+
+
+
+<link rel="dns-prefetch" href="https://ajax.googleapis.com/"> 
+<link rel="canonical" href="https://www.codeproject.com/Articles/5372873/ProtectedJson-Integrating-ASP-NET-Core-Configurati">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@CodeProject">
+<meta name="og:site_name" content="CodeProject">
+<meta name="twitter:creator" content="@CodeProject">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="11/20/2023 3:05:00 AM">
+<meta property="article:modified_time" content="3/24/2024 7:03:00 PM">
+<meta name="twitter:label1" content="Written by">
+<meta name="twitter:data1" content="Federico Di Marco">
+<meta name="twitter:label2" content="Reading time">
+<meta name="twitter:data2" content="11 min read">
+<meta property="og:url" content="https://www.codeproject.com/Articles/5372873/ProtectedJson-Integrating-ASP-NET-Core-Configurati">
+<meta property="og:title" content="ProtectedJson: Integrating ASP.NET Core Configuration and Data Protection">
+<meta property="og:description" content="An improved JSON configuration provider that allows partial or full encryption of values in appsettings.json">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="apple-touch-icon" sizes="144x144" href="https://www.codeproject.com/favicon/apple-touch-icon.png"> 
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.codeproject.com/favicon/favicon-32x32.png"> 
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.codeproject.com/favicon/favicon-16x16.png"> 
+<link rel="manifest" href="https://www.codeproject.com/favicon/manifest.json"> 
+<link rel="mask-icon" href="https://www.codeproject.com/favicon/safari-pinned-tab.svg" color="#ff9900">
+	<script type="application/ld+json">{
+  "@context": "http://schema.org",
+  "@type": "TechArticle",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.codeproject.com/Articles/5372873/ProtectedJson-Integrating-ASP-NET-Core-Configurati"
+   },
+  "name": "ProtectedJson: Integrating ASP.NET Core Configuration and Data Protection",
+  "headline": "ProtectedJson: Integrating ASP.NET Core Configuration and Data Protection",
+  "url": "https://www.codeproject.com/Articles/5372873/ProtectedJson-Integrating-ASP-NET-Core-Configurati",
+  "discussionUrl": "https://www.codeproject.com/Articles/5372873/ProtectedJson-Integrating-ASP-NET-Core-Configurati#_comments",
+  "isFamilyFriendly": "true",
+  "image": "https://www.codeproject.com/App_Themes/CodeProject/Img/Article100.png",
+  "keywords": "C#,.NET,JSON",
+  "commentCount": "0",
+  "editor" : {
+    "@type" : "Person",
+    "name" : "Editor",
+    "url" : "https://www.codeproject.com/script/Membership/View.aspx?mid=3865041"
+  },
+  "license": "http://www.codeproject.com/info/cpol10.aspx",
+  "publisher" : {
+    "@type" : "Organization",
+    "name" : "CodeProject"
+  },
+  "description": "This extensive article introduces ProtectedJson, an enhanced JSON configuration provider integrated into ASP.NET Core architecture, facilitating encryption of configuration values. It covers its implementation, usage, and illustrates how it seamlessly integrates into applications, allowing secure handling of sensitive data within configuration files.",
+  "articleSection": "C#",
+  "author" : [{
+      "@type" : "Person",
+      "name" : "Federico Di Marco",
+      "url" : "https://www.codeproject.com/script/Membership/View.aspx?mid=3865041"
+    }],
+  "datePublished": "2023-11-20",
+  "dateCreated": "2023-11-20",
+  "dateModified": "2024-03-24"
+,
+  "contentRating" : {
+    "@type" : "Rating",
+    "ratingValue" : 4.97,
+    "bestRating" : 5,
+    "worstRating" : 1
+  }
+}</script>
+
+<script type="application/ld+json">{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "item" : {
+      "@id" : "/script/Content/Tag.aspx?tags=Languages",
+      "name" : "Languages"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "item" : {
+      "@id" : "/script/Content/Tag.aspx?tags=Csharp",
+      "name" : "C#"
+    }
+  }]
+}</script>
+
+
+	<!--<base target="_top">--><base href="." target="_top">
+	
+    
+
+
+<script type="text/javascript">
+function defrm () { /* thanks twitter */
+    document.write = '';
+    window.top.location = window.self.location;
+    setTimeout(function() { document.body.innerHTML = ''; }, 0);
+    window.self.onload = function(evt) { document.body.innerHTML = ''; };
+}
+
+if (window.top !== window.self) {
+    try {
+        if (window.top.location.host) { /* will throw for all except chrome */ }
+        else { defrm(); /* chrome */ }
+    } catch (ex) { defrm(); /* everyone else */ }
+}
+
+// Specific case where a site is screwing with us.
+if (typeof(DemoUrl) !== 'undefined') {
+    document.write(unescape('%3Cme') + 'ta http' + '-equiv="re' + 'fresh con' +
+                           'tent="1;url=' + DemoUrl + unescape('"%3CE'));
+}
+</script>
+	
+
+
+
+
+
+    <script async="" type="text/javascript" src="./ProtectedJson_ Integrating ASP.NET Core Configuration and Data Protection- CodeProje_files/js"></script>
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-1735123-1' , {'user_id': '61732e5b-06af-4ac2-8734-b1591748583e'});
+    </script>
+
+<style type="text/css"></style></head>	
+
+<body class="chrome chrome130">
+
+
+
+<a class="access-link" href="https://www.codeproject.com/Articles/5372873/ProtectedJson-Integrating-ASP-NET-Core-Configurati#Main"><img alt="Click here to Skip to main content" src="./ProtectedJson_ Integrating ASP.NET Core Configuration and Data Protection- CodeProje_files/t.gif"></a>
+
+
+
+
+<div class="page-background">
+
+	
+	
+
+	
+
+	
+    <div id="ctl00_STM" class="site-top-menu fixed narrow">
+        <div class="main-content">
+            
+
+<div class="container memberbar clearfix flex-container flex-extend">
+
+	<div id="ctl00_MemberBar_GenInfo" class="flex-item align-left">65,938 articles</div>
+	
+	<div id="ctl00_MemberBar_ChangeNotice" class="flex-item align-left">CodeProject
+	is changing. <a href="https://www.codeproject.com/info/Changes.aspx">Read more</a>.</div>
+
+	<div class="flex-item">
+		
+	</div>
+
+	<div class="flex-item align-right">
+
+		
+
+		
+
+		
+	</div>
+</div>
+        </div>
+    </div>
+
+	
+    <div id="ctl00_SH" class="site-header fixed narrow">
+        <div class="main-content">
+            <div class="logo"><a href="https://www.codeproject.com/"><img id="ctl00_Logo" tabindex="1" title="CodeProject" src="./ProtectedJson_ Integrating ASP.NET Core Configuration and Data Protection- CodeProje_files/logo250x135.gif" alt="Home" style="height:135px;width:250px;border-width:0px;"></a></div>
+            <div class="promo"></div>
+        </div>
+    </div>
+
+	
+			
+	
+
+	<div id="A" class="container-content-wrap fixed narrow"> 
+
+	<div class="container-content">
+
+        
+		<div class="clearfix">
+			<div class="container-breadcrumb float-left ">
+				<div><a rel="nofollow" href="https://www.codeproject.com/script/Content/SiteMap.aspx">Articles</a> / <a rel="nofollow" href="https://www.codeproject.com/script/Content/Tag.aspx?tags=Languages">Languages</a> / <a rel="nofollow" href="https://www.codeproject.com/script/Content/Tag.aspx?tags=Csharp">C#</a></div>
+			</div>
+
+            <div class="float-left">
+				
+			</div>
+
+			<div class="edit-links float-right">
+				
+
+
+
+ 
+&nbsp;
+
+
+
+
+
+
+
+
+
+
+			</div>
+
+			<div class="article-nav float-right">
+				
+
+
+<div style="display:inline-block;position:relative;top:-6px;margin-right:20px">
+    
+</div>
+
+
+
+ 
+
+<a id="ctl00_ActionLinks_PrintMd" data-tooltip="Print" data-enabletooltip="true" data-width="auto" href="https://www.codeproject.com/Articles/5372873/ProtectedJson-Integrating-ASP-NET-Core-Configurati?display=Print" class="tooltip" title="">
+   <img src="./ProtectedJson_ Integrating ASP.NET Core Configuration and Data Protection- CodeProje_files/print48.png" width="24" height="24" style="border:0">
+<div class="speech-bubble-container-up" style="width:auto">  <div class="speech-bubble-up" style="text-align:center"> Print</div>  <div class="speech-bubble-pointer-up">    <div class="speech-bubble-pointer-up-inner"></div>  </div></div></a>
+
+
+
+<span id="ctl00_ActionLinks_R">
+    
+    
+</span>
+			</div>
+		</div>
+
+        
+		<div class="extended article-container-parts">
+
+			
+		    
+            
+
+			
+			<div id="AT" class="article-container  fixed narrow" style="max-width:inherit;"> 
+
+				<div class="article">
+
+					<form name="aspnetForm" method="post" action="https://www.codeproject.com/Articles/5372873/View.aspx" id="aspnetForm" style="margin:0;padding:0">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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">
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="10C1FD69">
+</div>
+
+					
+					 
+					<div class="header">
+					    <a name="Main"></a>
+					    <a name="_articleTop" id="_articleTop"></a>
+
+					    
+						<div>
+							<span id="ctl00_TagListHorz_TagWrp" class="tags horizontal">
+
+	
+	
+
+	
+	<span id="ctl00_TagListHorz_VisibleTags"><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/Csharp" data-id="81">C#</a></div><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/.NET" data-id="98">.NET</a></div><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/JSON" data-id="997">JSON</a></div></span> 
+
+	
+	
+</span>
+
+
+						</div>
+					    <div class="title">
+					        <h1 id="ctl00_ArticleTitle">ProtectedJson: Integrating ASP.NET Core Configuration and Data Protection</h1>
+					    </div>
+
+                        <div>
+					        
+					        <div class="entry flex-container">
+
+								
+
+                                <div class="flex-item" style="flex:1 1 auto">
+                                    <div class="flex-container" style="justify-content:space-between;flex-wrap:wrap-reverse">
+                                       <span id="ctl00_Authors" class="author flex-item"><a href="https://www.codeproject.com/script/Membership/View.aspx?mid=3865041" rel="author">Federico Di Marco</a></span> 
+
+                                        <div class="flex-item" style="margin-top:-4px;">
+                                            <div id="ctl00_RateArticle_RatingTable" class="small-text" data-objectref="2_5372873">
+
+	<meta itemprop="upvoteCount" content="9">
+
+
+	<div id="ctl00_RateArticle_RatingRow" class="flex-container rating-container large-stars">
+
+					
+		
+
+		
+		<div class="nowrap tooltip">
+
+			
+			<div id="ctl00_RateArticle_ResultNoHist" class="rating-result"><div class="flex-container rating-stars large-stars"><div><img src="./ProtectedJson_ Integrating ASP.NET Core Configuration and Data Protection- CodeProje_files/star-fill-lg.png" style="width:24px;height:24px"></div><div><img src="./ProtectedJson_ Integrating ASP.NET Core Configuration and Data Protection- CodeProje_files/star-fill-lg.png" style="width:24px;height:24px"></div><div><img src="./ProtectedJson_ Integrating ASP.NET Core Configuration and Data Protection- CodeProje_files/star-fill-lg.png" style="width:24px;height:24px"></div><div><img src="./ProtectedJson_ Integrating ASP.NET Core Configuration and Data Protection- CodeProje_files/star-fill-lg.png" style="width:24px;height:24px"></div><div style="width:23px;" class="clipped"><img src="./ProtectedJson_ Integrating ASP.NET Core Configuration and Data Protection- CodeProje_files/star-fill-lg.png" style="width:24px;height:24px"></div><div style="width:1px;position:relative" class="clipped"><img src="./ProtectedJson_ Integrating ASP.NET Core Configuration and Data Protection- CodeProje_files/star-empty-lg.png" style="width:24px;height:24px;position:absolute;top:0px;right:0"></div></div></div>
+			
+
+			
+			
+
+			
+            
+
+			
+                
+
+		</div>
+		
+	
+		
+		<div id="ctl00_RateArticle_VoteCountNoHist" class="rating-votes nowrap">4.97/5  (11 votes)</div>	
+
+		
+
+		
+		<div class="rating-undo" title="Undo vote" style="margin-left:5px;display:none"></div>
+
+		
+		
+	</div>
+
+	
+	
+
+</div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="flex-container" style="color:#666;font-size:smaller">
+                                        <span id="ctl00_LastUpdated" class="date flex-item-tight" title="Date last updated">24 Mar 2024</span><a id="ctl00_LicenseLink" title="The Code Project Open License (CPOL)" class="license flex-item-tight" href="http://www.codeproject.com/info/cpol10.aspx">CPOL</a><span id="ctl00_ReadingTime" class="stats flex-item-tight">11 min read</span><span id="ctl00_HorizontalStats" class="stats flex-item-tight"><span class="stats"><span title="Views"><img src="./ProtectedJson_ Integrating ASP.NET Core Configuration and Data Protection- CodeProje_files/views32.png" style="width:16px"> 29.4K</span> &nbsp; </span></span>
+                                    </div>
+                                </div>
+					        </div>
+
+                            
+
+                        </div>
+
+                        <div id="ctl00_DescriptionSpot" class="summary">An improved JSON configuration provider that allows partial or full encryption of values in appsettings.json</div><span id="ctl00_ThumbnailUrl" class="date" content="https://www.codeproject.com/script/Articles/Images/article100x80.png"></span>			
+
+                    </div>
+                    
+					
+					
+
+					
+
+					
+					<div id="ctl00_Abstract" class="abstract">This extensive article introduces ProtectedJson, an enhanced JSON configuration provider integrated into ASP.NET Core architecture, facilitating encryption of configuration values. It covers its implementation, usage, and illustrates how it seamlessly integrates into applications, allowing secure handling of sensitive data within configuration files.</div>
+
+					
+					
+
+						
+					
+
+					
+
+						
+						<div id="contentdiv" class="text">
+						
+
+
+
+<!-- Article Starts -->
+
+<h2>Introduction</h2>
+
+<p><code>ProtectedJson</code> is an improved JSON configuration provider which allows partial or full encryption of configuration values stored in <em>appsettings.json</em> files and fully integrated in the ASP.NET Core architecture. Basically, it implements a custom <code>ConfigurationSource</code> and a custom <code>ConfigurationProvider</code> which decrypts all the encrypted data enclosed in a custom tokenization tag inside the JSON values using ASP.NET Core Data Protection API.</p>
+
+<h3><strong>Note: This package is obsolete and has been replaced by&nbsp;the more versatile <a href="https://www.codeproject.com/Articles/5374311/Fededim-Extensions-Configuration-Protected-the-ult?msg=5978219#xx5978219xx" rel="noopener noreferrer nofollow">Fededim.Extensions.Configuration.Protected</a>.</strong></h3>
+
+<h1>Background</h1>
+
+<p><a href="https://learn.microsoft.com/en-GB/aspnet/core/fundamentals/configuration/?view=aspnetcore-6.0">ASP.NET Configuration</a> is the standard .NET Core way of storing application configuration data through hierarchical key-value pairs inside a variety of configuration sources (usually JSON files, but also environment variables, key vaults, database tables or any custom provider you would like to implement). While .NET Framework used a single source (usually, a XML file which was intrinsically more verbose), .NET Core can use multiple ordered configuration sources, which gets "merged" allowing the concept of overriding of the value of a key in a configuration source with the same one present in a subsequent configuration source. This is useful because in software development, there are usually multiple environments (Development, Integration, PRE-Production and Production) and each environment has its own custom settings (for example, API endpoints, database connection strings, different configuration variables, etc.). In .NET Core, this management is straightforward, in fact, you usually have two JSON files:</p>
+
+<ul>
+	<li><em>appsettings.json</em>: which contains the configuration parameters common to all environments.</li>	<li><em>appsettings.&lt;environment name&gt;.json</em>: which contains the configuration parameters specific to the particular environment.</li></ul>
+
+<p>ASP.NET Core apps usually configure and launch a host. The host is responsible for app startup, configuring dependency injection and background services, configuring logging, lifetime management and obviously configuring application configuration. This is done mainly in two ways:</p>
+
+<ul>
+	<li>Implicitly, by using one of the framework provided methods like <code>WebApplication.CreateBuilder</code> or <code>Host.CreateDefaultBuilder</code> (usually called inside the <em>Program.cs</em> source file) which substantially do:
+
+	<ul>
+		<li>Read and parse command line arguments</li>		<li>Retrieve environment name respectively from <code>ASPNETCORE_ENVIRONMENT</code> and <code>DOTNET_ENVIRONMENT</code> environment variable (set either in the operating system variables or passed directly in the command line with <code>--environment</code> argument).</li>		<li>Read and parse two JSON configuration files named <em>appsettings.json</em> and <em>appsettings.&lt;environment name&gt;.json.</em></li>		<li>Read and parse the environment variables.</li>		<li>Call the delegate <code>Action&lt;Microsoft.Extensions.Hosting.HostBuilderContext,Microsoft.Extensions.Configuration.IConfigurationBuilder&gt;</code> of <code>ConfigureAppConfiguration </code>where you can configure the app configuraton through <code>IConfigurationBuilder </code>parameter</li>	</ul>
+	</li>	<li>Explicitly by instantiating the <code>ConfigurationBuilder</code> class and using one of the provided extensions methods:
+	<ul>
+		<li><code>AddCommandLine</code>: to request of parsing of command line parameters (either by <code>--</code> or - or <code>/</code>)</li>		<li><code>AddJsonFile</code>: to request the parsing of a JSON file specifying whether it is mandatory or optional and whether it should be reloaded automatically whenever it changes on filesystem.</li>		<li><code>AddEnvironmentVariables</code>: to request the parsing of environment variables</li>		<li>etc.</li>	</ul>
+	</li></ul>
+
+<p>In essence, every <code>Add&lt;xxxx&gt;</code> extension method adds a <code>ConfigurationSource</code> to specify the source of key-value pairs (CommandLine, JSON File, Environment Variables, etc.) and an associated <code>ConfigurationProvider</code> used to load and parse the data from the source into the <code>Providers</code> list of <code>IConfigurationRoot</code> interface which is returned as a result of the <code>Build</code> method on <code>ConfigurationBuilder</code> class as you can see the picture below.</p>
+
+<p>(Inside <code>configuration.Providers</code>, we have four sources: <code>CommandLineConfigurationProvider</code>, two <code>ProtectedJsonConfigurationProvider </code>for both <em>appsettings.json</em> and <em>appsettings.&lt;environment name&gt;.json</em> and finally <code>EnvironmentVariableConfigurationProvider</code>).</p>
+
+<p><img src="./ProtectedJson_ Integrating ASP.NET Core Configuration and Data Protection- CodeProje_files/IConfigurationRoot_Providers.jpg" style="width: 700px; height: auto; cursor: pointer; border: 0" alt="Image 1" onclick="imageCleanup.showFullImage(&#39;./ProtectedJson_ Integrating ASP.NET Core Configuration and Data Protection- CodeProje_files/IConfigurationRoot_Providers.jpg&#39;)" class="lazyautosizes lazyloaded" data-sizes="auto" data-srcset="./ProtectedJson_ Integrating ASP.NET Core Configuration and Data Protection- CodeProje_files/IConfigurationRoot_Providers.jpg 400w, ./ProtectedJson_ Integrating ASP.NET Core Configuration and Data Protection- CodeProje_files/IConfigurationRoot_Providers.jpg 700w, ./ProtectedJson_ Integrating ASP.NET Core Configuration and Data Protection- CodeProje_files/IConfigurationRoot_Providers.jpg 1920w" sizes="700px" srcset="./ProtectedJson_ Integrating ASP.NET Core Configuration and Data Protection- CodeProje_files/IConfigurationRoot_Providers.jpg 400w, ./ProtectedJson_ Integrating ASP.NET Core Configuration and Data Protection- CodeProje_files/IConfigurationRoot_Providers.jpg 700w, ./ProtectedJson_ Integrating ASP.NET Core Configuration and Data Protection- CodeProje_files/IConfigurationRoot_Providers.jpg 1920w"></p>
+
+<p>As I wrote earlier, the order in which the <strong>Add&lt;xxxx&gt; extension methods</strong> are called is important because when the <code>IConfigurationRoot</code> class retrieves a key value, it uses the <a href="https://github.com/dotnet/runtime/blob/main/src/libraries/Microsoft.Extensions.Configuration/src/ConfigurationRoot.cs#L114-L127">GetConfiguration </a>method which cycles the <code>Providers</code> list in a reversed<em> </em>order trying to return the first one which contains the queried key, thus simulating a "merge" of all configuration sources (LIFO order, Last In First Out).</p>
+
+<p><code>ProtectedJson</code> is fundamentally a class library which defines a configuration source called <code>ProtectedJsonConfigurationSource</code> which specifies the configuration file and the tokenization tag, and the associated configuration provider <code>ProtectedJsonConfigurationProvider</code> used to parse the JSON file and to decrypt the JSON values enclosed in the tokenization tag; moreover, it provides also standard extensions method for hooking them into <code>IConfigurationBuilder</code> interface (e.g., <code>AddProtectedJsonFile</code>).</p>
+
+<h2>Using the Code</h2>
+
+<p>You find all the source code on <a href="https://github.com/fededim/Fededim.Extensions.Configuration.Protected">my Github repository</a>, the code is based on .NET 6.0 and Visual Studio 2022. Inside the solution file, there are two projects:</p>
+
+<ul>
+	<li><code>FDM.Extensions.Configuration.ProtectedJson</code>: This is a class library which implements <code>ProtectedJsonConfigurationSource</code>, <code>ProtectedJsonConfigurationProvider</code> (and their stream corresponding <code>ProtectedJsonStreamConfigurationProvider</code> and <code>ProtectedJsonStreamConfigurationSource</code>) and the extension methods for <code>IConfigurationBuilder</code> interface (<code>AddProtectedJsonFile</code> and its overloads<code>)</code>.</li>	<li><code>FDM.Extensions.Configuration.ProtectedJson.ConsoleTest</code>: This is a console project which shows how to use <code>JsonProtector</code> by reading and parsing two bespoke configuration files and converting them to a strongly typed class called <code>AppSettings</code>. The decryption happens flawlessly and automatically without almost any line of code, let's see how.</li></ul>
+
+<p>To use <code>ProtectedJson</code>, you have to add how many JSON files you like by using the extension method <code>AddProtectedJsonFile</code> of <code>IConfigurationBuilder</code> which takes these parameters:</p>
+
+<ul>
+	<li><code>path</code>: specifies the path and filename of the JSON file (standard parameter)</li>	<li><code>optional</code>: it is a boolean for specifying whether the JSON file is mandatory or optional (standard parameter)</li>	<li><code>reloadOnChange</code>: this is a boolean which indicates that the JSON file (and configuration) should be reloaded automatically whenever the specified file changes on disk (standard parameter).</li>	<li><code>protectedRegexString</code>: it is a regular expression <code>string</code> which specifies the tokenization tag which encloses the encrypted data; it must define a named group called <code>protectedData</code>. By default, this parameter assumes the value:
+	<div class="pre-lang" id="premain916856"><div>C#</div><div class="pre-action-link"><span id="copycode916856" class="copy-code" data-index="916856" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre916856" style="margin-top:0;" class="lang-csharp notranslate" data-language="cs" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">public</span> <span class="code-keyword">const</span> <span class="code-keyword">string</span> DefaultProtectedRegexString = <span class="code-string">"</span><span class="code-string"><strong>Protected:{(?&lt;protectedData&gt;.+?)}</strong>"</span>;</pre>
+
+	<p>The above regular expression essentially searches in a lazy way (so it can retrieve all the occurrences inside a JSON value) for any <code>string</code> matching the pattern <code>'Protected:{&lt;encrypted data&gt;}'</code> and extracts the <code>&lt;encrypted data&gt;</code> substring storing it inside a group named <code>protectedData</code>. If you do not like this tokenization, you can replace it to any other one you prefer by crafting a regular expression with the constraint that it extracts the <code>&lt;encrypted data&gt;</code> substring in a group called <code>protectedData</code>.</p>
+	</li>	<li><code>serviceProvider</code>: This is a <code>IServiceProvider</code> interface needed to instance the<em> <code>IDataProtectionProvider</code> </em>of Data Protection API in order to decrypt the data. This parameter is mutually exclusive to the next one.</li>	<li><code>dataProtectionConfigureAction</code>: This is a <code>Action&lt;IDataProtectionBuilder&gt;</code> used to <a href="https://learn.microsoft.com/en-us/aspnet/core/security/data-protection/configuration/overview?view=aspnetcore-8.0&amp;viewFallbackFrom=aspnetcore-2.2">configure the Data Protection API</a> in standard NET Core. Again, this parameter is mutually exclusive to the previous one.</li></ul>
+
+<p>The last two parameters are somewhat a drawback, because they represent a reconfiguration of another dependency injection for instantiating the <code>IDataProtectionProvider</code> needed to decrypt the data.</p>
+
+<p>In fact, in a standard NET Core application, usually the dependency injection is configured <strong>after </strong>having read and parsed the configuration file (so all configuration sources and providers do not use DI), but in this case, I was compelled since the only way to access Data Protection API is through DI. Moreover, when configuring the dependency injection, the parsed configuration usually gets binded to a strongly typed class by using <em><code>services.Configure&lt;&lt;strongly typed settings class&gt;&gt;(configuration)</code> </em>so it's a dog chasing its tail (for decrypting configuration you need DI, for configuring DI you need the configuration parsed in order to bound it to a strongly typed class). The only solution I came up for now is reconfiguring a second DI <code>IServiceProvider</code> just for the Data Protection API and use it inside <code>ProtectedJsonConfigurationProvider</code>. To configure the second DI <code>IServiceProvider</code> you have two options: you create it by yourself (by instantiating a <code>ServiceCollection</code>, calling <code>AddDataProtection</code> on it and passing it to <code>AddProtectedJsonFile</code>) or you let <code>ProtectedJsonConfigurationProvider </code>to create it by passing a <code>dataProtectionConfigureAction </code>parameter to <code>AddProtectedJsonFile</code>. In the console application, in order to avoid duplicated code, the configuration of Data Protection API is performed inside a common <code>private</code> method called <code>ConfigureDataProtection</code> whose implementation is:</p>
+
+<div class="pre-lang" id="premain257836"><div>C#</div><div class="pre-action-link"><span id="copycode257836" class="copy-code" data-index="257836" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre257836" style="margin-top:0;" class="lang-csharp notranslate" data-language="cs" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">private</span> <span class="code-keyword">static</span> <span class="code-keyword">void</span> ConfigureDataProtection(IDataProtectionBuilder builder)
+{
+    builder.UseCryptographicAlgorithms(<span class="code-keyword">new</span> AuthenticatedEncryptorConfiguration
+    {
+        EncryptionAlgorithm = EncryptionAlgorithm.AES_256_CBC,
+        ValidationAlgorithm = ValidationAlgorithm.HMACSHA256,
+
+    }).SetDefaultKeyLifetime(TimeSpan.FromDays(365*15)).PersistKeysToFileSystem
+                                              (<span class="code-keyword">new</span> DirectoryInfo(<span class="code-string">"</span><span class="code-string">..\\..\\Keys"</span>));
+}</pre>
+
+<p>Here, I chose to use AES 256 symmetric encryption with HMAC SHA256 as digital signature function. Moreover, I ask to store all the encryption metadata (keys, iv, hash algorithm key) in an XML file inside the <em>Keys</em> folder of the console app (note that all these APIs are provided by default by the Data Protection API). So when you start the app for the first time, the Data Protection API creates automatically the encryption key and stores it in the <em>Keys</em> folder, in the following runs, it loads the key data from this XML file. This configuration however is not the best approach from the security viewpoint because the metadata are stored in plain text, if you are on Windows, you can remove the <code>PersistKeysToFileSystem</code> extension method and in this case, the metadata would be encrypted in turn with another key stored in a secure place inside your computer. I have instead no clue on how Data Protection API manages this in Linux.</p>
+
+<p>In the two <em>appsetting.json</em> and <em>appsettings.development.json</em> files, I define standard key-value pairs in hierarchical way in order to exemplify the merging feature of ASP.NET Core Configuration and also the use of encrypted values.</p>
+
+<p>If you look at the <strong>ConnectionStrings section</strong> of <em>appsetting.json</em>, there are three keys:</p>
+
+<ul>
+	<li><code>PlainTextConnectionString</code>: As the name states, it contains a plaintext connection string</li>	<li><code>PartiallyEncryptedConnectionString</code>: As the name states, it contains a mixture of plain text and multiple <code>Protect:{&lt;data to encrypt&gt;}</code> tokenization tags. On every run, these tokens get automatically encrypted and replaced with the <em><code>Protected:{&lt;encrypted data&gt;}</code></em> token after the call to the extension method <code>IDataProtect.ProtectFiles.</code></li>	<li><code>FullyEncryptedConnectionString</code>: As the name states, it contains a single <code>Protect:{&lt;data to encrypt&gt;} </code>token spanning the whole connection string which gets totally encrypted after the first run.</li></ul>
+
+<p>If you look at <strong>Nullable section</strong> of <em>appsetting.development.json</em>, you can find some <strong>interesting keys</strong>:</p>
+
+<ul>
+	<li><code>Int, DateTime, Double, Bool</code><i>: </i>These keys contains respectively an integer, a datetime, a double and a boolean but they are all stored as a <code>string </code>using a single <code>Protect:{&lt;data to encrypt&gt;}</code> tag<em>. </em>Hey wait, how is this possible?
+
+	<p>Well, chiefly, all the <code>ConfigurationProviders</code> convert initially any <code>ConfigurationSource</code> into a <code>Dictionary&lt;String,String&gt;</code> in their <code>Load</code> method (please see the property <a href="https://github.com/dotnet/runtime/blob/main/src/libraries/Microsoft.Extensions.Configuration/src/ConfigurationProvider.cs#L30">Data of the framework ConfigurationProvider base abstract class</a>, the <code>Load</code> method also flattens all the hierarchical path to the key into a <code>string</code> separated by a colon, so for example <code>Nullable</code>-&gt;<code>Int</code> becomes <code>Nullable:Int</code>). Only later, this dictionary gets converted and binded to a strongly typed class.</p>
+
+	<p>The decryption process of <em><code>ProtectedJsonConfigurationProvider</code></em> happens in the middle, so it's transparent for the user and moreover is available on any simple variable type (<code>DateTime</code>, <code>bool</code>, etc.). For now, the full encryption of a whole array is not supported, but you can however encrypt a single element converting the array to an array of <code>string</code>s (have a look at <code>DoubleArray </code>key).</p>
+	</li></ul>
+
+<p>The main code is:</p>
+
+<div class="pre-lang" id="premain435189"><div>C#</div><div class="pre-action-link"><span class="code-collapse" data-index="435189" id="preShrink435189">Shrink ▲</span> &nbsp; <span id="copycode435189" class="copy-code" data-index="435189" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre435189" style="margin-top:0;" class="lang-csharp notranslate" data-language="cs" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">public</span> <span class="code-keyword">static</span> <span class="code-keyword">void</span> Main(string[] args)
+{
+    <span class="code-comment">//</span><span class="code-comment"> define the DI services: Data Protection API</span>
+    <span class="code-keyword">var</span> servicesDataProtection = <span class="code-keyword">new</span> ServiceCollection();
+    ConfigureDataProtection(servicesDataProtection.AddDataProtection());
+    <span class="code-keyword">var</span> serviceProviderDataProtection = servicesDataProtection.BuildServiceProvider();
+
+    <span class="code-comment">//</span><span class="code-comment"> retrieve IDataProtector interface for encrypting data</span>
+    <span class="code-keyword">var</span> dataProtector = serviceProviderDataProtection.GetRequiredService
+                        &lt;IDataProtectionProvider&gt;().CreateProtector
+                        (ProtectedJsonConfigurationProvider.DataProtectionPurpose);
+
+    <span class="code-comment">//</span><span class="code-comment"> encrypt all Protect:{&lt;data&gt;} token tags of all .json files </span>
+    <span class="code-comment">//</span><span class="code-comment"> (must be done before reading the configuration)</span>
+    <span class="code-keyword">var</span> encryptedFiles = dataProtector.ProtectFiles(<span class="code-string">"</span><span class="code-string">."</span>);
+
+    <span class="code-comment">//</span><span class="code-comment"> define the application configuration and read .json files</span>
+    <span class="code-keyword">var</span> configuration = <span class="code-keyword">new</span> ConfigurationBuilder()
+            .AddCommandLine(args)
+            .AddProtectedJsonFile(<span class="code-string">"</span><span class="code-string">appsettings.json"</span>, ConfigureDataProtection)
+            .AddProtectedJsonFile($<span class="code-string">"</span><span class="code-string">appsettings.{Environment.GetEnvironmentVariable
+                   ("</span>DOTNETCORE_ENVIRONMENT<span class="code-string">"</span><span class="code-string">)}.json"</span>, ConfigureDataProtection)
+            .AddEnvironmentVariables()
+            .Build();
+
+    <span class="code-comment">//</span><span class="code-comment"> define other DI services: configure strongly typed AppSettings </span>
+    <span class="code-comment">//</span><span class="code-comment"> configuration class (must be done after having read the configuration)</span>
+    <span class="code-keyword">var</span> services = <span class="code-keyword">new</span> ServiceCollection();
+    services.Configure&lt;AppSettings&gt;(configuration);
+    <span class="code-keyword">var</span> serviceProvider = services.BuildServiceProvider();
+
+    <span class="code-comment">//</span><span class="code-comment"> retrieve the strongly typed AppSettings configuration class</span>
+    <span class="code-keyword">var</span> appSettings = serviceProvider.GetRequiredService
+                      &lt;IOptions&lt;AppSettings&gt;&gt;().Value;
+    }</pre>
+
+<p>The above code is quite simple and commented, if you launch it in Debug mode, put a breakpoint on the last line where the <code>appSettings</code> variable gets retrieved from DI, you will notice:</p>
+
+<ul>
+	<li>the <em>appsettings.*json</em> files have been backed up in a <em>.bak</em> file and have its <code>Protect:{&lt;data to encrypt&gt;}</code> tokens being replaced with their encrypted version (e.g., <em><code>Protected:{&lt;encrypted data&gt;}</code></em>)</li>	<li>magically and automatically, the <code>appSettings</code> strongly typed class contains the decrypted values with the right data type even though the encrypted keys are always stored in JSON file as <code>string</code>s.</li></ul>
+
+<p><strong>To use it, we had just to use AddProtectedJsonFile on the IConfigurationBuilder, pass the Data Protection API configuration and everything works flawlessly in a transparent way. Moreover all the decryption happens in memory and nothing is stored on disk for any reason.</strong></p>
+
+<h2>Implementation Details</h2>
+
+<p>I explain here the main points of the implementation:</p>
+
+<ul>
+	<li><code>IDataProtect.ProtectFiles</code> is the first extension method which gets called and scans all JSON files inside the supplied directory for <code>Protect:{&lt;data to encrypt&gt;}</code> tokens, encrypts enclosed data, performs the replacement with <code>Protected:{&lt;encrypted data&gt;}</code> and saves back the file after having created an optional backup of the original file with the <em>.bak</em> extension. Again, if you do not like the default tokenization regular expression, you can pass your own one with the constraint that it must extracts the <code>&lt;dato to encrypt&gt;</code> substring in a group called <code>protectData</code>.</li>	<li>The extension method <code>AddProtectedJsonFile</code> stores input parameters into a <code>ProtectedJsonConfigurationSource</code> object and passes it to the <code>IConfigurationBuilder</code> by calling <code>Add</code> method<code>.</code></li>	<li><code>ProtectedJsonConfigurationSource</code> class derives from the standard <code>JsonConfigurationSource</code> and adds three properties: <code>ProtectedRegex</code> (after having checked that the provided <code>regex string</code> contains a group named <code>protectedData</code>), <code>DataProtectionBuildAction</code> and <code>ServiceProvider</code>. The overridden <code>Build</code> method returns a <code>ProtectedJsonConfigurationProvider</code> passing to it the <code>ProtectedJsonConfigurationSource</code> instance<code>.</code></li>	<li><code>ProtectedJsonConfigurationProvider</code> is the class responsible for the transparent decryption. Essentially:
+	<ul>
+		<li>it sets up another dependency injection provider in the constructor (see above for the reason)
+		<div class="pre-lang" id="premain929013"><div>C#</div><div class="pre-action-link"><span id="copycode929013" class="copy-code" data-index="929013" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre929013" style="margin-top:0;" class="lang-csharp notranslate" data-language="cs" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">public</span> ProtectedJsonConfigurationProvider
+     (ProtectedJsonConfigurationSource source) : <span class="code-keyword">base</span>(source)
+{
+    <span class="code-comment">//</span><span class="code-comment"> configure data protection</span>
+    <span class="code-keyword">if</span> (source.DataProtectionBuildAction != <span class="code-keyword">null</span>)
+    {
+        <span class="code-keyword">var</span> services = <span class="code-keyword">new</span> ServiceCollection();
+        source.DataProtectionBuildAction(services.AddDataProtection());
+        source.ServiceProvider = services.BuildServiceProvider();
+    }
+    <span class="code-keyword">else</span> <span class="code-keyword">if</span> (source.ServiceProvider==<span class="code-keyword">null</span>)
+        <span class="code-keyword">throw</span> <span class="code-keyword">new</span> ArgumentNullException(<span class="code-keyword">nameof</span>(source.ServiceProvider));
+
+    DataProtector = source.ServiceProvider.GetRequiredService
+      &lt;IDataProtectionProvider&gt;().CreateProtector(DataProtectionPurpose);
+}</pre>
+		</li>		<li>		<p>it overrides the <code>Load</code> method calling firstly the base class (<code>JsonConfigurationProvider</code>) corresponding method to load and parse input JSON file into the <code>Data</code> property and then cycling all keys, querying and replacing the associated value for all the tokenization tags using the regex<code> Replace</code> method after having decrypted its <code>protectedData</code> group (e.g., &lt;encrypted data&gt;).</p>
+
+		<div class="pre-lang" id="premain49453"><div>C#</div><div class="pre-action-link"><span id="copycode49453" class="copy-code" data-index="49453" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre49453" style="margin-top:0;" class="lang-csharp notranslate" data-language="cs" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">public</span> <span class="code-keyword">override</span> <span class="code-keyword">void</span> Load()
+{
+    <span class="code-keyword">base</span>.Load();
+
+    <span class="code-keyword">var</span> protectedSource = (ProtectedJsonConfigurationSource)Source;
+
+  <span class="code-comment">//</span><span class="code-comment"> decrypt needed values</span>
+  <span class="code-keyword">foreach</span> (<span class="code-keyword">var</span> key <span class="code-keyword">in</span> Data.Keys.ToList())
+  {
+      <span class="code-keyword">if</span> (!String.IsNullOrEmpty(Data[key]))
+      Data[key] = protectedSource.ProtectedRegex.Replace(Data[key], 
+           me =&gt; DataProtector.Unprotect(me.Groups[<span class="code-string">"</span><span class="code-string">protectedData"</span>].Value));
+  }
+}</pre>
+		</li>	</ul>
+	</li></ul>
+
+<h2>Points of Interest</h2>
+
+<p>I think that the idea of specifying the custom tag through a regex is very witty because it gives every user the flexibility they need to customize the tokenization tag. I have also released it as a <a href="https://www.nuget.org/packages/Fededim.Extensions.Configuration.ProtectedJson">NuGet package on NuGet.Org</a>.</p>
+
+<h2>History</h2>
+
+<ul>
+	<li>V1.0 (20<sup>th</sup> November, 2023)
+
+	<ul>
+		<li>Initial version</li>	</ul>
+	</li>	<li>V1.1 (21<sup>st</sup> November, 2023)
+	<ul>
+		<li>Added <code>IDataProtect.ProtectFile </code>extension method</li>		<li>Replaced regular expression named group from <code>protectionSection</code> to <code>protectedData</code></li>		<li>Improved legibility (there was a lot of basically!) and code</li>	</ul>
+	</li>	<li>V1.2 (4<sup>th</sup> December, 2023)
+	<ul>
+		<li>Targeting multi frameworks: NET 6.0, NET Standard 2.0 and .NET Framework 4.6.2</li>		<li>Update NuGet package to 1.0.1</li>	</ul>
+	</li></ul>
+
+
+
+
+						</div>
+						
+
+						
+						<h2>License</h2>
+						<div id="LicenseTerms"><p>This article, along with any associated source code and files, is licensed under <a href="http://www.codeproject.com/info/cpol10.aspx" rel="license">The Code Project Open License (CPOL)</a></p></div>
+						
+
+						
+						<br>
+						
+						    <br>
+						
+						
+
+						<div class="clearfix"></div>
+
+						<div style="padding-top:8px">
+							
+						</div>
+
+					
+
+				    
+					</form>
+
+				</div>
+
+				
+				<div class="bottom-promo"> 
+				    
+				</div>
+				
+                
+                
+
+				
+				
+				
+
+			</div>
+			
+
+            
+            
+            
+
+        </div>
+        
+
+		
+		<div class="site-footer">
+			<div class="align-left">
+				<a id="ctl00_PermaLink" href="https://www.codeproject.com/Articles/5372873/ProtectedJson-Integrating-ASP-NET-Core-Configurati">Permalink</a><br>
+				<br>
+				<a id="ctl00_PrivacyLink" href="https://www.codeproject.com/info/privacy.aspx">Privacy</a><br>
+    			<a id="ctl00_CookiePolicyLink" href="https://www.codeproject.com/info/cookie.aspx">Cookies</a><br>
+                <a id="ctl00_TermsOfUseLink" href="https://www.codeproject.com/info/TermsOfUse.aspx">Terms of Use</a><br>
+			</div>
+
+            <div class="align-center">
+				
+
+
+<div class="page-width">
+    Layout: <a id="ctl00_PageWidth_FixedT" title="Fixed width layout" rel="nofollow" class=" active" href="https://www.codeproject.com/Articles/5372873/ProtectedJson-Integrating-ASP-NET-Core-Configurati?PageFlow=FixedWidth">fixed</a>
+    |
+    <a id="ctl00_PageWidth_FluidT" title="Fluid layout" rel="nofollow" href="https://www.codeproject.com/Articles/5372873/ProtectedJson-Integrating-ASP-NET-Core-Configurati?PageFlow=Fluid">fluid</a>
+</div>
+
+
+				
+
+				
+
+	            
+
+                <br>
+			</div>
+                
+			<div class="align-right">
+				Article Copyright 2023 by Federico Di Marco<br>Everything else
+				Copyright © <a href="mailto:webmaster@codeproject.com">CodeProject</a>, 1999-2024<br>
+                <br>
+				Web01 
+				2.8:2024-10-20:1<br>
+			</div>
+		</div>
+		
+
+		<br clear="all">
+		
+			
+
+	</div> 
+	</div> 
+</div>
+
+
+
+
+
+
+
+<script type="text/javascript"> // DEFERRED script
+
+document.addEventListener('DOMContentLoaded', function() {
+
+	new CodeBlocks().initialise('#contentdiv');
+	
+	$('.author-wrapper .description').shorten({showChars: 400});
+	
+	anchorAnimate();
+	
+	$('#__EVENTVALIDATION').attr('autocomplete', 'off');
+
+})
+</script>
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">.copied::after {  position: absolute;  right: 0;  display: inline-block; white-space: nowrap; content: 'copied'; color: #fff; background-color: #f90;  border-radius: 3px; padding:1px 8px; opacity: 0;  will-change: opacity, transform; animation: showcopied 1.5s ease; } @keyframes showcopied { 0% { opacity: 0; } 70% { opacity: 1; } 100% { opacity: 0; } } </style><canvas id="cv1" width="1px" height="1px" style="position:absolute;left:0;top:0;pointer-events:none"></canvas><canvas id="cv2" width="1px" height="1px" style="position:absolute;left:0;top:0;pointer-events:none"></canvas></body></html>

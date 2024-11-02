@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<!-- saved from url=(0083)https://www.codeproject.com/Articles/1004498/SyncEvent-The-missing-Java-Event-Class -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	
+	<link rel="preconnect" href="https://www.google-analytics.com/">
+
+	<link rel="preconnect" href="https://www.codeproject.com/">
+
+
+	<link rel="preload" href="./SyncEvent_ The missing Java Event Class- CodeProject_files/logo250x135.gif" as="image">
+
+
+	<link rel="preload" href="https://www.codeproject.com/App_Themes/CodeProject/Img/logo135-bg.gif" as="image">
+	<link rel="preload" href="./SyncEvent_ The missing Java Event Class- CodeProject_files/jquery-3.4.1.min.js.download" as="script" type="text/javascript">
+
+
+	<title>SyncEvent: The missing Java Event Class- CodeProject</title> 
+    
+	<link type="text/css" rel="stylesheet" href="./SyncEvent_ The missing Java Event Class- CodeProject_files/Article.min.css">
+
+
+    <script type="text/javascript" async="" src="./SyncEvent_ The missing Java Event Class- CodeProject_files/analytics.js.download"></script><script type="text/javascript" src="./SyncEvent_ The missing Java Event Class- CodeProject_files/jquery-3.4.1.min.js.download" defer=""></script>
+<script type="text/javascript" src="./SyncEvent_ The missing Java Event Class- CodeProject_files/article.min.js.download" defer=""></script>
+
+	
+<meta http-equiv="content-language" content="en-US">
+
+<meta name="Description" content="This article presents a general purpose event class called SyncEvent supporting standard thread synchronization operations like signalling and waiting, also on multiple events.">
+<meta name="Keywords" content="Java, Mobile, Architect, Dev, Intermediate, Android, threads">
+<meta name="Author" content="Federico Di Marco">
+<meta name="Rating" content="General">
+<meta name="Revisit-After" content="1 days">
+<meta name="application-name" content="CodeProject">
+<meta name="google-translate-customization" content="d908bb7ce7aff658-4c2f3a504525c916-g629383f736781a8a-13">
+
+
+
+<link rel="dns-prefetch" href="https://ajax.googleapis.com/"> 
+<link rel="canonical" href="https://www.codeproject.com/Articles/1004498/SyncEvent-The-missing-Java-Event-Class">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@CodeProject">
+<meta name="og:site_name" content="CodeProject">
+<meta name="twitter:creator" content="@CodeProject">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="6/30/2015 1:07:00 PM">
+<meta property="article:modified_time" content="6/30/2015 1:07:00 PM">
+<meta name="twitter:label1" content="Written by">
+<meta name="twitter:data1" content="Federico Di Marco">
+<meta name="twitter:label2" content="Reading time">
+<meta name="twitter:data2" content="7 min read">
+<meta property="og:url" content="https://www.codeproject.com/Articles/1004498/SyncEvent-The-missing-Java-Event-Class">
+<meta property="og:title" content="SyncEvent: The missing Java Event Class">
+<meta property="og:description" content="This article presents a general purpose event class called SyncEvent supporting standard thread synchronization operations like signalling and waiting, also on multiple events.">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="apple-touch-icon" sizes="144x144" href="https://www.codeproject.com/favicon/apple-touch-icon.png"> 
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.codeproject.com/favicon/favicon-32x32.png"> 
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.codeproject.com/favicon/favicon-16x16.png"> 
+<link rel="manifest" href="https://www.codeproject.com/favicon/manifest.json"> 
+<link rel="mask-icon" href="https://www.codeproject.com/favicon/safari-pinned-tab.svg" color="#ff9900">
+	<script type="application/ld+json">{
+  "@context": "http://schema.org",
+  "@type": "TechArticle",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.codeproject.com/Articles/1004498/SyncEvent-The-missing-Java-Event-Class"
+   },
+  "name": "SyncEvent: The missing Java Event Class",
+  "headline": "SyncEvent: The missing Java Event Class",
+  "url": "https://www.codeproject.com/Articles/1004498/SyncEvent-The-missing-Java-Event-Class",
+  "discussionUrl": "https://www.codeproject.com/Articles/1004498/SyncEvent-The-missing-Java-Event-Class#_comments",
+  "isFamilyFriendly": "true",
+  "image": "https://www.codeproject.com/App_Themes/CodeProject/Img/Article100.png",
+  "keywords": "Java,Mobile,Architect,Dev,Intermediate,Android,threads",
+  "commentCount": "0",
+  "editor" : {
+    "@type" : "Person",
+    "name" : "Editor",
+    "url" : "https://www.codeproject.com/script/Membership/View.aspx?mid=3866010"
+  },
+  "license": "http://www.codeproject.com/info/cpol10.aspx",
+  "publisher" : {
+    "@type" : "Organization",
+    "name" : "CodeProject"
+  },
+  "description": "This article presents a general purpose event class called SyncEvent supporting standard thread synchronization operations like signalling and waiting, also on multiple events.",
+  "articleSection": "Android",
+  "author" : [{
+      "@type" : "Person",
+      "name" : "Federico Di Marco",
+      "url" : "https://www.codeproject.com/script/Membership/View.aspx?mid=3865041"
+    }],
+  "datePublished": "2015-06-30",
+  "dateCreated": "2015-06-30",
+  "dateModified": "2015-06-30"
+,
+  "contentRating" : {
+    "@type" : "Rating",
+    "ratingValue" : 5.00,
+    "bestRating" : 5,
+    "worstRating" : 1
+  }
+}</script>
+
+<script type="application/ld+json">{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "item" : {
+      "@id" : "/script/Content/Tag.aspx?tags=Mobile",
+      "name" : "Mobile"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "item" : {
+      "@id" : "/script/Content/Tag.aspx?tags=Android",
+      "name" : "Android"
+    }
+  }]
+}</script>
+
+
+	<!--<base target="_top">--><base href="." target="_top">
+	
+    
+
+
+<script type="text/javascript">
+function defrm () { /* thanks twitter */
+    document.write = '';
+    window.top.location = window.self.location;
+    setTimeout(function() { document.body.innerHTML = ''; }, 0);
+    window.self.onload = function(evt) { document.body.innerHTML = ''; };
+}
+
+if (window.top !== window.self) {
+    try {
+        if (window.top.location.host) { /* will throw for all except chrome */ }
+        else { defrm(); /* chrome */ }
+    } catch (ex) { defrm(); /* everyone else */ }
+}
+
+// Specific case where a site is screwing with us.
+if (typeof(DemoUrl) !== 'undefined') {
+    document.write(unescape('%3Cme') + 'ta http' + '-equiv="re' + 'fresh con' +
+                           'tent="1;url=' + DemoUrl + unescape('"%3CE'));
+}
+</script>
+	
+
+
+
+
+
+    <script async="" type="text/javascript" src="./SyncEvent_ The missing Java Event Class- CodeProject_files/js"></script>
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-1735123-1' , {'user_id': '61732e5b-06af-4ac2-8734-b1591748583e'});
+    </script>
+
+<style type="text/css"></style></head>	
+
+<body class="chrome chrome130">
+
+
+
+<a class="access-link" href="https://www.codeproject.com/Articles/1004498/SyncEvent-The-missing-Java-Event-Class#Main"><img alt="Click here to Skip to main content" src="./SyncEvent_ The missing Java Event Class- CodeProject_files/t.gif"></a>
+
+
+
+
+<div class="page-background">
+
+	
+	
+
+	
+
+	
+    <div id="ctl00_STM" class="site-top-menu fixed narrow">
+        <div class="main-content">
+            
+
+<div class="container memberbar clearfix flex-container flex-extend">
+
+	<div id="ctl00_MemberBar_GenInfo" class="flex-item align-left">65,938 articles</div>
+	
+	<div id="ctl00_MemberBar_ChangeNotice" class="flex-item align-left">CodeProject
+	is changing. <a href="https://www.codeproject.com/info/Changes.aspx">Read more</a>.</div>
+
+	<div class="flex-item">
+		
+	</div>
+
+	<div class="flex-item align-right">
+
+		
+
+		
+
+		
+	</div>
+</div>
+        </div>
+    </div>
+
+	
+    <div id="ctl00_SH" class="site-header fixed narrow">
+        <div class="main-content">
+            <div class="logo"><a href="https://www.codeproject.com/"><img id="ctl00_Logo" tabindex="1" title="CodeProject" src="./SyncEvent_ The missing Java Event Class- CodeProject_files/logo250x135.gif" alt="Home" style="height:135px;width:250px;border-width:0px;"></a></div>
+            <div class="promo"></div>
+        </div>
+    </div>
+
+	
+			
+	
+
+	<div id="A" class="container-content-wrap fixed narrow"> 
+
+	<div class="container-content">
+
+        
+		<div class="clearfix">
+			<div class="container-breadcrumb float-left ">
+				<div><a rel="nofollow" href="https://www.codeproject.com/script/Content/SiteMap.aspx">Articles</a> / <a rel="nofollow" href="https://www.codeproject.com/script/Content/Tag.aspx?tags=Mobile">Mobile</a> / <a rel="nofollow" href="https://www.codeproject.com/script/Content/Tag.aspx?tags=Android">Android</a></div>
+			</div>
+
+            <div class="float-left">
+				
+			</div>
+
+			<div class="edit-links float-right">
+				
+
+
+
+ 
+&nbsp;
+
+
+
+
+
+
+
+
+
+
+			</div>
+
+			<div class="article-nav float-right">
+				
+
+
+<div style="display:inline-block;position:relative;top:-6px;margin-right:20px">
+    
+</div>
+
+
+
+ 
+
+<a id="ctl00_ActionLinks_PrintMd" data-tooltip="Print" data-enabletooltip="true" data-width="auto" href="https://www.codeproject.com/Articles/1004498/SyncEvent-The-missing-Java-Event-Class?display=Print" class="tooltip" title="">
+   <img src="./SyncEvent_ The missing Java Event Class- CodeProject_files/print48.png" width="24" height="24" style="border:0">
+<div class="speech-bubble-container-up" style="width:auto">  <div class="speech-bubble-up" style="text-align:center"> Print</div>  <div class="speech-bubble-pointer-up">    <div class="speech-bubble-pointer-up-inner"></div>  </div></div></a>
+
+
+
+<span id="ctl00_ActionLinks_R">
+    
+    
+</span>
+			</div>
+		</div>
+
+        
+		<div class="extended article-container-parts">
+
+			
+		    
+            
+
+			
+			<div id="AT" class="article-container  fixed narrow" style="max-width:inherit;"> 
+
+				<div class="article">
+
+					<form name="aspnetForm" method="post" action="https://www.codeproject.com/Articles/1004498/View.aspx" id="aspnetForm" style="margin:0;padding:0">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="B9r2Ws/FcF1q+vxwNA+VqPiU7VfohA1W7nHeIW4dCUtURVKSdLQcqeMzGNANI2bEUrZmfvYtzUX+hL4dg+tSclLCAwWA8vmYDztZRZcIAtgR8K/9QAa2ymHzuW4DEEL7QWn+l8pv+jxTYf7OtJWfbuWmg59zQo3f00FMCz4S9+LToVQ2RtZZKaWjUW6PjGgio0glg9C5V0162n7JjirNOGTAMel+tsQJJe7UNWrHypwdWY4B4lhaQE3Jg5ugBnj4ZyJ0JfMf9MC8jForWoYImjxl+kPoOZj+sYAY0qE+nIPHzYA29ykgLZIhDBun21z0A5CzDTdNibfd36cVcbbisBgu9N0fZOI1fXH5eQsyPuFBTn6XMV0nSPrVs4ungqX7kAcBTjNJ70sNm/YoeyeWKOb1Wg3L5xCZg9x73Djitg/MeC6/RZpHSZohjndyM6qf4Km5cH6B0YNxob0EsK/3qy8EEkolF2Uk9X28cNvajOqIa83PjkK97+dUlN3obDwzxO0au/DN1Ua2BVcmuBVDcC52XcIVZSszUTWvJEqnwgFpW6PuLTc2BCRBaqP3jq/unUFbKmDG5eLMefkXtrgtQJOcVnhBT010HzepbSSi12MeJG/vlFKgukScsFaBS1D20vsmO3RVXn6OAw9oL6SBqAkZQG9RoF0+fD6/5SQlr34h5fDB00OOxYtLt8nMIBAyb5zO6EJz99QHsK5Mnn3dTh+5Tx3MlYDB/ByRcfh36qHzDEm+z81uScDS3vwV/hqD1E3xt2QkHJiKUzlGTNEfnuFAN+gPBNayDEWhNhXRCAaK2n01qFYWQMg5HcbCQDHeI6eLY3RyKKSz2v9oSV5Pgi+z/m+o4mDfUqnQ70Stxv7byaMzH88M7gBkZL22vluvSy6c7zPqxRUR+oS21ybgqhsQkPAjOlv73w+jrxuHFiV2i4xCRs+V+vRhiq4gjMvyTD+FCQeAnqw/z3WqLEvdcfBhwgwWm0M6rRSloN3RZnjUNbOaPgl2UQWGcor/8I2vnW3pKx2dH4dvvc857PMtckb2QsaFCw7i9IPoB0aw7B5we8Tw+ZcEeHzJ/L++BCUscGJPWvoxA2VxcN54cf+AyAwKJzU9S8lnZwrjhUu+0Iq1pDAgRSa5OjEeoVzpMM+a2CS7WreLP+t/2NmbGW+RceXSQ0PHSI846V25bIXBSchydf7gnlj9eWQjJD4BTJ3PafVKb3X/zmYc3IKPS1Cmk0VNPRFWfMiHlg7VCXSixKbG4awvMuuBpt2yIdbutttTz7oybIv1xf5FX/4HmjLGMgNjLS0wX6E62BWBWGQPDeqim6zxe0GgvvQn0Ped0SKYfkcaJ/MNtDYZCN6fmBIvgoKZgyelQo2t2Q+RjioUC6KOsnJyf+ARNLj27yJVTP62s+0cDVCxkjKl4Rk0/16TC+3l+oQT/T//u4ccON4w+XgWQGFvSp9vVrD06Ua5SqG9GfT+uvsU1uBihHONUB15hA5Y7FnLV91f/b7g1khR2zWum6DtbmAANPS8qfODCmVQgMSFVXq6y+c/99h2OnjAHPdJTUVVzPldvQvRDH2r05IEoC0063HKd7qXGHUHsP87/fmoQP4NHJ0BqVGRWbiKkgaOq0W2QZk6XyvQCCU/++gfpTyMIJwwNhiGDtn39ACUrRf/L8oKuTeTuoUItq4iRp+5RPzQK2vr2vELw4+3OdcdjOkEl8FQBQ5so9o4T8wjDrY/scWTl9s3A/N9A0O50jpQzF6h0yrLZ6kb3YcVZS2ycql9e+tUnAehv4fE38K293s5JGEIEloOPLIZqPjTawrMyG6+kp5q34A6YiJDUamjBb1M/Y9x3T1Mw0VSGVCq76MgHuxjjVI5tyXaYmjYGShXrRPuqDFVqrTdIcETX+luCmbpUILIqxJapeQY27Nq18vyUutxK1zR3V4hIS2O0lV4dpP0JK+hCpiksmiRkTSTlQXb03CXQASBdwV0BsujyWzPomwqKp2KperC8zWGT8+Nn2UHNmAaRWgUAmRUCx9aHrR/K/f0e8sb4BciQ84fsGmE0cVy/mYpmxwAWBWT01vtcPKUrTYX9maIU2DyNHkxQ/kWrIpVODjk0jetJeUigUsrkd5AU+HAssNcGq1TouKGJHurWcW1SLxq56a/ptlR3QRM">
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="10C1FD69">
+</div>
+
+					
+					 
+					<div class="header">
+					    <a name="Main"></a>
+					    <a name="_articleTop" id="_articleTop"></a>
+
+					    
+						<div>
+							<span id="ctl00_TagListHorz_TagWrp" class="tags horizontal">
+
+	
+	
+
+	
+	<span id="ctl00_TagListHorz_VisibleTags"><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/Java" data-id="91">Java</a></div><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/Mobile" data-id="105">Mobile</a></div><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/Android" data-id="280">Android</a></div><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/threads" data-id="821">threads</a></div></span> 
+
+	
+	
+</span>
+
+
+						</div>
+					    <div class="title">
+					        <h1 id="ctl00_ArticleTitle">SyncEvent: The missing Java Event Class</h1>
+					    </div>
+
+                        <div>
+					        
+					        <div class="entry flex-container">
+
+								
+
+                                <div class="flex-item" style="flex:1 1 auto">
+                                    <div class="flex-container" style="justify-content:space-between;flex-wrap:wrap-reverse">
+                                       <span id="ctl00_Authors" class="author flex-item"><a href="https://www.codeproject.com/script/Membership/View.aspx?mid=3865041" rel="author">Federico Di Marco</a></span> 
+
+                                        <div class="flex-item" style="margin-top:-4px;">
+                                            <div id="ctl00_RateArticle_RatingTable" class="small-text" data-objectref="2_1004498">
+
+	<meta itemprop="upvoteCount" content="1">
+
+
+	<div id="ctl00_RateArticle_RatingRow" class="flex-container rating-container large-stars">
+
+					
+		
+
+		
+		<div class="nowrap tooltip">
+
+			
+			<div id="ctl00_RateArticle_ResultNoHist" class="rating-result"><div class="flex-container rating-stars large-stars"><div><img src="./SyncEvent_ The missing Java Event Class- CodeProject_files/star-fill-lg.png" style="width:24px;height:24px"></div><div><img src="./SyncEvent_ The missing Java Event Class- CodeProject_files/star-fill-lg.png" style="width:24px;height:24px"></div><div><img src="./SyncEvent_ The missing Java Event Class- CodeProject_files/star-fill-lg.png" style="width:24px;height:24px"></div><div><img src="./SyncEvent_ The missing Java Event Class- CodeProject_files/star-fill-lg.png" style="width:24px;height:24px"></div><div><img src="./SyncEvent_ The missing Java Event Class- CodeProject_files/star-fill-lg.png" style="width:24px;height:24px"></div></div></div>
+			
+
+			
+			
+
+			
+            
+
+			
+                
+
+		</div>
+		
+	
+		
+		<div id="ctl00_RateArticle_VoteCountNoHist" class="rating-votes nowrap">5.00/5  (1 vote)</div>	
+
+		
+
+		
+		<div class="rating-undo" title="Undo vote" style="margin-left:5px;display:none"></div>
+
+		
+		
+	</div>
+
+	
+	
+
+</div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="flex-container" style="color:#666;font-size:smaller">
+                                        <span id="ctl00_LastUpdated" class="date flex-item-tight" title="Date last updated">30 Jun 2015</span><a id="ctl00_LicenseLink" title="The Code Project Open License (CPOL)" class="license flex-item-tight" href="http://www.codeproject.com/info/cpol10.aspx">CPOL</a><span id="ctl00_ReadingTime" class="stats flex-item-tight">7 min read</span><span id="ctl00_HorizontalStats" class="stats flex-item-tight"><span class="stats"><span title="Views"><img src="./SyncEvent_ The missing Java Event Class- CodeProject_files/views32.png" style="width:16px"> 9.5K</span> &nbsp; <span title="Downloads"><img src="./SyncEvent_ The missing Java Event Class- CodeProject_files/download32.png" style="width:16px"> 51</span> &nbsp; </span></span>
+                                    </div>
+                                </div>
+					        </div>
+
+                            
+
+                        </div>
+
+                        <div id="ctl00_DescriptionSpot" class="summary">This article presents a general purpose event class called SyncEvent supporting standard thread synchronization operations like signalling and waiting, also on multiple events.</div><span id="ctl00_ThumbnailUrl" class="date" content="https://www.codeproject.com/script/Articles/Images/article100x80.png"></span>			
+
+                    </div>
+                    
+					
+					
+
+					
+
+					
+					
+
+					
+					
+
+						
+					
+
+					
+
+						
+						<div id="contentdiv" class="text">
+						
+
+
+
+<!-- Article Starts -->
+
+<ul class="download">
+	<li><a href="https://www.codeproject.com/KB/threads/1004498/SyncEvent_V1.2.zip">Download source (V1.2) - 1.1 MB</a></li></ul>
+
+<h2>Introduction</h2>
+
+<p>If you are programming with asynchronous operations (e.g. threads), sooner or later, you will need to have a mechanism which enables a thread to suspend awaiting some kind of "acknowledge" (signaling) from another thread (the basic idea is "I want to wait when you have finished your job, tell me when"). Well, that mechanism is well known in computer literacy as an "Event" and most operating systems provide such functionality in their API. Java however does not provide an out-of-the-box class implementing this full mechanism, but only provides the basic functions needed to construct one. Moreover, it does not provide a straightforward way to suspend a thread waiting on multiple events for the first event to happen, feature which is sometimes needed. The <code>SyncEvent</code> packs all these functionalities in a Java class, which can be used as an hassle-free way for thread synchronization operations.</p>
+
+<h2>Background</h2>
+
+<p>I come from a Microsoft background and I had to switch to Java to write some simple Android apps. Android uses heavily asynchronous operations (for example all network related calls must not be called from the main process thread) and I was astonished that neither Java nor Android provides an out of the box class for such functionality, so common in Microsoft operating system and .NET framework. I looked on the internet for a general purpose class, but I was unable to find one, so I decided to build the <code>SyncEvent</code> class, with the most needed functionalities.</p>
+
+<h2>Description of SyncEvent Class</h2>
+
+<p>Let's take a look at the interface of <code>SyncEvent </code>class:</p>
+
+<ul>
+	<li>We have a <em>constructor </em>which takes a <code>String </code>as input parameter, which is used only in logging to distinguish an event from another (it's highly likely that you will have more than one event in your programs).</li>	<li>The <em>main methods</em> are (they are all documented according to javadoc specification):
+	<ul class="method">
+		<li><code>waitForEvent</code>: which suspends the thread, awaiting a signal on the event. You can specify whether the wait is for an indefinite/definite period of time and whether the signalled state of the event is autocleared on return from the method (<code>true </code>as default).</li>		<li><code>signalEvent</code>: which wakes up one of the threads awaiting on this event.</li>		<li><code>resetEvent</code>: which manually clears the signalled state of the event</li>		<li><code>isSignalled</code>: which returns whether this event has been signalled or not. You can specify also here if you wish to auto-clear the signal status on return or not.</li>		<li><code>getName</code>: which returns the event name, as previously specified in the constructor.</li>	</ul>
+	</li>	<li>There are also two&nbsp;<code>static </code>methods:
+	<ul class="method">
+		<li><code>WaitForMultipleEvents</code>: which allows waiting for multiple events, awaking as soon as one of the specified events happens (from version 1.2 it has been re-implemented with a queue and the same SyncEvent class for the most "basic" code).</li>		<li>		<p><code>WaitForMultipleEventsExecutor</code>:&nbsp;earlier version of the WaitForMultipleEvents implemented with&nbsp;<code>ExecutorCompletionService</code> class (remains as an alternative implementation).</p>
+		</li>	</ul>
+	</li></ul>
+
+<div class="pre-lang" id="premain450216"><div>Java</div><div class="pre-action-link"><span class="code-collapse" data-index="450216" id="preShrink450216">Shrink ▲</span> &nbsp; <span id="copycode450216" class="copy-code" data-index="450216" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre450216" style="margin-top:0;" class="lang-java notranslate" data-language="java" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">package</span> com.fdm.syncevent;
+
+<span class="code-keyword">import</span> java.util.Queue;
+<span class="code-keyword">import</span> java.util.concurrent.Callable;
+<span class="code-keyword">import</span> java.util.concurrent.ConcurrentLinkedQueue;
+<span class="code-keyword">import</span> java.util.concurrent.ExecutionException;
+<span class="code-keyword">import</span> java.util.concurrent.ExecutorCompletionService;
+<span class="code-keyword">import</span> java.util.concurrent.ExecutorService;
+<span class="code-keyword">import</span> java.util.concurrent.Executors;
+
+<span class="code-keyword">import</span> android.util.Pair;
+
+<span class="code-keyword">public</span> <span class="code-keyword">class</span> SyncEvent {
+    <span class="code-keyword">final</span> <span class="code-keyword">static</span> ILogger log = <span class="code-keyword">new</span> LogcatLogger(<span class="code-string">"</span><span class="code-string">SyncEvent"</span>);
+
+    Object sync;
+    <span class="code-keyword">boolean</span> syncSignalled;     	<span class="code-comment">//</span><span class="code-comment"> the boolean is needed to save the status of signal notification, </span>
+				<span class="code-comment">//</span><span class="code-comment"> when the signal comes before the wait operation    </span>
+    <span class="code-sdkkeyword">String</span> syncName;
+
+    <span class="code-keyword">public</span> SyncEvent(<span class="code-sdkkeyword">String</span> name) {
+        sync=new Object();
+        syncSignalled=false;
+        syncName=name;
+    }
+   
+
+    <span class="code-comment">/*</span><span class="code-comment">*
+    * Gets the signal name specified during creation.
+    * @return Returns the signal name used for logging.
+    */</span>
+    <span class="code-keyword">public</span> <span class="code-sdkkeyword">String</span> getName() {
+        <span class="code-keyword">return</span> syncName;
+    }
+
+    <span class="code-comment">/*</span><span class="code-comment">*
+    * Waits indefinetely for the event to be signalled. 
+    * The signalled status of the event is auto-cleared on return.
+    * @return &lt;li&gt;false&lt;/li&gt; if the wait operation has been interrupted 
+    * (someone is trying to "kill" our thread), &lt;li&gt;true&lt;/li&gt; is the event has been signalled.
+    */</span>
+    <span class="code-keyword">public</span> <span class="code-keyword">boolean</span> waitForEvent() {
+        <span class="code-keyword">return</span> waitForEvent(true);
+    }
+
+    <span class="code-comment">/*</span><span class="code-comment">*
+    * Waits indefinetely for the event to be signalled.
+    * @param  autoclear    if true the signalled status of the event is auto-cleared on return.
+    * @return &lt;li&gt;false&lt;/li&gt; if the wait operation has been interrupted 
+    * (someone is trying to "kill" our thread), &lt;li&gt;true&lt;/li&gt; is the event has been signalled.
+    */</span>
+    <span class="code-keyword">public</span> <span class="code-keyword">boolean</span> waitForEvent(<span class="code-keyword">boolean</span> autoclear) {
+          <span class="code-keyword">synchronized</span> (sync) {
+                  <span class="code-comment">//</span><span class="code-comment"> while is needed since Java's wait function could return even when no signal </span>
+		  <span class="code-comment">//</span><span class="code-comment"> has been raised (so called spurious wakeups)</span>
+                  <span class="code-keyword">while</span> (!syncSignalled) {
+                      <span class="code-comment">//</span><span class="code-comment">log.d("%s: Awaiting signal",syncName);</span>
+                      <span class="code-keyword">try</span> {
+                          sync.wait();
+                      }
+                      <span class="code-keyword">catch</span> (InterruptedException e) {
+                          <span class="code-keyword">return</span> false;                     
+                      }
+                  }
+                  <span class="code-keyword">if</span> (autoclear)
+                      syncSignalled=false;                       
+          }
+
+          <span class="code-keyword">return</span> true;
+    }
+   
+
+    <span class="code-comment">/*</span><span class="code-comment">*
+    * Waits for the event to be signalled up to the specified time. 
+    * The signalled status is auto-cleared on return
+    * @param  millis    maximum number of milliseconds to wait for
+    * @return
+    * &lt;li&gt;0&lt;/li&gt; if the event has been signalled;
+    * &lt;li&gt;-1&lt;/li&gt; if the wait operation has been interrupted (someone is trying to "kill" our thread);
+    * &lt;li&gt;-2&lt;/li&gt; if the timeout has elapsed and the event has not been signalled
+    */</span>    
+    <span class="code-keyword">public</span> <span class="code-keyword">int</span> waitForEvent(<span class="code-keyword">long</span> millis) {
+        <span class="code-keyword">return</span> waitForEvent(millis, true);
+    }
+   
+   
+
+    <span class="code-comment">/*</span><span class="code-comment">*
+    * Waits for the event to be signalled up to the specified time.
+    * @param  millis    maximum number of milliseconds to wait for
+    * @param  autoclear    if true the signalled status of the event is auto-cleared on return.
+    * @return
+    * &lt;li&gt;0&lt;/li&gt; if the event has been signalled;
+    * &lt;li&gt;-1&lt;/li&gt; if the wait operation has been interrupted (someone is trying to "kill" our thread);
+    * &lt;li&gt;-2&lt;/li&gt; if the timeout has elapsed and the event has not been signalled
+    */</span>    
+    <span class="code-keyword">public</span> <span class="code-keyword">int</span> waitForEvent(<span class="code-keyword">long</span> millis, <span class="code-keyword">boolean</span> autoclear) {                 
+        <span class="code-keyword">long</span> startTime,elapsed;
+
+        <span class="code-keyword">synchronized</span> (sync) {
+                <span class="code-comment">//</span><span class="code-comment"> while is needed since Java's wait function could return even when no signal </span>
+                <span class="code-comment">//</span><span class="code-comment"> has been raised (so called spurious wakeups)</span>
+                  <span class="code-keyword">while</span> (!syncSignalled) {
+                      <span class="code-comment">//</span><span class="code-comment">log.d("%s: Awaiting signal",syncName);</span>
+                      <span class="code-keyword">try</span> {
+                          startTime=System.currentTimeMillis();
+                          sync.wait(millis);
+                          elapsed=System.currentTimeMillis()-startTime;
+                          <span class="code-keyword">if</span> (elapsed&gt;=millis)  <span class="code-comment">//</span><span class="code-comment"> if it is a real timeout exit</span>
+                              <span class="code-keyword">break</span>;
+                          <span class="code-keyword">else</span>
+                              millis-=elapsed;  <span class="code-comment">//</span><span class="code-comment"> if it is a spurious wakeup go on waiting </span>
+						<span class="code-comment">//</span><span class="code-comment"> till the timeout has been reached</span>
+                      }
+                      <span class="code-keyword">catch</span> (InterruptedException e) {
+                          <span class="code-keyword">return</span> -<span class="code-digit">1</span>;                     
+                      }
+                  }
+                  <span class="code-keyword">boolean</span> signal=syncSignalled;
+                  <span class="code-keyword">if</span> (autoclear)
+                      syncSignalled=false;                       
+                  <span class="code-keyword">return</span> (signal?<span class="code-digit">0</span>:-<span class="code-digit">2</span>);
+          }
+    }
+
+   
+
+    <span class="code-comment">/*</span><span class="code-comment">*
+        * Waits for the first of multiple events to be signalled up to the specified time.
+        * The signalled status of the first event is auto-cleared on return
+        * @param  millis    maximum number of milliseconds to wait for
+        * @param  events    an array of one or more events to wait concurrently for
+        * @return
+        * &lt;li&gt;i&lt;/li&gt;  i&gt;=0, if the i-th event has been signalled;
+        * &lt;li&gt;-1&lt;/li&gt; if the wait operation has been interrupted
+        * (someone is trying to "kill" our thread);
+        * &lt;li&gt;-2&lt;/li&gt; if the timeout has elapsed and none of the events have been signalled
+        */</span>         
+        <span class="code-keyword">public</span> <span class="code-keyword">static</span> <span class="code-keyword">int</span> waitForMultipleEventsExecutor(<span class="code-keyword">final</span> <span class="code-keyword">long</span> millis, <span class="code-keyword">final</span> SyncEvent ...events) {
+            <span class="code-keyword">int</span> numEvents=events.length,ris=-<span class="code-digit">1</span>;                
+
+            ExecutorService poolMultipleWait=Executors.newFixedThreadPool(numEvents);
+            ExecutorCompletionService&lt;Pair&lt;Integer,Integer&gt;&gt;
+            cs=new ExecutorCompletionService&lt;Pair&lt;Integer,Integer&gt;&gt;(poolMultipleWait);
+
+            <span class="code-comment">//</span><span class="code-comment"> we launch multiple waits in parallel</span>
+            <span class="code-keyword">for</span> (<span class="code-keyword">int</span> i=0;i&lt;numEvents;i++) {
+                <span class="code-keyword">final</span> <span class="code-keyword">int</span> index=i;
+                cs.submit(<span class="code-keyword">new</span> Callable&lt;Pair&lt;Integer,Integer&gt;&gt;() {
+                    <span class="code-sdkkeyword">@Override</span>
+                    <span class="code-keyword">public</span> Pair&lt;Integer,Integer&gt; call() <span class="code-keyword">throws</span> Exception {
+                        <span class="code-keyword">return</span> <span class="code-keyword">new</span> Pair&lt;Integer,Integer&gt;(index,events[index].waitForEvent(millis,false));
+                    }
+                });
+            }
+
+            Pair&lt;Integer, Integer&gt; signalled;
+            <span class="code-keyword">try</span> {
+                log.d(<span class="code-string">"</span><span class="code-string">waitForMultipleEvents: awaiting on %d events %d timeout"</span>,numEvents,millis);
+                signalled = cs.take().get();
+                <span class="code-keyword">if</span> (signalled.second==0)
+                    ris=signalled.first;
+                <span class="code-keyword">else</span>
+                    ris=signalled.second;
+                events[signalled.first].resetEvent(); <span class="code-comment">//</span><span class="code-comment"> we clear the event status</span>
+                log.d(<span class="code-string">"</span><span class="code-string">waitForMultipleEvents: received event %d (%s) result %d"</span>,
+			signalled.first,events[signalled.first].syncName,signalled.second);
+            }
+            <span class="code-keyword">catch</span> (InterruptedException e) {
+                    ris=-<span class="code-digit">1</span>;  <span class="code-comment">//</span><span class="code-comment"> we have been interrupted</span>
+            }
+            <span class="code-keyword">catch</span> (ExecutionException e) {
+                log.e(e,<span class="code-string">"</span><span class="code-string">waitForMultipleEvents: exception"</span>);
+            }
+            <span class="code-keyword">finally</span> {
+                poolMultipleWait.shutdownNow();  <span class="code-comment">//</span><span class="code-comment"> abort any other wait operation           </span>
+            }        
+
+            <span class="code-keyword">return</span> ris;       
+        }    
+
+    <span class="code-comment">/*</span><span class="code-comment">*
+    * Waits for the first of multiple events to be signalled up to the specified time. 
+    * The signalled status of the first event is auto-cleared on return
+    * @param  millis    maximum number of milliseconds to wait for
+    * @param  events    an array of one or more events to wait concurrently for
+    * @return
+    * &lt;li&gt;i&lt;/li&gt;  i&gt;=0, if the i-th event has been signalled;
+    * &lt;li&gt;-1&lt;/li&gt; if the wait operation has been interrupted (someone is trying to "kill" our thread);
+    * &lt;li&gt;-2&lt;/li&gt; if the timeout has elapsed and none of the events have been signalled
+    */</span>         
+    <span class="code-keyword">public</span> <span class="code-keyword">static</span> <span class="code-keyword">int</span> waitForMultipleEvents (<span class="code-keyword">final</span> <span class="code-keyword">long</span> millis, <span class="code-keyword">final</span> SyncEvent ...events) {
+        <span class="code-keyword">int</span> numEvents=events.length,ris=-<span class="code-digit">1</span>;                
+
+        <span class="code-keyword">final</span> SyncEvent eventQueueNotEmpty=new SyncEvent(<span class="code-string">"</span><span class="code-string">eventQueueNotEmpty"</span>);
+        <span class="code-keyword">final</span> Queue&lt;Pair&lt;Integer,Integer&gt;&gt; 
+		eventQueue=new ConcurrentLinkedQueue&lt;Pair&lt;Integer,Integer&gt;&gt;();
+
+        Thread [] poolMultipleWait=new Thread[numEvents];
+
+        <span class="code-comment">//</span><span class="code-comment"> we launch multiple waits in parallel</span>
+        <span class="code-keyword">for</span> (<span class="code-keyword">int</span> i=0;i&lt;numEvents;i++) {
+            <span class="code-keyword">final</span> <span class="code-keyword">int</span> index=i;
+            poolMultipleWait[i]=new Thread() {
+
+                <span class="code-sdkkeyword">@Override</span>
+                <span class="code-keyword">public</span> <span class="code-keyword">void</span> run() {
+                    eventQueue.add(<span class="code-keyword">new</span> Pair&lt;Integer,Integer&gt;
+			(index,events[index].waitForEvent(false)?<span class="code-digit">0</span>:-<span class="code-digit">1</span>));
+                    eventQueueNotEmpty.signalEvent();
+                    <span class="code-comment">//</span><span class="code-comment">log.d("waitForMultipleEvents: thread waiting on event %s exiting...",</span>
+                    <span class="code-comment">//</span><span class="code-comment">events[index].getName());</span>
+                }
+            };
+            poolMultipleWait[i].start();
+        }
+                   
+
+        log.d(<span class="code-string">"</span><span class="code-string">waitForMultipleEvents: awaiting on %d events %d timeout 
+		(ActiveThreads %d)"</span>,numEvents,millis,Thread.activeCount());
+        ris=eventQueueNotEmpty.waitForEvent(millis);
+
+        <span class="code-comment">//</span><span class="code-comment"> abort any other wait operation</span>
+        <span class="code-keyword">for</span> (<span class="code-keyword">int</span> i=0;i&lt;numEvents;i++)
+            <span class="code-keyword">if</span> (poolMultipleWait[i].isAlive())
+                poolMultipleWait[i].interrupt();            
+
+        <span class="code-comment">//</span><span class="code-comment"> if we have been signalled</span>
+        <span class="code-keyword">if</span> (ris==0) {       
+            <span class="code-comment">//</span><span class="code-comment"> check the "first" signalled event</span>
+            Pair&lt;Integer, Integer&gt; signalled = eventQueue.peek();
+            <span class="code-keyword">if</span> (signalled.second==0) {
+                ris=signalled.first;
+                events[signalled.first].resetEvent(); <span class="code-comment">//</span><span class="code-comment"> we clear the event status</span>
+            }
+            <span class="code-keyword">else</span>
+                ris=signalled.second;
+
+            log.d(<span class="code-string">"</span><span class="code-string">waitForMultipleEvents: received event %d (%s) result %d"</span>,
+		signalled.first,events[signalled.first].syncName,signalled.second);
+        }
+
+        <span class="code-keyword">return</span> ris;       
+    }
+   
+   
+
+    <span class="code-comment">/*</span><span class="code-comment">*
+    * Waits indefinitely for the first of multiple events to be signalled. 
+    * The signalled status of the first event is auto-cleared on return
+    * @param    events    an array of one or more events to wait concurrently for
+    * @return
+    * &lt;li&gt;i&lt;/li&gt; i&gt;=0, if the i-th event has been signalled;
+    * &lt;li&gt;-1&lt;/li&gt; if the wait operation has been interrupted (someone is trying to "kill" our thread);
+    */</span>         
+    <span class="code-keyword">public</span> <span class="code-keyword">static</span> <span class="code-keyword">int</span> waitForMultipleEvents (<span class="code-keyword">final</span> SyncEvent ...events) {
+        <span class="code-keyword">int</span> numEvents=events.length,ris=-<span class="code-digit">1</span>;                
+
+        <span class="code-keyword">final</span> SyncEvent eventQueueNotEmpty=new SyncEvent(<span class="code-string">"</span><span class="code-string">eventQueueNotEmpty"</span>);
+        <span class="code-keyword">final</span> Queue&lt;Pair&lt;Integer,Integer&gt;&gt; 
+		eventQueue=new ConcurrentLinkedQueue&lt;Pair&lt;Integer,Integer&gt;&gt;();
+
+        Thread [] poolMultipleWait=new Thread[numEvents];
+
+        <span class="code-comment">//</span><span class="code-comment"> we launch multiple waits in parallel</span>
+        <span class="code-keyword">for</span> (<span class="code-keyword">int</span> i=0;i&lt;numEvents;i++) {
+            <span class="code-keyword">final</span> <span class="code-keyword">int</span> index=i;
+            poolMultipleWait[i]=new Thread() {
+
+                <span class="code-sdkkeyword">@Override</span>
+                <span class="code-keyword">public</span> <span class="code-keyword">void</span> run() {
+                    eventQueue.add(<span class="code-keyword">new</span> Pair&lt;Integer,Integer&gt;
+			(index,events[index].waitForEvent(false)?<span class="code-digit">0</span>:-<span class="code-digit">1</span>));
+                    eventQueueNotEmpty.signalEvent();
+                    <span class="code-comment">//</span><span class="code-comment">log.d("waitForMultipleEvents: thread waiting on event %s exiting...",</span>
+                    <span class="code-comment">//</span><span class="code-comment">events[index].getName());</span>
+                }
+            };
+            poolMultipleWait[i].start();
+        }
+                   
+
+        log.d(<span class="code-string">"</span><span class="code-string">waitForMultipleEvents: awaiting on %d events (ActiveThreads %d)"</span>,
+		numEvents,Thread.activeCount());
+        ris=eventQueueNotEmpty.waitForEvent()?<span class="code-digit">0</span>:-<span class="code-digit">1</span>;
+
+        <span class="code-comment">//</span><span class="code-comment"> abort any other wait operation</span>
+        <span class="code-keyword">for</span> (<span class="code-keyword">int</span> i=0;i&lt;numEvents;i++)
+            <span class="code-keyword">if</span> (poolMultipleWait[i].isAlive())
+                poolMultipleWait[i].interrupt();            
+
+        <span class="code-comment">//</span><span class="code-comment"> if we have been signalled</span>
+        <span class="code-keyword">if</span> (ris==0) {       
+            <span class="code-comment">//</span><span class="code-comment"> check the "first" signalled event</span>
+            Pair&lt;Integer, Integer&gt; signalled = eventQueue.peek();
+            <span class="code-keyword">if</span> (signalled.second==0) {
+                ris=signalled.first;
+                events[signalled.first].resetEvent(); <span class="code-comment">//</span><span class="code-comment"> we clear the event status</span>
+            }
+            <span class="code-keyword">else</span>
+                ris=signalled.second;
+
+            log.d(<span class="code-string">"</span><span class="code-string">waitForMultipleEvents: received event %d (%s) result %d"</span>,
+		signalled.first,events[signalled.first].syncName,signalled.second);
+        }
+
+        <span class="code-keyword">return</span> ris;       
+    }
+   
+
+    <span class="code-comment">/*</span><span class="code-comment">*
+    * Waits indefinitely for the first of multiple events to be signalled. 
+    * The signalled status of the first event is auto-cleared on return
+    * @param    events    an array of one or more events to wait concurrently for
+    * @return
+    * &lt;li&gt;i&lt;/li&gt; i&gt;=0, if the i-th event has been signalled;
+    * &lt;li&gt;-1&lt;/li&gt; if the wait operation has been interrupted (someone is trying to "kill" our thread);
+    */</span>         
+    <span class="code-keyword">public</span> <span class="code-keyword">static</span> <span class="code-keyword">int</span> waitForMultipleEventsExecutor (<span class="code-keyword">final</span> SyncEvent ...events) {
+        <span class="code-keyword">int</span> numEvents=events.length,ris=-<span class="code-digit">1</span>;
+
+        ExecutorService poolMultipleWait=Executors.newFixedThreadPool(numEvents);
+        ExecutorCompletionService&lt;Pair&lt;Integer,Boolean&gt;&gt; 
+		cs=new ExecutorCompletionService&lt;Pair&lt;Integer,Boolean&gt;&gt;(poolMultipleWait);
+
+        <span class="code-comment">//</span><span class="code-comment"> we launch multiple waits in parallel</span>
+        <span class="code-keyword">for</span> (<span class="code-keyword">int</span> i=0;i&lt;numEvents;i++) {
+            <span class="code-keyword">final</span> <span class="code-keyword">int</span> index=i;
+            cs.submit(<span class="code-keyword">new</span> Callable&lt;Pair&lt;Integer,Boolean&gt;&gt;() {
+                <span class="code-sdkkeyword">@Override</span>
+                <span class="code-keyword">public</span> Pair&lt;Integer,Boolean&gt; call() <span class="code-keyword">throws</span> Exception {
+                    <span class="code-keyword">return</span> <span class="code-keyword">new</span> Pair&lt;Integer,Boolean&gt;(index,events[index].waitForEvent(false));
+                }
+            });
+        }
+
+        Pair&lt;Integer, Boolean&gt; signalled;
+        <span class="code-keyword">try</span> {
+            log.d(<span class="code-string">"</span><span class="code-string">waitForMultipleEvents: awaiting on %d events"</span>,numEvents);
+            signalled = cs.take().get();
+            <span class="code-keyword">if</span> (signalled.second)
+                ris=signalled.first;
+            events[signalled.first].resetEvent(); <span class="code-comment">//</span><span class="code-comment"> we clear the event status</span>
+            log.d(<span class="code-string">"</span><span class="code-string">waitForMultipleEvents: received event %d (%s) result %b"</span>,
+		signalled.first,events[signalled.first].getName(),signalled.second);
+        }
+        <span class="code-keyword">catch</span> (InterruptedException e) {
+            ris=-<span class="code-digit">1</span>;
+        }
+        <span class="code-keyword">catch</span> (ExecutionException e) {
+            log.e(e,<span class="code-string">"</span><span class="code-string">waitForMultipleEvents: exception"</span>);
+        }
+        <span class="code-keyword">finally</span> {
+            poolMultipleWait.shutdownNow();  <span class="code-comment">//</span><span class="code-comment"> abort any other wait operation           </span>
+        }
+
+        <span class="code-keyword">return</span> ris;       
+    }
+
+   
+
+    <span class="code-comment">/*</span><span class="code-comment">*
+    * Checks if the event has been signalled. The signal status is auto-cleared on return.
+    * @return &lt;li&gt;true&lt;/li&gt; if the event has been signalled;
+    * &lt;li&gt;false&lt;/li&gt;    otherwise
+    */</span>    
+    <span class="code-keyword">public</span> <span class="code-keyword">boolean</span> isSignalled () {
+        <span class="code-keyword">return</span> isSignalled(true);
+    }
+   
+   
+
+    <span class="code-comment">/*</span><span class="code-comment">*
+    * Checks if the event has been signalled.
+    * @param  autoclear    if true the signalled status of the event is auto-cleared on return.
+    * @return &lt;li&gt;true&lt;/li&gt; if the event has been signalled;
+    * &lt;li&gt;false&lt;/li&gt;    otherwise
+    */</span>    
+    <span class="code-keyword">public</span> <span class="code-keyword">boolean</span> isSignalled (<span class="code-keyword">boolean</span> autoclear) {
+        <span class="code-keyword">synchronized</span> (sync) {
+            <span class="code-keyword">boolean</span> ris=syncSignalled;
+            <span class="code-keyword">if</span> (autoclear)
+                syncSignalled=false;
+            <span class="code-keyword">return</span> ris;
+        }
+    }
+
+   
+   
+
+    <span class="code-comment">/*</span><span class="code-comment">*
+    * Signals the event, waking one of the threads waiting on the signal (can be more than one).
+    */</span>    
+    <span class="code-keyword">public</span> <span class="code-keyword">void</span> signalEvent() {
+          <span class="code-keyword">synchronized</span> (sync) {
+            syncSignalled=true;
+            sync.notify();
+          }
+    }
+   
+
+    <span class="code-comment">/*</span><span class="code-comment">*
+    * Clears manually the signalled status of the event.
+    */</span>    
+    <span class="code-keyword">public</span> <span class="code-keyword">void</span> resetEvent() {
+          <span class="code-keyword">synchronized</span> (sync) {
+            syncSignalled=false;
+          }       
+    }
+}</pre>
+
+<h2>Implementations Notes</h2>
+
+<p>The <code>SyncEvent </code>class deals with most of the common issues found in Java standard functions for synchronization (wait and notify functions of <code>Object </code>class):</p>
+
+<ul>
+	<li><strong>Missed Events</strong>: If you issue a notify function on an object BEFORE a thread has started waiting on the same object, the signal is lost (i.e. the waiting thread continues to wait without waking up). The solution is well known (see [1]) and it is based on saving the signalled status on an internal variable called <code>syncSignalled</code>.</li>	<li><strong>Spurious Wakeups</strong>: For "inexplicable" reasons, it is possible for threads to wake up from a wait call even if <code>notify() </code>method has not been called. This is known as spurious wakeups (e.g. wakeups without any reason). To deal with such unexpected behaviour, the <code>syncSignalled</code> variable comes through again, since all <code>waitForEvent </code>methods go in a check variable-wait loop until the <code>syncSignalled </code>variable is set.</li>	<li><strong>Wait For Multiple Events</strong>: Java does not provide a synchronization function which waits on multiple events (well known in Windows API as <code>WaitForMultipleObjects</code>). The idea to solve this problem is to create several threads (one for every event we want to wait on), each of which suspends in a <code>waitForEvent </code>operation on one of the input events (in the <code>WaitForMultipleEventsExecutor</code> method threads are created using &nbsp;the&nbsp;<em><code>ExecutorService </code></em>class as thread pool). In turn, the thread calling the<code> static waitForMultipleEvents </code>method suspends to wait for which of the created threads wakes up "first", using a queue and the same SyncEvent class to notify the termination of a thread (in the <span style="color: rgba(153, 0, 0, 1); font-family: Consolas, &quot;Courier New&quot;, Courier, mono; font-size: 14.66px">WaitForMultipleEventsExecutor&nbsp;</span>the queue and termination event are all handled by the&nbsp;<code><em>ExecutorCompletionService&nbsp;</em></code>class). As soon as one of events is signalled, the corresponding created thread ends and <code>WaitForMultipleEvents&nbsp;</code>function awakes, collects the result and sends an interrupt to all the remaining threads, still waiting for the other unfired events. It is important here to use non auto-clearing <code>waitForEvent </code>operations, otherwise some events could get lost: for example when two events are signalled one after another, before the <code>WaitForMultipleEvents </code>function has had enough time to interrupt all the remaining event-waiting threads.</li>	<li><strong>InterruptedException</strong>: Many Java methods which deal with thread suspension throw the unwanted <code>InterruptedException</code> which must be caught, even though most of the times is not even handled by software (e.g., <code>try </code>with an empty <code>catch</code>). The <code>InterruptedException</code> is basically notifying to a "waiting" thread (e.g. thread which has called wait or sleep) that someone is trying to "kill" us (e.g. the user is trying to close the process or another thread has explicitly called interrupt method on the suspended thread). Since the suspended thread is not being executed, the only way to notify is by resuming it throwing an exception, which, as you can fancy, is the renowed <code>InterruptedException</code> exception. If you have understood the mechanism, you can probably imagine that the best way to handle this exception is by terminating whatever operation you were doing in the suspended thread, releasing any allocated resources and then exiting the thread. It would be useful if this exception could be propagated up through the call stack, but due to Java's checked exception, this is not always possible (e.g. use of <code>wait</code> functions in a method with a precise signature which does not allow any further <code>throw </code>clauses, such as when implementing methods of a Java interface), so for convenience's sake, all methods of <code>SyncEvent </code>class catch <code>InterruptedException</code> internally and return a particular value, when interrupted (see method documentation).</li></ul>
+
+<h2>Using the Code</h2>
+
+<p>First, instantiate the <code>SyncEvent</code> objects:</p>
+
+<div class="pre-lang" id="premain757006"><div>Java</div><div class="pre-action-link"><span id="copycode757006" class="copy-code" data-index="757006" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre757006" style="margin-top:0;" class="lang-java notranslate" data-language="Java" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true">SyncEvent connected = <span class="code-keyword">new</span> SyncEvent(<span class="code-string">"</span><span class="code-string">connected"</span>);
+SyncEvent newPeer = <span class="code-keyword">new</span> SyncEvent(<span class="code-string">"</span><span class="code-string">newPeer"</span>);</pre>
+
+<p>On the thread you want to wait for the event, call:</p>
+
+<div class="pre-lang" id="premain980137"><div>Java</div><div class="pre-action-link"><span id="copycode980137" class="copy-code" data-index="980137" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre980137" style="margin-top:0;" class="lang-java notranslate" data-language="Java" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-comment">//</span><span class="code-comment"> the thread will suspend for indefinite time, awaiting the event</span>
+<span class="code-comment">//</span><span class="code-comment"> returns true when the event is signalled or false when we have been interrupted</span>
+connected.waitForEvent();</pre>
+
+<div class="pre-lang" id="premain107143"><div>Java</div><div class="pre-action-link"><span id="copycode107143" class="copy-code" data-index="107143" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre107143" style="margin-top:0;" class="lang-java notranslate" data-language="Java" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-comment">//</span><span class="code-comment"> the thead will suspend awaiting the event for 10 seconds</span>
+<span class="code-comment">//</span><span class="code-comment"> returns an 0 when the event is signalled, -1 when we have been interrupted </span>
+<span class="code-comment">//</span><span class="code-comment"> and -2 when the timeout elapsed without any event.</span>
+connected.waitForEvent(<span class="code-digit">10000</span>);</pre>
+
+<p>On the thread you want to signal the event, call:</p>
+
+<div class="pre-lang" id="premain874614"><div>Java</div><div class="pre-action-link"><span id="copycode874614" class="copy-code" data-index="874614" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre874614" style="margin-top:0;" class="lang-java notranslate" data-language="Java" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true">connected.signalEvent();</pre>
+
+<p>If you want to wait for multiple events on a thread:</p>
+
+<div class="pre-lang" id="premain653585"><div>Java</div><div class="pre-action-link"><span id="copycode653585" class="copy-code" data-index="653585" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre653585" style="margin-top:0;" class="lang-java notranslate" data-language="Java" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-comment">//</span><span class="code-comment"> the thread will suspend indefinitely, awaiting both events</span>
+<span class="code-comment">//</span><span class="code-comment"> returns i-th event where i&gt;=0, if i-th event has been signalled </span>
+<span class="code-comment">//</span><span class="code-comment"> (0 for connected, 1 for newPeer) or  -1 when we have been interrupted</span>
+SyncEvent.waitForMultipleEvents(connected,newPeer);</pre>
+
+<div class="pre-lang" id="premain630316"><div>Java</div><div class="pre-action-link"><span id="copycode630316" class="copy-code" data-index="630316" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre630316" style="margin-top:0;" class="lang-java notranslate" data-language="Java" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-comment">//</span><span class="code-comment"> the thread will suspend awaiting both events for 10 seconds</span>
+<span class="code-comment">//</span><span class="code-comment"> returns i-th event where i&gt;=0, if i-th event has been signalled </span>
+<span class="code-comment">//</span><span class="code-comment"> (0 for connected, 1 for newPeer), -1 when we have been interrupted and -2 </span>
+<span class="code-comment">//</span><span class="code-comment"> when the timeout elapsed without any event.</span>
+SyncEvent.waitForMultipleEvents(<span class="code-digit">10000</span>,connected,newPeer);</pre>
+
+<h2>Source Code</h2>
+
+<p>You can find attached an Android Eclipse project named <code>SyncEvent</code> containing the <code>SyncEvent </code>class and a sample test program. It consists of a simple activity containing just two buttons:</p>
+
+<ul>
+	<li><strong>Start</strong>: which has a dual behaviour:
+
+	<ul>
+		<li>If there is no waiting thread, it creates a thread called "<em>Thread 1</em>" which simply waits endlessly on two <code>SyncEvent</code>s<font color="#990000" face="Consolas, Courier New, Courier, mono"><span style="font-size: 14.66px">&nbsp;</span></font>called "<em>start</em>" and "<em>stop</em>"&nbsp;(actually instead of waiting indefinitely it simulates it by using &nbsp;a while loop and definite wait of 5 seconds to test the "wait for timeout" methods, which were bugged in earlier versions).&nbsp;Whenever either <em>start</em> or&nbsp;<em>stop</em> event is received, "Thread 1" logs the received event and then re-begins waiting endlessly on the both SyncEvents.</li>		<li>If a waiting thread exists, it sends a random event (either <em>start</em> or <em>stop</em>) to wake "<em>Thread 1</em>".</li>	</ul>
+	</li>	<li><strong>Abort</strong>: which aborts the waiting thread.</li></ul>
+
+<p>If you launch the activity, you can check the output in Eclipse LogCat window. The application logs also the number of active threads whenever it starts waiting on a <code>SyncEvent</code> in order to check that all thread creation/interruption operations works flawlessly (i.e. thread count does not rise over time).</p>
+
+<p>Here follows the main code for the click events, which is straightforward:</p>
+
+<div class="pre-lang" id="premain401671"><div>Java</div><div class="pre-action-link"><span class="code-collapse" data-index="401671" id="preShrink401671">Shrink ▲</span> &nbsp; <span id="copycode401671" class="copy-code" data-index="401671" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre401671" style="margin-top:0;" class="lang-java notranslate" data-language="java" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-sdkkeyword">@Override</span>
+<span class="code-keyword">public</span> <span class="code-keyword">void</span> onClick(View v) {
+    <span class="code-keyword">switch</span> (v.getId()) {
+        <span class="code-keyword">case</span> R.id.startBtn:
+            <span class="code-comment">//</span><span class="code-comment"> Create Thread 1</span>
+            <span class="code-keyword">if</span> (t==null) {
+                t=new Thread() {
+                    <span class="code-keyword">public</span> <span class="code-keyword">void</span> run() {
+
+                        log.i(<span class="code-string">"</span><span class="code-string">Thread 1 started"</span>);
+                        <span class="code-keyword">while</span> (true) {
+                            log.i(<span class="code-string">"</span><span class="code-string">Awaiting start or stop signal from another thread"</span>);
+                            <span class="code-keyword">int</span> ris=SyncEvent.waitForMultipleEvents(<span class="code-digit">5000</span>,events);
+                            <span class="code-keyword">if</span> (ris==-<span class="code-digit">1</span>) {
+                                log.i(<span class="code-string">"</span><span class="code-string">Thread 1 abort signal received"</span>);
+                                <span class="code-keyword">break</span>;
+                            }
+                            <span class="code-keyword">else</span> <span class="code-keyword">if</span> (ris&gt;=0)
+                                log.i(<span class="code-string">"</span><span class="code-string">Thread 1 %s event received, processing..."</span>,events[ris].getName());
+                            <span class="code-keyword">else</span>
+                                log.i(<span class="code-string">"</span><span class="code-string">Thread 1 timeout elapsed, restarting..."</span>);
+                        }
+                        log.i(<span class="code-string">"</span><span class="code-string">Thread 1 exiting"</span>);
+                        t=null;
+                    };
+                };
+                t.start();
+            }
+            <span class="code-keyword">else</span> {
+                <span class="code-keyword">int</span> offset=(<span class="code-keyword">int</span>) (System.currentTimeMillis()<span class="code-sdkkeyword">%2</span>);
+                log.i(<span class="code-string">"</span><span class="code-string">Signalling %s to thread 1"</span>,events[offset].getName());
+                events[offset].signalEvent();
+        }
+
+        <span class="code-keyword">break</span>;
+
+        <span class="code-keyword">case</span> R.id.abortBtn:
+            log.i(<span class="code-string">"</span><span class="code-string">Signalling abort to thread 1"</span>);
+            <span class="code-keyword">if</span> (t!=null)
+                t.interrupt();
+        <span class="code-keyword">break</span>;
+    }
+}
+</pre>
+
+<p><span style="color: rgba(255, 153, 0, 1); font-size: 30px">Remarks</span></p>
+
+<p>One could note that all these operations could be simply realized by inserting a constant value in a blocking queue. Obviously this is true, since a blocking queue is "under the hood" a combination of a queue and events. To avoid misuse, events should be used when you just want to wake a thread (e.g., send a signal without any data), while blocking queues should be used when you are sending some data to a "consumer" thread.</p>
+
+<h2>References</h2>
+
+<ul>
+	<li>[1] Java Thread Signaling (<a href="http://tutorials.jenkov.com/java-concurrency/thread-signaling.html">http://tutorials.jenkov.com/java-concurrency/thread-signaling.html</a>)</li></ul>
+
+<h2>History</h2>
+
+<ul>
+	<li>V1.0 Initial release (30 June 2015)</li>	<li>V 1.1 Fixed <code>SyncEvent</code> class source code (30 June 2015)</li>	<li>V 1.2 Fixed <code>waitForEvent </code>with timeout method (to discriminate between spurious wakeup and timeout), reimplemented <code>waitForMultipleEvents</code> with ConcurrentLinkedQueue, Threads and a SyncEvent for the most "basic" code [older&nbsp;waitForMultipleEvents implementation is available in new&nbsp;<code>waitForMultipleEventsExecutor</code> methods], added <code>getName</code> method and updated Android test application (8 July 2015)</li></ul>
+
+<!-- Article Ends -->
+
+
+						</div>
+						
+
+						
+						<h2>License</h2>
+						<div id="LicenseTerms"><p>This article, along with any associated source code and files, is licensed under <a href="http://www.codeproject.com/info/cpol10.aspx" rel="license">The Code Project Open License (CPOL)</a></p></div>
+						
+
+						
+						<br>
+						
+						    <br>
+						
+						
+
+						<div class="clearfix"></div>
+
+						<div style="padding-top:8px">
+							
+						</div>
+
+					
+
+				    
+					</form>
+
+				</div>
+
+				
+				<div class="bottom-promo"> 
+				    
+				</div>
+				
+                
+                
+
+				
+				
+				
+
+			</div>
+			
+
+            
+            
+            
+
+        </div>
+        
+
+		
+		<div class="site-footer">
+			<div class="align-left">
+				<a id="ctl00_PermaLink" href="https://www.codeproject.com/Articles/1004498/SyncEvent-The-missing-Java-Event-Class">Permalink</a><br>
+				<br>
+				<a id="ctl00_PrivacyLink" href="https://www.codeproject.com/info/privacy.aspx">Privacy</a><br>
+    			<a id="ctl00_CookiePolicyLink" href="https://www.codeproject.com/info/cookie.aspx">Cookies</a><br>
+                <a id="ctl00_TermsOfUseLink" href="https://www.codeproject.com/info/TermsOfUse.aspx">Terms of Use</a><br>
+			</div>
+
+            <div class="align-center">
+				
+
+
+<div class="page-width">
+    Layout: <a id="ctl00_PageWidth_FixedT" title="Fixed width layout" rel="nofollow" class=" active" href="https://www.codeproject.com/Articles/1004498/SyncEvent-The-missing-Java-Event-Class?PageFlow=FixedWidth">fixed</a>
+    |
+    <a id="ctl00_PageWidth_FluidT" title="Fluid layout" rel="nofollow" href="https://www.codeproject.com/Articles/1004498/SyncEvent-The-missing-Java-Event-Class?PageFlow=Fluid">fluid</a>
+</div>
+
+
+				
+
+				
+
+	            
+
+                <br>
+			</div>
+                
+			<div class="align-right">
+				Article Copyright 2015 by Federico Di Marco<br>Everything else
+				Copyright © <a href="mailto:webmaster@codeproject.com">CodeProject</a>, 1999-2024<br>
+                <br>
+				Web01 
+				2.8:2024-10-19:1<br>
+			</div>
+		</div>
+		
+
+		<br clear="all">
+		
+			
+
+	</div> 
+	</div> 
+</div>
+
+
+
+
+
+
+
+<script type="text/javascript"> // DEFERRED script
+
+document.addEventListener('DOMContentLoaded', function() {
+
+	new CodeBlocks().initialise('#contentdiv');
+	
+	$('.author-wrapper .description').shorten({showChars: 400});
+	
+	anchorAnimate();
+	
+	$('#__EVENTVALIDATION').attr('autocomplete', 'off');
+
+})
+</script>
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">.copied::after {  position: absolute;  right: 0;  display: inline-block; white-space: nowrap; content: 'copied'; color: #fff; background-color: #f90;  border-radius: 3px; padding:1px 8px; opacity: 0;  will-change: opacity, transform; animation: showcopied 1.5s ease; } @keyframes showcopied { 0% { opacity: 0; } 70% { opacity: 1; } 100% { opacity: 0; } } </style><canvas id="cv1" width="1px" height="1px" style="position:absolute;left:0;top:0;pointer-events:none"></canvas><canvas id="cv2" width="1px" height="1px" style="position:absolute;left:0;top:0;pointer-events:none"></canvas></body></html>

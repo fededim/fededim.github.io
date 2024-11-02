@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<!-- saved from url=(0090)https://www.codeproject.com/Tips/5368776/How-to-Automate-Saving-Webpages-as-a-Single-MHTML -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+	
+	<link rel="preconnect" href="https://www.google-analytics.com/">
+
+	<link rel="preconnect" href="https://www.codeproject.com/">
+
+
+	<link rel="preload" href="./How to Automate Saving Webpages as a Single .MHTML Files using Selenium Webdriver- CodeProject_files/logo250x135.gif" as="image">
+
+
+	<link rel="preload" href="https://www.codeproject.com/App_Themes/CodeProject/Img/logo135-bg.gif" as="image">
+	<link rel="preload" href="./How to Automate Saving Webpages as a Single .MHTML Files using Selenium Webdriver- CodeProject_files/jquery-3.4.1.min.js.download" as="script" type="text/javascript">
+
+
+	<title>How to Automate Saving Webpages as a Single .MHTML Files using Selenium Webdriver- CodeProject</title> 
+    
+	<link type="text/css" rel="stylesheet" href="./How to Automate Saving Webpages as a Single .MHTML Files using Selenium Webdriver- CodeProject_files/Article.min.css">
+
+
+    <script type="text/javascript" async="" src="./How to Automate Saving Webpages as a Single .MHTML Files using Selenium Webdriver- CodeProject_files/analytics.js.download"></script><script type="text/javascript" src="./How to Automate Saving Webpages as a Single .MHTML Files using Selenium Webdriver- CodeProject_files/jquery-3.4.1.min.js.download" defer=""></script>
+<script type="text/javascript" src="./How to Automate Saving Webpages as a Single .MHTML Files using Selenium Webdriver- CodeProject_files/article.min.js.download" defer=""></script>
+
+	
+<meta http-equiv="content-language" content="en-US">
+
+<meta name="Description" content="Saving webpages in single self contained files using Selenium Webdriver">
+<meta name="Keywords" content="C#, Windows, Dev, Beginner, selenium, WebDriver, .NET6, .ASP.NET-Core">
+<meta name="Author" content="Federico Di Marco">
+<meta name="Rating" content="General">
+<meta name="Revisit-After" content="1 days">
+<meta name="application-name" content="CodeProject">
+<meta name="google-translate-customization" content="d908bb7ce7aff658-4c2f3a504525c916-g629383f736781a8a-13">
+
+
+
+<link rel="dns-prefetch" href="https://ajax.googleapis.com/"> 
+<link rel="canonical" href="https://www.codeproject.com/Tips/5368776/How-to-Automate-Saving-Webpages-as-a-Single-MHTML">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@CodeProject">
+<meta name="og:site_name" content="CodeProject">
+<meta name="twitter:creator" content="@CodeProject">
+<meta property="og:type" content="article">
+<meta property="article:published_time" content="9/25/2023 9:54:00 AM">
+<meta property="article:modified_time" content="9/25/2023 9:54:00 AM">
+<meta name="twitter:label1" content="Written by">
+<meta name="twitter:data1" content="Federico Di Marco">
+<meta name="twitter:label2" content="Reading time">
+<meta name="twitter:data2" content="3 min read">
+<meta property="og:url" content="https://www.codeproject.com/Tips/5368776/How-to-Automate-Saving-Webpages-as-a-Single-MHTML">
+<meta property="og:title" content="How to Automate Saving Webpages as a Single .MHTML Files using Selenium Webdriver">
+<meta property="og:description" content="Saving webpages in single self contained files using Selenium Webdriver">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="apple-touch-icon" sizes="144x144" href="https://www.codeproject.com/favicon/apple-touch-icon.png"> 
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.codeproject.com/favicon/favicon-32x32.png"> 
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.codeproject.com/favicon/favicon-16x16.png"> 
+<link rel="manifest" href="https://www.codeproject.com/favicon/manifest.json"> 
+<link rel="mask-icon" href="https://www.codeproject.com/favicon/safari-pinned-tab.svg" color="#ff9900">
+	<script type="application/ld+json">{
+  "@context": "http://schema.org",
+  "@type": "TechArticle",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.codeproject.com/Tips/5368776/How-to-Automate-Saving-Webpages-as-a-Single-MHTML"
+   },
+  "name": "How to Automate Saving Webpages as a Single .MHTML Files using Selenium Webdriver",
+  "headline": "How to Automate Saving Webpages as a Single .MHTML Files using Selenium Webdriver",
+  "url": "https://www.codeproject.com/Tips/5368776/How-to-Automate-Saving-Webpages-as-a-Single-MHTML",
+  "discussionUrl": "https://www.codeproject.com/Tips/5368776/How-to-Automate-Saving-Webpages-as-a-Single-MHTML#_comments",
+  "isFamilyFriendly": "true",
+  "image": "https://www.codeproject.com/App_Themes/CodeProject/Img/Article100.png",
+  "keywords": "C#,Windows,Dev,Beginner,selenium,WebDriver,.NET6,.ASP.NET-Core",
+  "commentCount": "0",
+  "editor" : {
+    "@type" : "Person",
+    "name" : "Editor",
+    "url" : "https://www.codeproject.com/script/Membership/View.aspx?mid=3866010"
+  },
+  "license": "http://www.codeproject.com/info/cpol10.aspx",
+  "publisher" : {
+    "@type" : "Organization",
+    "name" : "CodeProject"
+  },
+  "description": "A simple console application which downloads a set of webpages and saves them as single .MHTML files in a specified folder.",
+  "articleSection": "C#",
+  "author" : [{
+      "@type" : "Person",
+      "name" : "Federico Di Marco",
+      "url" : "https://www.codeproject.com/script/Membership/View.aspx?mid=3865041"
+    }],
+  "datePublished": "2023-09-25",
+  "dateCreated": "2023-09-25",
+  "dateModified": "2023-09-25"
+}</script>
+
+<script type="application/ld+json">{
+  "@context": "http://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "item" : {
+      "@id" : "/script/Content/Tag.aspx?tags=Languages",
+      "name" : "Languages"
+    }
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "item" : {
+      "@id" : "/script/Content/Tag.aspx?tags=Csharp",
+      "name" : "C#"
+    }
+  }]
+}</script>
+
+
+	<!--<base target="_top">--><base href="." target="_top">
+	
+    
+
+
+<script type="text/javascript">
+function defrm () { /* thanks twitter */
+    document.write = '';
+    window.top.location = window.self.location;
+    setTimeout(function() { document.body.innerHTML = ''; }, 0);
+    window.self.onload = function(evt) { document.body.innerHTML = ''; };
+}
+
+if (window.top !== window.self) {
+    try {
+        if (window.top.location.host) { /* will throw for all except chrome */ }
+        else { defrm(); /* chrome */ }
+    } catch (ex) { defrm(); /* everyone else */ }
+}
+
+// Specific case where a site is screwing with us.
+if (typeof(DemoUrl) !== 'undefined') {
+    document.write(unescape('%3Cme') + 'ta http' + '-equiv="re' + 'fresh con' +
+                           'tent="1;url=' + DemoUrl + unescape('"%3CE'));
+}
+</script>
+	
+
+
+
+
+
+    <script async="" type="text/javascript" src="./How to Automate Saving Webpages as a Single .MHTML Files using Selenium Webdriver- CodeProject_files/js"></script>
+    <script type="text/javascript">
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-1735123-1' , {'user_id': '61732e5b-06af-4ac2-8734-b1591748583e'});
+    </script>
+
+<style type="text/css"></style></head>	
+
+<body class="chrome chrome130">
+
+
+
+<a class="access-link" href="https://www.codeproject.com/Tips/5368776/How-to-Automate-Saving-Webpages-as-a-Single-MHTML#Main"><img alt="Click here to Skip to main content" src="./How to Automate Saving Webpages as a Single .MHTML Files using Selenium Webdriver- CodeProject_files/t.gif"></a>
+
+
+
+
+<div class="page-background">
+
+	
+	
+
+	
+
+	
+    <div id="ctl00_STM" class="site-top-menu fixed narrow">
+        <div class="main-content">
+            
+
+<div class="container memberbar clearfix flex-container flex-extend">
+
+	<div id="ctl00_MemberBar_GenInfo" class="flex-item align-left">65,938 articles</div>
+	
+	<div id="ctl00_MemberBar_ChangeNotice" class="flex-item align-left">CodeProject
+	is changing. <a href="https://www.codeproject.com/info/Changes.aspx">Read more</a>.</div>
+
+	<div class="flex-item">
+		
+	</div>
+
+	<div class="flex-item align-right">
+
+		
+
+		
+
+		
+	</div>
+</div>
+        </div>
+    </div>
+
+	
+    <div id="ctl00_SH" class="site-header fixed narrow">
+        <div class="main-content">
+            <div class="logo"><a href="https://www.codeproject.com/"><img id="ctl00_Logo" tabindex="1" title="CodeProject" src="./How to Automate Saving Webpages as a Single .MHTML Files using Selenium Webdriver- CodeProject_files/logo250x135.gif" alt="Home" style="height:135px;width:250px;border-width:0px;"></a></div>
+            <div class="promo"></div>
+        </div>
+    </div>
+
+	
+			
+	
+
+	<div id="A" class="container-content-wrap fixed narrow"> 
+
+	<div class="container-content">
+
+        
+		<div class="clearfix">
+			<div class="container-breadcrumb float-left ">
+				<div><a rel="nofollow" href="https://www.codeproject.com/script/Content/SiteMap.aspx">Articles</a> / <a rel="nofollow" href="https://www.codeproject.com/script/Content/Tag.aspx?tags=Languages">Languages</a> / <a rel="nofollow" href="https://www.codeproject.com/script/Content/Tag.aspx?tags=Csharp">C#</a></div>
+			</div>
+
+            <div class="float-left">
+				
+			</div>
+
+			<div class="edit-links float-right">
+				
+
+
+
+ 
+&nbsp;
+
+
+
+
+
+
+
+
+
+
+			</div>
+
+			<div class="article-nav float-right">
+				
+
+
+<div style="display:inline-block;position:relative;top:-6px;margin-right:20px">
+    
+</div>
+
+
+
+ 
+
+<a id="ctl00_ActionLinks_PrintMd" data-tooltip="Print" data-enabletooltip="true" data-width="auto" href="https://www.codeproject.com/Tips/5368776/How-to-Automate-Saving-Webpages-as-a-Single-MHTML?display=Print" class="tooltip" title="">
+   <img src="./How to Automate Saving Webpages as a Single .MHTML Files using Selenium Webdriver- CodeProject_files/print48.png" width="24" height="24" style="border:0">
+<div class="speech-bubble-container-up" style="width:auto">  <div class="speech-bubble-up" style="text-align:center"> Print</div>  <div class="speech-bubble-pointer-up">    <div class="speech-bubble-pointer-up-inner"></div>  </div></div></a>
+
+
+
+<span id="ctl00_ActionLinks_R">
+    
+    
+</span>
+			</div>
+		</div>
+
+        
+		<div class="extended article-container-parts">
+
+			
+		    
+            
+
+			
+			<div id="AT" class="article-container  fixed narrow" style="max-width:inherit;"> 
+
+				<div class="article">
+
+					<form name="aspnetForm" method="post" action="https://www.codeproject.com/Tips/5368776/View.aspx" id="aspnetForm" style="margin:0;padding:0">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="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">
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="10C1FD69">
+</div>
+
+					
+					 
+					<div class="header">
+					    <a name="Main"></a>
+					    <a name="_articleTop" id="_articleTop"></a>
+
+					    
+						<div>
+							<span id="ctl00_TagListHorz_TagWrp" class="tags horizontal">
+
+	
+	
+
+	
+	<span id="ctl00_TagListHorz_VisibleTags"><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/Csharp" data-id="81">C#</a></div><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/Windows" data-id="94">Windows</a></div><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/selenium" data-id="2994">selenium</a></div><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/WebDriver" data-id="4350">WebDriver</a></div><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/.NET6" data-id="5101">.NET6</a></div><div class="t"><a rel="tag" href="https://www.codeproject.com/Tags/.ASP.NET-Core" data-id="5357">.ASP.NET-Core</a></div></span> 
+
+	
+	
+</span>
+
+
+						</div>
+					    <div class="title">
+					        <h1 id="ctl00_ArticleTitle">How to Automate Saving Webpages as a Single .MHTML Files using Selenium Webdriver</h1>
+					    </div>
+
+                        <div>
+					        
+					        <div class="entry flex-container">
+
+								
+
+                                <div class="flex-item" style="flex:1 1 auto">
+                                    <div class="flex-container" style="justify-content:space-between;flex-wrap:wrap-reverse">
+                                       <span id="ctl00_Authors" class="author flex-item"><a href="https://www.codeproject.com/script/Membership/View.aspx?mid=3865041" rel="author">Federico Di Marco</a></span> 
+
+                                        <div class="flex-item" style="margin-top:-4px;">
+                                            <div id="ctl00_RateArticle_RatingTable" class="small-text" data-objectref="2_5368776">
+
+	<meta itemprop="upvoteCount" content="0">
+
+
+	<div id="ctl00_RateArticle_RatingRow" class="flex-container rating-container large-stars">
+
+					
+		
+
+		
+		<div class="nowrap tooltip">
+
+			
+			<div id="ctl00_RateArticle_ResultNoHist" class="rating-result"><div class="flex-container rating-stars large-stars"><div style="width:24px;position:relative" class="clipped"><img src="./How to Automate Saving Webpages as a Single .MHTML Files using Selenium Webdriver- CodeProject_files/star-empty-lg.png" style="width:24px;height:24px;position:absolute;top:0px;right:0"></div><div><img src="./How to Automate Saving Webpages as a Single .MHTML Files using Selenium Webdriver- CodeProject_files/star-empty-lg.png" style="width:24px;height:24px"></div><div><img src="./How to Automate Saving Webpages as a Single .MHTML Files using Selenium Webdriver- CodeProject_files/star-empty-lg.png" style="width:24px;height:24px"></div><div><img src="./How to Automate Saving Webpages as a Single .MHTML Files using Selenium Webdriver- CodeProject_files/star-empty-lg.png" style="width:24px;height:24px"></div><div><img src="./How to Automate Saving Webpages as a Single .MHTML Files using Selenium Webdriver- CodeProject_files/star-empty-lg.png" style="width:24px;height:24px"></div></div></div>
+			
+
+			
+			
+
+			
+            
+
+			
+                
+
+		</div>
+		
+	
+		
+		<div id="ctl00_RateArticle_VoteCountNoHist" class="rating-votes nowrap">0.00/5  (No votes)</div>	
+
+		
+
+		
+		<div class="rating-undo" title="Undo vote" style="margin-left:5px;display:none"></div>
+
+		
+		
+	</div>
+
+	
+	
+
+</div>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="flex-container" style="color:#666;font-size:smaller">
+                                        <span id="ctl00_LastUpdated" class="date flex-item-tight" title="Date last updated">25 Sep 2023</span><a id="ctl00_LicenseLink" title="The Code Project Open License (CPOL)" class="license flex-item-tight" href="http://www.codeproject.com/info/cpol10.aspx">CPOL</a><span id="ctl00_ReadingTime" class="stats flex-item-tight">3 min read</span><span id="ctl00_HorizontalStats" class="stats flex-item-tight"><span class="stats"><span title="Views"><img src="./How to Automate Saving Webpages as a Single .MHTML Files using Selenium Webdriver- CodeProject_files/views32.png" style="width:16px"> 5.1K</span> &nbsp; </span></span>
+                                    </div>
+                                </div>
+					        </div>
+
+                            
+
+                        </div>
+
+                        <div id="ctl00_DescriptionSpot" class="summary">Saving webpages in single self contained files using Selenium Webdriver</div><span id="ctl00_ThumbnailUrl" class="date" content="https://www.codeproject.com/script/Articles/Images/tip100x80.png"></span>			
+
+                    </div>
+                    
+					
+					
+
+					
+
+					
+					<div id="ctl00_Abstract" class="abstract">A simple console application which downloads a set of webpages and saves them as single .MHTML files in a specified folder.</div>
+
+					
+					
+
+						
+					
+
+					
+
+						
+						<div id="contentdiv" class="text">
+						
+
+
+
+<!-- Article Starts -->
+
+<h2>Introduction</h2>
+
+<p><strong><a data-pjax="#repo-content-pjax-container" data-turbo-frame="repo-content-turbo-frame" href="https://github.com/fededim/EdgeSinglePageDownloader">EdgeSinglePageDownloader</a></strong> is a simple console application which downloads a set of webpages and saves them as single <em>.MHTML</em> files in a specified folder using Edge Selenium Webdriver (it should work also on ChromeDriver). It is a simple proof of concept which shows how to implement this feature using the Selenium Webdriver and allows also to download and save a set of webpages in batch.</p>
+
+<h2>Background</h2>
+
+<p>The <a href="https://learn.microsoft.com/en-us/microsoft-edge/webdriver-chromium/?tabs=c-sharp">Edge Selenium Webdriver</a> is a NuGet package which allows you to automate Microsoft Edge by simulating user interaction. The saving of the browsed web page happens by sending CTRL + S key to Edge in order to pop up the <strong>Save As</strong> dialog, specifying then a filename, selecting the file format (Webpage, single file <em>.mhtml</em>) and clicking the <strong>Save</strong> button. Unluckily, the method <code>SendKeys</code> provided by Selenium Webdriver does not work (or at least I was not able to in Windows), so after several tries, I switched to using <a href="https://qa.social.technet.microsoft.com/wiki/contents/articles/5169.vbscript-sendkeys-method.aspx">VBScript SendKeys</a> method which works flawlessly with the caveat of requiring Windows as operating system.</p>
+
+<h2>Using the Code</h2>
+
+<p>Using the code is very simple, all you have to do is:</p>
+
+<ul>
+	<li>adjust the <code>DefaultSaveFolder</code> <em>constant</em> to specify the local folder where to save the <em>mhtml</em> files, <strong>it defaults to <em>C:\temp</em></strong>
+
+	<div class="pre-lang" id="premain78372"><div>C#</div><div class="pre-action-link"><span id="copycode78372" class="copy-code" data-index="78372" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre78372" style="margin-top:0;" class="lang-csharp notranslate" data-language="cs" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">const</span> <span class="code-keyword">string</span> DefaultSaveFolder = <span class="code-string">"</span><span class="code-string">c:\\temp"</span>;</pre>
+	</li>	<li>adjust <code>urlsToSave</code> <em>variable</em> initialization with the urls you would like to save, <strong>by default The Verge and Wired urls are provided</strong>:
+	<div class="pre-lang" id="premain577587"><div>C#</div><div class="pre-action-link"><span id="copycode577587" class="copy-code" data-index="577587" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre577587" style="margin-top:0;" class="lang-csharp notranslate" data-language="cs" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">var</span> urlsToSave = <span class="code-keyword">new</span> List&lt;string&gt; 
+                 { <span class="code-string">"</span><span class="code-string">https://www.theverge.com"</span>, <span class="code-string">"</span><span class="code-string">https://www.wired.com/"</span> };</pre>
+	</li></ul>
+
+<p>After that, just run the code, Edge will be started, all the <code>urlsToSave</code> will be browsed sequentially and they will be saved in the <em>DefaultSaveFolder</em> with filenames <em>Page_1.mhtml</em>, <em>Page_2.mhtml</em>, ..., <em>Page_n.mhtml</em>.</p>
+
+<p>The code is very simple and it is all contained in the <code>Main</code> function with the <code>SaveAsSingleFile</code> helper function.</p>
+
+<p>The <code>Main</code> function performs these steps:</p>
+
+<ul>
+	<li>Loops for all urls inside the <code>urlsToSave</code> variable and for each of them:
+
+	<ul>
+		<li>Instantiates a new <code>EdgeDriver</code> class (provided by Selenium Webdriver) which starts a new Edge browser</li>		<li>Makes the browser navigate to the url by calling <code>EdgeDriver.Navigate().GoToUrl</code></li>		<li>Saves the webpage as a single <em>.mhtml</em> file by calling helper function <code>SaveAsSingleFile</code></li>	</ul>
+	</li></ul>
+
+<div class="pre-lang" id="premain25877"><div>C#</div><div class="pre-action-link"><span id="copycode25877" class="copy-code" data-index="25877" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre25877" style="margin-top:0;" class="lang-csharp notranslate" data-language="cs" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">static</span> <span class="code-keyword">void</span> Main(string[] args)
+{
+    <span class="code-keyword">var</span> options = <span class="code-keyword">new</span> EdgeOptions();
+
+    <span class="code-keyword">var</span> service = EdgeDriverService.CreateDefaultService();
+    service.EnableVerboseLogging = <span class="code-keyword">true</span>;
+
+    WshShell = <span class="code-keyword">new</span> WshShellClass();
+
+    <span class="code-keyword">var</span> urlsToSave = <span class="code-keyword">new</span> List&lt;string&gt; 
+        { <span class="code-string">"</span><span class="code-string">https://www.theverge.com"</span>, <span class="code-string">"</span><span class="code-string">https://www.wired.com/"</span> };
+
+    <span class="code-keyword">var</span> i = <span class="code-digit">1</span>;
+    <span class="code-keyword">foreach</span> (<span class="code-keyword">var</span> url <span class="code-keyword">in</span> urlsToSave)
+    {
+        Driver = <span class="code-keyword">new</span> EdgeDriver(service, options);
+
+        Driver.Navigate().GoToUrl(url);
+
+        SaveAsSingleFile(Path.Combine(DefaultSaveFolder, 
+                         $<span class="code-string">"</span><span class="code-string">Page_{i++}.mhtml"</span>),url);
+
+        Driver.Close();
+            }
+    }</pre>
+
+<p>The <code>SaveAsSingleFile</code> helper function performs these steps:</p>
+
+<ul>
+	<li>Checks whether the output directory exists and creates it if not</li>	<li>Checks whether the output file exists and it is in the <em>.mhtml</em> format, if yes, it exists without re-saving it again otherwise it deletes the existing file</li>	<li>Sends CTRL (^ character) + S key to Edge browser by using <code>WshShell.SendKeys</code>, this pops up the "<strong>Save as</strong>" dialog (image below). Notice that the "<code>Filename</code>" and "<code>Save as type</code>" labels of textboxes have an underlined <code>char</code> respectively '<code>n</code>' and '<code>t</code>', you can focus on their controls by pressing ALT + one of these characters. Please pay attention to the fact that these shortcuts are localization-dependent (I am using English localized Windows), in your Windows installation they could be different ones, so adapt them if necessary.</li>	<li>Sends ALT (% character) + 'n' and the filename passed to the function</li>	<li>Sends ALT (% character) + 't', DOWN ARROW to open all "Save as Type" possible formats , UP ARROW to select "WebPage, Single File (<em>*.mhtml</em>)" and ENTER (~ character) twice to confirm the file format and press the "<strong>Save</strong>" button.</li>	<li>After this, it waits for 1 minute (specified by <code>MaxWaitForSaveMSec</code> constant) to check that the saved file has been created and it is in the MHTML format (it checks it contains the <code>string</code> "<code>Snapshot-Content-Location: {url}</code>"), if not, it goes back to the beginning of the function to redo everything again.
+	<p><img alt="Image 1" src="./How to Automate Saving Webpages as a Single .MHTML Files using Selenium Webdriver- CodeProject_files/extracted-image-1.png" style="width: 640px; height: 246px" class="lazyautosizes ls-is-cached lazyloaded" data-sizes="auto" data-srcset="/KB/TipsnTricks/5368776/extracted-image-1-r-400.png 400w, /KB/TipsnTricks/5368776/extracted-image-1.png 640w" sizes="640px" srcset="/KB/TipsnTricks/5368776/extracted-image-1-r-400.png 400w, /KB/TipsnTricks/5368776/extracted-image-1.png 640w"></p>
+	</li></ul>
+
+<div class="pre-lang" id="premain353135"><div>C#</div><div class="pre-action-link"><span class="code-collapse" data-index="353135" id="preShrink353135">Shrink ▲</span> &nbsp; <span id="copycode353135" class="copy-code" data-index="353135" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre353135" style="margin-top:0;" class="lang-csharp notranslate" data-language="cs" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">static</span> <span class="code-keyword">void</span> SaveAsSingleFile(<span class="code-keyword">string</span> filename, <span class="code-keyword">string</span> url)
+{
+again:
+    <span class="code-keyword">if</span> (!Directory.Exists(Path.GetDirectoryName(filename)))
+        Directory.CreateDirectory(Path.GetDirectoryName(filename));
+        
+    <span class="code-keyword">if</span> (System.IO.File.Exists(filename))
+    {
+        <span class="code-comment">//</span><span class="code-comment"> simple check that the existing file format is mhtml, </span>
+        <span class="code-comment">//</span><span class="code-comment"> otherwise delete and re-save it</span>
+        <span class="code-keyword">if</span> (!System.IO.File.ReadAllText(filename).Contains
+                            ($<span class="code-string">"</span><span class="code-string">Snapshot-Content-Location: {url}"</span>))
+            System.IO.File.Delete(filename);
+        <span class="code-keyword">else</span>
+            <span class="code-keyword">return</span>;
+    }
+    
+    WshShell.SendKeys(<span class="code-string">"</span><span class="code-string">^s"</span>);
+    Thread.Sleep(<span class="code-digit">1000</span>);
+    <span class="code-comment">//</span><span class="code-comment"> send alt+n, enter filename</span>
+    WshShell.SendKeys($<span class="code-string">"</span><span class="code-string">%n{filename}"</span>);
+    Thread.Sleep(<span class="code-digit">20</span>);
+    <span class="code-comment">//</span><span class="code-comment"> send alt+t, down arrow, up arrow (to select single mhtml), press enter twice</span>
+    WshShell.SendKeys($<span class="code-string">"</span><span class="code-string">%t"</span>);
+    Thread.Sleep(<span class="code-digit">20</span>);
+    WshShell.SendKeys($<span class="code-string">"</span><span class="code-string">{{DOWN}}"</span>);
+    Thread.Sleep(<span class="code-digit">20</span>);
+    WshShell.SendKeys($<span class="code-string">"</span><span class="code-string">{{UP}}"</span>);
+    Thread.Sleep(<span class="code-digit">20</span>);
+    WshShell.SendKeys($<span class="code-string">"</span><span class="code-string">~~"</span>);
+    
+    <span class="code-comment">//</span><span class="code-comment"> waits up to MaxWaitForSaveMSec to check that the file is saved correctly</span>
+    <span class="code-keyword">var</span> endtime = DateTime.Now.AddMilliseconds(MaxWaitForSaveMSec);
+    
+    <span class="code-keyword">while</span> (DateTime.Now &lt; endtime)
+    {
+        Thread.Sleep(<span class="code-digit">1000</span>);
+        <span class="code-comment">//</span><span class="code-comment"> simple check that the file is present and its format is mhtml, </span>
+        <span class="code-comment">//</span><span class="code-comment"> otherwise retry again to save</span>
+        <span class="code-keyword">if</span> (System.IO.File.Exists(filename))
+        {
+            <span class="code-keyword">if</span> (!System.IO.File.ReadAllText(filename).Contains
+                                ($<span class="code-string">"</span><span class="code-string">Snapshot-Content-Location: {url}"</span>))
+                <span class="code-keyword">goto</span> again;
+            <span class="code-keyword">else</span>
+                <span class="code-keyword">break</span>;
+        }
+    }
+}</pre>
+
+<h2>Points of Interest</h2>
+
+<p>To use the <a href="https://qa.social.technet.microsoft.com/wiki/contents/articles/5169.vbscript-sendkeys-method.aspx">VBScript SendKeys</a> method, you have to create an instance of <strong>WScript.Shell COM object</strong>. The easiest way to do this is to reference directly its <b>ActiveX Control file</b> by right clicking project file --&gt; <strong>Add</strong> --&gt; <strong>Com Reference</strong> --&gt; <strong>Browse</strong> --&gt; <strong>Select C:\Windows\SysWOW64\wshom.ocx</strong>.</p>
+
+<p>You should be seeing in Dependencies/COM node in Visual Studio <code>Interop.IWshRuntimeLibrary</code>. Click on it and change "<strong>Embed Interop Types</strong>" from <strong>Yes</strong> to <strong>No</strong> (if you use Net Core).</p>
+
+<p><img alt="Interop.IWshRuntimeLibrary" height="1405" src="./How to Automate Saving Webpages as a Single .MHTML Files using Selenium Webdriver- CodeProject_files/440be633-f9d2-45c2-a3ba-1d177c7604e6.Png" width="501" data-src="/KB/TipsnTricks/5368776/440be633-f9d2-45c2-a3ba-1d177c7604e6.Png" class="lazyautosizes lazyloaded" data-sizes="auto" data-srcset="/KB/TipsnTricks/5368776/440be633-f9d2-45c2-a3ba-1d177c7604e6-r-400.Png 400w, /KB/TipsnTricks/5368776/440be633-f9d2-45c2-a3ba-1d177c7604e6.Png 501w" sizes="501px" srcset="/KB/TipsnTricks/5368776/440be633-f9d2-45c2-a3ba-1d177c7604e6-r-400.Png 400w, /KB/TipsnTricks/5368776/440be633-f9d2-45c2-a3ba-1d177c7604e6.Png 501w"></p>
+
+<p>After doing this, you can simply instantiate the <code>WScript.Shell COM</code> object by:</p>
+
+<div class="pre-lang" id="premain971775"><div>C#</div><div class="pre-action-link"><span id="copycode971775" class="copy-code" data-index="971775" style="visibility: visible;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 460 460" style="width: 16px;height:16px;" xml:space="preserve"><g><path d="M425.934,0H171.662c-18.122,0-32.864,14.743-32.864,32.864v77.134h30V32.864c0-1.579,1.285-2.864,2.864-2.864h254.272     c1.579,0,2.864,1.285,2.864,2.864v254.272c0,1.58-1.285,2.865-2.864,2.865h-74.729v30h74.729 c18.121,0,32.864-14.743,32.864-32.865V32.864C458.797,14.743,444.055,0,425.934,0z"></path><path d="M288.339,139.998H34.068c-18.122,0-32.865,14.743-32.865,32.865v254.272C1.204,445.257,15.946,460,34.068,460h254.272 c18.122,0,32.865-14.743,32.865-32.864V172.863C321.206,154.741,306.461,139.998,288.339,139.998z M288.341,430H34.068    c-1.58,0-2.865-1.285-2.865-2.864V172.863c0-1.58,1.285-2.865,2.865-2.865h254.272c1.58,0,2.865,1.285,2.865,2.865v254.273h0.001 C291.206,428.715,289.92,430,288.341,430z"></path></g></svg></span></div></div>
+<pre id="pre971775" style="margin-top:0;" class="lang-csharp notranslate" data-language="cs" data-allowshrink="True" data-collapse="False" data-codeblock-processed="true"><span class="code-keyword">var</span> wshShell = <span class="code-keyword">new</span> WshShellClass();</pre>
+
+<h2>History</h2>
+
+<ul>
+	<li>V1.0 (22<sup>nd</sup> September, 2023): Initial version</li></ul>
+
+
+
+
+						</div>
+						
+
+						
+						<h2>License</h2>
+						<div id="LicenseTerms"><p>This article, along with any associated source code and files, is licensed under <a href="http://www.codeproject.com/info/cpol10.aspx" rel="license">The Code Project Open License (CPOL)</a></p></div>
+						
+
+						
+						<br>
+						
+						    <br>
+						
+						
+
+						<div class="clearfix"></div>
+
+						<div style="padding-top:8px">
+							
+						</div>
+
+					
+
+				    
+					</form>
+
+				</div>
+
+				
+				<div class="bottom-promo"> 
+				    
+				</div>
+				
+                
+                
+
+				
+				
+				
+
+			</div>
+			
+
+            
+            
+            
+
+        </div>
+        
+
+		
+		<div class="site-footer">
+			<div class="align-left">
+				<a id="ctl00_PermaLink" href="https://www.codeproject.com/Tips/5368776/How-to-Automate-Saving-Webpages-as-a-Single-MHTML">Permalink</a><br>
+				<br>
+				<a id="ctl00_PrivacyLink" href="https://www.codeproject.com/info/privacy.aspx">Privacy</a><br>
+    			<a id="ctl00_CookiePolicyLink" href="https://www.codeproject.com/info/cookie.aspx">Cookies</a><br>
+                <a id="ctl00_TermsOfUseLink" href="https://www.codeproject.com/info/TermsOfUse.aspx">Terms of Use</a><br>
+			</div>
+
+            <div class="align-center">
+				
+
+
+<div class="page-width">
+    Layout: <a id="ctl00_PageWidth_FixedT" title="Fixed width layout" rel="nofollow" class=" active" href="https://www.codeproject.com/Tips/5368776/How-to-Automate-Saving-Webpages-as-a-Single-MHTML?PageFlow=FixedWidth">fixed</a>
+    |
+    <a id="ctl00_PageWidth_FluidT" title="Fluid layout" rel="nofollow" href="https://www.codeproject.com/Tips/5368776/How-to-Automate-Saving-Webpages-as-a-Single-MHTML?PageFlow=Fluid">fluid</a>
+</div>
+
+
+				
+
+				
+
+	            
+
+                <br>
+			</div>
+                
+			<div class="align-right">
+				Article Copyright 2023 by Federico Di Marco<br>Everything else
+				Copyright © <a href="mailto:webmaster@codeproject.com">CodeProject</a>, 1999-2024<br>
+                <br>
+				Web01 
+				2.8:2024-10-20:1<br>
+			</div>
+		</div>
+		
+
+		<br clear="all">
+		
+			
+
+	</div> 
+	</div> 
+</div>
+
+
+
+
+
+
+
+<script type="text/javascript"> // DEFERRED script
+
+document.addEventListener('DOMContentLoaded', function() {
+
+	new CodeBlocks().initialise('#contentdiv');
+	
+	$('.author-wrapper .description').shorten({showChars: 400});
+	
+	anchorAnimate();
+	
+	$('#__EVENTVALIDATION').attr('autocomplete', 'off');
+
+})
+</script>
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">.copied::after {  position: absolute;  right: 0;  display: inline-block; white-space: nowrap; content: 'copied'; color: #fff; background-color: #f90;  border-radius: 3px; padding:1px 8px; opacity: 0;  will-change: opacity, transform; animation: showcopied 1.5s ease; } @keyframes showcopied { 0% { opacity: 0; } 70% { opacity: 1; } 100% { opacity: 0; } } </style><canvas id="cv1" width="1px" height="1px" style="position:absolute;left:0;top:0;pointer-events:none"></canvas><canvas id="cv2" width="1px" height="1px" style="position:absolute;left:0;top:0;pointer-events:none"></canvas></body></html>
