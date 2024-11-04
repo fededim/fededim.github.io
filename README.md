@@ -12,6 +12,8 @@ Email: Federico Di Marco <fededim@gmail.com><br/>
 [Instagram](https://www.instagram.com/fededim.76)<br/>
 [YouTube](https://www.youtube.com/@fededim76)<br/>
 
+# IT
+
 You can find below copies of my articles published on the CodeProject which unluckily was shutted down in October 2024.
 
 # Articles
@@ -28,3 +30,11 @@ You can find below copies of my articles published on the CodeProject which unlu
 [Query Excel or CSV files with T-SQL](<./TipsAndTricks/Query Excel or CSV files with T-SQL- CodeProject.html>)<br/>
 [spSearchTables_ Search and Find Tables or Columns by Name or Value](<./TipsAndTricks/spSearchTables_ Search and Find Tables or Columns by Name or Value- CodeProject.html>)<br/>
 [VPNScripter_ A Scripter for Windows' VPN Connections](<./TipsAndTricks/VPNScripter_ A Scripter for Windows' VPN Connections- CodeProject.html>)<br/>
+[Git cheatsheet (this one is unpublished)](<./TipsAndTricks/Git_cheatsheet.md>)
+
+# Retrofits
+
+I am an owner of a Golf MK7.5 and I have written some detailed guides for a few optionals I retrofitted, you can find them here:
+
+[Volkswagen Golf MK7.5 Facelift Heated Windscreen Retrofit](./Retrofits/Golf_MK7.5/Heated Windscreen/Volkswagen Golf MK7.5 Facelift Heated Windscreen Retrofit V1.0.1.pdf)<br/>
+[Volkswagen Golf MK7.5 Facelift Lane Assist Retrofit](./Retrofits/Golf_MK7.5/Volkswagen Golf MK7.5 Facelift Lane Assist Retrofit V1.0.pdf)<br/>
