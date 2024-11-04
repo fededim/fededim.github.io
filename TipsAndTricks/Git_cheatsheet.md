@@ -87,9 +87,8 @@ git stash<br/>
 git stash list<br/>
 
 **Revert to a saved stash**<br/>
-git stash apply@{number} (number is one in the git stash list output)
+git stash apply@{number} (number is one in the git stash list output)<br/>
 
-**Git add a worktree for a particular branch**
-go to the master branch of your repo
-git worktree add \<relative folder\> <branch name>
-
+**Git add a worktree for a particular branch**<br/>
+go to the master branch of your repo<br/>
+git worktree add \<relative folder\> <branch name><br/>
