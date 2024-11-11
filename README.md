@@ -38,3 +38,10 @@ I am an owner of a Golf MK7.5 and I have written some detailed guides for a few 
 
 [Volkswagen Golf MK7.5 Facelift Heated Windscreen Retrofit](<./Retrofits/Golf_MK7.5/Heated Windscreen/Volkswagen Golf MK7.5 Facelift Heated Windscreen Retrofit V1.0.1.pdf>)<br/>
 [Volkswagen Golf MK7.5 Facelift Lane Assist Retrofit](<./Retrofits/Golf_MK7.5/Lane Assist/Volkswagen Golf MK7.5 Facelift Lane Assist Retrofit V1.0.pdf>)<br/>
+
+
+# Various
+
+Here you can find other guides I wrote about my DIY projects.
+
+[How to turn an IKEA FLUGBO into a smart floor lamp](<./Various/Smart floor lamp IKEA FLUGBO/How to turn an IKEA FLUGBO into a smart floor lamp.pdf>)<br/>
