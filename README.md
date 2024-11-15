@@ -48,6 +48,7 @@ I am an owner of a Golf MK7.5 and I have written some detailed guides for a few 
 
 [Volkswagen Golf MK7.5 Facelift Heated Windscreen Retrofit](<./Retrofits/Golf_MK7.5/Heated Windscreen/Volkswagen Golf MK7.5 Facelift Heated Windscreen Retrofit V1.0.1.pdf>)<br/>
 [Volkswagen Golf MK7.5 Facelift Lane Assist Retrofit](<./Retrofits/Golf_MK7.5/Lane Assist/Volkswagen Golf MK7.5 Facelift Lane Assist Retrofit V1.0.pdf>)<br/>
+[Volkswagen Golf MK7.5 Facelift Blind Spot Assist Retrofit](<./Retrofits/Golf_MK7.5/Blind Spot Assist/Volkswagen Golf MK7.5 Facelift Blind Spot Assist Retrofit.pdf>)<br/>
 
 
 # Various
