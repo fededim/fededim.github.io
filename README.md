@@ -30,7 +30,7 @@ You can find below copies of my articles published on the CodeProject which unlu
 [Query Excel or CSV files with T-SQL](<./TipsAndTricks/Query Excel or CSV files with T-SQL- CodeProject.html>)<br/>
 [spSearchTables_ Search and Find Tables or Columns by Name or Value](<./TipsAndTricks/spSearchTables_ Search and Find Tables or Columns by Name or Value- CodeProject.html>)<br/>
 [VPNScripter_ A Scripter for Windows' VPN Connections](<./TipsAndTricks/VPNScripter_ A Scripter for Windows' VPN Connections- CodeProject.html>)<br/>
-[Git cheatsheet (this one is unpublished)](<./TipsAndTricks/Git_cheatsheet.md>)
+[Git cheatsheet (this one is unpublished)](<https://github.com/fededim/fededim.github.io/blob/main/TipsAndTricks/Git_cheatsheet.md>)
 
 # Retrofits
 
