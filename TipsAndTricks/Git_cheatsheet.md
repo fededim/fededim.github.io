@@ -7,10 +7,13 @@ This is a short GIT cheatsheet guide which I have been writing and keeping updat
 git remote -v<br/>
 
 **Switch to a existing branch**<br/>
-git checkout \<brachname\><br/>
+git checkout \<branch_name\><br/>
+
+**Switch to a remote only existing branch**<br/>
+git checkout -t \<origin/branch_name\><br/>
 
 **Create and checkout a new branch**<br/>
-git checkout -b \<brachname\><br/>
+git checkout -b \<branch_name\><br/>
 
 **See what's modified in local folder**<br/>
 git status<br/>
@@ -32,7 +35,7 @@ git push --force
 
 **Merge**<br/>
 git fetch<br/>
-git merge \<branchname\><br/>
+git merge \<branch_name\><br/>
 git push<br/>
 
 **Resolving manual conflicts (for each file) - Keep local file**<br/>
