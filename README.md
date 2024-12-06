@@ -36,7 +36,7 @@ You can find below copies of my articles published on the CodeProject which unlu
 
 I am an owner of a Golf MK7.5 and I have written some detailed guides for a few optionals I retrofitted, you can find them here:
 
-[Volkswagen Golf MK7.5 Facelift Heated Windscreen Retrofit](<./Retrofits/Golf_MK7.5/Heated Windscreen/Volkswagen Golf MK7.5 Facelift Heated Windscreen Retrofit V1.0.1.pdf>)<br/>
+[Volkswagen Golf MK7.5 Facelift Heated Windscreen Retrofit](<./Retrofits/Golf_MK7.5/Heated Windscreen/Volkswagen Golf MK7.5 Facelift Heated Windscreen Retrofit V1.0.1.pdf>) ([General overview video](https://www.youtube.com/watch?v=I2hk7vTIvNM)</a><br/> 
 [Volkswagen Golf MK7.5 Facelift Lane Assist Retrofit](<./Retrofits/Golf_MK7.5/Lane Assist/Volkswagen Golf MK7.5 Facelift Lane Assist Retrofit V1.0.pdf>)<br/>
 [Volkswagen Golf MK7.5 Facelift Blind Spot Assist Retrofit](<./Retrofits/Golf_MK7.5/Blind Spot Assist/Volkswagen Golf MK7.5 Facelift Blind Spot Assist Retrofit.pdf>)<br/>
 
@@ -45,4 +45,4 @@ I am an owner of a Golf MK7.5 and I have written some detailed guides for a few 
 
 Here you can find other guides I wrote about my DIY projects.
 
-[How to turn an IKEA FLUGBO into a smart floor lamp](<./Various/Smart floor lamp IKEA FLUGBO/How to turn an IKEA FLUGBO into a smart floor lamp.pdf>)<br/>
+[How to turn an IKEA FLUGBO into a smart floor lamp](<./Various/Smart floor lamp IKEA FLUGBO/How to turn an IKEA FLUGBO into a smart floor lamp.pdf>) ([General overview video](https://www.youtube.com/watch?v=WeW8FoWY9ug)<br/>
