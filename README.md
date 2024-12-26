@@ -11,6 +11,7 @@ Email: Federico Di Marco <fededim@gmail.com><br/>
 [Stackoverflow](https://stackoverflow.com/users/4375005/fededim)<br/>
 [Instagram](https://www.instagram.com/fededim.76)<br/>
 [YouTube](https://www.youtube.com/@fededim76)<br/>
+Music: [YouTube](https://www.youtube.com/@fededim76/playlists) [Spotify](https://open.spotify.com/user/31gffooi3mml3xkhvwcmwvrjnpoq)<br/>
 
 # IT
 
@@ -18,7 +19,7 @@ You can find below copies of my articles published on the CodeProject which unlu
 
 # Articles
 
-[Fededim.Extensions.Configuration.Protected.DataProtectionAPI](<./Articles/Fededim.Extensions.Configuration.Protected.DataProtectionAPI.html>)<br/>
+[Fededim.Extensions.Configuration.Protected.DataProtectionAPI](<./Articles/Fededim.Extensions.Configuration.Protected.DataProtectionAPI.html>) ([Demo video about its use](<https://www.youtube.com/watch?v=imNnItSh3eg>)</a><br/>
 [How to Transform Binary Files into Powershell Script(s)<br/> in Order to Copy them Silently on a Server](<./Articles/How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject.html>)<br/>
 [ProtectedJson_ Integrating ASP.NET Core Configuration and Data Protection](<./Articles/ProtectedJson_ Integrating ASP.NET Core Configuration and Data Protection- CodeProje.html>)<br/>
 [SyncEvent_ The missing Java Event Class](<./Articles/SyncEvent_ The missing Java Event Class- CodeProject.html>)<br/>
