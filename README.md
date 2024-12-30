@@ -10,7 +10,7 @@ Email:
 - Work: [federico.dimarco@gmail.com](<mailto:federico.dimarco@gmail.com>)
 
 Instant messaging:
-- [Telegram](https://t.me/AnybodySeenMyBaby)
+- [Telegram, (for sexy women :-)](https://t.me/AnybodySeenMyBaby)
 
 Social medias:
 - [Linkedin](https://www.linkedin.com/in/federicodimarco)
