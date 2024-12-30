@@ -9,6 +9,9 @@ Email:
 - Personal: [fededim@gmail.com](<mailto:fededim@gmail.com>)
 - Work: [federico.dimarco@gmail.com](<mailto:federico.dimarco@gmail.com>)
 
+Instant messaging:
+- [Telegram](https://t.me/AnybodySeenMyBaby)
+
 Social medias:
 - [Linkedin](https://www.linkedin.com/in/federicodimarco)
 - [Github](https://github.com/fededim/)
