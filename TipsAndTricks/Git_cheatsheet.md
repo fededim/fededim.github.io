@@ -95,3 +95,6 @@ git stash apply@{number} (number is one in the git stash list output)<br/>
 **Git add a worktree for a particular branch**<br/>
 go to the master branch of your repo<br/>
 git worktree add \<relative folder\> <branch name><br/>
+
+**Clear Git credentials**
+git credential-cache exit
