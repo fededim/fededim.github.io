@@ -77,6 +77,9 @@ git push<br/>
 git reset --keep HEAD^1<br/>
 git push<br/>
 
+**Clean untracked files**<br/>
+git clean -f -d<br/>
+
 **Squash last n commits**<br/>
 git rebase --interactive HEAD~n (n is the number of commits)<br/>
 <br/>
@@ -96,5 +99,6 @@ git stash apply@{number} (number is one in the git stash list output)<br/>
 go to the master branch of your repo<br/>
 git worktree add \<relative folder\> <branch name><br/>
 
-**Clear Git credentials**
-git credential-cache exit
+**Clear Git credentials**<br/>
+git credential-cache exit<br/>
+
