@@ -1,7 +1,7 @@
 # fededim.github.io
 Federico Di Marco - My personal pages
 
-![Federico Di Marco](<./Images/Federico_Di_Marco_2024_Bali.jpg> "Federico Di Marco")
+![Federico Di Marco](<./Images/Federico_Di_Marco_2024_Varese.jpg> "Federico Di Marco")
 
 I'm a senior software engineer, born in Genova, Italy, with a master degree in computer science, in the second half of his forties. Started using a computer at six years, gone through logo, basic, assembly, C/C++, java and finally to .NET and .NET core. Proficient also in databases, especially Sql Server and reporting. Let's say I have also some experience on security but mainly in the past, now things have become much more difficult and I do not have too much time to keep me updated, but sometimes I am still kicking in. Fan of videogames, technologies, motorbikes, travelling and comedy.
 
