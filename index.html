@@ -212,6 +212,39 @@
 <li><a href="https://www.youtube.com/watch?v=I2hk7vTIvNM">General overview video</a></li>
 <li><a href="https://github.com/Mr-MIBonk/Lane-Assistant-60-Seconds">Firmware and associated parameter files with warning time increased from 15 seconds to 60</a></li>
 <li><a href="https://icanhack.nl/blog/vw-part1/">How to hack a Volkswagen Golf Power steering ECU (very interesting article)</a></li>
+<li><a href="https://www.mathworks.com/help/vision/ug/camera-calibration.html">Calibration</a>: it is the process of determining both extrinsic and intrinsic camera parameters (like camera coordinates, focal length, optical center) once installed. It is a <b>mandatory process</b> needed to perform any kind of calculation on an image, like measuring a distance between pixels, estimate depth or 3d structure. It is performed using a predefined <a href="https://www.mathworks.com/help/vision/ug/calibration-patterns.html">calibration pattern</a> consisting of a sheet where a set of objects of a predetermined shape (like square, circles), size and position is put in front of the camera at a precise distance.<p>Every camera manufacturer has its own calibration pattern; for Volkswagen it is called <a href="https://it.aliexpress.com/item/1005006292986980.html?spm=a2g0o.order_list.order_list_main.5.56923696TD0njL&gatewayAdapt=glo2ita">VAS 6430</a>. Usually you have to perform calibration at carglass centers where they have all the needed equipment, but if you are skilled enough and you know what you are doing you can perform it by yourself using either official VW ODIS (guided procedure) or OBD11, I quote here an untested OBD11 procedure which I found on a Skoda owner website:
+<ul>
+<li>Position the car as in this <a href="./Images/Golf calibration.png">picture</a></li>
+<li><b>Measure 4 wheel arches</b> and go to module <b>A5 Front Sensors Driver Assistance System</b> performing the security access with code</li>
+<li>Change diagnostic service --> VW</li>
+<li>Go to Adaptation
+<ul>
+<li>Body height wheel house edge-Body height left front wheel house edge --> Enter value</li>
+<li>Body height wheel house edge-Body height right front wheel house edge --> Enter value</li>
+<li>Body height wheel house edge-Body height left rear wheel house edge --> Enter value​</li>
+<li>Body height wheel house edge-Body height right rear wheel house edge --> Enter value</li> 
+<li>Distance to calibration field --> Enter 1500</li>
+<li>Calibration target position --> Just confirm</li>
+<li>Axel offset --> Just confirm</li>
+</ul>
+</li>
+<li>Go to Basic Configuration
+<ul>
+<li>Search calibration target</li>
+<li>Initial online configuration</li>
+<li>Static calibration costumer service</li>
+</ul>
+</li>
+<li>Change diagnostic service --> End of assembly line</li>
+<li>Basic Configuration --> Static calibration end of assembly line</li>
+</ul>
+</p>
+<ul></ul>
+</li>
+If everything is fine the fault about "No basic settings" should be removed and this marks the end of the <b>static</b> calibration (called static because the car is not moving). Since this calibration is never perfect the lane assist camera A5 after this phase enters another calibration phase called <b>dynamic</b> because it is performed automatically by the camera while you drive (you have to drive for at least 500 kms), the more you drive, the better the calibration will be fine-tuned, you can check this in the Live Data menu option.
+</ul>
+</ul>
+</li>
 </ul></li>
 <li><a href="./Retrofits/Golf_MK7.5/Blind%20Spot%20Assist/Volkswagen%20Golf%20MK7.5%20Facelift%20Blind%20Spot%20Assist%20Retrofit.pdf">Volkswagen Golf MK7.5 Facelift Blind Spot Assist Retrofit</a>
 <br/>
