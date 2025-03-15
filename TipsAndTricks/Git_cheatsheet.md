@@ -103,5 +103,6 @@ git worktree add \<relative folder\> <branch name><br/>
 git credential-cache exit<br/>
 
 **Track for changes in commit history of some lines of code or a function**<br/>
-git log -L \<startline\>,\<end line\>:\<path to filename\>
-git log -L :\<function name\>:\<path to filename\>
+git log -L \<startline\>,\<end line\>:\<path to filename\><br/>
+git log -L :\<function name\>:\<path to filename\><br/>
+
