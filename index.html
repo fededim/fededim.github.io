@@ -276,6 +276,31 @@ If everything is fine the fault about "No basic settings" should be removed and 
 
 </ul>
 
+<h2 id="retrofits">VW Odis software</h2>
+Just some information about the VW Odis software, there are two versions:
+<ul>
+<li><b>Odis Service</b>: it works only online and you need a login/password called GeKo access (price around 30$ an hour on internet, you can also buy it directly at Volkswagen ErWin, but it costs more). You must use this for:
+<ul>
+<li>Removing component protection on specific control units (adaptive cruise control, gateway, dashboard, engine, gear, multimedia unit, gps by the way lane assist, heated windscreen and blind spot assist DO NOT USE component protection)</li>
+<li>Replacing the ignition key (e.g. activating immobilizer on a new key)</li>
+<li>Restore the original coding, adaptations and SWAP codes (SWAP = SoftWare As Product, some optionals are already built-in but disabled and they are activated through SWAP codes like voice commands, travel assist, emergency assist, etc.). There are even other codes, called SVM codes, which allow you to add officially retrofits to your car (and perform coding and adaptations automatically for them), but you have to buy them from VW or authorised resellers (the configuration of the optional of your car is linked to the VIN and it is stored on VW servers).</li>
+<li>Perform software updates according to campaigns (on every campaign document there should be a code provided which must be entered in Odis Service to perform the upgrade)</li>
+<li>Fixing severe errors which are not solvable with the other Odis (Engineering, see below)</li>
+</ul></li>
+<li><b>Odis Engineering</b>: it works only offline and it allows you
+<ul>
+<li>Perform coding and adaptations (like OBD11)</li>
+<li>Performing backup/restore of coding/adaptations (like OBD11)</li>
+<li>Check faults (it provides better details than OBD11)</li>
+<li>Flashing control units, e.g. updating/downgrading firmware</li>
+<li>Data transfer, e.g. writing xml parameter data on control units usually done after a new firmware upgrade.</li>
+<li>Perform offline guided functions like calibration, basic settings, etc.</li>
+</ul>
+</li>
+</ul>
+Both software work with the interface <a href="https://www.vncishop.com/wholesale/vnci-6154a-and-usb-software.html">VNCI 6154</a>, you can download a VMware virtual machine from forums on internet with everything installed (it is very time consuming to install by yourself), if you are lazy you can pay something more (around 10$) when ordering VNCI 6154 and you will receive an USB key with the software.
+<br/>
+
 <h2 id="various">Various</h2>
 
 <p>Here you can find other guides I wrote about my DIY projects.</p>
