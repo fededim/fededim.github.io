@@ -5,22 +5,22 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="Keywords" content="software, engineer, C#, .NET, Sql-Server, T-SQL, microsoft, smart, lamp, diy, retrofits, vw, golf, mk7.5">
+	<meta name="Keywords" content="software, engineer, C#, .NET, Sql-Server, T-SQL, microsoft, smart, lamp, diy, retrofits, vw, golf, mk7, facelift">
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>fededim.github.io | Federico Di Marco</title>
+<title>Federico Di Marco | Personal page</title>
 <meta name="generator" content="Jekyll v3.10.0">
-<meta property="og:title" content="fededim.github.io">
+<meta property="og:title" content="Federico Di Marco | Personal page">
+<meta property="twitter:title" content="Federico Di Marco | Personal page">
 <meta property="og:locale" content="en_US">
-<meta name="description" content="Federico Di Marco <fededim@gmail.com> personal page">
-<meta property="og:description" content="My personal pages">
-<meta property="og:url" content="https://fededim.github.io/">
-<meta property="og:site_name" content="Federico Di Marco">
+<meta name="description" content="Federico Di Marco | Personal page">
+<meta property="og:description" content="Federico Di Marco | Personal page">
+<meta property="og:url" content="https://fededim.github.io/index.html">
+<meta property="og:site_name" content="Federico Di Marco | Personal pages">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary">
-<meta property="twitter:title" content="fededim.github.io">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","description":"Federico Di Marco <fededim@gmail.com> personal page","headline":"fededim.github.io","name":"Federico Di Marco","url":"https://fededim.github.io/","keywords": "software,engineer,C#,.NET,SqlServer,T-SQL,security,microsoft,smart,lamp,diy,retrofits,vw,golf,mk7.5"}</script>
+{"@context":"https://schema.org","@type":"WebSite","description":"Federico Di Marco | Personal page","headline":"Federico Di Marco | Personal page","name":"Federico Di Marco","url":"https://fededim.github.io/index.html","keywords": "software,engineer,it,C#,.NET,SqlServer,T-SQL,security,microsoft,smart,lamp,diy,retrofits,vw,golf,mk7"}</script>
 <!-- End Jekyll SEO tag -->
 
     <link rel="canonical" href="https://fededim.github.io/index.html" />
@@ -207,100 +207,6 @@
 <a href="./TipsAndTricks/VPNScripter_%20A%20Scripter%20for%20Windows&#39;%20VPN%20Connections-%20CodeProject.html">VPNScripter_ A Scripter for Windows’ VPN Connections</a><br/>
 <a href="https://github.com/fededim/fededim.github.io/blob/main/TipsAndTricks/Git_cheatsheet.md">Git cheatsheet (this one is unpublished)</a></p>
 
-<h2 id="retrofits">Retrofits</h2>
-
-<p>I am an owner of a Golf MK7.5 and I have written some detailed guides for a few optionals I retrofitted, you can find them here:</p>
-
-<ul>
-<li><a href="./Retrofits/Golf_MK7.5/Heated%20Windscreen/Volkswagen%20Golf%20MK7.5%20Facelift%20Heated%20Windscreen%20Retrofit%20V1.0.1.pdf">Volkswagen Golf MK7.5 Facelift Heated Windscreen Retrofit</a></li>
-<li><a href="./Retrofits/Golf_MK7.5/Lane%20Assist/Volkswagen%20Golf%20MK7.5%20Facelift%20Lane%20Assist%20Retrofit%20V1.1.pdf">Volkswagen Golf MK7.5 Facelift Lane Assist Retrofit</a>
-<ul>
-<li><a href="https://www.youtube.com/watch?v=I2hk7vTIvNM">General overview video</a></li>
-<li><a href="https://www.youtube.com/watch?v=ucE7aRJweYU">Extended test video on the highway</a></li>
-<li><a href="https://github.com/Mr-MIBonk/Lane-Assistant-60-Seconds">Firmware and associated parameter files with warning time increased from 15 seconds to 60</a></li>
-<li><a href="https://icanhack.nl/blog/vw-part1/">How to hack a Volkswagen Golf Power steering ECU (very interesting article)</a></li>
-<li><a href="https://obdii365.blogspot.com/2024/06/replace-and-code-vag-mqb-gateway-with.html">How to replace/upgrade the gateway</a></li>
-<li><a href="https://www.mathworks.com/help/vision/ug/camera-calibration.html">Calibration</a>: it is the process of determining both extrinsic and intrinsic camera parameters (like camera coordinates, focal length, optical center) once installed. It is a <b>mandatory process</b> needed to perform any kind of calculation on an image, like measuring a distance between pixels, estimate depth or 3d structure. It is performed using a predefined <a href="https://www.mathworks.com/help/vision/ug/calibration-patterns.html">calibration pattern</a> consisting of a sheet where a set of objects of a predetermined shape (like squares, circles), size and position is put in front of the camera at a precise distance.<p>Every camera manufacturer has its own calibration pattern; for Volkswagen it is called <a href="https://it.aliexpress.com/item/1005006292986980.html?spm=a2g0o.order_list.order_list_main.5.56923696TD0njL&gatewayAdapt=glo2ita">VAS 6430</a>. Usually you have to perform calibration at carglass centers where they have all the needed equipment, but if you are skilled enough and you know what you are doing you can perform it by yourself using either official VW ODIS (guided procedure) or OBD11, I quote here an untested OBD11 procedure which I found on a Skoda owner website:
-<ul>
-<li>Position the car in front of the calibration pattern as in this <a href="./Images/Golf calibration.png">picture</a></li>
-<li><b>Measure 4 wheel arches</b> and go to module <b>A5 Front Sensors Driver Assistance System</b> performing the security access with code 20103</li>
-<li>Change diagnostic service --> VW</li>
-<li>Go to Adaptation (confirm all values!)
-<ul>
-<li>Body height wheel house edge-Body height left front wheel house edge --> Enter value</li>
-<li>Body height wheel house edge-Body height right front wheel house edge --> Enter value</li>
-<li>Body height wheel house edge-Body height left rear wheel house edge --> Enter value​</li>
-<li>Body height wheel house edge-Body height right rear wheel house edge --> Enter value</li> 
-<li>Distance to calibration field --> Enter 1500</li>
-<li>Calibration target position --> Just confirm</li>
-<li>Axel offset --> Just confirm</li>
-</ul>
-</li>
-<li>Go to Basic Configuration
-<ul>
-<li>Search calibration target</li>
-<li>Initial online configuration</li>
-<li>Static calibration costumer service</li>
-</ul>
-</li>
-<li>Change diagnostic service --> End of assembly line</li>
-<li>Basic Configuration --> Static calibration end of assembly line</li>
-</ul>
-</p>
-<ul></ul>
-</li>
-If everything is fine the fault about "No basic settings" should be removed and this marks the end of the <b>static</b> calibration (called static because the car is not moving). Since this calibration is never perfect the lane assist camera A5 after this phase enters another calibration phase called <b>dynamic</b> because it is performed automatically by the camera while you drive (you have to drive for at least 500 kms), the more you drive, the better the calibration will be fine-tuned, you can check this in the Live Data menu option (Dynamic calibration, status and Dynamic calibration, details).
-</ul>
-</ul>
-</li>
-</ul></li>
-<li><a href="./Retrofits/Golf_MK7.5/Blind%20Spot%20Assist/Volkswagen%20Golf%20MK7.5%20Facelift%20Blind%20Spot%20Assist%20Retrofit.pdf">Volkswagen Golf MK7.5 Facelift Blind Spot Assist Retrofit</a>
-<br/>
-<br/>Here you can find good-res pictures (sorry taken using a mobile) of PCB of blind spot assist radar <b>5QD907685 rev. H12</b>: (<a href="./Retrofits/Golf_MK7.5/Blind%20Spot%20Assist/5QD907685_H12_Front_1.jpg">Front 1</a>&nbsp;<a href="./Retrofits/Golf_MK7.5/Blind%20Spot%20Assist/5QD907685_H12_Front_2.jpg">Front 2</a>&nbsp;<a href="./Retrofits/Golf_MK7.5/Blind%20Spot%20Assist/5QD907685_H12_Back_1.jpg">Back 1</a>) which I disassembled in order to update the firmware of the slave (left) control unit, unluckily I was unable to find on this hardware revision any eeprom chip (it is integrated in the BGA SOC) and also even a serial header (when I have some time I'll try to desolder the SOC and track the path on the PCB to identify the UART pins or if I bother I'll buy two new control units).</li>
-<br/>
-<p>This is the part list I was able to identify (I am not an electronic engineer though I know a little bit of digital electronics): <br/><br/>
-<b>A5973A E8213</b> - variable switching regulator (1.2-35V) <br/>
-<b>532RQ K221</b> - oscillator <br/>
-<b>NXP A1051/3 CIMH43 Tn2391</b> - high speed CAN BUS transceiver <br/>
-<b>BGT24ATR12 2FT H2017</b> - radar sensor 24Ghz <br/>
-<b>WR19906</b> - HEX buffer and line driver <br/>
-<b>6002E 212MM9</b> - Op Amp <br/>
-<b>HC365 WR19906 TnD19 14B</b> - 3 state Hex Buffer <br/>
-<b>99167 RRS</b> -  ???? <br/>
-<b>AD8648 A#226 2904</b> - 24 MHz Rail-to-Rail Amplifiers with Shutdown Option <br/>
-<b>TMS 320F28235ZJZQ CA-28ZLE43 G1</b> - Automotive C2000™ 32-bit MCU with 150 MIPS, 512 KB flash, EMIF, 12b ADC <br/>
-<b>ISSY 2228 IS64WV12816DBLL 12BLA3 8152 DSU868Y1</b> - 2Mb static ram <br/>
-<b>SJT TI 27K AHKL</b> - ???? <br/>
-</p></li>
-</ul>
-
-</ul>
-
-<h2 id="retrofits">VW Odis software</h2>
-Just some information about the VW Odis software, there are two versions:
-<ul>
-<li><b>Odis Service</b>: it works only online and you need a login/password called GeKo access (price around 30$ an hour on internet, you can also buy it directly at Volkswagen ErWin, but it costs more). You must use this for:
-<ul>
-<li>Removing component protection on specific control units (adaptive cruise control, gateway, dashboard, engine, gear, multimedia unit, gps by the way lane assist, heated windscreen and blind spot assist DO NOT USE component protection)</li>
-<li>Replacing the ignition key (e.g. activating immobilizer on a new key)</li>
-<li>Restore the original coding, adaptations and SWAP codes (SWAP = SoftWare As Product, some optionals are already built-in but disabled and they are activated through SWAP codes like voice commands, travel assist, emergency assist, etc.). There are even other codes, called SVM codes, which allow you to add officially retrofits to your car (and perform coding and adaptations automatically for them), but you have to buy them from VW or authorised resellers (the configuration of the optional of your car is linked to the VIN and it is stored on VW servers).</li>
-<li>Perform software updates according to campaigns (on every campaign document there should be a code provided which must be entered in Odis Service to perform the upgrade)</li>
-<li>Fixing severe errors which are not solvable with the other Odis (Engineering, see below)</li>
-</ul></li>
-<li><b>Odis Engineering</b>: it works only offline and it allows you
-<ul>
-<li>Perform coding and adaptations (like OBD11)</li>
-<li>Performing backup/restore of coding/adaptations (like OBD11)</li>
-<li>Check faults (it provides better details than OBD11)</li>
-<li>Flashing control units, e.g. updating/downgrading firmware</li>
-<li>Data transfer, e.g. writing xml parameter data on control units usually done after a new firmware upgrade.</li>
-<li>Perform offline guided functions like calibration, basic settings, etc.</li>
-</ul>
-</li>
-</ul>
-Both software work with the interface <a href="https://www.vncishop.com/wholesale/vnci-6154a-and-usb-software.html">VNCI 6154</a>, you can download a VMware virtual machine from forums on internet with everything installed (it is very time consuming to install by yourself), if you are lazy you can pay something more (around 10$) when ordering VNCI 6154 and you will receive an USB key with the software.
-<br/>
-
 <h2 id="various">Various</h2>
 
 <p>Here you can find other guides I wrote about my DIY projects.</p>
@@ -327,6 +233,20 @@ Both software work with the interface <a href="https://www.vncishop.com/wholesal
 <li><b><a href="https://www.stacksocial.com/">Stacksocial</a></b>: it is an US website providing good and sometimes bargain offers on products and services. Being a European I used it mainly in the past to buy IT products licenses or lifetime VPN services, which were actually lifetime, even though some of them went bankrupt :-)</li>
 </ul>
 
+<b><h2>Subpages</h2></b>
+
+<a href="./golf_mk7_facelift_retrofits.html"><h2 id="golf_mk7_facelift_retrofits">Golf MK7 Facelift retrofits page</h2></a>
+
+<a href="./The_Genesis_StarterService_of_Simatic_IT.html"><h2 id="personalnote_starterservice">The genesis of StarterService component of the SIMATIC IT industrial automation suite.</h2></a>
+
+<a href="./working_switzerland_cross_border.html"><h2 id="workingswitzerland">Working in Switzerland as a cross border worker living in Italy</h2></a>
+
+<a href="./personal_note_holocaust.html"><h2 id="personalnote_holocaust">Personal note on an underrated person of Nazi Holocaust</h2></a>
+
+<a href="./personal_note_lbgt.html"><h2 id="personalnote_lbgt">Personal note on LBGT community</h2></a>
+
+<a href="./personal_note_working_at_igo.html"><h2 id="personalnote_igo">Personal advice when applying to international organizations</h2></a>
+
 <h2 id="family">My family</h2>
     
 "Di Marco" family picture (at a restaurant in 2006)<br /><br />
@@ -340,17 +260,7 @@ Both software work with the interface <a href="https://www.vncishop.com/wholesal
 
 <h2><b>"Baldini, Manotti, Gatti, Mancuso, Pastorini, Corsini, Calabrese, Costa: so are they all, all honourable men" a Shakespearean quote in the memory of the honest Di Marco family.</b></h2>
 
-<b><h2><a href="./various_pictures.html">Various pictures</a></h2></b>
-
-<a href="./The_Genesis_StarterService_of_Simatic_IT.html"><h2 id="personalnote_starterservice">The genesis of StarterService component of the SIMATIC IT industrial automation suite.</h2></a>
-
-<a href="./working_switzerland_cross_border.html"><h2 id="workingswitzerland">Working in Switzerland as a cross border worker living in Italy</h2></a>
-
-<a href="./personal_note_holocaust.html"><h2 id="personalnote_holocaust">Personal note on an underrated person of Nazi Holocaust</h2></a>
-
-<a href="./personal_note_lbgt.html"><h2 id="personalnote_lbgt">Personal note on LBGT community</h2></a>
-
-<a href="./personal_note_working_at_igo.html"><h2 id="personalnote_igo">Personal advice when applying to international organizations</h2></a>
+<a href="./various_pictures.html"><h2 id="other_family_pictures">Other pictures of me and my family</h2></a>
 
     </div>
     <script src="./index_files/anchor.min.js.download" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
