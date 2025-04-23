@@ -108,8 +108,6 @@
 <li><a href="https://www.youtube.com/watch?v=I2hk7vTIvNM">General overview video</a></li>
 <li><a href="https://www.youtube.com/watch?v=ucE7aRJweYU">Extended test video on the highway</a></li>
 <li><a href="https://github.com/Mr-MIBonk/Lane-Assistant-60-Seconds">Firmware and associated parameter files with warning time increased from 15 seconds to 60</a></li>
-<li><a href="https://icanhack.nl/blog/vw-part1/">How to hack a Volkswagen Golf Power steering ECU (very interesting article)</a></li>
-<li><a href="https://obdii365.blogspot.com/2024/06/replace-and-code-vag-mqb-gateway-with.html">How to replace/upgrade the gateway</a></li>
 <li><a href="https://www.mathworks.com/help/vision/ug/camera-calibration.html">Camera Calibration</a>: it is the process of determining both extrinsic and intrinsic camera parameters (like camera coordinates, focal length, optical center) once installed. It is a <b>mandatory process</b> needed to perform any kind of calculation on an image, like measuring a distance between pixels, estimate depth or 3d structure. It is performed using a predefined <a href="https://www.mathworks.com/help/vision/ug/calibration-patterns.html">calibration pattern</a> consisting of a sheet where a set of objects of a predetermined shape (like squares, circles), size and position is put in front of the camera at a precise distance.<p>Every camera manufacturer has its own calibration pattern; for Volkswagen it is called <a href="https://it.aliexpress.com/item/1005006292986980.html?spm=a2g0o.order_list.order_list_main.5.56923696TD0njL&gatewayAdapt=glo2ita">VAS 6430</a>. Usually you have to perform calibration at carglass centers where they have all the needed equipment, but if you are skilled enough and you know what you are doing you can perform it by yourself using either official VW ODIS (guided procedure) or OBD11, I quote here an untested OBD11 procedure which I found on a Skoda owner website:
 <ul>
 <li>Position the car in front of the calibration pattern as in this <a href="./Images/Golf calibration.png">picture</a></li>
@@ -140,6 +138,12 @@
 <p>If everything is fine the fault about "No basic settings" should be removed and this marks the end of the <b>static</b> calibration (called static because the car is not moving). Since this calibration is never perfect the lane assist camera A5 after this phase enters another calibration phase called <b>dynamic</b> because it is performed automatically by the camera while you drive (you have to drive for at least 500 kms), the more you drive, the better the calibration will be fine-tuned, you can check this in the Live Data menu option (Dynamic calibration, status and Dynamic calibration, details).</p>
 </li>
 </ul>
+</ul>
+
+<h2 id="retrofits">Other interesting articles/guides about retrofits</h2>
+<ul>
+<li><a href="https://obdii365.blogspot.com/2024/06/replace-and-code-vag-mqb-gateway-with.html">How to replace/upgrade the gateway</a></li>
+<li><a href="https://icanhack.nl/blog/vw-part1/">How to hack a Volkswagen Golf Power steering ECU (very interesting article)</a></li>
 </ul>
 
 <h2 id="retrofits">VW Odis software</h2>
