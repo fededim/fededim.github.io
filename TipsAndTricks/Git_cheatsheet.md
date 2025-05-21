@@ -69,13 +69,13 @@ git cherry-pick \<commit id\>
 **Clone without committing (for modifying something) a commit from another branch into current one**<br/>
 git cherry-pick -n \<commit id\>
 
-**Nuke last commit**<br/>
+**Nuke last commit (pay attention)**<br/>
 git reset --hard HEAD^1<br/>
-git push<br/>
+git push --force<br/>
 
-**Undoes last commit keeping changes in local folder**<br/>
+**Undoes last commit keeping changes in local folder (pay attention)**<br/>
 git reset --keep HEAD^1<br/>
-git push<br/>
+git push --force<br/>
 
 **Clean untracked files**<br/>
 git clean -f -d<br/>
@@ -83,7 +83,7 @@ git clean -f -d<br/>
 **Squash last n commits**<br/>
 git rebase --interactive HEAD~n (n is the number of commits)<br/>
 <br/>
-an editor pops up, change **pick** to **s** for any commits you want to merge<br/>
+an editor pops up, change **pick** to **s** for any commits you want to squash<br/>
 as soon as you save you are prompted again with the comment of the new merged commit which by<br/> default is the sum of comments of all merged commits<br/>
 
 **Save uncommitted local changes (like TFS shelveset) for switching branches**<br/>
