@@ -81,7 +81,7 @@
   <body>
     <div class="container-lg px-3 my-5 markdown-body">
       
-      <h1><a href="https://fededim.github.io">Federico Di Marco - My personal pages (fededim.github.io)</a></h1>
+      <h1><a href="https://fededim.github.io">Federico Di Marco - Golf MK7 Facelift retrofits page (fededim.github.io)</a></h1>
 	
 <p><img src="./Images/Federico_Di_Marco_2024_Varese.jpg" alt="Federico Di Marco" title="Federico Di Marco" class="center"></p>
 
@@ -96,7 +96,14 @@
 </p>
 
 <p>
-<h2 id="retrofits">Golf MK7 Facelift retrofits page</h2>
+<h2 id="hwinterfaces">VW Group hardware interfaces for retrofits</h2>
+<p>For performing retrofits you must have a hardware OBD II interface in order to configure the new optionals which you have retrofitted inside your car control units. The hardware OBDII interfaces which I use are (they both support all VW group car, so VW, Seat, Skoda, Audi, etc.):</p>
+<ul>
+<li><b><a href="https://www.vncishop.com/wholesale/vnci-6154a-and-usb-software.html">VNCI 6154</a></b>: <u>this is best unofficial chinese clone of the original Volkswagen 6154 interface and it supports all its functions for a bargain price (around <b>130$</b>)</u>. It works with both the official Volkswagen software <b>Odis Service</b> and <b>Odis Engineering</b> which require a laptop/computer (<a href="#odissoftware">see here</a> for details) and it supports both cable and wireless connection. This is a must have for performing any retrofits.</li>
+<li><b><a href="https://obdeleven.com?aff=4308&utm_source=afltly&utm_medium=affiliate">OBDeleven</a></b>: this OBD-II dongle includes a very usable modern mobile app <b>for the quick configuration and tweaking of your car</b>.  but it less powerful than the combination of VNCI 6154A + ODIS (there are functions which it can't perform like flashing, writing datasets, etc.). <u>So this interface is optional (you can do everything with VNCI 6154), but it is wireless, very small to keep in your car (I always leave it connected to the OBD II port of my car) and it is very handy due to their mobile app. Moreover you can check any faults anywhere you are or read live data while driving using its mobile app</u>. Price <b>100$</b>.</li>
+</ul>
+
+<h2 id="retrofits">Golf MK7 Facelift retrofits guides</h2>
 
 <p>I am an owner of a Golf MK7.5 and I have written some detailed guides for a few optionals I retrofitted on my car, you can find them here:</p>
 
@@ -140,18 +147,18 @@
 </ul>
 </ul>
 
-<h2 id="retrofits">Other interesting articles/guides about retrofits</h2>
+<h2 id="otherguidesretrofits">Other interesting articles/guides about retrofits</h2>
 <ul>
 <li><a href="https://obdii365.blogspot.com/2024/06/replace-and-code-vag-mqb-gateway-with.html">How to replace/upgrade the gateway</a></li>
 <li><a href="https://icanhack.nl/blog/vw-part1/">How to hack a Volkswagen Golf Power steering ECU (very interesting article)</a></li>
 </ul>
 
-<h2 id="retrofits">VW Odis software</h2>
+<h2 id="odissoftware">VW Odis software</h2>
 Just some information about the VW Odis software, there are two versions:
 <ul>
 <li><b>Odis Service</b>: it works only online and you need a login/password called GeKo access (price around 30$ an hour on internet, more convenient for increasing durations, you can also buy it directly at <a href="https://volkswagen.erwin-store.com/erwin/showHome.do">Volkswagen ErWin</a>, but it costs more). You must use this for:
 <ul>
-<li>Removing component protection on specific control units (adaptive cruise control, gateway, dashboard, engine, gear, multimedia unit, gps by the way lane assist, heated windscreen and blind spot assist DO NOT USE component protection)</li>
+<li>Removing component protection on specific control units (adaptive cruise control, gateway, dashboard, engine, gear, multimedia unit, gps by the way lane assist, heated windscreen and blind spot assist DO NOT USE component protection in a Golf MK7)</li>
 <li>Replacing the ignition key (e.g. activating immobilizer on a new key)</li>
 <li>Restore the original coding, adaptations and SWAP codes (SWAP = SoftWare As Product, some optionals are already built-in but disabled and they are activated through SWAP codes like voice commands, travel assist, emergency assist, etc.). There are even other codes, called SVM codes, which allow you to add officially retrofits to your car (and perform coding and adaptations automatically for them), but you have to buy them from VW or authorised resellers (the configuration of the optionals of your car is linked to the VIN and it is stored on VW servers).</li>
 <li>Perform software updates according to campaigns (on every campaign document there should be a code provided which must be entered in Odis Service to perform the upgrade)</li>
@@ -161,7 +168,7 @@ Just some information about the VW Odis software, there are two versions:
 <ul>
 <li>Perform coding and adaptations (like OBD11)</li>
 <li>Performing backup/restore of coding/adaptations (like OBD11)</li>
-<li>Check faults (it provides better details on errors than OBD11)</li>
+<li>Check faults (like OBD11 though it provides better details on errors)</li>
 <li>Flashing control units, e.g. updating/downgrading firmware</li>
 <li>Data transfer, e.g. writing xml parameter data on control units: this is the specific data of the car model (Golf, Passat, T-Roc, Tiguan, usually control units firmware is shared between different car models of the same manufacturer) and of the installed optionals (e.g. the adaptive cruise control could also work the car navigation data to give you also predictive cruise control, etc.) which must be uploaded to the control units usually after a new firmware upgrade / retrofit installation (even though sometimes new firmwares of some control units still use the old parameter data).</li>
 <li>Perform offline guided functions like calibration, basic settings, etc.</li>
