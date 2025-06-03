@@ -89,13 +89,11 @@
 <p>Started using a computer at six years, gone through logo, basic, assembly, C/C++, java and finally to .NET and .NET core. Proficient also in databases, especially Sql Server and reporting. Let’s say I have also some experience on security but mainly in the past, now things have become much more difficult and I do not have too much time to keep me updated, but sometimes I am still kicking in.</p>
 <p>Fan of videogames, technologies, motorbikes, travelling and comedy.</p>
 
-<p>Famous quotes:
+<p>Famous quotes:</p>
 <ul>
 <li><b>"No one can imagine how cruel an entire country comes to be when it targets someone, making up stories, going so far as to slander, trampling on the most basic rules of civilized living." (<a href="https://it.wikipedia.org/wiki/Gaetano_Afeltra">Gaetano Afeltra, an italian journalist and writer</a>).</b></li>
 </ul>
-</p>
 
-<p>
 <h2 id="hwinterfaces">VW Group hardware interfaces for retrofits</h2>
 <p>For performing retrofits you must have a hardware OBD II interface in order to configure the new optionals which you have retrofitted inside your car control units. The hardware OBDII interfaces which I use are (they both support all VW group car, so VW, Seat, Skoda, Audi, etc.):</p>
 <ul>
@@ -117,7 +115,7 @@
 <li><a href="https://github.com/Mr-MIBonk/Lane-Assistant-60-Seconds">Firmware and associated parameter files with warning time increased from 15 seconds to 60</a></li>
 <li><a href="https://www.mathworks.com/help/vision/ug/camera-calibration.html">Camera Calibration</a>: it is the process of determining both extrinsic and intrinsic camera parameters (like camera coordinates, focal length, optical center) once installed. It is a <b>mandatory process</b> needed to perform any kind of calculation on an image, like measuring a distance between pixels, estimate depth or 3d structure. It is performed using a predefined <a href="https://www.mathworks.com/help/vision/ug/calibration-patterns.html">calibration pattern</a> consisting of a sheet where a set of objects of a predetermined shape (like squares, circles), size and position is put in front of the camera at a precise distance.<p>Every camera manufacturer has its own calibration pattern; for Volkswagen it is called <a href="https://it.aliexpress.com/item/1005006292986980.html?spm=a2g0o.order_list.order_list_main.5.56923696TD0njL&gatewayAdapt=glo2ita">VAS 6430</a>. Usually you have to perform calibration at carglass centers where they have all the needed equipment, but if you are skilled enough and you know what you are doing you can perform it by yourself using either official VW ODIS (guided procedure) or OBD11, I quote here an untested OBD11 procedure which I found on a Skoda owner website:
 <ul>
-<li>Position the car in front of the calibration pattern as in this <a href="./Images/Golf calibration.png">picture</a></li>
+<li>Position the car in front of the calibration pattern as in this <a href="./Images/Golf_calibration.png">picture</a></li>
 <li><b>Measure 4 wheel arches</b> and go to module <b>A5 Front Sensors Driver Assistance System</b> performing the security access with code 20103</li>
 <li>Change diagnostic service --> VW</li>
 <li>Go to Adaptation (confirm all values!)
@@ -141,7 +139,6 @@
 <li>Change diagnostic service --> End of assembly line</li>
 <li>Basic Configuration --> Static calibration end of assembly line</li>
 </ul>
-</p>
 <p>If everything is fine the fault about "No basic settings" should be removed and this marks the end of the <b>static</b> calibration (called static because the car is not moving). Since this calibration is never perfect the lane assist camera A5 after this phase enters another calibration phase called <b>dynamic</b> because it is performed automatically by the camera while you drive (you have to drive for at least 500 kms), the more you drive, the better the calibration will be fine-tuned, you can check this in the Live Data menu option (Dynamic calibration, status and Dynamic calibration, details).</p>
 </li>
 </ul>
