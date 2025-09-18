@@ -106,13 +106,13 @@
 <p>I am an owner of a Golf MK7.5 and I have written some detailed guides for a few optionals I retrofitted on my car, you can find them here:</p>
 
 <ul>
-<li><a href="./Retrofits/Golf_MK7.5/Blind%20Spot%20Assist/Volkswagen%20Golf%20MK7.5%20Facelift%20Blind%20Spot%20Assist%20Retrofit.pdf">Volkswagen Golf MK7.5 Facelift Blind Spot Assist Retrofit guide</a>:
+<li><b><a href="./Retrofits/Golf_MK7.5/Blind%20Spot%20Assist/Volkswagen%20Golf%20MK7.5%20Facelift%20Blind%20Spot%20Assist%20Retrofit.pdf">Volkswagen Golf MK7.5 Facelift Blind Spot Assist Retrofit guide</a></b>:
 <ul>
-<li><a href="https://www.thingiverse.com/thing:7013623">3D printable spacer wedge</a> I designed to fix the setup angle of the new side assist control units <b>2Q090768x</b> on a <b>Golf MK7</b></li>
+<li><a href="https://www.thingiverse.com/thing:7013623">3D printable spacer wedge</a> I designed to fix the setup angle of the new side assist control units <b>2Q090768x</b> on a <b>Golf MK7</b>. <a href="https://youtu.be/Lwjs-KutOKA">Sample video of installation</a>.</li>
 </ul>
 </li>
-<li><a href="./Retrofits/Golf_MK7.5/Heated%20Windscreen/Volkswagen%20Golf%20MK7.5%20Facelift%20Heated%20Windscreen%20Retrofit%20V1.0.1.pdf">Volkswagen Golf MK7.5 Facelift Heated Windscreen Retrofit guide</a></li>
-<li><a href="./Retrofits/Golf_MK7.5/Lane%20Assist/Volkswagen%20Golf%20MK7.5%20Facelift%20Lane%20Assist%20Retrofit%20V1.1.pdf">Volkswagen Golf MK7.5 Facelift Lane Assist Retrofit guide</a>
+<li><b><a href="./Retrofits/Golf_MK7.5/Heated%20Windscreen/Volkswagen%20Golf%20MK7.5%20Facelift%20Heated%20Windscreen%20Retrofit%20V1.0.1.pdf">Volkswagen Golf MK7.5 Facelift Heated Windscreen Retrofit guide</a></b></li>
+<li><b><a href="./Retrofits/Golf_MK7.5/Lane%20Assist/Volkswagen%20Golf%20MK7.5%20Facelift%20Lane%20Assist%20Retrofit%20V1.1.pdf">Volkswagen Golf MK7.5 Facelift Lane Assist Retrofit guide</a></b>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=I2hk7vTIvNM">General overview video</a></li>
 <li><a href="https://www.youtube.com/watch?v=ucE7aRJweYU">Extended test video on the highway</a></li>
@@ -126,7 +126,7 @@
 <ul>
 <li>Body height wheel house edge-Body height left front wheel house edge --> Enter value</li>
 <li>Body height wheel house edge-Body height right front wheel house edge --> Enter value</li>
-<li>Body height wheel house edge-Body height left rear wheel house edge --> Enter value​</li>
+<li>Body height wheel house edge-Body height left rear wheel house edge --> Enter value</li>
 <li>Body height wheel house edge-Body height right rear wheel house edge --> Enter value</li> 
 <li>Distance to calibration field --> Enter 1500</li>
 <li>Calibration target position --> Just confirm</li>
@@ -146,6 +146,36 @@
 <p>If everything is fine the fault about "No basic settings" should be removed and this marks the end of the <b>static</b> calibration (called static because the car is not moving). Since this calibration is never perfect the lane assist camera A5 after this phase enters another calibration phase called <b>dynamic</b> because it is performed automatically by the camera while you drive (you have to drive for at least 500 kms), the more you drive, the better the calibration will be fine-tuned, you can check this in the Live Data menu option (Dynamic calibration, status and Dynamic calibration, details).</p>
 </li>
 </ul>
+<li><b>Volkswagen Golf MK7.5 Facelift Park Steering Assist 3.0 Retrofit guide</b>: I still need to write the guide (I was unable to find one), I have though made all the necessary pictures. Sample videos here:
+<ul>
+<li><a href="https://youtu.be/-3nzBJB_tHo">Golf MK7 Facelift Park Steering Assist Retrofit parallel test</a></li>
+<li><a href="https://youtu.be/I9czHC7a86Q">Golf MK7 Facelift Park Steering Assist Retrofit perpendicular test</a></li>
+<li><a href="https://youtu.be/gKBk9_9Dleo">Golf MK7 Facelift Park Steering Assist Retrofit oblique test</a></li>
+</ul>
+</li>
+<li><b>Volkswagen Golf MK7.5 Facelift PXC dynamic light assist</b>: I bought used <b>5G194108xB GTE headlights</b> the ones with lower blue "whiskers" and this was an easier retrofit for me because the car had PXA led lights from factory so it was just a matter of replacing the headlights and adding a single wire for each one using T shaped wire tap. What "drove me crazy" was instead at buying a used set of working headlights (I had to send them back two times) and then to setup the right codings which I quote down below. Sample videos here:
+<ul>
+<li><a href="https://youtube.com/shorts/aKzEsl--tu4">Golf MK7 Facelift retrofitted the blue Golf GTE PXC headlights (very cool on white painted car)</a></li>
+<li><a href="https://youtube.com/shorts/Fw6dS5gIhmI">Golf MK7 Facelift Dynamic Light Assist Retrofit self test on engine start</a></li>
+</ul>
+</li>
+<li><b>Volkswagen Golf MK7.5 Facelift door exit lights</b>: <a href="https://youtube.com/shorts/U7eS6C8Fpgg">very easy just a sample video</a>.</li>
+</ul>
+<br/>
+<b>Volkswagen Golf MK7.5 Facelift full Odis backup</b>: <u>my car had adaptive cruise control, PXA led lights, front and rear park assist sensors and Discover Media navigator from factory</u>, I retrofitted successfully:
+<ul>
+<li><b>the heated windscreen</b></li>
+<li><b>the lane assist camera+traffic sign recognition+high beam assist (initially)</b></li>
+<li><b>blind spot assist with the new 2Q090768x control units supporting emergency maneuver braking</b>: in order to support maneuver braking I had also to update the firmware of the 03 ABS control unit, <u>be sure to perform a backup of the 03 control unit with Odis before doing this otherwise you would get a dead car!</u></li>
+<li><b>the park steering assist 3.0 for automatic parking</b></li>
+<li><b>the PXC dynamic light assist using Golf MK7 Facelift GTE headlights with "whiskers" in blue colour</b></li>
+</ul>
+</ul>
+I quote here the full odis backup of codings + adaptations for you convenience and also for me as a backup:
+<ul>
+<li><b><a href="./Retrofits/Golf_MK7.5/FullBackup_PXA_WVWZZZAUZHP345715_20250909T235845.html">Full backup with original PXA</a></b></li>
+<li><b><a href="./Retrofits/Golf_MK7.5/FullBackup_PXC_WVWZZZAUZHP345715_20250911T172039.html">Full backup with retrofitted PXC</a></b></li>
+</ul> 
 </ul>
 
 <h2 id="otherguidesretrofits">Other interesting articles/guides about retrofits</h2>
