@@ -112,6 +112,7 @@
 <li><b><a href="./Retrofits/Golf_MK7.5/Blind%20Spot%20Assist/Volkswagen%20Golf%20MK7.5%20Facelift%20Blind%20Spot%20Assist%20Retrofit.pdf">Volkswagen Golf MK7.5 Facelift Blind Spot Assist Retrofit guide</a></b>:
 <ul>
 <li><a href="https://www.thingiverse.com/thing:7013623">3D printable spacer wedge</a> I designed to fix the setup angle of the new side assist control units <b>2Q090768x</b> on a <b>Golf MK7</b>. <a href="https://youtu.be/Lwjs-KutOKA">Sample video of installation</a>.</li>
+<li><a href="https://www.youtube.com/watch?v=HJUw2YUvgG4">Sample video of OBD11 live data after 10000 kms of drive</a>.</li>
 </ul>
 </li>
 <li><b><a href="./Retrofits/Golf_MK7.5/Heated%20Windscreen/Volkswagen%20Golf%20MK7.5%20Facelift%20Heated%20Windscreen%20Retrofit%20V1.0.1.pdf">Volkswagen Golf MK7.5 Facelift Heated Windscreen Retrofit guide</a></b></li>
@@ -122,7 +123,7 @@
 <li><a href="https://github.com/Mr-MIBonk/Lane-Assistant-60-Seconds">Firmware and associated parameter files with warning time increased from 15 seconds to 60</a></li>
 <li><a href="https://www.mathworks.com/help/vision/ug/camera-calibration.html">Camera Calibration</a>: it is the process of determining both extrinsic and intrinsic camera parameters (like camera coordinates, focal length, optical center) once installed. It is a <b>mandatory process</b> needed to perform any kind of calculation on an image, like measuring a distance between pixels, estimate depth or 3d structure. It is performed using a predefined <a href="https://www.mathworks.com/help/vision/ug/calibration-patterns.html">calibration pattern</a> consisting of a sheet where a set of objects of a predetermined shape (like squares, circles), size and position is put in front of the camera at a precise distance.<p>Every camera manufacturer has its own calibration pattern; for Volkswagen it is called <a href="https://it.aliexpress.com/item/1005006292986980.html?spm=a2g0o.order_list.order_list_main.5.56923696TD0njL&gatewayAdapt=glo2ita">VAS 6430</a>. Usually you have to perform calibration at carglass centers where they have all the needed equipment, but if you are skilled enough and you know what you are doing you can perform it by yourself using either official VW ODIS (guided procedure) or OBD11, I quote here an untested OBD11 procedure which I found on a Skoda owner website:
 <ul>
-<li>Position the car in front of the calibration pattern as in this <a href="./Images/Golf_calibration.png">picture</a></li>
+<li>Position the car in front of the calibration pattern as in this <a href="./Images/Golf_calibration.jpg">picture</a></li>
 <li><b>Measure 4 wheel arches</b> and go to module <b>A5 Front Sensors Driver Assistance System</b> performing the security access with code 20103</li>
 <li>Change diagnostic service --> VW</li>
 <li>Go to Adaptation (confirm all values!)
@@ -185,10 +186,13 @@ I quote here the full odis backup of codings + adaptations for you convenience a
 <h2>Useful fixes for common errors</h2>
 <h3>13: Adaptive Cruise Control</h3>
 <ul>
-<li><b>C110300: Adaptive cruise control sensor misaligned</b>: Check this <a href="https://www.youtube.com/watch?v=DcNV1VdkOU8">video</a>
-</li>
+<li><b>C110300: Adaptive cruise control sensor misaligned</b>: Check this <a href="https://www.youtube.com/watch?v=DcNV1VdkOU8">video</a></li>
 </ul>
 
+<h3>4B: Multi function module</h3>
+<ul>
+<li><b>C119F00 High beam variant implausible (SOA mismatch)</b>: Check my post <a href="https://forum.obdeleven.com/thread/42444/fixing-headlight-c119f00-variant-implausible">on OBD11 forums</a> </li>
+</ul>
 
 <h2 id="otherguidesretrofits">Other interesting articles/guides about retrofits</h2>
 <ul>
