@@ -98,7 +98,7 @@
 </ul>
 
 <h2 id="hwinterfaces">VW Group hardware interfaces for retrofits</h2>
-<p>For performing retrofits you must have a hardware OBD II interface in order to configure the new optionals which you have retrofitted inside your car control units. The hardware OBDII interfaces which I use are (they both support all VW group car, so <b>VW, Seat, Skoda, Audi, etc.</b>):</p>
+<p>For performing retrofits you must have a hardware OBD II interface in order to configure the new optional extras which you have retrofitted inside your car control units. The hardware OBDII interfaces which I use are (they both support all VW group car, so <b>VW, Seat, Skoda, Audi, etc.</b>):</p>
 <ul>
 <li><b><a href="https://www.vncishop.com/wholesale/vnci-6154a-and-usb-software.html">VNCI 6154</a></b>: <u>this is best unofficial chinese clone of the original Volkswagen 6154 interface and it supports all its functions for a bargain price (around <b>130$</b>)</u>. It works with both the official Volkswagen software <b>Odis Service</b> and <b>Odis Engineering</b> which require a laptop/computer (<a href="#odissoftware">see here</a> for details) and it supports both cable and wireless connection. This is a must have for performing any retrofits.</li>
 <li><b><a href="https://obdeleven.com?aff=4308&utm_source=afltly&utm_medium=affiliate">OBDeleven</a></b>: this OBD11 dongle includes a very usable modern mobile app <b>for the quick configuration and tweaking of your car</b>.  but it less powerful than the combination of VNCI 6154A + ODIS (there are functions which it can't perform like flashing, writing datasets, etc.). <u>So this interface is optional (you can do everything with VNCI 6154), but it is wireless, very small to keep in your car (I always leave it connected to the OBD II port of my car) and it is very handy due to their mobile app. Moreover you can check any faults anywhere you are or read live data while driving using its mobile app</u>. Price <b>100$</b>.<br/><br/>Note: I bought it in 2019 the second version and it was sold as a product (so you paid only once and luckily it is still like this today for me), unluckily <b>the greedy, ruthless mind of businesses following the modern fad (e.g the transformation of products into services) turned it into a service requiring you to pay an annual subscription becoming now much more expensive. So if you are private like me (e.g. you do not perform retrofits as work and you use it occasionally) OBD11 is less appealing than VNCI 6154 though much more user friendly for the common features</b> (personally it would have been wiser to make you pay according to the number of times you actually use it).</li>
@@ -106,7 +106,7 @@
 
 <h2 id="retrofits">Golf MK7 Facelift retrofits guides</h2>
 
-<p>I am an owner of a Golf MK7.5 and I have written some detailed guides for a few optionals I retrofitted on my car, you can find them here:</p>
+<p>I am an owner of a Golf MK7.5 and I have written some detailed guides for a few optional extras I retrofitted on my car, you can find them here:</p>
 
 <ul>
 <li><b><a href="./Retrofits/Golf_MK7.5/Blind%20Spot%20Assist/Volkswagen%20Golf%20MK7.5%20Facelift%20Blind%20Spot%20Assist%20Retrofit.pdf">Volkswagen Golf MK7.5 Facelift Blind Spot Assist Retrofit guide</a></b>:
@@ -200,14 +200,36 @@ I quote here the full odis backup of codings + adaptations for you convenience a
 <li><a href="https://icanhack.nl/blog/vw-part1/">How to hack a Volkswagen Golf Power steering ECU (very interesting article)</a></li>
 </ul>
 
+<h2 id="vwecusconfiguration">VW ECUs configuration</h2>
+Just some information about the <b>main configuration parameters of VW electrical control units</b>:
+<ul>
+<li><b>Firmware</b>: this is the software which runs on the electrical control unit to provide all its functionalities. <b>The firmware can only be flashed using any VW Odis software</b> and <u>it is a long-running task ranging from a few minutes up to 10 hours, mainly due to the moderate size of the data to be transferred (from 0.5MB up to 300MB) and the slow transfer speed of car bus (e.g. <a href="https://en.wikipedia.org/wiki/CAN_bus">CANBUS</a>)</u>.</b></li>
+<li style="list-style-type:none;"><br/><b>ODIS firmware flashing</b><br/><img src="./Images/Odis_flashing.jpg" alt="odisflashing" /></li>
+<li><b>Parametrization</b>: usually for economic reasons (developing software is a time.consuming operation which costs) control units firmware is shared between different car models of the same manufacturer (for Volkswagen Golf, Passat, T-Roc, Tiguan) and even between manufactures of the same group (Volkswagen, Seat, Audi, Porsche, etc.). Obviously, every car has its own physical and optional extras so some parameters need to be tweaked according to the particular car where the control unit is installed and also, the functionalities available in the car. <b>This is done through parametrization, e.g. by uploading appropriate binary data, usually provided as different XML files (also known as datasets) for every control unit matching the car characteristics and optional extras configuration</b>. <b>This parametrization data can only be flashed using any VW Odis software</b> and <u>usually it is very fast (a few seconds) because the data to be transferred consists in a few KBs</u>.</b></li>
+<li style="list-style-type:none;"><br/><b>Note: when updating either firmware of parametrization all possible errors show in the display of the car beeping (it becomes like a Xmas tree :-) and even some optional extras activate without any reason (rear wipers, etc.), probably because the bus is saturated by the control unit performing the flashing process, so the other control units can't exchange messages with each other and start raising all possible errors</b>. Luckily after the flashing operation has finished, everything is fine, but you have to clear all the errors code which still remain displayed on your dashboard. The first I performed this operation by myself I was unaware of this behaviour and I was crossing fingers if my car would still be running afterwards, which luckily did :-). However, I share this information because someone could not be so confident and trustful like me (and if you do not know what are you doing it is wiseness). <u><b>AND FOR ANY REASON DO NOT EVER INTERRUPT A FLASHING OPERATION OTHERWISE YOU WOULD BE HIGH LIKELY LEFT WITH A DEAD CONTROL MODULE.</b></u></li>
+<li style="list-style-type:none;"><br/><b>ODIS Dataset upload (aka parametrization)</b><br/><img src="./Images/Odis_Dataset_ Writing.jpg" alt="odisparametrization" /></li>
+<li><b>Coding</b>: it specifies the features and optional extras activated in the control units. <u>Typically, every control unit has a sequence of bytes responsible for coding (between from a few bytes up to 40) and coding involves changing one or a set of bits along the sequence, each one associated with the enablement of a particular feature</u>. For practical reasons, besides a plain binary/hex data editor for the sequence on bytes, software like Odis and OBD11 also provide, for supported control units and options, a meaningful description of the codings and their possible values to be picked from a list. So essentially while coding you could be:
+<ul>
+<li>Ticking a checkbox</li>
+<li>Select a possible option from a list of values</li>
+<li>Entering a numerical value</li>
+<li>Changing one or more bits along the sequence of bytes</li>
+<li>Changing an entire byte along the sequence of bytes</li>
+</ul>
+<li style="list-style-type:none;"><br/><b>OBD11 coding</b><br/><img src="./Images/Obd11_long_coding.jpg" alt="obd11coding" /></li>
+<li style="list-style-type:none;"><br/><b>ODIS Engineering coding</b><br/><img src="./Images/Odis_coding.jpg" alt="odiscoding" /></li>
+<li><b>Adaptation</b>: <b>as the name suggest adaptations are long-term learned values and settings to tweak a specific control unit to function optimally.</b> But sometimes (e.g. after a repair or due to a miscalibration or after a retrofit) you have to force a reset of the auto-learning features or even enter manually some data which is not defined in a brand-new control module after a replacement or in an existing control unit because the car had not originally the retrofitted optional extras. <b>From a practical point of view, adaptations work more or less like codings but there is almost no binary data, only a list of meaningful options (many still in German) where you have to input a meaningful numerical value or choose the correct option from a predefined list.</b></li>
+<li style="list-style-type:none;"><br/><b>OBD11 adaptation</b><br/><img src="./Images/Obd11_adaptation.jpg" alt="obd11adaptation" width="50%"/></li>
+</ul>
+
 <h2 id="odissoftware">VW Odis software</h2>
-Just some information about the VW Odis software, there are two versions:
+Just some information about the <b>VW Odis software</b>, there are two versions:
 <ul>
 <li><b>Odis Service</b>: it works only online and you need a login/password called GeKo access (price around 30$-40$ an hour on internet, more convenient for increasing durations, you can also buy it directly at <a href="https://volkswagen.erwin-store.com/erwin/showHome.do">Volkswagen ErWin</a>, but it costs more). You must use this for:
 <ul>
 <li>Removing component protection on specific control units (adaptive cruise control, gateway, dashboard, engine, gear, multimedia unit, gps by the way lane assist, heated windscreen and blind spot assist DO NOT USE component protection in a Golf MK7)</li>
 <li>Replacing the ignition key (e.g. activating immobilizer on a new key)</li>
-<li>Restore the original coding, adaptations and SWAP codes (SWAP = SoftWare As Product, some optionals are already built-in but disabled and they are activated through SWAP codes like voice commands, travel assist, emergency assist, etc.). There are even other codes, called <a href="https://static.nhtsa.gov/odi/tsbs/2019/MC-10166284-9999.pdf">SVM codes</a>, which allow you to add officially retrofits to your car (and perform coding and adaptations automatically for them), but you have to buy them from VW or authorised resellers (the configuration of the optionals of your car is linked to the VIN and it is stored on VW servers).</li>
+<li>Restore the original coding, adaptations and SWAP codes (SWAP = SoftWare As Product, some optional extras are already built-in but disabled and they are activated through SWAP codes like voice commands, travel assist, emergency assist, etc.). There are even other codes, called <a href="https://static.nhtsa.gov/odi/tsbs/2019/MC-10166284-9999.pdf">SVM codes</a>, which allow you to add officially retrofits to your car (and perform coding and adaptations automatically for them), but you have to buy them from VW or authorised resellers (the configuration of the optional extras of your car is linked to the VIN and it is stored on VW servers).</li>
 <li>Perform software updates according to campaigns (on every campaign document there should be a code provided which must be entered in Odis Service to perform the upgrade)</li>
 <li>Fixing severe errors which are not solvable with the other Odis (Engineering, see below)</li>
 </ul></li>
@@ -217,12 +239,18 @@ Just some information about the VW Odis software, there are two versions:
 <li>Performing backup/restore of coding/adaptations (like OBD11)</li>
 <li>Check faults (like OBD11 though it provides better details on errors)</li>
 <li>Flashing control units, e.g. updating/downgrading firmware</li>
-<li>Data transfer, e.g. writing xml parameter data on control units: this is the specific data of the car model (Golf, Passat, T-Roc, Tiguan, usually control units firmware is shared between different car models of the same manufacturer) and of the installed optionals (e.g. the adaptive cruise control could also work the car navigation data to give you also predictive cruise control, etc.) which must be uploaded to the control units usually after a new firmware upgrade / retrofit installation (even though sometimes new firmwares of some control units still use the old parameter data).</li>
+<li>Data transfer, e.g. writing xml parameter data on control units: this is the specific data of the car model (Golf, Passat, T-Roc, Tiguan, usually control units firmware is shared between different car models of the same manufacturer) and of the installed optional extras (e.g. the adaptive cruise control could also work the car navigation data to give you also predictive cruise control, etc.) which must be uploaded to the control units usually after a new firmware upgrade / retrofit installation (even though sometimes new firmwares of some control units still use the old parameter data).</li>
 <li>Perform offline guided functions like calibration, basic settings, etc.</li>
+<li style="list-style-type:none;"><br/><img src="./Images/OdisEngineering.jpg" alt="odisengineering" /></li>
 </ul>
 </li>
 </ul>
 Both software work with the interface <a href="https://www.vncishop.com/wholesale/vnci-6154a-and-usb-software.html">VNCI 6154</a>, you can download a VMware virtual machine from forums on internet with everything installed (it is very time consuming to install by yourself), if you are lazy you can pay something more (around 10$) when ordering VNCI 6154 and you will receive an USB key with the software.
+<h2 id="odisbackupcompare">OdisBackupCompare</h2>
+<p><b>OdisBackupCompare is a tool I developed for extracting the differences between two Volkswagen Odis XML backup files and exporting them in various formats (JSON/PDF).</b></p>
+<p><u><p>Many times after having finished the "physical" and electrical phase of a retrofit (e.g. installing new control units or devices and the relative wiring), you can get frustrated (especially if you are a newbie) because nothing works without setting the appropriate configuration of control units</u>. Hence I developed this tool which can be used to check the differences of configuration between the control units of two cars in order to simplify and speed up the troubleshooting of any issues after a retrofit.</p><p><b>I released it free for everyone under MIT license</b>, you can find the software and the guide on how to use on my <a href="https://github.com/fededim/OdisBackupCompare"><b>GitHub project page OdisBackupCompare</b></a>
+
+
 <br/>
 
     </div>
