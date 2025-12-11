@@ -1,323 +1,303 @@
 <?xml version="1.0"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 	<url>
 		<loc>https://fededim.github.io/golf_mk7_facelift_retrofits.html</loc>
-		<lastmod>2025-11-26T18:28:23.9016169+01:00</lastmod>
+		<lastmod>2025-12-11T17:52:17.0758491+01:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/</loc>
-		<lastmod>2025-11-14T13:17:48.4867342+01:00</lastmod>
+		<lastmod>2025-12-11T17:52:17.0758491+01:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/index.html</loc>
-		<lastmod>2025-11-14T13:17:48.4867342+01:00</lastmod>
+		<lastmod>2025-12-11T17:52:17.0758491+01:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/personal_note_holocaust.html</loc>
-		<lastmod>2025-11-14T13:15:59.8243000+01:00</lastmod>
+		<lastmod>2025-12-11T17:52:17.0914540+01:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/personal_note_lbgt.html</loc>
-		<lastmod>2025-11-30T12:38:52.6739148+01:00</lastmod>
+		<lastmod>2025-12-11T17:52:17.0914540+01:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/personal_note_working_at_igo.html</loc>
-		<lastmod>2025-12-08T15:10:45.9878882+01:00</lastmod>
+		<lastmod>2025-12-11T18:32:06.3898886+01:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/README.md</loc>
-		<lastmod>2025-03-09T14:57:04.6103711+01:00</lastmod>
+		<lastmod>2025-08-27T19:16:32.4913403+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/The_Genesis_StarterService_of_Simatic_IT.html</loc>
-		<lastmod>2025-11-14T13:18:59.9773314+01:00</lastmod>
+		<lastmod>2025-12-11T17:52:16.8258797+01:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/various_pictures.html</loc>
-		<lastmod>2025-11-14T13:19:26.5220160+01:00</lastmod>
+		<lastmod>2025-12-11T17:52:17.0914540+01:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/working_switzerland_cross_border.html</loc>
-		<lastmod>2025-11-14T13:20:12.6747162+01:00</lastmod>
+		<lastmod>2025-12-11T17:52:17.0914540+01:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Articles/Fededim.Extensions.Configuration.Protected.DataProtectionAPI.html</loc>
-		<lastmod>2025-10-25T11:15:30.4456306+02:00</lastmod>
+		<lastmod>2025-10-07T08:25:28.2624237+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Articles/How%20to%20Transform%20Binary%20Files%20into%20Powershell%20Script(s)%20in%20Order%20to%20Copy%20them%20Silently%20on%20a%20Server-%20CodeProject.html</loc>
-		<lastmod>2025-10-25T11:15:30.4456306+02:00</lastmod>
+		<lastmod>2025-10-07T08:25:19.6524804+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Articles/ProtectedJson_%20Integrating%20ASP.NET%20Core%20Configuration%20and%20Data%20Protection-%20CodeProje.html</loc>
-		<lastmod>2025-10-25T11:15:30.4525494+02:00</lastmod>
+		<lastmod>2025-10-07T08:25:10.2299694+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Articles/SyncEvent_%20The%20missing%20Java%20Event%20Class-%20CodeProject.html</loc>
-		<lastmod>2025-10-25T11:15:30.4525494+02:00</lastmod>
+		<lastmod>2025-10-07T08:24:58.8237234+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Certificates/Degrees/Certificate%20of%20master%20degree%20in%20computer%20science%20at%20university%20of%20Genova%20(old).pdf</loc>
-		<lastmod>2017-05-16T16:42:23.8293946+02:00</lastmod>
+		<lastmod>2025-08-27T19:16:31.5779974+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Certificates/Degrees/Certificate%20of%20master%20degree%20in%20computer%20science%20at%20university%20of%20Genova.pdf</loc>
-		<lastmod>2024-01-21T11:36:04.3546143+01:00</lastmod>
+		<lastmod>2025-08-27T19:16:31.5793227+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Certificates/Degrees/Certificate%20of%20master%20degree%20in%20computer%20science%20at%20university%20of%20Udine%20(old).pdf</loc>
-		<lastmod>2017-05-16T16:44:01.6452751+02:00</lastmod>
+		<lastmod>2025-08-27T19:16:31.5883003+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Certificates/Degrees/Certificate%20of%20master%20degree%20in%20computer%20science%20at%20university%20of%20Udine.pdf</loc>
-		<lastmod>2024-01-21T11:37:57.7963081+01:00</lastmod>
+		<lastmod>2025-08-27T19:16:31.5952820+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Certificates/Degrees/Certificate%20of%20qualifying%20examination%20of%20engineer%20in%20computer%20science.pdf</loc>
-		<lastmod>2024-01-21T11:37:10.5280346+01:00</lastmod>
+		<lastmod>2025-08-27T19:16:31.5962798+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Certificates/Diploma/Scientific%20Liceum%20Diploma.pdf</loc>
-		<lastmod>2025-01-01T23:39:40.2653926+01:00</lastmod>
+		<lastmod>2025-08-27T19:16:31.6311861+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Certificates/IT%20Certificates/Agile%20-%20Certified%20SAFe%206%20Practitioner%20-%20Certificate.pdf</loc>
-		<lastmod>2024-01-21T12:26:57.5627383+01:00</lastmod>
+		<lastmod>2025-08-27T19:16:31.6361724+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Certificates/IT%20Certificates/Architecture%20-%20Archimate%202%20Certified%20-%20Certificate.pdf</loc>
-		<lastmod>2018-03-08T20:52:10.1178697+01:00</lastmod>
+		<lastmod>2025-08-27T19:16:31.6381672+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Certificates/IT%20Certificates/Architecture%20-%20TOGAF%C2%AE%209%20Certified%20-%20Certificate.pdf</loc>
-		<lastmod>2020-01-05T19:45:24.3264173+01:00</lastmod>
+		<lastmod>2025-08-27T19:16:31.6411592+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Certificates/IT%20Certificates/Architecture%20-%20TOGAF%C2%AE%209%20Foundation%20-%20Certificate.pdf</loc>
-		<lastmod>2020-01-05T19:46:16.8082749+01:00</lastmod>
+		<lastmod>2025-08-27T19:16:31.6461458+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Certificates/IT%20Certificates/ITSM%20-%20ITIL%20V3%20Foundation%20-%20Certificate.pdf</loc>
-		<lastmod>2025-01-04T13:06:53.3887852+01:00</lastmod>
+		<lastmod>2025-08-27T19:16:31.6601086+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Certificates/IT%20Certificates/ITSM%20-%20ITIL%20V3%20Foundation%20-%20Confirmation%20Letter.pdf</loc>
-		<lastmod>2020-02-08T12:22:12.5161544+01:00</lastmod>
+		<lastmod>2025-08-27T19:16:31.6611059+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Certificates/IT%20Certificates/ProjectManagement%20-%20Prince2%20Foundation%20certificate.pdf</loc>
-		<lastmod>2024-01-21T12:11:37.7249736+01:00</lastmod>
+		<lastmod>2025-08-27T19:16:31.6630999+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Certificates/IT%20Certificates/ProjectManagement%20-%20Prince2%20Practitioner%20certificate.pdf</loc>
-		<lastmod>2019-12-29T11:23:35.1870154+01:00</lastmod>
+		<lastmod>2025-08-27T19:16:31.6680870+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Certificates/Languages/Cambridge%20Advanced%20English%20Certificate.pdf</loc>
-		<lastmod>2017-05-16T17:13:26.8645796+02:00</lastmod>
+		<lastmod>2025-08-27T19:16:31.6708531+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Certificates/Languages/First%20Certificate%20English%20Certificate.pdf</loc>
-		<lastmod>2025-01-04T13:05:26.0000000+01:00</lastmod>
+		<lastmod>2025-08-27T19:16:31.6758385+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Certificates/Reference%20Letters%20and%20proof%20of%20work%20activity/ICT%20Referent%20at%20Italian%20Revenue%20Agency.pdf</loc>
-		<lastmod>2017-05-16T16:48:50.4575152+02:00</lastmod>
+		<lastmod>2025-08-27T19:16:31.6918240+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Certificates/Reference%20Letters%20and%20proof%20of%20work%20activity/Junior%20Software%20Engineer%20at%20GEA-Siemens.pdf</loc>
-		<lastmod>2017-05-16T16:57:17.8439629+02:00</lastmod>
+		<lastmod>2025-08-27T19:16:31.7087509+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Certificates/Reference%20Letters%20and%20proof%20of%20work%20activity/Senior%20Software%20Engineer%20at%20Altran.pdf</loc>
-		<lastmod>2017-05-16T16:51:19.4914467+02:00</lastmod>
+		<lastmod>2025-08-27T19:16:31.7296938+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Certificates/Reference%20Letters%20and%20proof%20of%20work%20activity/System%20Architect%20-%20Team%20leader%20at%20Atos%20Origin.pdf</loc>
-		<lastmod>2017-05-16T16:55:31.1940949+02:00</lastmod>
+		<lastmod>2025-08-27T19:16:31.7646321+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Certificates/Various/International_driving_license.pdf</loc>
-		<lastmod>2025-07-05T10:06:38.0000000+02:00</lastmod>
+		<lastmod>2025-12-11T17:52:16.7633466+01:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Certificates/Various/UAE%20A2%20certificate.pdf</loc>
-		<lastmod>2025-01-02T00:53:48.4289846+01:00</lastmod>
+		<lastmod>2025-08-27T19:16:31.7840114+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Certificates/Various/UAS%20A1-A3%20certificate.pdf</loc>
-		<lastmod>2025-01-02T00:56:01.5796512+01:00</lastmod>
+		<lastmod>2025-08-27T19:16:31.7860393+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Retrofits/Golf_MK7.5/FullBackup_PXA_WVWZZZAUZHP345715_20250909T235845.html</loc>
-		<lastmod>2025-10-25T11:15:30.4879110+02:00</lastmod>
+		<lastmod>2025-09-10T00:08:12.0000000+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Retrofits/Golf_MK7.5/FullBackup_PXC_WVWZZZAUZHP345715_20250912T154832.html</loc>
-		<lastmod>2025-10-25T11:15:30.5037580+02:00</lastmod>
+		<lastmod>2025-09-12T15:56:52.0000000+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Retrofits/Golf_MK7.5/Blind%20Spot%20Assist/Volkswagen%20Golf%20MK7.5%20Facelift%20Blind%20Spot%20Assist%20Retrofit.pdf</loc>
-		<lastmod>2025-08-10T20:20:04.9235530+02:00</lastmod>
+		<lastmod>2025-08-27T19:16:32.7093830+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Retrofits/Golf_MK7.5/Heated%20Windscreen/Volkswagen%20Golf%20MK7.5%20Facelift%20Heated%20Windscreen%20Retrofit%20V1.0.1.pdf</loc>
-		<lastmod>2024-04-18T20:29:41.9195263+02:00</lastmod>
+		<lastmod>2025-08-27T19:16:32.7763964+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Retrofits/Golf_MK7.5/Lane%20Assist/Volkswagen%20Golf%20MK7.5%20Facelift%20Lane%20Assist%20Retrofit%20V1.0.pdf</loc>
-		<lastmod>2024-08-16T01:16:11.4103325+02:00</lastmod>
+		<lastmod>2025-08-27T19:16:32.8422218+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Retrofits/Golf_MK7.5/Lane%20Assist/Volkswagen%20Golf%20MK7.5%20Facelift%20Lane%20Assist%20Retrofit%20V1.1.pdf</loc>
-		<lastmod>2025-03-12T22:22:40.6106270+01:00</lastmod>
+		<lastmod>2025-08-27T19:16:32.9060193+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/TipsAndTricks/Git_cheatsheet.md</loc>
-		<lastmod>2025-05-21T16:39:11.8850117+02:00</lastmod>
+		<lastmod>2025-08-27T19:16:32.9080148+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/TipsAndTricks/How%20to%20Automate%20Saving%20Webpages%20as%20a%20Single%20.MHTML%20Files%20using%20Selenium%20Webdriver-%20CodeProject.html</loc>
-		<lastmod>2025-10-25T11:15:30.5037580+02:00</lastmod>
+		<lastmod>2025-10-07T08:24:05.9481965+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/TipsAndTricks/How%20to%20Enable%20Bitlocker%20Hardware%20Encryption%20on%20SEDs-%20CodeProject.html</loc>
-		<lastmod>2025-10-25T11:15:30.5037580+02:00</lastmod>
+		<lastmod>2025-10-07T08:23:53.3673731+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/TipsAndTricks/Query%20Excel%20or%20CSV%20files%20with%20T-SQL-%20CodeProject.html</loc>
-		<lastmod>2025-10-25T11:15:30.5037580+02:00</lastmod>
+		<lastmod>2025-10-07T08:23:45.4004893+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/TipsAndTricks/spSearchTables_%20Search%20and%20Find%20Tables%20or%20Columns%20by%20Name%20or%20Value-%20CodeProject.html</loc>
-		<lastmod>2025-10-25T11:15:30.5194293+02:00</lastmod>
+		<lastmod>2025-10-07T08:23:28.3993361+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/TipsAndTricks/VPNScripter_%20A%20Scripter%20for%20Windows'%20VPN%20Connections-%20CodeProject.html</loc>
-		<lastmod>2025-10-25T11:15:30.5194293+02:00</lastmod>
+		<loc>https://fededim.github.io/TipsAndTricks/VPNScripter_%20A%20Scripter%20for%20Windows%27%20VPN%20Connections-%20CodeProject.html</loc>
+		<lastmod>2025-10-07T08:23:12.8820530+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Various/34K1_TSB_ITA.pdf</loc>
-		<lastmod>2025-11-11T11:38:21.5040971+01:00</lastmod>
+		<lastmod>2025-12-11T17:52:16.8414702+01:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Various/Balance_Officina_di_Stile_2013.pdf</loc>
-		<lastmod>2025-06-01T13:42:02.0484891+02:00</lastmod>
+		<lastmod>2025-08-27T19:16:33.1012880+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Various/Balance_Officina_di_Stile_2015.pdf</loc>
-		<lastmod>2025-06-01T13:42:56.8465908+02:00</lastmod>
+		<lastmod>2025-08-27T19:16:33.1022868+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Various/Balance_Officina_di_Stile_2017.pdf</loc>
-		<lastmod>2025-06-01T13:40:13.0602641+02:00</lastmod>
-		<priority>1.00</priority>
-	</url>
-	<url>
-		<loc>https://fededim.github.io/Various/Brainwash_Marocchi_Clip_1.mp3</loc>
-		<lastmod>2025-11-30T18:32:21.9300776+01:00</lastmod>
-		<priority>1.00</priority>
-	</url>
-	<url>
-		<loc>https://fededim.github.io/Various/Brainwash_Marocchi_Clip_2.mp3</loc>
-		<lastmod>2025-11-30T18:25:13.8616806+01:00</lastmod>
-		<priority>1.00</priority>
-	</url>
-	<url>
-		<loc>https://fededim.github.io/Various/Clip_Invidia_Landa_1.mp3</loc>
-		<lastmod>2025-12-01T00:03:17.8432869+01:00</lastmod>
+		<lastmod>2025-08-27T19:16:33.1032823+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Various/Indagine_Piazza_Erbe.pdf</loc>
-		<lastmod>2025-10-25T11:15:30.5194293+02:00</lastmod>
+		<lastmod>2025-09-27T17:10:50.8182223+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Various/Marco_Marocchi_Brainwash.html</loc>
-		<lastmod>2025-11-30T17:48:25.3089187+01:00</lastmod>
+		<lastmod>2025-12-11T17:52:16.8571162+01:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Various/Prospect_Officina_di_Stile_2013.pdf</loc>
-		<lastmod>2025-06-01T13:42:44.3634225+02:00</lastmod>
+		<lastmod>2025-08-27T19:16:33.1042797+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Various/Prospect_Officina_di_Stile_2015.pdf</loc>
-		<lastmod>2025-06-01T13:43:15.4835247+02:00</lastmod>
+		<lastmod>2025-08-27T19:16:33.1052768+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Various/Prospect_Officina_di_Stile_2017.pdf</loc>
-		<lastmod>2025-06-01T13:41:55.6242690+02:00</lastmod>
-		<priority>1.00</priority>
-	</url>
-	<url>
-		<loc>https://fededim.github.io/Various/Telefonata_Paolo_Elennio.mp4</loc>
-		<lastmod>2011-02-14T18:55:30.0000000+01:00</lastmod>
+		<lastmod>2025-08-27T19:16:33.1062748+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Various/Visura_Officina_di_Stile.pdf</loc>
-		<lastmod>2025-06-01T13:22:47.1207343+02:00</lastmod>
+		<lastmod>2025-08-27T19:16:33.1728701+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Various/Smart%20floor%20lamp%20IKEA%20FLUGBO/How%20to%20turn%20an%20IKEA%20FLUGBO%20into%20a%20smart%20floor%20lamp.pdf</loc>
-		<lastmod>2024-11-11T23:51:19.9456838+01:00</lastmod>
+		<lastmod>2025-08-27T19:16:33.1718421+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 </urlset>
