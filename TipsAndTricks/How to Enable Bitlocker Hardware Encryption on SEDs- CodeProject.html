@@ -436,7 +436,8 @@ if (typeof(DemoUrl) !== 'undefined') {
 <!-- Article Starts -->
 
 <ul class="download">
-	<li><a href="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/DisableBlockSid.zip">Download source code - 858 B</a></li></ul>
+	<li><a href="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/DisableBlockSid.zip">Download source code - 858 B</a></li>
+	<li><a href="https://1drv.ms/u/c/3da78f873f843e80/IQAyy8o1btVRTogfLB6JtHpdAR3EKZEhOt4cFm51qtMp1ac?e=sEK8RA">My early Windows 11 WinPE ISO image hosted on my OneDrive</a></li></ul>
 
 <h2>Introduction</h2>
 
@@ -458,7 +459,7 @@ if (typeof(DemoUrl) !== 'undefined') {
 	<li><strong>Update computer BIOS and SED firmware to the latest version</strong>. Sometimes, in order to update them, you need to disable Bitlocker encryption (if you use TPM), so it's better to do it as first point. In BIOS:
 
 	<ul>
-		<li><em>Disable <strong>UEFI CSM</strong></em> (<i>Compatibility Support Module) </i>option, if present</li>		<li><em>Ensure that <strong>Secure Boot</strong> option is set to <strong>Custom</strong></em> for the entire setup, this allows Bitlocker to enroll boot keys for booting without a password the SED. Moreover, it allows you to enroll boot keys for multi image booting tools like <a href="https://www.ventoy.net/en/index.html"><code>Ventoy</code></a>.</li>		<li><em>Reset Secure Boot keys to platform default </em>(optional step to restore TPM keys to factory default)</li>	</ul>
+		<li><em>Disable <strong>UEFI CSM</strong></em> (<i>Compatibility Support Module) </i>option, if present</li>		<li><em>Ensure that <strong>Secure Boot</strong> option is set to <strong>Custom</strong></em> for the entire setup, this allows Bitlocker to enroll boot keys for booting without a password the SED. Moreover, it allows you to enroll boot keys for multi image booting tools like <a href="https://www.ventoy.net/en/index.html"><code>Ventoy</code></a>.</li>		<li><em>Reset Secure Boot keys to platform default </em>(optional step to restore TPM keys to factory default)</li>	  <li><em>Disable <b>Intel Rapid Storage Technology (IRST)</b></em> usually called <em><b>VMD controller</b></em></li></ul>
 	</li>	<li><strong>Check on SED hardware vendor website if and how IEEE1667 or Microsoft eDrive should be first activated (o<em>ptional step depending on hardware vendor</em>)</strong>: This is usually performed through their management software (Samsung Magician for Samsungs, Kingston SSD Manager for Kingston SEDs, etc., Crucials have it instead activated by default).</li>	<li><strong>Prepare a bootable usb drive</strong> (I would say 64GB or bigger) for the next operations: personally, I use the <a href="https://www.ventoy.net/en/index.html"><code>Ventoy</code></a><font color="#990000" face="Consolas, monospace, mono"><span style="font-size: 15px"> </span></font>usb tool which came out in 2020 and it has quickly become a must have for any IT Administrator or enthusiast since it allows you to configure multiple booting images on a single USB drive in a very simple way. First and foremost, you install it on an USB disk and then you can copy any iso image in any format (ISO/WIM/IMG/VHD(x)/EFI) you want; when you restart your computer and boot it, it will scan all the iso images inside and let you pick through a menu which one you would like to boot (in my usb key, I put the latest Windows to be installed, the Samsung SecureErase, the MemTest86 and an Ubuntu live image for emergency).
 	<p>If your bios does not have the <strong>Disable Block SID option</strong>, <em>you need also to build a WinPE image (e.g., a live Windows iso which runs in RAM without being installed) with Powershell core or Powershell in order to configure such option through a script;</em> incredibly, I wasn't able to find any iso image like this publicly available. To build the iso image, you can use a tool like <a href="https://github.com/ChrisRfr/Win10XPE"><code><strong>Win10XPE</strong></code></a> (the link is to the project website for the documentation, but incredibly it does not contain the binary, I downloaded it from <a href="https://sourceforge.net/projects/win10xpe/files/Program/"><code>Sourceforge</code></a>). It is simple to use (it has a GUI), essentially you have to:</p>
 
@@ -469,6 +470,8 @@ if (typeof(DemoUrl) !== 'undefined') {
 		<p>After configuration, you have to hit the play button and wait for the iso image to be built (takes less than 10 minutes), then you can copy it to the Ventoy usb drive, together with the 2 Powershell scripts (<em>DisableBlockSid.ps1</em> and <em>DisableBlockSid_Core.ps1</em>) provided in the archive attached to this article (<a href="https://www.codeproject.com./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/DisableBlockSid.zip">Download DisableBlockSid.zip</a>).</p>
 
 		<p style="margin-left: 40px"><img src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Win10XPE_running.png" alt="Image 2" data-src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Win10XPE_running.png" class="lazyautosizes lazyloaded" style="cursor: pointer; border: 0; width: 700px; height: auto" onclick="imageCleanup.showFullImage(&#39;./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Win10XPE_running.png&#39;)" data-sizes="auto" data-srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Win10XPE_running.png 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Win10XPE_running.png 700w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Win10XPE_running.png 1920w" sizes="632px" srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Win10XPE_running.png 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Win10XPE_running.png 700w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Win10XPE_running.png 1920w"></p>
+	
+		<p><b>For sake convenience, I'm link <a href="https://1drv.ms/u/c/3da78f873f843e80/IQAyy8o1btVRTogfLB6JtHpdAR3EKZEhOt4cFm51qtMp1ac?e=sEK8RA">my early Windows 11 WinPE ISO image hosted on my OneDrive</a>, which incredibly still works perfectly (I have recently used it on a 2025 laptop without any issues)</b>.</p>
 		</li>	</ul>
 	</li>	<li><strong>PSID revert the SED</strong>: All SEDs have a 32 hexadecimal characters code physically printed on their label with the heading <strong>PSID</strong> (aka <em>Physical Secure ID</em>, check picture below). This code can be passed to a tool in order to bring the SED back to factory state destroying also any data on drive since this operation also creates a new DEK which makes all user data on drive unreadable.<br>
 	<strong>Again, I repeat it, you must do this, even for brand new drives, otherwise it won't work.</strong> I have always used <code><strong>sedutil-cli</strong></code> which is the first official executable tool provided by Drive Trust Alliance, available for both Linux and Windows. You can <a href="http://github.com/Drive-Trust-Alliance/sedutil/wiki/PSID-Revert">read the documentation</a> and <a href="http://github.com/Drive-Trust-Alliance/sedutil/wiki/Executable-Distributions">download the binaries</a>. <strong>Remember that the PSID must be quoted in upper case letters without any dashes</strong>. Nowadays, this PSID revert function is even integrated in UEFI bios or in the SEDs hardware vendor management software, pick the one which works best for you.
@@ -493,10 +496,10 @@ if (typeof(DemoUrl) !== 'undefined') {
 	</li>	<li>	<p><strong>Disable the Disable Block SID option </strong>either through BIOS (if supported) or through the<strong> Win10XPE </strong>iso image you have built in step 3 by running one of the two attached scripts. Essentially, both the two provided scripts contains a single command line, <code>SetPhysicalPresenceRequest</code> (97) on the TPM instance, e.g.:</p>
 
 	<p><strong>Powershell</strong> (<em>DisableBlockSid.ps1)</em><br>
-	powershell.exe -ExecutionPolicy bypass -Command "(Get-WmiObject -Namespace "root\CIMV2\Security\MicrosoftTpm" -Class Win32_TPM).SetPhysicalPresenceRequest(97)"</p>
+	powershell.exe -ExecutionPolicy bypass -Command "<b>(Get-WmiObject -Namespace "root\CIMV2\Security\MicrosoftTpm" -Class Win32_TPM).SetPhysicalPresenceRequest(97)</b>"</p>
 
 	<p><strong>Powershell Core</strong> (<em>DisableBlockSid_Core.ps1)</em><br>
-	pwsh.exe -ExecutionPolicy Bypass -Command "Get-CimInstance -Namespace 'root/cimv2/Security/MicrosoftTpm' -ClassName 'Win32_TPM' | Invoke-CimMethod -MethodName 'SetPhysicalPresenceRequest' -Arguments @{Request='97'}"</p>
+	pwsh.exe -ExecutionPolicy Bypass -Command "<b>Get-CimInstance -Namespace 'root/cimv2/Security/MicrosoftTpm' -ClassName 'Win32_TPM' | Invoke-CimMethod -MethodName 'SetPhysicalPresenceRequest' -Arguments @{Request='97'}</b>"</p>
 
 	<p>If you would like to know why 97, you can check out the document about <a href="https://trustedcomputinggroup.org/wp-content/uploads/PC-Client-Platform-Physical-Presence-Interface-Specification-V1.4-R15_22July22.pdf">Physical Presence specification on TCG website (at the bottom of page 60)</a>. At the next reboot, you should be seeing a warning message at boot like the one below which you must accept (hit F10). <em>Note that this is valid only for the next boot so you have to boot the official Windows iso image to start the installation, if not, you have to redo this when you are ready to install it.</em></p>
 
@@ -508,7 +511,7 @@ if (typeof(DemoUrl) !== 'undefined') {
 
 		<p><img src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Group_policy.png" alt="Image 7" data-src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Group_policy.png" class="lazyautosizes lazyloaded" style="cursor: pointer; border: 0; width: 700px; height: auto" onclick="imageCleanup.showFullImage(&#39;./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Group_policy.png&#39;)" data-sizes="auto" data-srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Group_policy.png 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Group_policy.png 700w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Group_policy.png 1920w" sizes="672px" srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Group_policy.png 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Group_policy.png 700w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/Group_policy.png 1920w"></p>
 		</li>	</ul>
-	</li>	<li><strong>Try to turn on Bitlocker on drive (e.g., right click on disk drive</strong> -&gt; <strong>Turn Bitlocker On</strong>). There are two outcomes:
+	</li>	<li><strong>Try to turn on Bitlocker on drive (e.g., right click on disk drive</strong> -&gt; <strong>Turn Bitlocker On</strong> or force hardware encryption by issuing in administrator prompt <b>manage-bde -on C: -fet hardware -recoverypassword -recoverykey &lt;usb flash disk drive letter&gt;</b>). There are two outcomes:
 	<ul>
 		<li>There is something which prevents the activation of Bitlocker hardware encryption. In this case, you have to try again the procedure from scratch (yes from scratch), but you can check the <strong>Windows Event Viewer</strong> for some hints about what went wrong under the nodes <strong>Application and Service Logs --&gt; Microsoft --&gt; Windows --&gt; BitLocker-API --&gt; Management</strong> and <strong>Application and Service Logs</strong> --&gt; <strong>Microsoft</strong> --&gt; <strong>Windows</strong> --&gt; <strong>EnhancedStorage-ClassDrive</strong> --&gt; <strong>Microsoft-Windows-EnhancedStorage-EhStorClass/Operational</strong><em>,</em> even though most of the events logged there are murky for those who do not know the details of the provisioning process of a SEDs including me (you can send them however to the technical support of your vendor).
 		<p><img alt="Image 8" src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/extracted-image-3.png" style="height: 471px; width: 600px" data-src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/extracted-image-3.png" class="lazyautosizes lazyloaded" data-sizes="auto" data-srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/extracted-image-3.png 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/extracted-image-3.png 600w" sizes="600px" srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/extracted-image-3.png 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/extracted-image-3.png 600w"></p>
@@ -522,8 +525,20 @@ if (typeof(DemoUrl) !== 'undefined') {
 
 		<p><img height="328" src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/SecureBoot_not_in_custom_mode.png" width="528" alt="Image 11" data-src="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/SecureBoot_not_in_custom_mode.png" class="lazyautosizes lazyloaded" data-sizes="auto" data-srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/SecureBoot_not_in_custom_mode.png 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/SecureBoot_not_in_custom_mode.png 528w" sizes="528px" srcset="./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/SecureBoot_not_in_custom_mode.png 400w, ./How to Enable Bitlocker Hardware Encryption on SEDs- CodeProject_files/SecureBoot_not_in_custom_mode.png 528w"></p>
 		</li>	</ul>
-	</li>	<li>	<p><strong>Perform a last reboot and switch back in bios the Secure Boot option from Custom to Enabled (or Standard)</strong> in order to forbid any key management operation.</p>
+	</li>	<li>	<p><strong>Perform a last reboot and switch back in bios the Secure Boot option from Custom to Enabled (or Standard)</strong> in order to forbid any further key management operation.</p>
 	</li></ol>
+
+
+<h2>Reinstalling Windows on or repartitioning an already encrypted SEDs</h2>
+
+In the past I did not know how to perform this and <u>I resorted in backing up all hard disk partitions and nuking it with a PSID revert operation</u>; this operation was manageable since it was occasional and the hard disk capacity was limited (less than 1TB). Recently SEDs have gone bigger capacity , so backing up and nuking all paritions became troublesome, therefore I found a way to preserve all data. Here it follows all the steps:
+<ul>
+<li><em><b>Turn off Bitlocker (hardware) encryption on all partitions of the SED</b></em>. The disk now behaves as a normal SSD.</li>
+<li><em><b>If needed, repartition the disk with the tool of your choice</b></em>.</li>
+<li><em><b>Reissue a Disable Block Sid command either through BIOS or through the aforementioned WinPE environment and Powershell scripts</b></em></li>
+<li><em><b>On the first subsequent reboot you have to reinstall Windows</b></em>. You can also perform partition management with the Windows Installer deleting the older Windows partitions and recreating them.</li>
+<li><em><b>After Windows installation has finished, reconfigure as stated before the Group Policy Settings and turn on again Bitlocker</b></em></li> 
+</ul>
 
 <h2>Points of Interest</h2>
 
@@ -604,7 +619,16 @@ manage-bde -protectors -add c: -tpm</pre>
 	</li>	<li>V1.4 (7<sup>th</sup>&nbsp;July, 2024)
 	<ul>
 		<li>Improved TPM information inside Points Of Interest section (added way to retrieve recovery key and to re-seal the hardware/software configuration inside TPM after a "breaking" upgrade)</li>	</ul>
-	</li></ul>
+	</li>
+	
+	<li>V1.5 (19<sup>th</sup>&nbsp;December, 2025)
+	<ul>
+		<li>Linked my WinPE enviroment ISO on my Google drive</li>
+		<li>Added section Reinstalling Windows on or repartitioning an already encrypted SEDs</li>
+		<li>Added command line for activating Bitlocker forcing the hardware encryption</li>
+	</ul>
+	</li>
+	</ul>
 
 
 
