@@ -44,7 +44,7 @@
 <meta name="twitter:creator" content="@CodeProject">
 <meta property="og:type" content="article">
 <meta property="article:published_time" content="10/9/2023 8:42:00 AM">
-<meta property="article:modified_time" content="3/2/2024 7:26:00 PM">
+<meta property="article:modified_time" content="4/15/2026 7:26:00 PM">
 <meta name="twitter:label1" content="Written by">
 <meta name="twitter:data1" content="Federico Di Marco">
 <meta name="twitter:label2" content="Reading time">
@@ -93,7 +93,7 @@
     }],
   "datePublished": "2023-10-09",
   "dateCreated": "2023-10-09",
-  "dateModified": "2024-03-02"
+  "dateModified": "2026-04-14"
 ,
   "contentRating" : {
     "@type" : "Rating",
@@ -389,7 +389,7 @@ if (typeof(DemoUrl) !== 'undefined') {
                                     </div>
 
                                     <div class="flex-container" style="color:#666;font-size:smaller">
-                                        <span id="ctl00_LastUpdated" class="date flex-item-tight" title="Date last updated">2 Mar 2024</span><a id="ctl00_LicenseLink" title="The Code Project Open License (CPOL)" class="license flex-item-tight" href="http://www.codeproject.com/info/cpol10.aspx">CPOL</a><span id="ctl00_ReadingTime" class="stats flex-item-tight">9 min read</span><span id="ctl00_HorizontalStats" class="stats flex-item-tight"><span class="stats"><span title="Views"><img src="./How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject_files/views32.png" alt="View" style="width:16px"> 12.5K</span> &nbsp; </span></span>
+                                        <span id="ctl00_LastUpdated" class="date flex-item-tight" title="Date last updated">15<sup>th</sup> Apr 2026</span><a id="ctl00_LicenseLink" title="The Code Project Open License (CPOL)" class="license flex-item-tight" href="http://www.codeproject.com/info/cpol10.aspx">CPOL</a><span id="ctl00_ReadingTime" class="stats flex-item-tight">9 min read</span><span id="ctl00_HorizontalStats" class="stats flex-item-tight"><span class="stats"><span title="Views"><img src="./How to Transform Binary Files into Powershell Script(s) in Order to Copy them Silently on a Server- CodeProject_files/views32.png" alt="View" style="width:16px"> 12.5K</span> &nbsp; </span></span>
                                     </div>
                                 </div>
 					        </div>
@@ -893,7 +893,7 @@ function StringToByteArray  {
 <p>Well, any physical server in the world will always have two devices:</p>
 
 <ul>
-	<li><strong>An input device like a keyboard</strong> which can be used to inject any sequence of keystrokes, for example, by plugging in a programmable microcontroller like ESP32 which simulates a USB keyboard and sends the output Powershell script as keystrokes on the happening of a particular condition (<em>this is an idea for another project</em>). If the server has only an old PS2 keyboard, you can design or subcontract a custom hardware which acts in the same way. Or if you want a quick solution, you can invest some bucks on a programmable keyboard.</li>	<li><strong>An output device like a monitor</strong> which can be used to extract silently data from the server by injecting and executing a custom app with the above script method. This app basically will read any binary file and transcodes it into sequences of "QR codes" (or pixel images) which in turn can be recorded and decoded by a mobile phone camera shooting at the monitor. This is nothing new since it was already done in the 90s on an old 32bit computer called Amiga with the <a href="http://www.hugolyppens.com/VBS.html">Video Backup System</a> which basically transcoded binary files (usually floppy disks images) into sequences of black and white pixel images which were stored on a videotape. As a bonus, one could think also of transcoding into color pixel images in order to increase the density (and therefore, the throughput) of the data, but <em>this is again an idea for another project</em>.</li></ul>
+	<li><strong>An input device like a keyboard</strong> which can be used to inject any sequence of keystrokes, for example, by plugging in a programmable microcontroller like ESP32 which simulates a USB keyboard and sends the output Powershell script as keystrokes on the happening of a particular condition (<em>this is an idea for another project</em>). If the server has only an old PS2 keyboard, you can design or subcontract a custom hardware which acts in the same way. Or if you want a quick solution, you can invest some bucks on a programmable keyboard.</li>	<li><strong>An output device like a monitor</strong> which can be used to extract silently data from the server by injecting and executing a custom app with the above script method. This app basically will read any binary file and transcodes it into sequences of "QR codes" (or pixel images) which in turn can be recorded and decoded by a mobile phone camera shooting at the monitor. This is nothing new since it was already done in the 90s on an old 32bit computer called <b>Amiga</b> with the <a href="http://www.hugolyppens.com/VBS.html"><b>Video Backup System</b></a> which basically transcoded binary files (usually floppy disks images) into sequences of black and white pixel images which were stored on a videotape (see demo videos here, <a href="https://www.youtube.com/watch?v=yeFfn9LYlhQ"><b>Overview and Setup [Part 1]</b></a>, <a href="https://www.youtube.com/watch?v=VcBY6PMH0Kg"><b>Floppy backup and restore [part 2]</b></a> and <a href="https://www.youtube.com/watch?v=GS8MX4zVcoQ"><b>Filesystem backup [part 3]</b></a>). As a bonus, one could think also of transcoding into color pixel images in order to increase the density (and therefore, the throughput) of the data, but <em>this is again an idea for another project</em>.</li></ul>
 
 <p>Last but not the least, I want to underline that the script language, be it either Powershell or bash or bat is not so much important (maybe on bat you have some limitations), what is important is the idea behind this implementation, e.g., to recreate a binary file through a well crafted script.</p>
 
@@ -912,7 +912,14 @@ function StringToByteArray  {
 	</li>	<li>V1.0.2 (31<sup>st</sup> January, 2023)
 	<ul>
 		<li>Added additional note at the end of <a href="https://www.codeproject.com/Articles/5369565/How-to-Transform-Binary-Files-into-Powershell-Scri#PointsOfInterest">Points of Interest</a> section about a further implementation available also in the Powershell language.</li>	</ul>
-	</li></ul>
+	</li>
+	
+	<li>V1.0.3 (15<sup>th</sup> April, 2026)
+	<ul>
+		<li>Added Amiga Video Backup System videos on YouTube.</li>	</ul>
+	</li>
+	
+	</ul>
 
 
 
