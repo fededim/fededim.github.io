@@ -1,6 +1,16 @@
 <?xml version="1.0"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 	<url>
+		<loc>https://fededim.github.io/ads.txt</loc>
+		<lastmod>2026-04-30T15:14:03.1067607+02:00</lastmod>
+		<priority>1.00</priority>
+	</url>
+	<url>
+		<loc>https://fededim.github.io/b90e22c7680d4d4fbf051bc68004064e.txt</loc>
+		<lastmod>2025-03-04T17:03:44.6012323+01:00</lastmod>
+		<priority>1.00</priority>
+	</url>
+	<url>
 		<loc>https://fededim.github.io/golf_mk7_facelift_retrofits.html</loc>
 		<lastmod>2026-04-30T15:11:44.9877127+02:00</lastmod>
 		<priority>1.00</priority>
@@ -38,6 +48,11 @@
 	<url>
 		<loc>https://fededim.github.io/README.md</loc>
 		<lastmod>2025-03-09T14:57:04.6103711+01:00</lastmod>
+		<priority>1.00</priority>
+	</url>
+	<url>
+		<loc>https://fededim.github.io/robots.txt</loc>
+		<lastmod>2024-11-12T21:11:36.9059603+01:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
@@ -196,6 +211,11 @@
 		<priority>1.00</priority>
 	</url>
 	<url>
+		<loc>https://fededim.github.io/Images/Federico_Di_Marco_Lugano_2023.jpeg</loc>
+		<lastmod>2023-07-22T19:09:23.6194157+02:00</lastmod>
+		<priority>1.00</priority>
+	</url>
+	<url>
 		<loc>https://fededim.github.io/Retrofits/Golf_MK7.5/FullBackup_PXA_WVWZZZAUZHP345715_20250909T235845.html</loc>
 		<lastmod>2025-10-25T11:15:30.4879110+02:00</lastmod>
 		<priority>1.00</priority>
@@ -253,6 +273,16 @@
 	<url>
 		<loc>https://fededim.github.io/TipsAndTricks/VPNScripter_%20A%20Scripter%20for%20Windows'%20VPN%20Connections-%20CodeProject.html</loc>
 		<lastmod>2026-04-30T15:10:20.2097164+02:00</lastmod>
+		<priority>1.00</priority>
+	</url>
+	<url>
+		<loc>https://fededim.github.io/TipsAndTricks/How%20to%20Enable%20Bitlocker%20Hardware%20Encryption%20on%20SEDs-%20CodeProject_files/BlockSID_disabled_for_the_next_boot.jpeg</loc>
+		<lastmod>2024-11-02T10:01:20.4012108+01:00</lastmod>
+		<priority>1.00</priority>
+	</url>
+	<url>
+		<loc>https://fededim.github.io/TipsAndTricks/How%20to%20Enable%20Bitlocker%20Hardware%20Encryption%20on%20SEDs-%20CodeProject_files/Hardware_encryption_on_Samsung_990_PRO_2.jpeg</loc>
+		<lastmod>2024-11-02T10:02:11.0695971+01:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
