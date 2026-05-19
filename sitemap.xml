@@ -67,7 +67,7 @@
 	</url>
 	<url>
 		<loc>https://fededim.github.io/various_pictures.html</loc>
-		<lastmod>2026-05-06T12:22:18.7574403+02:00</lastmod>
+		<lastmod>2026-05-20T01:27:01.7803258+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
@@ -81,7 +81,7 @@
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Articles/How%20to%20Transform%20Binary%20Files%20into%20Powershell%20Script(s)%20in%20Order%20to%20Copy%20them%20Silently%20on%20a%20Server-%20CodeProject.html</loc>
+		<loc>https://fededim.github.io/Articles/How%20to%20Transform%20Binary%20Files%20into%20Powershell%20Script%28s%29%20in%20Order%20to%20Copy%20them%20Silently%20on%20a%20Server-%20CodeProject.html</loc>
 		<lastmod>2026-04-30T15:11:58.8567682+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
@@ -106,7 +106,7 @@
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Certificates/Degrees/Certificate%20of%20master%20degree%20in%20computer%20science%20at%20university%20of%20Genova%20(old).pdf</loc>
+		<loc>https://fededim.github.io/Certificates/Degrees/Certificate%20of%20master%20degree%20in%20computer%20science%20at%20university%20of%20Genova%20%28old%29.pdf</loc>
 		<lastmod>2017-05-16T16:42:23.8293946+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
@@ -116,7 +116,7 @@
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Certificates/Degrees/Certificate%20of%20master%20degree%20in%20computer%20science%20at%20university%20of%20Udine%20(old).pdf</loc>
+		<loc>https://fededim.github.io/Certificates/Degrees/Certificate%20of%20master%20degree%20in%20computer%20science%20at%20university%20of%20Udine%20%28old%29.pdf</loc>
 		<lastmod>2017-05-16T16:44:01.6452751+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
@@ -271,13 +271,13 @@
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Images/Besio_Serra_Meletti.jpg</loc>
-		<lastmod>2026-04-26T01:12:31.7448738+02:00</lastmod>
+		<loc>https://fededim.github.io/Images/Besio_Serra_Meletti_AI_Upscaled.jpg</loc>
+		<lastmod>2026-04-26T01:13:46.2720533+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Images/Besio_Serra_Meletti_AI_Upscaled.jpg</loc>
-		<lastmod>2026-04-26T01:13:46.2720533+02:00</lastmod>
+		<loc>https://fededim.github.io/Images/Besio_Serra_Meletti.jpg</loc>
+		<lastmod>2026-04-26T01:12:31.7448738+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
@@ -301,23 +301,23 @@
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Images/Campania_Woman_Sharm.jpg</loc>
-		<lastmod>2026-04-15T13:22:11.5045713+02:00</lastmod>
-		<priority>1.00</priority>
-	</url>
-	<url>
 		<loc>https://fededim.github.io/Images/Campania_Woman_Sharm_2.jpg</loc>
 		<lastmod>2026-04-15T13:23:02.4848422+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Images/Campo_di_giove.jpg</loc>
-		<lastmod>2013-08-21T10:21:02.0000000+02:00</lastmod>
+		<loc>https://fededim.github.io/Images/Campania_Woman_Sharm.jpg</loc>
+		<lastmod>2026-04-15T13:22:11.5045713+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Images/Campo_di_giove_1.jpg</loc>
 		<lastmod>2013-08-21T10:20:34.0000000+02:00</lastmod>
+		<priority>1.00</priority>
+	</url>
+	<url>
+		<loc>https://fededim.github.io/Images/Campo_di_giove_10.jpg</loc>
+		<lastmod>2026-05-20T01:12:06.5012562+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
@@ -366,6 +366,11 @@
 		<priority>1.00</priority>
 	</url>
 	<url>
+		<loc>https://fededim.github.io/Images/Campo_di_giove.jpg</loc>
+		<lastmod>2013-08-21T10:21:02.0000000+02:00</lastmod>
+		<priority>1.00</priority>
+	</url>
+	<url>
 		<loc>https://fededim.github.io/Images/Canary_Island_Picture.jpg</loc>
 		<lastmod>2026-02-03T21:38:38.0293022+01:00</lastmod>
 		<priority>1.00</priority>
@@ -381,12 +386,12 @@
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Images/Claudia_Rovani.jpg</loc>
+		<loc>https://fededim.github.io/Images/Claudia_Rovani_With_Ceraudo.jpg</loc>
 		<lastmod>2025-10-25T11:15:30.4581873+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Images/Claudia_Rovani_With_Ceraudo.jpg</loc>
+		<loc>https://fededim.github.io/Images/Claudia_Rovani.jpg</loc>
 		<lastmod>2025-10-25T11:15:30.4581873+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
@@ -401,13 +406,13 @@
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Images/Dinner_Christmas_Eve.jpg</loc>
-		<lastmod>2018-01-29T17:28:16.0000000+01:00</lastmod>
+		<loc>https://fededim.github.io/Images/Di_Marco_Walter_student_record_book.jpg</loc>
+		<lastmod>2024-12-26T18:21:35.4951148+01:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Images/Di_Marco_Walter_student_record_book.jpg</loc>
-		<lastmod>2024-12-26T18:21:35.4951148+01:00</lastmod>
+		<loc>https://fededim.github.io/Images/Dinner_Christmas_Eve.jpg</loc>
+		<lastmod>2018-01-29T17:28:16.0000000+01:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
@@ -416,13 +421,18 @@
 		<priority>1.00</priority>
 	</url>
 	<url>
+		<loc>https://fededim.github.io/Images/Fabrizio_Rizza_AI_Upscaled.jpg</loc>
+		<lastmod>2026-04-26T01:24:27.7413777+02:00</lastmod>
+		<priority>1.00</priority>
+	</url>
+	<url>
 		<loc>https://fededim.github.io/Images/Fabrizio_Rizza.jpg</loc>
 		<lastmod>2025-12-26T14:24:39.2872133+01:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Images/Fabrizio_Rizza_AI_Upscaled.jpg</loc>
-		<lastmod>2026-04-26T01:24:27.7413777+02:00</lastmod>
+		<loc>https://fededim.github.io/Images/Family_Levanto.jpg</loc>
+		<lastmod>2026-05-20T01:08:18.6647913+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
@@ -496,13 +506,13 @@
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Images/Federico_Di_Marco_Bergen_2011.jpg</loc>
-		<lastmod>2026-03-09T10:49:12.4113390+01:00</lastmod>
+		<loc>https://fededim.github.io/Images/Federico_Di_Marco_Bergen_2011_bis.jpg</loc>
+		<lastmod>2026-03-09T10:49:06.2999698+01:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Images/Federico_Di_Marco_Bergen_2011_bis.jpg</loc>
-		<lastmod>2026-03-09T10:49:06.2999698+01:00</lastmod>
+		<loc>https://fededim.github.io/Images/Federico_Di_Marco_Bergen_2011.jpg</loc>
+		<lastmod>2026-03-09T10:49:12.4113390+01:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
@@ -516,13 +526,13 @@
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Images/Federico_Di_Marco_Lyceum_GD_Cassini_5_Section_F.jpg</loc>
-		<lastmod>2026-03-08T20:49:36.1378276+01:00</lastmod>
+		<loc>https://fededim.github.io/Images/Federico_Di_Marco_Lyceum_GD_Cassini_5_Section_F_Telephone_Numbers.jpg</loc>
+		<lastmod>2026-03-08T20:31:14.0000000+01:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Images/Federico_Di_Marco_Lyceum_GD_Cassini_5_Section_F_Telephone_Numbers.jpg</loc>
-		<lastmod>2026-03-08T20:31:14.0000000+01:00</lastmod>
+		<loc>https://fededim.github.io/Images/Federico_Di_Marco_Lyceum_GD_Cassini_5_Section_F.jpg</loc>
+		<lastmod>2026-05-20T01:18:11.4075781+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
@@ -536,13 +546,13 @@
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Images/Flight_baptism.jpg</loc>
-		<lastmod>2025-01-01T18:05:50.9979747+01:00</lastmod>
+		<loc>https://fededim.github.io/Images/Flight_baptism_2.jpg</loc>
+		<lastmod>2025-01-01T18:05:24.4697515+01:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Images/Flight_baptism_2.jpg</loc>
-		<lastmod>2025-01-01T18:05:24.4697515+01:00</lastmod>
+		<loc>https://fededim.github.io/Images/Flight_baptism.jpg</loc>
+		<lastmod>2025-01-01T18:05:50.9979747+01:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
@@ -591,13 +601,13 @@
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Images/Luca_Lastri.jpg</loc>
-		<lastmod>2026-02-25T20:03:42.2354372+01:00</lastmod>
+		<loc>https://fededim.github.io/Images/Luca_Lastri_Elisa_AI_Upscaled.jpg</loc>
+		<lastmod>2026-05-02T10:31:13.7142446+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Images/Luca_Lastri_Elisa_AI_Upscaled.jpg</loc>
-		<lastmod>2026-05-02T10:31:13.7142446+02:00</lastmod>
+		<loc>https://fededim.github.io/Images/Luca_Lastri.jpg</loc>
+		<lastmod>2026-02-25T20:03:42.2354372+01:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
@@ -626,13 +636,13 @@
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Images/Marco_Pallavicino_Chiara_Ghersi.jpg</loc>
-		<lastmod>2026-04-26T01:06:40.1459101+02:00</lastmod>
+		<loc>https://fededim.github.io/Images/Marco_Pallavicino_Chiara_Ghersi_AI_Upscaled.jpg</loc>
+		<lastmod>2026-04-26T01:08:10.8920016+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Images/Marco_Pallavicino_Chiara_Ghersi_AI_Upscaled.jpg</loc>
-		<lastmod>2026-04-26T01:08:10.8920016+02:00</lastmod>
+		<loc>https://fededim.github.io/Images/Marco_Pallavicino_Chiara_Ghersi.jpg</loc>
+		<lastmod>2026-04-26T01:06:40.1459101+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
@@ -651,13 +661,13 @@
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Images/Navarra_Muzi.jpg</loc>
-		<lastmod>2026-05-02T10:27:25.5815308+02:00</lastmod>
+		<loc>https://fededim.github.io/Images/Navarra_Muzi_AI_Upscale.jpg</loc>
+		<lastmod>2026-05-02T11:47:49.6805393+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Images/Navarra_Muzi_AI_Upscale.jpg</loc>
-		<lastmod>2026-05-02T11:47:49.6805393+02:00</lastmod>
+		<loc>https://fededim.github.io/Images/Navarra_Muzi.jpg</loc>
+		<lastmod>2026-05-02T10:27:25.5815308+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
@@ -668,11 +678,6 @@
 	<url>
 		<loc>https://fededim.github.io/Images/Obd11_long_coding.jpg</loc>
 		<lastmod>2025-11-06T09:10:06.8870607+01:00</lastmod>
-		<priority>1.00</priority>
-	</url>
-	<url>
-		<loc>https://fededim.github.io/Images/OdisEngineering.jpg</loc>
-		<lastmod>2025-05-28T18:57:12.0000000+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
@@ -693,6 +698,11 @@
 	<url>
 		<loc>https://fededim.github.io/Images/Odis_flashing.jpg</loc>
 		<lastmod>2025-11-06T10:33:11.4762970+01:00</lastmod>
+		<priority>1.00</priority>
+	</url>
+	<url>
+		<loc>https://fededim.github.io/Images/OdisEngineering.jpg</loc>
+		<lastmod>2025-05-28T18:57:12.0000000+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
@@ -746,13 +756,13 @@
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Images/Roberto_Bazzoni_Giovanna_Pischedda.jpg</loc>
-		<lastmod>2026-04-26T01:01:03.8733959+02:00</lastmod>
+		<loc>https://fededim.github.io/Images/Roberto_Bazzoni_Giovanna_Pischedda_AI_Upscaled.jpg</loc>
+		<lastmod>2026-04-26T01:01:47.4854944+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Images/Roberto_Bazzoni_Giovanna_Pischedda_AI_Upscaled.jpg</loc>
-		<lastmod>2026-04-26T01:01:47.4854944+02:00</lastmod>
+		<loc>https://fededim.github.io/Images/Roberto_Bazzoni_Giovanna_Pischedda.jpg</loc>
+		<lastmod>2026-04-26T01:01:03.8733959+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
@@ -776,13 +786,13 @@
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Images/Stefania_Serra_Giovanna_Pischedda.jpg</loc>
-		<lastmod>2026-04-26T00:54:22.5266447+02:00</lastmod>
+		<loc>https://fededim.github.io/Images/Stefania_Serra_Giovanna_Pischedda_AI_Upscaled.jpg</loc>
+		<lastmod>2026-04-26T00:55:40.3929437+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Images/Stefania_Serra_Giovanna_Pischedda_AI_Upscaled.jpg</loc>
-		<lastmod>2026-04-26T00:55:40.3929437+02:00</lastmod>
+		<loc>https://fededim.github.io/Images/Stefania_Serra_Giovanna_Pischedda.jpg</loc>
+		<lastmod>2026-04-26T00:54:22.5266447+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
@@ -791,13 +801,13 @@
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Images/The_last_supper.jpg</loc>
-		<lastmod>2026-03-29T12:03:07.8208856+02:00</lastmod>
+		<loc>https://fededim.github.io/Images/The_last_supper_AI_Upscaled.jpg</loc>
+		<lastmod>2026-04-28T13:14:55.6425859+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Images/The_last_supper_AI_Upscaled.jpg</loc>
-		<lastmod>2026-04-28T13:14:55.6425859+02:00</lastmod>
+		<loc>https://fededim.github.io/Images/The_last_supper.jpg</loc>
+		<lastmod>2026-03-29T12:03:07.8208856+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
@@ -926,7 +936,7 @@
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/TipsAndTricks/VPNScripter_%20A%20Scripter%20for%20Windows'%20VPN%20Connections-%20CodeProject.html</loc>
+		<loc>https://fededim.github.io/TipsAndTricks/VPNScripter_%20A%20Scripter%20for%20Windows%27%20VPN%20Connections-%20CodeProject.html</loc>
 		<lastmod>2026-04-30T15:10:20.2097164+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
@@ -1071,23 +1081,23 @@
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Various/Email_1_Curriculum_Escobar.pdf</loc>
-		<lastmod>2026-04-26T11:57:23.0192358+02:00</lastmod>
-		<priority>1.00</priority>
-	</url>
-	<url>
 		<loc>https://fededim.github.io/Various/Email_1_Curriculum_Escobar_Failure.pdf</loc>
 		<lastmod>2026-04-26T12:00:19.3092736+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Various/Email_2_Curriculum_Escobar.pdf</loc>
-		<lastmod>2026-04-26T12:00:42.1693698+02:00</lastmod>
+		<loc>https://fededim.github.io/Various/Email_1_Curriculum_Escobar.pdf</loc>
+		<lastmod>2026-04-26T11:57:23.0192358+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Various/Email_2_Curriculum_Escobar_Failure.pdf</loc>
 		<lastmod>2026-04-26T12:00:56.8453718+02:00</lastmod>
+		<priority>1.00</priority>
+	</url>
+	<url>
+		<loc>https://fededim.github.io/Various/Email_2_Curriculum_Escobar.pdf</loc>
+		<lastmod>2026-04-26T12:00:42.1693698+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
@@ -1156,12 +1166,12 @@
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Various/Messaggio%20insolito%20Danilo%20Quaranta.jpg</loc>
+		<loc>https://fededim.github.io/Various/Messaggio%20insolito%20Danilo%20Quaranta_BIs.jpg</loc>
 		<lastmod>2025-10-25T11:15:30.5194293+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
-		<loc>https://fededim.github.io/Various/Messaggio%20insolito%20Danilo%20Quaranta_BIs.jpg</loc>
+		<loc>https://fededim.github.io/Various/Messaggio%20insolito%20Danilo%20Quaranta.jpg</loc>
 		<lastmod>2025-10-25T11:15:30.5194293+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
