@@ -42,7 +42,7 @@
 	</url>
 	<url>
 		<loc>https://fededim.github.io/personal_note_working_at_igo.html</loc>
-		<lastmod>2026-11-09T10:12:40.3953976+01:00</lastmod>
+		<lastmod>2026-11-10T12:50:55.8048024+01:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
@@ -67,7 +67,7 @@
 	</url>
 	<url>
 		<loc>https://fededim.github.io/various_pictures.html</loc>
-		<lastmod>2026-08-20T00:36:20.2094043+02:00</lastmod>
+		<lastmod>2026-11-10T12:48:12.9669316+01:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
@@ -621,6 +621,11 @@
 		<priority>1.00</priority>
 	</url>
 	<url>
+		<loc>https://fededim.github.io/Images/Garage_Blocked_1.jpg</loc>
+		<lastmod>2013-12-26T16:39:18.0000000+01:00</lastmod>
+		<priority>1.00</priority>
+	</url>
+	<url>
 		<loc>https://fededim.github.io/Images/Garage_blocked.jpg</loc>
 		<lastmod>2013-12-26T16:39:18.0000000+01:00</lastmod>
 		<priority>1.00</priority>
@@ -733,6 +738,11 @@
 	<url>
 		<loc>https://fededim.github.io/Images/Navarra_Muzi.jpg</loc>
 		<lastmod>2026-05-02T10:27:25.5815308+02:00</lastmod>
+		<priority>1.00</priority>
+	</url>
+	<url>
+		<loc>https://fededim.github.io/Images/Niagara_Falls.jpg</loc>
+		<lastmod>2012-07-25T22:31:31.9593432+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
@@ -1182,7 +1192,7 @@
 	</url>
 	<url>
 		<loc>https://fededim.github.io/Various/Annotated_Birth_Certificate_Claudia_Bonifazio.pdf</loc>
-		<lastmod>2026-10-22T14:54:14.5456404+02:00</lastmod>
+		<lastmod>2026-11-10T11:50:52.3551075+01:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
@@ -1198,6 +1208,11 @@
 	<url>
 		<loc>https://fededim.github.io/Various/Annotated_Birth_Certificate_Cristina_De_Marco.pdf</loc>
 		<lastmod>2026-04-28T01:13:13.5474469+02:00</lastmod>
+		<priority>1.00</priority>
+	</url>
+	<url>
+		<loc>https://fededim.github.io/Various/Annotated_Birth_Certificate_Daniele_Scali.pdf</loc>
+		<lastmod>2026-08-21T17:40:57.5017447+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
@@ -1226,8 +1241,18 @@
 		<priority>1.00</priority>
 	</url>
 	<url>
+		<loc>https://fededim.github.io/Various/Annotated_Birth_Certificate_Fabio_Risso_Luigino.pdf</loc>
+		<lastmod>2026-03-17T18:00:20.3613239+01:00</lastmod>
+		<priority>1.00</priority>
+	</url>
+	<url>
 		<loc>https://fededim.github.io/Various/Annotated_Birth_Certificate_Federico_Di_Marco.pdf</loc>
 		<lastmod>2026-04-26T01:23:20.1495450+02:00</lastmod>
+		<priority>1.00</priority>
+	</url>
+	<url>
+		<loc>https://fededim.github.io/Various/Annotated_Birth_Certificate_Francesco_Neri.pdf</loc>
+		<lastmod>2026-05-25T14:26:17.1857022+02:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
@@ -1336,6 +1361,11 @@
 		<priority>1.00</priority>
 	</url>
 	<url>
+		<loc>https://fededim.github.io/Various/Annotated_Birth_Certificate_Raffaella_Marletta.pdf</loc>
+		<lastmod>2026-09-18T11:10:08.5656524+02:00</lastmod>
+		<priority>1.00</priority>
+	</url>
+	<url>
 		<loc>https://fededim.github.io/Various/Annotated_Birth_Certificate_Roberta_Grillo.pdf</loc>
 		<lastmod>2026-06-09T14:07:36.8667807+02:00</lastmod>
 		<priority>1.00</priority>
@@ -1343,6 +1373,11 @@
 	<url>
 		<loc>https://fededim.github.io/Various/Annotated_Birth_Certificate_Roberto_Bazzoni.pdf</loc>
 		<lastmod>2026-03-17T01:32:46.0148123+01:00</lastmod>
+		<priority>1.00</priority>
+	</url>
+	<url>
+		<loc>https://fededim.github.io/Various/Annotated_Birth_Certificate_Sara_Meloni.pdf</loc>
+		<lastmod>2026-03-23T11:33:31.6905782+01:00</lastmod>
 		<priority>1.00</priority>
 	</url>
 	<url>
