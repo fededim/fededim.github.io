@@ -1,0 +1,1114 @@
+Delivered-To: fededim@gmail.com
+Received: by 10.236.109.135 with SMTP id s7cs1937yhg;
+        Tue, 19 Oct 2010 03:05:50 -0700 (PDT)
+Return-Path: <fabri.rizza@gmail.com>
+Received-SPF: pass (google.com: domain of fabri.rizza@gmail.com designates 10.231.157.212 as permitted sender) client-ip=10.231.157.212;
+Authentication-Results: mr.google.com; spf=pass (google.com: domain of fabri.rizza@gmail.com designates 10.231.157.212 as permitted sender) smtp.mail=fabri.rizza@gmail.com; dkim=pass header.i=fabri.rizza@gmail.com
+Received: from mr.google.com ([10.231.157.212])
+        by 10.231.157.212 with SMTP id c20mr4483059ibx.186.1287482749248 (num_hops = 1);
+        Tue, 19 Oct 2010 03:05:49 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=gamma;
+        h=domainkey-signature:mime-version:received:received:in-reply-to
+         :references:date:message-id:subject:from:to:content-type;
+        bh=AsEc8wzz8E53FAH2SC2L39rzJCZ5HJrS/465JKMhBFk=;
+        b=dW4vQNJmZ55+zl0frPjWFHUBY3SiUlvW0HXj7HMT487KSwDgsCLjfDVEGaT52NbgWJ
+         ldwLJooyokvthZQqDhexnp+wGnq7WCi1H2dI5fOrNQK9AxLsYrXhq44ORTUgmgUnuW5Z
+         NAfr+v/Ohvz3Gm7cZJ1HNMO0v2EAPN6k8gqy8=
+DomainKey-Signature: a=rsa-sha1; c=nofws;
+        d=gmail.com; s=gamma;
+        h=mime-version:in-reply-to:references:date:message-id:subject:from:to
+         :content-type;
+        b=KIJAhw8wijRq+6yGBY6Tw9h8waQsGppN6eqizX0JVQtYZpRfpXMiRFKRr+DyxOACoJ
+         HzKxc5iBPq7RUnsG2OqW5Vzff66xuCP+dHzNbkoH/RZP0QkYilUJjIKJd7thFgrTpxhf
+         u6pBenffhIK1wP9qDtS2UyEQ4KM+M1P8CKoL8=
+MIME-Version: 1.0
+Received: by 10.231.157.212 with SMTP id c20mr4483059ibx.186.1287482749232;
+ Tue, 19 Oct 2010 03:05:49 -0700 (PDT)
+Received: by 10.231.36.75 with HTTP; Tue, 19 Oct 2010 03:05:49 -0700 (PDT)
+In-Reply-To: <31AB69399D764654A202718E4713C06E@GruppoSigla.it>
+References: <31AB69399D764654A202718E4713C06E@GruppoSigla.it>
+Date: Tue, 19 Oct 2010 12:05:49 +0200
+Message-ID: <AANLkTi=3h9DvJ_U=wM=epmiz2DX6NNBhYJsq78Eh0EFu@mail.gmail.com>
+Subject: Fwd: ITIL v3 - Workshop 22.10.'10
+From: Fabrizio Rizza <fabri.rizza@gmail.com>
+To: Federico Di Marco <fededim@gmail.com>
+Content-Type: multipart/related; boundary=0050450168c8ec28590492f56f10
+
+--0050450168c8ec28590492f56f10
+Content-Type: multipart/alternative; boundary=0050450168c8ec28510492f56f0f
+
+--0050450168c8ec28510492f56f0f
+Content-Type: text/plain; charset=windows-1252
+Content-Transfer-Encoding: quoted-printable
+
+forse ti pu=F2 interessare.
+
+Ciao
+
+---------- Messaggio inoltrato ----------
+Da: Segreter=ECa Gruppo SIGLA <info@grupposigla.it>
+Date: 19 ottobre 2010 10:25
+Oggetto: ITIL v3 - Workshop 22.10.'10
+A: Info Gruppo SIGLA <info@grupposigla.it>
+
+
+ Buongiorno.
+
+Come preannunciato,  il prossimo *Venerd=EC 22 Ottobre *si terr=E0 il Works=
+hop:
+**
+*Le applicazioni delle Best Practices* *ITIL v3*.
+
+Sotto potete vedere il programma dell'evento che, previa iscrizione come
+indicato, =E8 *gratuito*.
+Sono previsti numerosi *"case studies*".
+
+Grazie e buona giornata.
+
+Segreter=ECa Organizzativa
+Gruppo SIGLA SrL
+
+***************
+
+
+        [image: http://www.grupposigla.it/promo/mp_logo.gif]
+
+Non riesci a visualizzare questa
+mail?<http://www.grupposigla.it/gs2008/promo/mpromo_23.htm>
+
+*Ottobre 2010*
+
+Visita il nostro Sito <http://www.grupposigla.it> |
+Contattaci<info@grupposigla.it>
+
+*Workshop gratuito: Le applicazioni delle Best Practices ITIL v3*
+
+*Gruppo SIGLA*, in collaborazione con *Quint Wellington Redwood*, continua
+il percorso di approfondimento delle tematiche* ITIL* e propone una giornat=
+a
+di apprendimento dal titolo:
+
+*Le applicazioni delle Best Practices ITIL v3*
+
+
+Le Best Practices *ITIL v3* rappresentano l=92insieme delle linee guida e
+delle raccomandazioni da seguire per riuscire a creare coerenza tra le
+attivit=E0 svolte dalla Divisione IT (e/o dagli IT Service Provider) e le
+esigenze delle Direzioni di Business. Il tasso di adozione di* ITIL v3* =E8=
+ in
+continua crescita anche nel nostro paese, ma la complessit=E0 e la vastit=
+=E0
+degli argomenti trattati da ITIL possono rendere ancora oggi difficoltosa l=
+a
+comprensione di quali siano le possibili applicazioni pratiche e i benefici
+che ne possono derivare.
+
+Il seminario proposto ha lo scopo di illustrare le diverse esperienze fatte
+da aziende che gi=E0 hanno iniziato il percorso di adozione di* ITIL v3* al
+loro interno, tramite una serie di esempi sulle principali applicazioni
+pratiche, in diversi Settori di Mercato, focalizzate sui seguenti processi:
+
+*=BB* La gestione delle relazioni con il Cliente
+*=BB* La gestione della rete dei fornitori di servizi IT
+*=BB* La valutazione delle Performances
+*=BB* L=92integrazione tra il sistema di gestione dei servizi IT e il Siste=
+ma di
+Gestione Qualit=E0 aziendale
+
+I contenuti sono rivolti in particolar modo ai Direttori IT, EDP Manager,
+Service Operation Manager, Consultants, Responsabili dell=92Organizzazione =
+ed
+Utenti Finali.
+
+La giornata si svolger=E0 *Venerdi* *22 Ottobre a Genova* presso:
+*Romantik Hotel Villa Pagoda <http://www.villapagoda.it>*
+Via Capolungo 15,  16167 Nervi - GE
+*Sala Parchi*
+cliccare per visualizzare la
+cartina<http://maps.google.it/maps?f=3Dq&source=3Ds_q&hl=3Dit&q=3DVia+Capol=
+ungo,+15,+16167+Genova,+Liguria&sll=3D41.442726,12.392578&sspn=3D16.129464,=
+28.256836&ie=3DUTF8&cd=3D1&geocode=3DFbU0pQIdwhGKAA&split=3D0&ll=3D44.38278=
+1,9.048507&spn=3D0.007514,0.013797&z=3D16&iwloc=3Dr1>
+
+La giornata =E8 gratuita, previa iscrizione alla segreteria organizzativa
+dell=92evento all=92indirizzo:
+http://www.grupposigla.it/modulo.htm
+
+*Agenda***
+
+h. 09,00
+
+*Registrazione dei Partecipanti*
+
+h. 09,15
+
+*Benvenuto e Introduzione Lavori *
+*Aldo Loiaconi - Presidente - Gruppo SIGLA,**
+Stefano Cappi - Responsabile Vendite - Quint Wellington Redwood *
+
+h. 09,30
+
+*ITIL V3*: Descrizione sintetica del framework
+*Giovanni Sadun - Senior Consultant & Trainer - Quint Wellington Redwood*
+
+h. 10,15
+
+*ITIL ed il mercato*: ITIL nel mondo e in Italia
+*Giovanni Sadun*
+
+h. 10,45
+
+*Coffe Break*
+
+h. 11,15
+
+*Il valore aggiunto dell=92utilizzo di ITIL*: Come l=92implementazione di u=
+n
+sistema di gestione orientato alle Performance pu=F2 migliorare le relazion=
+i
+con il Cliente.
+*Giovanni Sadun*
+
+h. 12,00
+
+*Applicazioni pratiche 1: *Elsag Datamat e la gestione del Cliente:
+Progettazione, Realizzazione, Delivery e Monitoraggio del servizio di
+Gestione dei prodotti Finanziari - *Case Study: Neos Finance*
+*Maurizio Gatti - Project Manager - Elsag Datamat; *
+*Gianluca Rossi - Service Manager - Elsag Datamat*
+
+h. 12,30
+
+*Domande e Dibattito*
+
+h. 13,00
+
+*Pranzo a buffet*
+
+h. 14,00
+
+*Applicazioni pratiche 2: *La gestione della rete dei fornitori di servizi
+IT *- **Case Study: RFI*
+*Giovanni Sadun*
+
+h. 14,45
+
+*Applicazioni pratiche 3: *La pianificazione come strumento di
+ottimizzazione delle attivit=E0 di assistenza tecnica - *Case study: SISAL*
+*Raffaele Ioio - Responsabile Sistemi CRM - SISAL*
+*Maria Grazia Fiorani - Responsabile Enterprise Business Solutions - Gruppo
+SIGLA*
+
+h. 15,20
+
+*Applicazioni pratiche 4: *L=92integrazione tra il sistema di gestione dei
+servizi IT e il Sistema di Gestione Qualit=E0 - *Case Study: TSF*
+*Giovanni Sadun*
+
+h. 16,00
+
+*Sessione di domande e risposte e chiusura lavori*
+
+[image: http://www.grupposigla.it/promo/mp_03.gif]
+
+*Gruppo SIGLA*
+
+*Gruppo SIGLA* =E8 un=92azienda privata, composta da pi=F9 di 60 tecnici co=
+n
+elevata specializzazione ed esperienza in ambito Information Technology, ch=
+e
+progetta e sviluppa soluzioni informatiche per aziende ed enti pubblici:
+presta la propria collaborazione essenzialmente per Grandi Clienti con sedi
+a Genova e in Liguria, nel resto d=92Italia ed all=92estero.
+
+*Gruppo SIGLA* =E8 in grado di fornire soluzioni e servizi in ambito
+informatico, coprendo tutto il ciclo di vita: dall=92analisi dei requisiti
+alla realizzazione degli studi di fattibilit=E0, dalla progettazione (hardw=
+are
+e software) all=92integrazione e configurazione dei sistemi, dalla
+realizzazione di =93applicazioni software dedicate=94 all=92installazione e=
+ messa
+in opera delle stesse presso gli utenti finali.
+
+[image: http://www.grupposigla.it/promo/mp_04.gif]
+
+
+
+[image: http://www.grupposigla.it/promo/mp_03.gif]
+
+*Quint*
+
+*Quint Wellington Redwood* =96 o pi=F9 semplicemente *Quint* =96 =E8 stata =
+fondata
+nel 1992 nei Paesi Bassi, per supportare le imprese nel massimizzare il
+ritorno dei loro investimenti pi=F9 rilevanti nell=92ambito dell=92Informat=
+ion
+Technology.
+
+*Quint* si caratterizza per essere un=92azienda di consulenza manageriale
+indipendente, specializzata nella risoluzione di problematiche organizzativ=
+e
+in ambito IT. Attraverso un network globale di quindici sedi Quint fornisce
+servizi di consulenza e formazione in tutto il mondo.
+
+Grazie alle esperienze sviluppate ed alla presenza locale in Italia,
+*Quint*=E8 in grado di aiutare i propri Clienti a raggiungere un livello
+di
+eccellenza nella gestione del business, tenendo fede alla mission aziendale=
+:
+"Orchestrating Business Excellence".
+
+[image: http://www.grupposigla.it/promo/mp_04.gif]
+
+Se ritenete di aver ricevuto per errore questo messaggio, o se non
+desiderate riceverne altri,
+inviate cortesemente un email vuoto all'indirizzo:* remove@grupposigla.it*
+
+[image: http://www.grupposigla.it/promo/mp_03.gif]
+
+*Gruppo SIGLA Srl*
+Via Finocchiaro Aprile 31/4a - 16129 GE
+Tel:+39.010.589635 Fax:+39.010.5531889
+
+http://www.grupposigla.it
+
+--0050450168c8ec28510492f56f0f
+Content-Type: text/html; charset=windows-1252
+Content-Transfer-Encoding: quoted-printable
+
+forse ti pu=F2 interessare.<br><br>Ciao<br><br><div class=3D"gmail_quote">-=
+--------- Messaggio inoltrato ----------<br>Da: <b class=3D"gmail_sendernam=
+e">Segreter=ECa Gruppo SIGLA</b> <span dir=3D"ltr">&lt;<a href=3D"mailto:in=
+fo@grupposigla.it">info@grupposigla.it</a>&gt;</span><br>
+Date: 19 ottobre 2010 10:25<br>Oggetto: ITIL v3 - Workshop 22.10.&#39;10<br=
+>A: Info Gruppo SIGLA &lt;<a href=3D"mailto:info@grupposigla.it">info@grupp=
+osigla.it</a>&gt;<br><br><br>
+
+
+
+
+
+<div vlink=3D"purple" link=3D"blue" bgcolor=3D"#efefef" lang=3D"IT">
+<div><font face=3D"Arial" size=3D"2">Buongiorno.</font></div>
+<div><font face=3D"Arial" size=3D"2">
+<div><font face=3D"Arial" size=3D"2">
+<div>
+<div align=3D"justify"><font face=3D"Arial" size=3D"2"></font>=A0</div>
+<div align=3D"justify"><font face=3D"Arial" size=3D"2">Come preannunciato,=
+=A0=A0il=20
+prossimo <b><font color=3D"#ff0000">Venerd=EC 22 Ottobre </font></b>si terr=
+=E0=20
+il Workshop:</font></div>
+<div align=3D"justify"><font face=3D"Arial" size=3D"2"><font color=3D"#0000=
+80"><b></b></font></font>=A0</div>
+<div align=3D"justify"><font face=3D"Arial" size=3D"2"><font color=3D"#0000=
+80"><b>Le=20
+applicazioni delle Best Practices</b> <b>ITIL=20
+v3</b></font>.</font></div>
+<div align=3D"justify"><font face=3D"Arial" size=3D"2"></font>=A0</div>
+<div align=3D"justify"><font face=3D"Arial" size=3D"2">Sotto potete vedere =
+il programma=20
+dell&#39;evento che, previa iscrizione come indicato,=A0=E8 <b><font color=
+=3D"#ff0000">gratuito</font></b>.</font></div>
+<div align=3D"justify"><font face=3D"Arial" size=3D"2">Sono previsti numero=
+si <b><font color=3D"#ff0000">&quot;case studies</font></b>&quot;.</font></=
+div>
+<div align=3D"justify"><font face=3D"Arial" size=3D"2"></font>=A0</div>
+<div align=3D"justify"><font face=3D"Arial" size=3D"2">Grazie e buona giorn=
+ata.</font></div>
+<div align=3D"justify">=A0</div>
+<div align=3D"justify">Segreter=ECa Organizzativa</div>
+<div align=3D"justify">Gruppo SIGLA SrL</div>
+<div align=3D"justify">=A0</div>
+<div align=3D"justify">***************</div>
+<div align=3D"justify"><font face=3D"Arial" size=3D"2"></font>=A0</div></di=
+v></font></div></font></div>
+<div><font face=3D"Arial" size=3D"2"></font><br></div>
+<div>
+<table style=3D"background: none repeat scroll 0% 0% rgb(239, 239, 239); wi=
+dth: 100%;" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+>
+  <tbody>
+  <tr>
+    <td style=3D"padding: 0cm;" valign=3D"top">
+      <div align=3D"center">
+      <table style=3D"background: none repeat scroll 0% 0% rgb(248, 250, 24=
+9); width: 468pt;" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" width=
+=3D"780">
+        <tbody>
+        <tr>
+          <td style=3D"padding: 0cm 13.8pt;">
+            <div align=3D"center">
+            <table style=3D"width: 456pt;" border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" width=3D"760">
+              <tbody>
+              <tr style=3D"min-height: 54.6pt;">
+                <td style=3D"padding: 0cm; width: 314.4pt; min-height: 54.6=
+pt;" width=3D"524">
+                  <p class=3D"MsoNormal"><img alt=3D"http://www.grupposigla=
+.it/promo/mp_logo.gif" src=3D"cid:30087F6A17D746AAAA3F24303F62BA1A@GruppoSi=
+gla.it" width=3D"185" height=3D"71"></p></td>
+                <td style=3D"padding: 0cm; width: 141.6pt; min-height: 54.6=
+pt;" width=3D"236">
+                  <div align=3D"center">
+                  <table style=3D"background: none repeat scroll 0% 0% rgb(=
+248, 250, 249); width: 141.6pt;" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"236">
+                    <tbody>
+                    <tr>
+                      <td style=3D"padding: 0cm 9pt 0cm 0cm; background: no=
+ne repeat scroll 0% 0% rgb(140, 138, 128);" valign=3D"bottom">
+                        <p class=3D"MsoNormal" style=3D"text-align: right;"=
+ align=3D"right"><span style=3D"font-size: 6.5pt; color: white;"><a href=3D=
+"http://www.grupposigla.it/gs2008/promo/mpromo_23.htm" target=3D"_blank"><s=
+pan style=3D"color: white;">Non riesci a visualizzare questa=20
+                        mail?</span></a></span></p></td></tr>
+                    <tr>
+                      <td style=3D"padding: 0cm 9pt 0cm 0cm; background: no=
+ne repeat scroll 0% 0% rgb(140, 138, 128);" valign=3D"bottom">
+                        <p class=3D"MsoNormal" style=3D"text-align: right;"=
+ align=3D"right"><b><span style=3D"font-size: 11pt; color: rgb(201, 223, 24=
+2);">Ottobre=20
+                        2010</span></b><span style=3D"font-size: 11pt; colo=
+r: rgb(201, 223, 242);"></span></p></td></tr>
+                    <tr>
+                      <td style=3D"padding: 0cm 9pt 0cm 0cm; background: no=
+ne repeat scroll 0% 0% rgb(140, 138, 128);" valign=3D"bottom">
+                        <p class=3D"MsoNormal" style=3D"text-align: right;"=
+ align=3D"right"><span style=3D"font-size: 6.5pt; color: white;"><a href=3D=
+"http://www.grupposigla.it" target=3D"_blank"><span style=3D"color: white;"=
+>Visita il nostro Sito</span></a> |=20
+                        <a href=3D"mailto:info@grupposigla.it" target=3D"_b=
+lank"><span style=3D"color: white;">Contattaci</span></a></span></p></td></=
+tr>
+                    <tr style=3D"min-height: 6pt;">
+                      <td style=3D"padding: 0cm; min-height: 6pt;"></td></t=
+r></tbody></table></div></td></tr></tbody></table></div></td></tr>
+        <tr>
+          <td style=3D"padding: 9pt 13.8pt 0cm;">
+            <div align=3D"center">
+            <table style=3D"width: 456pt;" border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" width=3D"760">
+              <tbody>
+              <tr>
+                <td style=3D"padding: 6pt 13.2pt 0cm 0cm; width: 314.4pt;" =
+valign=3D"top" width=3D"524">
+                  <div>
+                  <p class=3D"MsoNormal" style=3D"text-align: center;" alig=
+n=3D"center"><b><span style=3D"color: rgb(242, 174, 46);">Workshop=20
+                  gratuito: Le applicazioni delle Best Practices ITIL=20
+                  v3</span></b><span style=3D"color: rgb(242, 174, 46);"></=
+span></p></div>
+                  <div>
+                  <div>
+                  <p style=3D"line-height: 9pt;"><b><span style=3D"font-siz=
+e: 7pt; color: rgb(51, 51, 51);">Gruppo=20
+                  SIGLA</span></b><span style=3D"font-size: 7pt; color: rgb=
+(51, 51, 51);">,=20
+                  in collaborazione con <b>Quint Wellington Redwood</b>,=20
+                  continua il percorso di approfondimento delle tematiche<b=
+>=20
+                  ITIL</b> e propone una giornata di apprendimento dal=20
+                  titolo:</span></p>
+                  <div>
+                  <p class=3D"MsoNormal" style=3D"text-align: center;" alig=
+n=3D"center"><b><span style=3D"font-size: 13.5pt; color: rgb(67, 141, 209);=
+">Le=20
+                  applicazioni delle Best Practices ITIL v3</span></b><span=
+ style=3D"font-size: 7pt; color: rgb(51, 51, 51);"></span></p></div>
+                  <p class=3D"MsoNormal" style=3D"line-height: 9pt;"><span =
+style=3D"font-size: 7pt; color: rgb(51, 51, 51);"><br>Le=20
+                  Best Practices <b>ITIL v3</b> rappresentano l=92insieme d=
+elle=20
+                  linee guida e delle raccomandazioni da seguire per riusci=
+re a=20
+                  creare coerenza tra le attivit=E0 svolte dalla Divisione =
+IT (e/o=20
+                  dagli IT Service Provider) e le esigenze delle Direzioni =
+di=20
+                  Business. Il tasso di adozione di<b> ITIL v3</b> =E8 in c=
+ontinua=20
+                  crescita anche nel nostro paese, ma la complessit=E0 e la=
+=20
+                  vastit=E0 degli argomenti trattati da ITIL possono render=
+e=20
+                  ancora oggi difficoltosa la comprensione di quali siano l=
+e=20
+                  possibili applicazioni pratiche e i benefici che ne posso=
+no=20
+                  derivare.<br><br>Il seminario proposto ha lo scopo di=20
+                  illustrare le diverse esperienze fatte da aziende che gi=
+=E0=20
+                  hanno iniziato il percorso di adozione di<b> ITIL v3</b> =
+al=20
+                  loro interno, tramite una serie di esempi sulle principal=
+i=20
+                  applicazioni pratiche, in diversi Settori di Mercato,=20
+                  focalizzate sui seguenti processi:<br><br></span><b><span=
+ style=3D"font-size: 7pt; color: rgb(67, 141, 209);">=BB</span></b><span st=
+yle=3D"font-size: 7pt; color: rgb(51, 51, 51);">=20
+                  La gestione delle relazioni con il Cliente<br></span><b><=
+span style=3D"font-size: 7pt; color: rgb(67, 141, 209);">=BB</span></b><spa=
+n style=3D"font-size: 7pt; color: rgb(51, 51, 51);">=20
+                  La gestione della rete dei fornitori di servizi=20
+                  IT<br></span><b><span style=3D"font-size: 7pt; color: rgb=
+(67, 141, 209);">=BB</span></b><span style=3D"font-size: 7pt; color: rgb(51=
+, 51, 51);">=20
+                  La valutazione delle Performances<br></span><b><span styl=
+e=3D"font-size: 7pt; color: rgb(67, 141, 209);">=BB</span></b><span style=
+=3D"font-size: 7pt; color: rgb(51, 51, 51);">=20
+                  L=92integrazione tra il sistema di gestione dei servizi I=
+T e il=20
+                  Sistema di Gestione Qualit=E0 aziendale<br><br>I contenut=
+i sono=20
+                  rivolti in particolar modo ai Direttori IT, EDP Manager,=
+=20
+                  Service Operation Manager, Consultants, Responsabili=20
+                  dell=92Organizzazione ed Utenti=20
+                  Finali.</span></p></div>
+                  <p style=3D"line-height: 9pt; text-align: center;" align=
+=3D"center"><span style=3D"font-size: 7pt; color: rgb(51, 51, 51);">La=20
+                  giornata si svolger=E0 <b>Venerdi</b> <b><span>22 Ottobre=
+ a=20
+                  Genova</span></b> presso:<br><b><span><a href=3D"http://w=
+ww.villapagoda.it" target=3D"_blank">Romantik Hotel=20
+                  Villa Pagoda</a></span></b> <br>Via Capolungo 15,=A0=20
+                  16167 Nervi - GE<br><i><span>Sala=20
+                  Parchi</span></i><br><a href=3D"http://maps.google.it/map=
+s?f=3Dq&amp;source=3Ds_q&amp;hl=3Dit&amp;q=3DVia+Capolungo,+15,+16167+Genov=
+a,+Liguria&amp;sll=3D41.442726,12.392578&amp;sspn=3D16.129464,28.256836&amp=
+;ie=3DUTF8&amp;cd=3D1&amp;geocode=3DFbU0pQIdwhGKAA&amp;split=3D0&amp;ll=3D4=
+4.382781,9.048507&amp;spn=3D0.007514,0.013797&amp;z=3D16&amp;iwloc=3Dr1" ta=
+rget=3D"_blank">cliccare per visualizzare la=20
+                  cartina</a></span></p>
+                  <p class=3D"MsoNormal" style=3D"margin-bottom: 12pt; line=
+-height: 9pt; text-align: center;" align=3D"center"><span style=3D"font-siz=
+e: 7pt; color: rgb(51, 51, 51);">La=20
+                  giornata =E8 gratuita, previa iscrizione alla segreteria=
+=20
+                  organizzativa dell=92evento all=92indirizzo:<br><a href=
+=3D"http://www.grupposigla.it/modulo.htm" target=3D"_blank">http://www.grup=
+posigla.it/modulo.htm</a></span></p>
+                  <table style=3D"width: 297.6pt;" align=3D"left" border=3D=
+"0" cellpadding=3D"0" cellspacing=3D"0" width=3D"496">
+                    <tbody>
+                    <tr>
+                      <td style=3D"padding: 6pt 0cm 3pt;" colspan=3D"2" val=
+ign=3D"top">
+                        <p class=3D"MsoNormal" style=3D"line-height: 9pt;">=
+<b><span style=3D"font-size: 7pt; color: rgb(67, 141, 209);">Agenda</span><=
+/b><b><span style=3D"font-size: 7pt; color: rgb(51, 51, 51);"></span></b></=
+p></td>
+</tr>
+                    <tr>
+                      <td style=3D"padding: 6pt 0cm 3pt;" valign=3D"top">
+                        <p class=3D"MsoNormal" style=3D"line-height: 9pt;">=
+<span style=3D"font-size: 7pt; color: rgb(51, 51, 51);">h.=20
+                        09,00</span></p></td>
+                      <td style=3D"padding: 6pt 0cm 3pt;" valign=3D"top">
+                        <p class=3D"MsoNormal" style=3D"line-height: 9pt;">=
+<b><span style=3D"font-size: 7pt; color: rgb(51, 51, 51);">Registrazione=20
+                        dei Partecipanti</span></b><span style=3D"font-size=
+: 7pt; color: rgb(51, 51, 51);"></span></p></td></tr>
+                    <tr>
+                      <td style=3D"padding: 6pt 0cm 3pt;" valign=3D"top">
+                        <p class=3D"MsoNormal" style=3D"line-height: 9pt;">=
+<span style=3D"font-size: 7pt; color: rgb(51, 51, 51);">h.=20
+                        09,15</span></p></td>
+                      <td style=3D"padding: 6pt 0cm 3pt; width: 267pt;" val=
+ign=3D"top" width=3D"445">
+                        <p class=3D"MsoNormal" style=3D"line-height: 9pt;">=
+<b><span style=3D"font-size: 7pt; color: rgb(51, 51, 51);">Benvenuto=20
+                        e Introduzione Lavori </span></b><span style=3D"fon=
+t-size: 7pt; color: rgb(51, 51, 51);"><br></span><i><span style=3D"font-siz=
+e: 7pt; color: rgb(136, 136, 136);">Aldo=20
+                        Loiaconi - Presidente - Gruppo=20
+                        SIGLA,</span></i><i><span style=3D"font-size: 7pt; =
+color: rgb(136, 136, 136);"><br><i><span>Stefano Cappi=20
+                        - Responsabile Vendite - Quint Wellington Redwood=
+=20
+                        </span></i></span></i><span style=3D"font-size: 7pt=
+; color: rgb(51, 51, 51);"></span></p></td></tr>
+                    <tr>
+                      <td style=3D"padding: 6pt 0cm 3pt; width: 28.2pt;" va=
+lign=3D"top" width=3D"47">
+                        <p class=3D"MsoNormal" style=3D"line-height: 9pt;">=
+<span style=3D"font-size: 7pt; color: rgb(51, 51, 51);">h.=20
+                        09,30</span></p></td>
+                      <td style=3D"padding: 6pt 0cm 3pt;" valign=3D"top">
+                        <p class=3D"MsoNormal" style=3D"line-height: 9pt;">=
+<b><span style=3D"font-size: 7pt; color: rgb(51, 51, 51);">ITIL=20
+                        V3</span></b><span style=3D"font-size: 7pt; color: =
+rgb(51, 51, 51);">:=20
+                        Descrizione sintetica del framework<br></span><i><s=
+pan style=3D"font-size: 7pt; color: rgb(136, 136, 136);">Giovanni=20
+                        Sadun - Senior Consultant &amp; Trainer - Quint=20
+                        Wellington Redwood</span></i><span style=3D"font-si=
+ze: 7pt; color: rgb(51, 51, 51);"></span></p></td></tr>
+                    <tr>
+                      <td style=3D"padding: 6pt 0cm 3pt; width: 28.2pt;" va=
+lign=3D"top" width=3D"47">
+                        <p class=3D"MsoNormal" style=3D"line-height: 9pt;">=
+<span style=3D"font-size: 7pt; color: rgb(51, 51, 51);">h.=20
+                        10,15</span></p></td>
+                      <td style=3D"padding: 6pt 0cm 3pt;" valign=3D"top">
+                        <p class=3D"MsoNormal" style=3D"line-height: 9pt;">=
+<b><span style=3D"font-size: 7pt; color: rgb(51, 51, 51);">ITIL=20
+                        ed il mercato</span></b><span style=3D"font-size: 7=
+pt; color: rgb(51, 51, 51);">:=20
+                        ITIL nel mondo e in Italia<br></span><i><span style=
+=3D"font-size: 7pt; color: rgb(136, 136, 136);">Giovanni=20
+                        Sadun</span></i><span style=3D"font-size: 7pt; colo=
+r: rgb(51, 51, 51);"></span></p></td></tr>
+                    <tr>
+                      <td style=3D"padding: 6pt 0cm 3pt; width: 28.2pt;" va=
+lign=3D"top" width=3D"47">
+                        <p class=3D"MsoNormal" style=3D"line-height: 9pt;">=
+<span style=3D"font-size: 7pt; color: rgb(51, 51, 51);">h.=20
+                        10,45</span></p></td>
+                      <td style=3D"padding: 6pt 0cm 3pt;" valign=3D"top">
+                        <p class=3D"MsoNormal" style=3D"line-height: 9pt;">=
+<b><span style=3D"font-size: 7pt; color: rgb(51, 51, 51);">Coffe=20
+                        Break</span></b><span style=3D"font-size: 7pt; colo=
+r: rgb(51, 51, 51);"></span></p></td></tr>
+                    <tr>
+                      <td style=3D"padding: 6pt 0cm 3pt; width: 28.2pt;" va=
+lign=3D"top" width=3D"47">
+                        <p class=3D"MsoNormal" style=3D"line-height: 9pt;">=
+<span style=3D"font-size: 7pt; color: rgb(51, 51, 51);">h.=20
+                        11,15</span></p></td>
+                      <td style=3D"padding: 6pt 0cm 3pt;" valign=3D"top">
+                        <p class=3D"MsoNormal" style=3D"line-height: 9pt;">=
+<b><span style=3D"font-size: 7pt; color: rgb(51, 51, 51);">Il=20
+                        valore aggiunto dell=92utilizzo di=20
+                        ITIL</span></b><span style=3D"font-size: 7pt; color=
+: rgb(51, 51, 51);">:=20
+                        Come l=92implementazione di un sistema di gestione=
+=20
+                        orientato alle Performance pu=F2 migliorare le rela=
+zioni=20
+                        con il Cliente.<br></span><i><span style=3D"font-si=
+ze: 7pt; color: rgb(136, 136, 136);">Giovanni=20
+                        Sadun</span></i><span style=3D"font-size: 7pt; colo=
+r: rgb(51, 51, 51);"></span></p></td></tr>
+                    <tr>
+                      <td style=3D"padding: 6pt 0cm 3pt; width: 28.2pt;" va=
+lign=3D"top" width=3D"47">
+                        <p class=3D"MsoNormal" style=3D"line-height: 9pt;">=
+<span style=3D"font-size: 7pt; color: rgb(51, 51, 51);">h.=20
+                        12,00</span></p></td>
+                      <td style=3D"padding: 6pt 0cm 3pt;" valign=3D"top">
+                        <p class=3D"MsoNormal" style=3D"line-height: 9pt;">=
+<b><span style=3D"font-size: 7pt; color: rgb(51, 51, 51);">Applicazioni=20
+                        pratiche 1: </span></b><span style=3D"font-size: 7p=
+t; color: rgb(51, 51, 51);">Elsag=20
+                        Datamat e la gestione del Cliente: Progettazione,=
+=20
+                        Realizzazione, Delivery e Monitoraggio del servizio=
+ di=20
+                        Gestione dei prodotti Finanziari - </span><b><span =
+style=3D"font-size: 7pt; color: rgb(67, 141, 209);">Case=20
+                        Study: Neos Finance</span></b><span style=3D"font-s=
+ize: 7pt; color: rgb(51, 51, 51);"><br></span><i><span style=3D"font-size: =
+7pt; color: rgb(136, 136, 136);">Maurizio=20
+                        Gatti - Project Manager - Elsag Datamat;=20
+                        </span></i><span style=3D"font-size: 7pt; color: rg=
+b(136, 136, 136);"><br><i><span>Gianluca Rossi=20
+                        - Service Manager - Elsag=20
+                        Datamat</span></i></span><span style=3D"font-size: =
+7pt; color: rgb(51, 51, 51);"></span></p></td></tr>
+                    <tr>
+                      <td style=3D"padding: 6pt 0cm 3pt; width: 28.2pt;" va=
+lign=3D"top" width=3D"47">
+                        <p class=3D"MsoNormal" style=3D"line-height: 9pt;">=
+<span style=3D"font-size: 7pt; color: rgb(51, 51, 51);">h.=20
+                        12,30</span></p></td>
+                      <td style=3D"padding: 6pt 0cm 3pt;" valign=3D"top">
+                        <p class=3D"MsoNormal" style=3D"line-height: 9pt;">=
+<b><span style=3D"font-size: 7pt; color: rgb(51, 51, 51);">Domande=20
+                        e Dibattito</span></b><span style=3D"font-size: 7pt=
+; color: rgb(51, 51, 51);"></span></p></td></tr>
+                    <tr>
+                      <td style=3D"padding: 6pt 0cm 3pt; width: 28.2pt;" va=
+lign=3D"top" width=3D"47">
+                        <p class=3D"MsoNormal" style=3D"line-height: 9pt;">=
+<span style=3D"font-size: 7pt; color: rgb(51, 51, 51);">h.=20
+                        13,00</span></p></td>
+                      <td style=3D"padding: 6pt 0cm 3pt;" valign=3D"top">
+                        <p class=3D"MsoNormal" style=3D"line-height: 9pt;">=
+<b><span style=3D"font-size: 7pt; color: rgb(51, 51, 51);">Pranzo=20
+                        a buffet</span></b><span style=3D"font-size: 7pt; c=
+olor: rgb(51, 51, 51);"></span></p></td></tr>
+                    <tr>
+                      <td style=3D"padding: 6pt 0cm 3pt; width: 28.2pt;" va=
+lign=3D"top" width=3D"47">
+                        <p class=3D"MsoNormal" style=3D"line-height: 9pt;">=
+<span style=3D"font-size: 7pt; color: rgb(51, 51, 51);">h.=20
+                        14,00</span></p></td>
+                      <td style=3D"padding: 6pt 0cm 3pt;" valign=3D"top">
+                        <p class=3D"MsoNormal" style=3D"line-height: 9pt;">=
+<b><span style=3D"font-size: 7pt; color: rgb(51, 51, 51);">Applicazioni=20
+                        pratiche 2: </span></b><span style=3D"font-size: 7p=
+t; color: rgb(51, 51, 51);">La=20
+                        gestione della rete dei fornitori di servizi IT=20
+                        </span><i><span style=3D"font-size: 7pt; color: rgb=
+(136, 136, 136);">-=20
+                        </span></i><b><span style=3D"font-size: 7pt; color:=
+ rgb(67, 141, 209);">Case=20
+                        Study: RFI</span></b><span style=3D"font-size: 7pt;=
+ color: rgb(51, 51, 51);"><br></span><i><span style=3D"font-size: 7pt; colo=
+r: rgb(136, 136, 136);">Giovanni=20
+                        Sadun</span></i><span style=3D"font-size: 7pt; colo=
+r: rgb(51, 51, 51);">=20
+                        </span></p></td></tr>
+                    <tr>
+                      <td style=3D"padding: 6pt 0cm 3pt; width: 28.2pt;" va=
+lign=3D"top" width=3D"47">
+                        <p class=3D"MsoNormal" style=3D"line-height: 9pt;">=
+<span style=3D"font-size: 7pt; color: rgb(51, 51, 51);">h.=20
+                        14,45</span></p></td>
+                      <td style=3D"padding: 6pt 0cm 3pt;" valign=3D"top">
+                        <p class=3D"MsoNormal" style=3D"line-height: 9pt;">=
+<b><span style=3D"font-size: 7pt; color: rgb(51, 51, 51);">Applicazioni=20
+                        pratiche 3: </span></b><span style=3D"font-size: 7p=
+t; color: rgb(51, 51, 51);">La=20
+                        pianificazione come strumento di ottimizzazione del=
+le=20
+                        attivit=E0 di assistenza tecnica - </span><b><span =
+style=3D"font-size: 7pt; color: rgb(67, 141, 209);">Case=20
+                        study: SISAL</span></b><span style=3D"font-size: 7p=
+t; color: rgb(51, 51, 51);"><br></span><i><span style=3D"font-size: 7pt; co=
+lor: rgb(136, 136, 136);">Raffaele=20
+                        Ioio - Responsabile Sistemi CRM - SISAL</span></i><=
+span style=3D"font-size: 7pt; color: rgb(136, 136, 136);"><br><i><span>Mari=
+a Grazia=20
+                        Fiorani - Responsabile Enterprise Business Solution=
+s -=20
+                        Gruppo SIGLA</span></i></span><span style=3D"font-s=
+ize: 7pt; color: rgb(51, 51, 51);">=20
+                        </span></p></td></tr>
+                    <tr>
+                      <td style=3D"padding: 6pt 0cm 3pt; width: 28.2pt;" va=
+lign=3D"top" width=3D"47">
+                        <p class=3D"MsoNormal" style=3D"line-height: 9pt;">=
+<span style=3D"font-size: 7pt; color: rgb(51, 51, 51);">h.=20
+                        15,20</span></p></td>
+                      <td style=3D"padding: 6pt 0cm 3pt;" valign=3D"top">
+                        <p class=3D"MsoNormal" style=3D"line-height: 9pt;">=
+<b><span style=3D"font-size: 7pt; color: rgb(51, 51, 51);">Applicazioni=20
+                        pratiche 4: </span></b><span style=3D"font-size: 7p=
+t; color: rgb(51, 51, 51);">L=92integrazione=20
+                        tra il sistema di gestione dei servizi IT e il Sist=
+ema=20
+                        di Gestione Qualit=E0 -</span><span style=3D"font-s=
+ize: 7pt; color: rgb(67, 141, 209);">=20
+                        <b><span>Case Study:=20
+                        TSF</span></b> </span><span style=3D"font-size: 7pt=
+; color: rgb(51, 51, 51);"><br></span><i><span style=3D"font-size: 7pt; col=
+or: rgb(136, 136, 136);">Giovanni=20
+                        Sadun</span></i><span style=3D"font-size: 7pt; colo=
+r: rgb(51, 51, 51);"></span></p></td></tr>
+                    <tr>
+                      <td style=3D"padding: 6pt 0cm 3pt; width: 28.2pt;" va=
+lign=3D"top" width=3D"47">
+                        <p class=3D"MsoNormal" style=3D"line-height: 9pt;">=
+<span style=3D"font-size: 7pt; color: rgb(51, 51, 51);">h.=20
+                        16,00</span></p></td>
+                      <td style=3D"padding: 6pt 0cm 3pt;" valign=3D"top">
+                        <p class=3D"MsoNormal" style=3D"line-height: 9pt;">=
+<b><span style=3D"font-size: 7pt; color: rgb(51, 51, 51);">Sessione=20
+                        di domande e risposte e chiusura lavori</span></b><=
+span style=3D"font-size: 7pt; color: rgb(51, 51, 51);"></span></p></td></tr=
+>
+                    <tr>
+                      <td style=3D"padding: 6pt 0cm 3pt;" colspan=3D"2" val=
+ign=3D"top"></td></tr></tbody></table></div></td>
+                <td style=3D"padding: 0cm; width: 141.6pt;" valign=3D"top" =
+width=3D"236">
+                  <div align=3D"center">
+                  <table style=3D"background: none repeat scroll 0% 0% rgb(=
+201, 223, 242); width: 141.6pt;" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"236">
+                    <tbody>
+                    <tr>
+                      <td style=3D"padding: 0cm;">
+                        <p class=3D"MsoNormal"><img alt=3D"http://www.grupp=
+osigla.it/promo/mp_03.gif" src=3D"cid:FB22EA98DC204F229BF58AA2FA39DBF1@Grup=
+poSigla.it" border=3D"0" width=3D"236" height=3D"8"></p></td></tr>
+                    <tr>
+                      <td style=3D"padding: 3pt 6pt;">
+                        <div>
+                        <p class=3D"MsoNormal"><b><span style=3D"font-size:=
+ 9.5pt; color: rgb(46, 46, 46);">Gruppo=20
+                        SIGLA</span></b><span style=3D"font-size: 9.5pt; co=
+lor: rgb(46, 46, 46);"></span></p></div>
+                        <div>
+                        <p class=3D"MsoNormal" style=3D"line-height: 9.6pt;=
+"><b><span style=3D"font-size: 6pt; color: rgb(96, 96, 96);">Gruppo=20
+                        SIGLA</span></b><span style=3D"font-size: 6pt; colo=
+r: rgb(96, 96, 96);">=20
+                        =E8 un=92azienda privata, composta da pi=F9 di 60 t=
+ecnici con=20
+                        elevata specializzazione ed esperienza in ambito=20
+                        Information Technology, che progetta e sviluppa=20
+                        soluzioni informatiche per aziende ed enti pubblici=
+:=20
+                        presta la propria collaborazione essenzialmente per=
+=20
+                        Grandi Clienti con sedi a Genova e in Liguria, nel =
+resto=20
+                        d=92Italia ed all=92estero.<br><br><b>Gruppo SIGLA<=
+/b> =E8 in=20
+                        grado di fornire soluzioni e servizi in ambito=20
+                        informatico, coprendo tutto il ciclo di vita:=20
+                        dall=92analisi dei requisiti alla realizzazione deg=
+li=20
+                        studi di fattibilit=E0, dalla progettazione (hardwa=
+re e=20
+                        software) all=92integrazione e configurazione dei s=
+istemi,=20
+                        dalla realizzazione di =93applicazioni software ded=
+icate=94=20
+                        all=92installazione e messa in opera delle stesse p=
+resso=20
+                        gli utenti finali.</span></p></div></td></tr>
+                    <tr>
+                      <td style=3D"padding: 0cm;">
+                        <p class=3D"MsoNormal"><img alt=3D"http://www.grupp=
+osigla.it/promo/mp_04.gif" src=3D"cid:B3A69E4E3EC14BE393765B6CFD768EFF@Grup=
+poSigla.it" border=3D"0" width=3D"236" height=3D"8"></p></td></tr></tbody><=
+/table>
+</div>
+                  <p class=3D"MsoNormal" style=3D"text-align: center;" alig=
+n=3D"center"><span>=A0</span></p>
+                  <div align=3D"center">
+                  <table style=3D"background: none repeat scroll 0% 0% rgb(=
+201, 223, 242); width: 141.6pt;" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"236">
+                    <tbody>
+                    <tr>
+                      <td style=3D"padding: 0cm;">
+                        <p class=3D"MsoNormal"><img alt=3D"http://www.grupp=
+osigla.it/promo/mp_03.gif" src=3D"cid:FB22EA98DC204F229BF58AA2FA39DBF1@Grup=
+poSigla.it" border=3D"0" width=3D"236" height=3D"8"></p></td></tr>
+                    <tr>
+                      <td style=3D"padding: 3pt 6pt;">
+                        <div>
+                        <p class=3D"MsoNormal"><b><span style=3D"font-size:=
+ 9.5pt; color: rgb(46, 46, 46);">Quint</span></b><span style=3D"font-size: =
+9.5pt; color: rgb(46, 46, 46);"></span></p></div>
+                        <div>
+                        <p class=3D"MsoNormal" style=3D"line-height: 9.6pt;=
+"><b><span style=3D"font-size: 6pt; color: rgb(96, 96, 96);">Quint=20
+                        Wellington Redwood</span></b><span style=3D"font-si=
+ze: 6pt; color: rgb(96, 96, 96);">=20
+                        =96 o pi=F9 semplicemente <b>Quint</b> =96 =E8 stat=
+a fondata nel=20
+                        1992 nei Paesi Bassi, per supportare le imprese nel=
+=20
+                        massimizzare il ritorno dei loro investimenti pi=F9=
+=20
+                        rilevanti nell=92ambito dell=92Information=20
+                        Technology.<br><br><b>Quint</b> si caratterizza per=
+=20
+                        essere un=92azienda di consulenza manageriale=20
+                        indipendente, specializzata nella risoluzione di=20
+                        problematiche organizzative in ambito IT. Attravers=
+o un=20
+                        network globale di quindici sedi Quint fornisce ser=
+vizi=20
+                        di consulenza e formazione in tutto il=20
+                        mondo.<br><br>Grazie alle esperienze sviluppate ed =
+alla=20
+                        presenza locale in Italia, <b>Quint</b> =E8 in grad=
+o di=20
+                        aiutare i propri Clienti a raggiungere un livello d=
+i=20
+                        eccellenza nella gestione del business, tenendo fed=
+e=20
+                        alla mission aziendale: &quot;Orchestrating Busines=
+s=20
+                        Excellence&quot;.</span></p></div></td></tr>
+                    <tr>
+                      <td style=3D"padding: 0cm;">
+                        <p class=3D"MsoNormal"><img alt=3D"http://www.grupp=
+osigla.it/promo/mp_04.gif" src=3D"cid:B3A69E4E3EC14BE393765B6CFD768EFF@Grup=
+poSigla.it" border=3D"0" width=3D"236" height=3D"8"></p></td></tr></tbody><=
+/table>
+</div></td></tr></tbody></table></div></td></tr>
+        <tr>
+          <td style=3D"padding: 9pt 13.8pt 0cm;" valign=3D"bottom">
+            <div align=3D"center">
+            <table style=3D"width: 456pt;" border=3D"0" cellpadding=3D"0" c=
+ellspacing=3D"0" width=3D"760">
+              <tbody>
+              <tr>
+                <td style=3D"padding: 0cm 14.4pt 0cm 0cm; width: 314.4pt;" =
+width=3D"524">
+                  <p style=3D"text-align: center;" align=3D"center"><span s=
+tyle=3D"font-size: 6.5pt; color: rgb(160, 160, 160);">Se=20
+                  ritenete di aver ricevuto per errore questo messaggio, o =
+se=20
+                  non desiderate riceverne altri,<br>inviate cortesemente u=
+n=20
+                  email vuoto all&#39;indirizzo:<b> <a href=3D"mailto:remov=
+e@grupposigla.it" target=3D"_blank"><span style=3D"color: rgb(93, 93, 93);"=
+>remove@grupposigla.it</span></a></b></span></p></td>
+                <td style=3D"padding: 0cm;">
+                  <div align=3D"center">
+                  <table style=3D"background: none repeat scroll 0% 0% rgb(=
+255, 243, 229); width: 141.6pt;" border=3D"0" cellpadding=3D"0" cellspacing=
+=3D"0" width=3D"236">
+                    <tbody>
+                    <tr>
+                      <td style=3D"padding: 0cm;">
+                        <p class=3D"MsoNormal"><img alt=3D"http://www.grupp=
+osigla.it/promo/mp_03.gif" src=3D"cid:FB22EA98DC204F229BF58AA2FA39DBF1@Grup=
+poSigla.it" border=3D"0" width=3D"236" height=3D"8"></p></td></tr>
+                    <tr>
+                      <td style=3D"padding: 3pt 2.4pt;" valign=3D"top">
+                        <div>
+                        <p class=3D"MsoNormal" style=3D"line-height: 7.8pt;=
+ text-align: center;" align=3D"center"><b><span style=3D"font-size: 6pt; co=
+lor: rgb(127, 127, 127);">Gruppo=20
+                        SIGLA Srl</span></b><span style=3D"font-size: 6pt; =
+color: rgb(127, 127, 127);"><br>Via=20
+                        Finocchiaro Aprile 31/4a - 16129=20
+                        GE<br>Tel:+39.010.589635=20
+                        Fax:+39.010.5531889</span></p></div>
+                        <div>
+                        <p class=3D"MsoNormal" style=3D"line-height: 7.8pt;=
+ text-align: center;" align=3D"center"><span style=3D"font-size: 6pt; color=
+: rgb(127, 127, 127);"><a href=3D"http://www.grupposigla.it" target=3D"_bla=
+nk"><span style=3D"color: rgb(255, 167, 64);">http://www.grupposigla.it</sp=
+an></a></span></p>
+</div></td></tr></tbody></table></div></td></tr></tbody></table></div></td>=
+</tr></tbody></table></div></td></tr></tbody></table>
+<p class=3D"MsoNormal">=A0</p></div></div>
+</div><br>
+
+--0050450168c8ec28510492f56f0f--
+--0050450168c8ec28590492f56f10
+Content-Type: image/gif; name="image002.gif"
+Content-Transfer-Encoding: base64
+Content-ID: <FB22EA98DC204F229BF58AA2FA39DBF1@GruppoSigla.it>
+X-Attachment-Id: 6240d0ce025a3df8_0.2
+
+R0lGODlh7AAIALMLAPv7+/39/ff29vn5+fb19fX09Pj39/b29vz7+/r6+v////Tz8wAAAAAAAAAA
+AAAAACH5BAEAAAsALAAAAADsAAgAAARRUMmJDFk46827/2AojmRpnmiqeoSBTPAUHGtt33iu7/sR
+xJIEb0gsGo9ITSI2SDqf0Gh0MAFIr9is9gSQFLbgsPhaUFjH6LRaBxCs3/C4SBABADs=
+--0050450168c8ec28590492f56f10
+Content-Type: image/gif; name="image001.gif"
+Content-Transfer-Encoding: base64
+Content-ID: <30087F6A17D746AAAA3F24303F62BA1A@GruppoSigla.it>
+X-Attachment-Id: 6240d0ce025a3df8_0.1
+
+R0lGODlhuQBHAPcAAHmIl32j1LXH2+ry+JanurTK46O1ys3i9Gp2hNXr/UhOU2RteXSTu6zC3K3E
+4oev42aEqsLW9ThEUqavuIuz5tLl+1Rqh+Pu+Vt0mC85Rsre9L3V8mF5mmqKs4uds5msxJy75Ftm
+dIOq24qt3P7//r7X+4WOmMLZ+b/Z9qS608HZ9nWLpaS+5NPk9IKl1OXp67nP7MPa7dzs+5K14kdV
+Zfb5+rrS8XF8icLW7aa82khbc4ejyYaq27bO6hoiK6XD64Kn2sXd+p2xyqzF6rnR7aq91HqeyyQn
+KrrN47jP8gMDBRMWGsbe9sLZ8pSz3FJZYqm/3SIrNLbO7oSTpbfR7r/Z+oycrfH09Nrd4a3J7N3i
+5Z200jtNZJOdp/v9+8rf+dTY242x37vV8naDj7HH44Wq3rS7wrvV9YOp3r3DyL7R5crP0ygwO01h
+enOVwfH3+5W542J9ooyr1U5lhKzJ8XqbxHSaysvc7rbS8rLK6b7W7s3i+c3S1nGOtY+huFhha6K3
+0hQbI87l+b3T8sTb9drm88rh+TI2OsXa8cHX+rrQ6MPJzqXB5HWZxcfh+ltwjA0SGISo1r3S7Yat
+3pukrsTb+p263r3T9rvT9oSVqpK26r3S6rbL6cni/Zu228fe/MPT5t3p99Dp/Zy96cbd8ZGu2V16
+os7m/b7V6p/B7LLN6YKdwa/I5Yet25m34nee0MLZ/XySrQgMEMLe9c3j/m6RurPH6djm+XB+kcjh
+9VNsj9nw/7HK7X+PoMrl/sPe+YKt4IuVoMPd8v39+sPd/rvV7sTb/rLN8GuBnNTo9o6ZpJa74Mvh
+7IeZrrbL7Za66JCfsvX4936p4NHg9nqYv4Ot2YiXqb7Q3UBOYC4vLxISEAwQEPn7+7/X9/n7+b3V
+9fv7+b/X9L/V9L3X+L3V+L3X9L/V9/v9/fv7+8zl96G42Q0MC/n5+iQjIRwcHMHP7DxAQ/n595Gw
+4bbR57fT+4qn0A4OEm6XwbLC1h0gIsTZ6cjX58jY7NHe6wAAAPj6+SH5BAAAAAAALAAAAAC5AEcA
+AAj/AP8JHEiwoMGDCBMqXMiwocOHECNKnEixosWLGDNq3Mixo8ePIEOKHEmypMmTHL2p9OZl5b8a
+MGMOlAkzWkyZL2sIpPlvJUtvKIMKLeiFm09v4N4ofTPgCtNChUJdkDFARqFbMlq0uHCr652tMroW
+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
+d3M/d3RPd3U394AAADs=
+--0050450168c8ec28590492f56f10
+Content-Type: image/gif; name="image003.gif"
+Content-Transfer-Encoding: base64
+Content-ID: <B3A69E4E3EC14BE393765B6CFD768EFF@GruppoSigla.it>
+X-Attachment-Id: 6240d0ce025a3df8_0.3
+
+R0lGODlh7AAIALMJAPv7+/j39/b19f39/fr5+fn4+Pb29vX19f////Tz8wAAAAAAAAAAAAAAAAAA
+AAAAACH5BAEAAAkALAAAAADsAAgAAARPMKRJq7046827/2AojmRpUgFwrmzrvnAsA4gg33iu73xy
+IAhVb0gsGnk0YOHIbDqfmwJwSoBar1gdYcodGLLgsPhjGHDPwYBtzG5fBSl0BAA7
+--0050450168c8ec28590492f56f10--
